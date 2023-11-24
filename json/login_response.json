@@ -1,0 +1,16 @@
+{
+    "success": true,
+    "message": "Login Success",
+    "data": {
+        "user": {
+            "id": "1",
+            "name": "Aghiad Odeh",
+            "avatar": "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            "country": "Greece",
+            "city": "Sanford",
+            "company": "Bespoke Plastic Table",
+            "createdAt": "2022-06-13T15:03:24.653Z"
+        },
+        "token": "dcc36aa219448f4825673dfaeca75514dff81c0570ff9c66390d697d0a089aa3"
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "app_name": "XflutterCliTestApplication",
+  "check_internet_connection": "Check Your Internet Connection",
+  "name": "Name",
+  "mail": "Mail",
+  "password": "Password",
+  "confirm_password": "Confirm password"
+}
