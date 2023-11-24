@@ -45,5 +45,3 @@ Available commands:
 - (theme): used with (generate screen), initialize your global app theme.
 
 - (router): used with (generate screen), give you ability to manage navigation between screens, initialize (auto_route) package and wrap the generated screen in app routes.
-
-## [Github example](https://github.com/aghiadodeh/xflutter_cli_example)
