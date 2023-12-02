@@ -26,9 +26,9 @@ void main() async {
   await AppIsar.initialize();
   runApp(
     EasyLocalization(
-      supportedLocales: const [Locale('en', 'US')],
+      supportedLocales: const [Locale('en')],
       path: 'assets/localization',
-      fallbackLocale: const Locale('en', 'US'),
+      fallbackLocale: const Locale('en'),
       child: const MyApp(),
     ),
   );
@@ -45,7 +45,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    uiConfig(context);
 
     // change Material-App current theme
     eventBus.on<ThemeChangedEvent>().listen((_) => setState(() {}));
@@ -55,6 +54,8 @@ class _MyAppState extends State<MyApp> {
 
     // handle unauthorizedEvent
     eventBus.on<UnauthorizedEvent>().listen((_) => handleUnauthorizedEvent());
+
+    runAfterBuild(() => uiConfig(context));
   }
 
   /// logOut
