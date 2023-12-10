@@ -47,13 +47,18 @@ class InfiniteScrollView<VM extends PaginationViewModel<T>, T extends Object> ex
   /// scroll-view padding
   final EdgeInsets? padding;
 
+  /// [noItemsWidget] is a widget appears after fetch first page data and the result is empty
   final Widget? noItemsWidget;
+
+  /// [loadingWidget] is a widget appears when first page is in loading state.
+  final Widget? loadingWidget;
 
   /// build [AnimatedInfiniteScrollView] with basic configuration
   const InfiniteScrollView({
     required this.viewModel,
     required this.itemBuilder,
     this.refreshIndicator = true,
+    this.loadingWidget,
     this.onRefresh,
     this.topWidget,
     this.retry,
@@ -72,7 +77,7 @@ class InfiniteScrollView<VM extends PaginationViewModel<T>, T extends Object> ex
       viewModel: viewModel,
       refreshIndicator: refreshIndicator,
       topWidget: topWidget,
-      loadingWidget: const CustomizedAnimatedWidget(child: Loader()),
+      loadingWidget: loadingWidget ?? const CustomizedAnimatedWidget(child: Loader()),
       footerLoadingWidget: const PaginationLoaderWidget(),
       errorWidget: PaginationErrorWidget(
         retry: retry ?? () => viewModel.fetchData(viewModel.paginationParams.page),
