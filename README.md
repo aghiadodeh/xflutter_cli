@@ -1,5 +1,8 @@
 #### `xflutter_cli` is a command line tool helps you to generates and/or modifies your Flutter Components.
 
+### Offical Docs:
+[https://www.xflutter-cli.com](https://www.xflutter-cli.com)
+
 ### Install:
 activate dart cli to run it globally:
 

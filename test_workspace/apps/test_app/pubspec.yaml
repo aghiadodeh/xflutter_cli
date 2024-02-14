@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  test_package:
   redacted: ^1.0.11
   animated_infinite_scroll_pagination: ^0.3.8
   flutterx_live_data: ^1.9.2

@@ -2,4 +2,5 @@ name: test_workspace
 environment:
   sdk: ">=3.1.0 <4.0.0"
 dev_dependencies:
-  melos: ^3.2.0
+  build_runner: ^2.2.1
+  melos: ^3.4.0

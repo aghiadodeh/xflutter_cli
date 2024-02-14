@@ -68,3 +68,23 @@ modules:
     generate:
       run_build_runner: true
       overwrite: false
+  - env:
+      architecture: mvvm
+      template: app
+      base: apps/myapp/lib/
+      path: apps/myapp/
+      name: myapp
+      flutter_version: 3.13.1
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/test_package/lib/src/
+      path: packages/test_package/
+      name: test_package
+      flutter_version: 3.13.1
+    generate:
+      run_build_runner: true
+      overwrite: false
