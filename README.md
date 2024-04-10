@@ -43,7 +43,7 @@ Available commands:
 
 - (tablet): used with (generate screen), give you the ability to wrap tablet and mobile layouts in your screen (generate mobile and tablet screens).
 
-- (di): used with (generate screen), state management with dependency injection to manage variables between screen and children widgets.
+- (state_management): used with (generate screen), state management with dependency injection to manage variables between screen and children widgets.
 
 - (theme): used with (generate screen), initialize your global app theme.
 
