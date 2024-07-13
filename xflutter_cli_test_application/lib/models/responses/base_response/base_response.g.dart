@@ -11,7 +11,7 @@ _$BaseResponseImpl<T> _$$BaseResponseImplFromJson<T>(
   T Function(Object? json) fromJsonT,
 ) =>
     _$BaseResponseImpl<T>(
-      statusCode: json['status_code'] as int?,
+      statusCode: (json['status_code'] as num?)?.toInt(),
       message: json['message'] as String?,
       data: _$nullableGenericFromJson(json['data'], fromJsonT),
       success: json['success'] as bool?,

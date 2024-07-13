@@ -12,10 +12,9 @@ part of 'base_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-BaseResponse<T> _$BaseResponseFromJson<T>(
-    Map<String, dynamic> json, T Function(Object?) fromJsonT) {
+BaseResponse<T> _$BaseResponseFromJson<T>(Map<String, dynamic> json, T Function(Object?) fromJsonT) {
   return _BaseResponse<T>.fromJson(json, fromJsonT);
 }
 
@@ -26,25 +25,21 @@ mixin _$BaseResponse<T> {
   T? get data => throw _privateConstructorUsedError;
   bool? get success => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
-      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson(Object? Function(T) toJsonT) => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BaseResponseCopyWith<T, BaseResponse<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BaseResponseCopyWith<T, BaseResponse<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BaseResponseCopyWith<T, $Res> {
-  factory $BaseResponseCopyWith(
-          BaseResponse<T> value, $Res Function(BaseResponse<T>) then) =
+  factory $BaseResponseCopyWith(BaseResponse<T> value, $Res Function(BaseResponse<T>) then) =
       _$BaseResponseCopyWithImpl<T, $Res, BaseResponse<T>>;
   @useResult
   $Res call({int? statusCode, String? message, T? data, bool? success});
 }
 
 /// @nodoc
-class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>>
-    implements $BaseResponseCopyWith<T, $Res> {
+class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>> implements $BaseResponseCopyWith<T, $Res> {
   _$BaseResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -82,10 +77,8 @@ class _$BaseResponseCopyWithImpl<T, $Res, $Val extends BaseResponse<T>>
 }
 
 /// @nodoc
-abstract class _$$BaseResponseImplCopyWith<T, $Res>
-    implements $BaseResponseCopyWith<T, $Res> {
-  factory _$$BaseResponseImplCopyWith(_$BaseResponseImpl<T> value,
-          $Res Function(_$BaseResponseImpl<T>) then) =
+abstract class _$$BaseResponseImplCopyWith<T, $Res> implements $BaseResponseCopyWith<T, $Res> {
+  factory _$$BaseResponseImplCopyWith(_$BaseResponseImpl<T> value, $Res Function(_$BaseResponseImpl<T>) then) =
       __$$BaseResponseImplCopyWithImpl<T, $Res>;
   @override
   @useResult
@@ -93,12 +86,9 @@ abstract class _$$BaseResponseImplCopyWith<T, $Res>
 }
 
 /// @nodoc
-class __$$BaseResponseImplCopyWithImpl<T, $Res>
-    extends _$BaseResponseCopyWithImpl<T, $Res, _$BaseResponseImpl<T>>
+class __$$BaseResponseImplCopyWithImpl<T, $Res> extends _$BaseResponseCopyWithImpl<T, $Res, _$BaseResponseImpl<T>>
     implements _$$BaseResponseImplCopyWith<T, $Res> {
-  __$$BaseResponseImplCopyWithImpl(
-      _$BaseResponseImpl<T> _value, $Res Function(_$BaseResponseImpl<T>) _then)
-      : super(_value, _then);
+  __$$BaseResponseImplCopyWithImpl(_$BaseResponseImpl<T> _value, $Res Function(_$BaseResponseImpl<T>) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -132,12 +122,9 @@ class __$$BaseResponseImplCopyWithImpl<T, $Res>
 /// @nodoc
 @JsonSerializable(genericArgumentFactories: true)
 class _$BaseResponseImpl<T> extends _BaseResponse<T> {
-  const _$BaseResponseImpl(
-      {this.statusCode, this.message, this.data, this.success})
-      : super._();
+  const _$BaseResponseImpl({this.statusCode, this.message, this.data, this.success}) : super._();
 
-  factory _$BaseResponseImpl.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
+  factory _$BaseResponseImpl.fromJson(Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
       _$$BaseResponseImplFromJson(json, fromJsonT);
 
   @override
@@ -155,12 +142,11 @@ class _$BaseResponseImpl<T> extends _BaseResponse<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BaseResponseImpl<T> &&
-            (identical(other.statusCode, statusCode) ||
-                other.statusCode == statusCode) &&
+            (identical(other.statusCode, statusCode) || other.statusCode == statusCode) &&
             (identical(other.message, message) || other.message == message) &&
             const DeepCollectionEquality().equals(other.data, data) &&
             (identical(other.success, success) || other.success == success));
@@ -168,15 +154,13 @@ class _$BaseResponseImpl<T> extends _BaseResponse<T> {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, statusCode, message,
-      const DeepCollectionEquality().hash(data), success);
+  int get hashCode => Object.hash(runtimeType, statusCode, message, const DeepCollectionEquality().hash(data), success);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BaseResponseImplCopyWith<T, _$BaseResponseImpl<T>> get copyWith =>
-      __$$BaseResponseImplCopyWithImpl<T, _$BaseResponseImpl<T>>(
-          this, _$identity);
+      __$$BaseResponseImplCopyWithImpl<T, _$BaseResponseImpl<T>>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson(Object? Function(T) toJsonT) {
@@ -185,16 +169,10 @@ class _$BaseResponseImpl<T> extends _BaseResponse<T> {
 }
 
 abstract class _BaseResponse<T> extends BaseResponse<T> {
-  const factory _BaseResponse(
-      {final int? statusCode,
-      final String? message,
-      final T? data,
-      final bool? success}) = _$BaseResponseImpl<T>;
+  const factory _BaseResponse({final int? statusCode, final String? message, final T? data, final bool? success}) = _$BaseResponseImpl<T>;
   const _BaseResponse._() : super._();
 
-  factory _BaseResponse.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =
-      _$BaseResponseImpl<T>.fromJson;
+  factory _BaseResponse.fromJson(Map<String, dynamic> json, T Function(Object?) fromJsonT) = _$BaseResponseImpl<T>.fromJson;
 
   @override
   int? get statusCode;
@@ -206,6 +184,5 @@ abstract class _BaseResponse<T> extends BaseResponse<T> {
   bool? get success;
   @override
   @JsonKey(ignore: true)
-  _$$BaseResponseImplCopyWith<T, _$BaseResponseImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$BaseResponseImplCopyWith<T, _$BaseResponseImpl<T>> get copyWith => throw _privateConstructorUsedError;
 }

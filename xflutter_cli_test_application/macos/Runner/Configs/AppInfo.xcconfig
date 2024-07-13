@@ -8,7 +8,7 @@
 PRODUCT_NAME = xflutter_cli_test_application
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.test.xflutterCliTestApplication
+PRODUCT_BUNDLE_IDENTIFIER = com.xfluttercli.xflutterCliTestApplication
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.test. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 com.xflutter_cli. All rights reserved.

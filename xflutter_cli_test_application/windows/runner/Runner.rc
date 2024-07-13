@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.test" "\0"
+            VALUE "CompanyName", "com.xflutter_cli" "\0"
             VALUE "FileDescription", "xflutter_cli_test_application" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "xflutter_cli_test_application" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.test. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.xflutter_cli. All rights reserved." "\0"
             VALUE "OriginalFilename", "xflutter_cli_test_application.exe" "\0"
             VALUE "ProductName", "xflutter_cli_test_application" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

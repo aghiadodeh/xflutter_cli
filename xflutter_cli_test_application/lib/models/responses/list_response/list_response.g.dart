@@ -11,7 +11,7 @@ _$ListResponseImpl<T> _$$ListResponseImplFromJson<T>(
   T Function(Object? json) fromJsonT,
 ) =>
     _$ListResponseImpl<T>(
-      total: json['total'] as int?,
+      total: (json['total'] as num?)?.toInt(),
       data: (json['data'] as List<dynamic>?)?.map(fromJsonT).toList(),
       cached: json['cached'] as bool? ?? false,
     );

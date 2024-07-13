@@ -1,5 +1,5 @@
 name: xflutter_cli_test_application
-description: A new Flutter project.
+description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.1.0 <4.0.0'
+  sdk: '>=3.4.3 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -28,25 +28,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  isar_flutter_libs: ^3.1.0+1
-  isar: ^3.1.0+1
-  path_provider: ^2.1.1
-  pretty_dio_logger: ^1.3.1
-  retrofit: ^4.0.1
-  dio: ^5.1.2
-  responsive_builder: ^0.7.0
   easy_localization: ^3.0.1
   auto_route: ^7.8.2
   flutter_animate: ^4.1.1+1
   flutter_spinkit: ^5.1.0
-  implicitly_animated_reorderable_list_2: ^0.5.1
-  animated_infinite_scroll_pagination: ^0.3.7
+  implicitly_animated_reorderable_list_2: ^0.6.0
+  animated_infinite_scroll_pagination: ^0.3.9
   reactive_forms: ^16.1.0
   flutter_secure_storage: ^8.0.0
   shared_preferences: ^2.0.15
   event_bus: ^2.0.0
   flutterx_live_data: ^1.9.2
-  connectivity_plus: ^5.0.0
+  connectivity_plus: ^6.0.3
   get_it: ^7.2.0
   json_annotation: ^4.7.0
   freezed_annotation: ^2.1.0
@@ -56,11 +49,9 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.6
 
 dev_dependencies:
-  isar_generator: ^3.1.0+1
-  retrofit_generator: ^7.0.1
   auto_route_generator: ^7.3.1
   freezed: ^2.1.0+1
   build_runner: ^2.2.1
@@ -73,7 +64,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
