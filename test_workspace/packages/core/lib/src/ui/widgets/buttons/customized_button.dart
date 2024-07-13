@@ -25,7 +25,7 @@ class CustomizedButton extends StatefulWidget {
 class _CustomizedButtonState extends State<CustomizedButton> {
   final GlobalKey<InteractionWidgetState> globalKey = GlobalKey<InteractionWidgetState>();
   final GlobalKey<InteractionWidgetState> childKey = GlobalKey<InteractionWidgetState>();
-  
+
   @override
   Widget build(BuildContext context) {
     return InteractionWidget(
@@ -41,8 +41,8 @@ class _CustomizedButtonState extends State<CustomizedButton> {
           widget.callback();
         },
         style: (widget.style ?? elevatedButtonTheme(darkMode: Theme.of(context).brightness == Brightness.dark).style)?.copyWith(
-          overlayColor: MaterialStateProperty.all(Colors.transparent),
-          backgroundColor: MaterialStateProperty.all(widget.enabled ? Theme.of(context).primaryColor : Colors.grey.shade400),
+          overlayColor: WidgetStateProperty.all(Colors.transparent),
+          backgroundColor: WidgetStateProperty.all(widget.enabled ? Theme.of(context).primaryColor : Colors.grey.shade400),
         ),
         child: InteractionWidget(
           duration: const Duration(milliseconds: 200),

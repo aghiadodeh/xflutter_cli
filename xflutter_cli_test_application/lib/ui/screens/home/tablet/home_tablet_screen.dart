@@ -11,7 +11,7 @@ class HomeTabletScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InstanceBuilder<HomeViewModel>(
-      builder: (viewModel) => SizedBox(),
+      builder: (viewModel) => const SizedBox(),
     );
   }
 }

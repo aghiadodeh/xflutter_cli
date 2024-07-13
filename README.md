@@ -1,6 +1,6 @@
 #### `xflutter_cli` is a command line tool helps you to generates and/or modifies your Flutter Components.
 
-### Offical Docs:
+### Official Docs:
 [https://www.xflutter-cli.com](https://www.xflutter-cli.com)
 
 ### Install:
@@ -23,7 +23,7 @@ Available commands:
 - create: Create new Flutter App and Initialize it.
 - generate: Generates and/or modifies files based on a schematic.
 - init: Initialize your project with necessary packages and reusable files.
-- help: browse all avialable commands, options and flags.
+- help: browse all available commands, options and flags.
 
 ### generate options:
 

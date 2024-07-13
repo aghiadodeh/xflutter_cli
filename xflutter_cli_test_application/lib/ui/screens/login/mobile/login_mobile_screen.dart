@@ -11,7 +11,7 @@ class LoginMobileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InstanceBuilder<LoginViewModel>(
-      builder: (viewModel) => SizedBox(),
+      builder: (viewModel) => const SizedBox(),
     );
   }
 }

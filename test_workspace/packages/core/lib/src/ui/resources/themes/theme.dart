@@ -19,13 +19,11 @@ final lightTheme = ThemeData(
   colorScheme: const ColorScheme(
     primary: DesignColors.primaryColor,
     secondary: DesignColors.secondaryColor,
-    surface: DesignColors.primaryColor,
-    background: Colors.white,
+    surface: DesignColors.scaffoldBackgroundColor,
     error: Colors.red,
     onPrimary: Colors.white,
     onSecondary: Colors.white,
     onSurface: Colors.black,
-    onBackground: Color.fromRGBO(249, 249, 249, 1),
     onError: Colors.red,
     brightness: Brightness.light,
   ),
@@ -129,6 +127,7 @@ InputDecoration textInputDecoration(ThemeData theme) => InputDecoration(
       filled: true,
       fillColor: theme.scaffoldBackgroundColor,
     );
+
 /// -------------------------------------------------------- ///
 
 /// -------------------- Buttons Theme -------------------- ///
@@ -136,14 +135,14 @@ TextButtonThemeData textButtonTheme({bool darkMode = false}) {
   final primaryColor = darkMode ? DesignColorsDark.primaryColor : DesignColors.primaryColor;
   return TextButtonThemeData(
     style: ButtonStyle(
-      foregroundColor: MaterialStateProperty.all<Color>(primaryColor),
-      overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
-      shape: MaterialStateProperty.all<OutlinedBorder>(
+      foregroundColor: WidgetStateProperty.all<Color>(primaryColor),
+      overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
+      shape: WidgetStateProperty.all<OutlinedBorder>(
         const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(buttonCorner)),
         ),
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(textButtonTextStyle(darkMode: darkMode)),
+      textStyle: WidgetStateProperty.all<TextStyle>(textButtonTextStyle(darkMode: darkMode)),
     ),
   );
 }
@@ -152,12 +151,12 @@ OutlinedButtonThemeData outlinedButtonTheme({bool darkMode = false}) {
   final primaryColor = darkMode ? DesignColorsDark.primaryColor : DesignColors.primaryColor;
   return OutlinedButtonThemeData(
     style: ButtonStyle(
-      textStyle: MaterialStateProperty.all<TextStyle>(outlinedButtonTextStyle(darkMode: darkMode)),
-      foregroundColor: MaterialStateProperty.all<Color>(primaryColor),
-      overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
-      side: MaterialStateProperty.all<BorderSide>(BorderSide(color: primaryColor)),
-      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.all(buttonPadding)),
-      shape: MaterialStateProperty.all<OutlinedBorder>(
+      textStyle: WidgetStateProperty.all<TextStyle>(outlinedButtonTextStyle(darkMode: darkMode)),
+      foregroundColor: WidgetStateProperty.all<Color>(primaryColor),
+      overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
+      side: WidgetStateProperty.all<BorderSide>(BorderSide(color: primaryColor)),
+      padding: WidgetStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.all(buttonPadding)),
+      shape: WidgetStateProperty.all<OutlinedBorder>(
         const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(buttonCorner)),
         ),
@@ -182,6 +181,7 @@ ElevatedButtonThemeData elevatedButtonTheme({bool darkMode = false}) {
     ),
   );
 }
+
 /// -------------------------------------------------------- ///
 
 /// -------------------- TextStyles -------------------- ///
@@ -191,6 +191,7 @@ const mediumTextStyle = TextStyle(fontSize: mediumText, fontWeight: FontWeight.w
 const normalTextStyle = TextStyle(fontSize: normalText, fontWeight: FontWeight.w500);
 const smallTextStyle = TextStyle(fontSize: smallText, fontWeight: FontWeight.w400);
 const verySmallTextStyle = TextStyle(fontSize: verySmallText, fontWeight: FontWeight.w400);
+
 /// -------------------------------------------------------- ///
 
 /// ignore bottom padding on [Platform.isIOS]

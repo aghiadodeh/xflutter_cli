@@ -26,11 +26,11 @@ class _RegisterScreenState extends State<RegisterScreen> with InstanceState<Regi
       children: [
         BaseScaffold(
           builder: (context, theme) => SafeArea(
-      child: ScreenTypeLayout.builder(
-    mobile: (context) => RegisterMobileScreen(), 
-  ),
-    ),
-  ),
+            child: ScreenTypeLayout.builder(
+              mobile: (context) => const RegisterMobileScreen(),
+            ),
+          ),
+        ),
         LiveDataFullScreenLoader(loading: viewModel.baseParams.loading),
       ],
     );

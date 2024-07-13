@@ -23,11 +23,11 @@ class _LoginScreenState extends State<LoginScreen> with InstanceState<LoginScree
       children: [
         Scaffold(
           body: SafeArea(
-      child: ScreenTypeLayout.builder(
-    mobile: (context) => LoginMobileScreen(), 
-  ),
-    ),
-  ),
+            child: ScreenTypeLayout.builder(
+              mobile: (context) => const LoginMobileScreen(),
+            ),
+          ),
+        ),
         LiveDataFullScreenLoader(loading: viewModel.baseParams.loading),
       ],
     );

@@ -70,8 +70,9 @@ class _BaseBottomSheetDialog extends StatelessWidget {
       backgroundColor: Colors.transparent,
       resizeToAvoidBottomInset: true,
       builder: (context, theme) {
-        return WillPopScope(
-          onWillPop: () => Future.value(isDismissible),
+        return PopScope(
+          canPop: isDismissible,
+          onPopInvoked: (value) => Future.value(value),
           child: Container(
             padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
             child: Column(
