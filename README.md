@@ -3,8 +3,6 @@ a command line tool helps you to generates and/or modifies your Flutter Componen
 
 <br clear="left"/>
 
-[![pub package][pub_badge]][pub_link]
-
 ---
 ## Documentation:
 For official documentation, please visit https://www.xflutter-cli.com
@@ -91,7 +89,3 @@ xflutter_cli --help
 - (theme): used with (generate screen), initialize your global app theme.
 
 - (router): used with (generate screen), give you ability to manage navigation between screens, initialize (auto_route) package and wrap the generated screen in app routes.
-
-## [Github example](https://github.com/aghiadodeh/xflutter_cli_example)
-
-[pub_link]: https://pub.dartlang.org/packages/xflutter_cli
