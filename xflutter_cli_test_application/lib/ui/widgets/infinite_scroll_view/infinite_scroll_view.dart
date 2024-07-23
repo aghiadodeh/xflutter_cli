@@ -27,7 +27,7 @@ class InfiniteScrollView<VM extends PaginationViewModel<T>, T extends Object> ex
   /// [ScrollPhysics] of pagination scrollView.
   final ScrollPhysics? physics;
 
-  /// [retry] callback called when pagination request faild and user press on [PaginationErrorWidget].
+  /// [retry] callback called when pagination request failed and user press on [PaginationErrorWidget].
   final Function()? retry;
 
   /// warp [ScrollView] in [RefreshIndicator] when [refreshIndicator] == `true`
