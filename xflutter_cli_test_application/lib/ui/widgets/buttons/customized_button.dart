@@ -25,7 +25,7 @@ class CustomizedButton extends StatelessWidget {
         callback();
       },
       style: (style ?? elevatedButtonTheme(darkMode: Theme.of(context).brightness == Brightness.dark).style)?.copyWith(
-        backgroundColor: MaterialStateProperty.all(enabled ? Theme.of(context).primaryColor : Colors.grey.shade400),
+        backgroundColor: WidgetStateProperty.all(enabled ? Theme.of(context).primaryColor : Colors.grey.shade400),
       ),
       child: child,
     );
