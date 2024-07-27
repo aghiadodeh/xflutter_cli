@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  pinput: ^3.0.1
   redacted: ^1.0.11
   retrofit: ^4.0.1
   pretty_dio_logger: ^1.4.0
