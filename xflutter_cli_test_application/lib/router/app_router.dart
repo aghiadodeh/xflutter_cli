@@ -4,12 +4,19 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import 'package:xflutter_cli_test_application/ui/screens/products/products_screen.dart';
 part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Screen')
 class AppRouter extends _$AppRouter {
   @override
-  List<AutoRoute> get routes => [];
+  List<AutoRoute> get routes => [
+        AutoRoute(
+          path: '/products',
+          page: Products.page,
+          initial: true,
+        ),
+      ];
 }
 
 final appRouter = AppRouter();

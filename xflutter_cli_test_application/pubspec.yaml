@@ -28,8 +28,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  easy_localization: ^3.0.1
   auto_route: ^7.8.2
+  responsive_builder: ^0.7.0
+  easy_localization: ^3.0.1
   flutter_animate: ^4.1.1+1
   flutter_spinkit: ^5.1.0
   implicitly_animated_reorderable_list_2: ^0.6.0

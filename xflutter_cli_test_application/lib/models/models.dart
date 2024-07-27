@@ -6,3 +6,7 @@ export "responses/base_response/base_response.dart";
 export "responses/list_response/list_response.dart";
 export "data/generic_result/generic_result.dart";
 export "ui_models/ui_message/ui_message.dart";
+export 'data/media/media.dart';
+export 'data/category/category.dart';
+export 'data/user/user.dart';
+export 'data/product/product.dart';
