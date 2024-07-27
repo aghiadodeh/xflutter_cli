@@ -1,0 +1,14 @@
+# melos_managed_dependency_overrides: events,extensions,models,theme,utilities,widgets
+dependency_overrides:
+  events:
+    path: ../events
+  extensions:
+    path: ../extensions
+  models:
+    path: ../models
+  theme:
+    path: ../theme
+  utilities:
+    path: ../utilities
+  widgets:
+    path: ../widgets

@@ -1,0 +1,18 @@
+name: utilities
+version: 0.0.1
+homepage: none
+publish_to: none
+description: generate utilities files like (debouncer, logger)
+environment: 
+  sdk: '>=3.4.3 <4.0.0'
+  flutter: '>=1.17.0'
+dependencies: 
+  connectivity_plus: ^6.0.3
+  get_it: ^7.2.0
+  flutter: 
+    sdk: flutter
+dev_dependencies: 
+  flutter_lints: ^3.0.0
+  flutter_test: 
+    sdk: flutter
+flutter: null

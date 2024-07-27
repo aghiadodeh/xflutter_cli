@@ -1,0 +1,26 @@
+library widgets;
+
+export "src/ui/widgets/text_fields/customized_text_form_field.dart";
+export "src/ui/widgets/text_fields/customized_reactive_text_field.dart";
+export "src/utilities/validators/matching_validator.dart";
+export "src/ui/widgets/buttons/back_button.dart";
+export "src/ui/widgets/core/theme_widget.dart";
+export "src/ui/widgets/core/base_scaffold.dart";
+export "src/ui/widgets/core/base_scrollview.dart";
+export "src/ui/widgets/core/base_appbar.dart";
+export "src/ui/widgets/snackbar.dart";
+export "src/ui/widgets/blur_widget.dart";
+export "src/ui/widgets/infinite_scroll_view/infinite_scroll_view.dart";
+export "src/ui/widgets/infinite_scroll_view/pagination_error_widget.dart";
+export "src/ui/widgets/infinite_scroll_view/pagination_load_widget.dart";
+export "src/ui/widgets/loaders/full_screen_loader.dart";
+export "src/ui/widgets/loaders/live_data_loader.dart";
+export "src/ui/widgets/loaders/loader.dart";
+export "src/ui/widgets/result/result_builder.dart";
+export "src/ui/widgets/buttons/text_button.dart";
+export "src/ui/widgets/base_bottom_sheet_dialog.dart";
+export "src/ui/widgets/buttons/customized_button.dart";
+export "src/ui/widgets/animations/customized_animated_widget.dart";
+export "src/ui/widgets/animations/interaction_widget.dart";
+export "src/ui/widgets/animations/animated_gesture.dart";
+export "src/ui/widgets/animations/animated_column.dart";

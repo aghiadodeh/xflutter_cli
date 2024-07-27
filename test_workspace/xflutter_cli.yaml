@@ -5,8 +5,8 @@ workspace: test_workspace
 #
 # If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
 # you can downgrade version manually by run command:
-# dart pub global activate xflutter_cli 2.0.0
-version: 2.0.0
+# dart pub global activate xflutter_cli 2.1.7
+version: 2.1.7
 
 # project modules
 modules:
@@ -22,16 +22,16 @@ modules:
       # the tool will generate and modify all components which located in this directory 
       # `main.dart` path for `app` template
       # `{package_path}/src` for `package` template
-      base: apps/test_app/lib
+      base: apps/booking_app/lib/
       
       # path of `pubspec.yaml`
-      path: apps/test_app/
+      path: apps/booking_app/
       
       # project name (same of name in `pubspec.yaml`)
-      name: test_app
+      name: booking_app
       
       # machine Flutter version when initialize the module
-      flutter_version: 3.13.1
+      flutter_version: 3.22.2
 
     # xflutter_cli generate configuration
     generate:
@@ -51,40 +51,90 @@ modules:
   - env:
       architecture: mvvm
       template: package
-      base: packages/core/lib/src/
-      path: packages/core/
-      name: core
-      flutter_version: 3.13.1
+      base: packages/utilities/lib/src/
+      path: packages/utilities/
+      name: utilities
+      flutter_version: 3.22.2
     generate:
       run_build_runner: true
       overwrite: false
   - env:
       architecture: mvvm
       template: package
-      base: packages/shared/lib/src/
-      path: packages/shared/
-      name: shared
-      flutter_version: 3.13.1
+      base: packages/extensions/lib/src/
+      path: packages/extensions/
+      name: extensions
+      flutter_version: 3.22.2
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/events/lib/src/
+      path: packages/events/
+      name: events
+      flutter_version: 3.22.2
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/storage/lib/src/
+      path: packages/storage/
+      name: storage
+      flutter_version: 3.22.2
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/models/lib/src/
+      path: packages/models/
+      name: models
+      flutter_version: 3.22.2
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/theme/lib/src/
+      path: packages/theme/
+      name: theme
+      flutter_version: 3.22.2
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/widgets/lib/src/
+      path: packages/widgets/
+      name: widgets
+      flutter_version: 3.22.2
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/state_management/lib/src/
+      path: packages/state_management/
+      name: state_management
+      flutter_version: 3.22.2
     generate:
       run_build_runner: true
       overwrite: false
   - env:
       architecture: mvvm
       template: app
-      base: apps/myapp/lib/
-      path: apps/myapp/
-      name: myapp
-      flutter_version: 3.13.1
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: mvvm
-      template: package
-      base: packages/test_package/lib/src/
-      path: packages/test_package/
-      name: test_package
-      flutter_version: 3.13.1
+      base: apps/admin_app/lib/
+      path: apps/admin_app/
+      name: admin_app
+      flutter_version: 3.22.2
     generate:
       run_build_runner: true
       overwrite: false

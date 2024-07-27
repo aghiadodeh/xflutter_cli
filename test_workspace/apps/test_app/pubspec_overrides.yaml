@@ -1,8 +1,0 @@
-# melos_managed_dependency_overrides: core,shared,test_package
-dependency_overrides:
-  core:
-    path: ../../packages/core
-  shared:
-    path: ../../packages/shared
-  test_package:
-    path: ../../packages/test_package

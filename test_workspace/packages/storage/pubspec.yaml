@@ -1,0 +1,21 @@
+name: storage
+version: 0.0.1
+homepage: none
+publish_to: none
+description: initialize `shared_preferences` and `secure_storage` packages
+environment: 
+  sdk: '>=3.4.3 <4.0.0'
+  flutter: '>=1.17.0'
+dependencies: 
+  flutter_secure_storage: ^8.0.0
+  shared_preferences: ^2.0.15
+  get_it: ^7.2.0
+  utilities: 
+    path: ../../packages/utilities
+  flutter: 
+    sdk: flutter
+dev_dependencies: 
+  flutter_lints: ^3.0.0
+  flutter_test: 
+    sdk: flutter
+flutter: null

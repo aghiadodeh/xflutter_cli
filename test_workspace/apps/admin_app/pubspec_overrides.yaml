@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: events,theme,utilities,storage
+dependency_overrides:
+  events:
+    path: ../../packages/events
+  storage:
+    path: ../../packages/storage
+  theme:
+    path: ../../packages/theme
+  utilities:
+    path: ../../packages/utilities

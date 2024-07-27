@@ -1,0 +1,17 @@
+name: events
+version: 0.0.1
+homepage: none
+publish_to: none
+description: initialize `event_bus` package with common events
+environment: 
+  sdk: '>=3.4.3 <4.0.0'
+  flutter: '>=1.17.0'
+dependencies: 
+  event_bus: ^2.0.0
+  flutter: 
+    sdk: flutter
+dev_dependencies: 
+  flutter_lints: ^3.0.0
+  flutter_test: 
+    sdk: flutter
+flutter: null
