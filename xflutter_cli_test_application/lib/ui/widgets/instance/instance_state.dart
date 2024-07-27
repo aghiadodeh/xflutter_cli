@@ -8,7 +8,6 @@ import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/viewmodels/base_viewmodel.dart';
 import 'package:xflutter_cli_test_application/utilities/ui/ui.dart';
 import 'package:xflutter_cli_test_application/utilities/di/di.dart';
-import 'package:xflutter_cli_test_application/ui/widgets/snackbar.dart';
 import 'instance_builder.dart';
 import 'instance_use.dart';
 
