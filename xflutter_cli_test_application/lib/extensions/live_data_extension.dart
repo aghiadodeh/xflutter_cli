@@ -2,19 +2,6 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutterx_live_data/flutterx_live_data.dart';
-import 'package:xflutter_cli_test_application/utilities/async/debouncer.dart';
-
-extension LiveDataUtils<T> on LiveData<T> {
-  /// Ignore all changes in [callback] during [duration] (0.5 sec by default)
-  /// and sends the last value after [duration]
-  ObserverWrapper<T> debounce(void Function(T) callback, {Duration duration = const Duration(milliseconds: 500)}) {
-    final debouncer = Debouncer(delay: duration);
-    void onChange(value) => debouncer(() => callback(value));
-    ObserverWrapper<T>? observerWrapper = ObserverWrapper<T>(onChange, Dispatcher.postFrame);
-    addObserverWrapper(observerWrapper);
-    return observerWrapper;
-  }
-}
 
 extension MutableLiveDataUtils<T> on T {
   /// create new [MutableLiveData] instance with initialValue from passed variable value
