@@ -14,5 +14,26 @@ abstract class _$AppRouter extends RootStackRouter {
   _$AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, PageFactory> pagesMap = {};
+  final Map<String, PageFactory> pagesMap = {
+    AdminProducts.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AdminProductsScreen(),
+      );
+    }
+  };
+}
+
+/// generated route for
+/// [AdminProductsScreen]
+class AdminProducts extends PageRouteInfo<void> {
+  const AdminProducts({List<PageRouteInfo>? children})
+      : super(
+          AdminProducts.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AdminProducts';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

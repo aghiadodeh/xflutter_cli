@@ -1,4 +1,4 @@
-name: test_workspace
+name: flutter_monorepo_workspace
 environment:
   sdk: ">=3.4.3 <4.0.0"
 dev_dependencies:

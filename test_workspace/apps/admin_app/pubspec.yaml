@@ -28,12 +28,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  easy_localization: ^3.0.1
-  storage:
-  events:
-  utilities:
-  theme:
+  orders:
   auto_route: ^7.8.2
+  flutterx_live_data: ^1.9.2
+  responsive_builder: ^0.7.0
+  products:
+  easy_localization: ^3.0.1
+  core:
   flutter:
     sdk: flutter
 

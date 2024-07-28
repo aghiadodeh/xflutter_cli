@@ -1,12 +1,12 @@
 # workspace name
-workspace: test_workspace
+workspace: flutter_monorepo_workspace
 
 # xflutter_cli version when you initialize your application,
 #
 # If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
 # you can downgrade version manually by run command:
-# dart pub global activate xflutter_cli 2.1.7
-version: 2.1.7
+# dart pub global activate xflutter_cli 2.1.8
+version: 2.1.8
 
 # project modules
 modules:
@@ -22,13 +22,13 @@ modules:
       # the tool will generate and modify all components which located in this directory 
       # `main.dart` path for `app` template
       # `{package_path}/src` for `package` template
-      base: apps/booking_app/lib/
+      base: apps/customer_app/lib/
       
       # path of `pubspec.yaml`
-      path: apps/booking_app/
+      path: apps/customer_app/
       
       # project name (same of name in `pubspec.yaml`)
-      name: booking_app
+      name: customer_app
       
       # machine Flutter version when initialize the module
       flutter_version: 3.22.2
@@ -51,79 +51,9 @@ modules:
   - env:
       architecture: mvvm
       template: package
-      base: packages/utilities/lib/src/
-      path: packages/utilities/
-      name: utilities
-      flutter_version: 3.22.2
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: mvvm
-      template: package
-      base: packages/extensions/lib/src/
-      path: packages/extensions/
-      name: extensions
-      flutter_version: 3.22.2
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: mvvm
-      template: package
-      base: packages/events/lib/src/
-      path: packages/events/
-      name: events
-      flutter_version: 3.22.2
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: mvvm
-      template: package
-      base: packages/storage/lib/src/
-      path: packages/storage/
-      name: storage
-      flutter_version: 3.22.2
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: mvvm
-      template: package
-      base: packages/models/lib/src/
-      path: packages/models/
-      name: models
-      flutter_version: 3.22.2
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: mvvm
-      template: package
-      base: packages/theme/lib/src/
-      path: packages/theme/
-      name: theme
-      flutter_version: 3.22.2
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: mvvm
-      template: package
-      base: packages/widgets/lib/src/
-      path: packages/widgets/
-      name: widgets
-      flutter_version: 3.22.2
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: mvvm
-      template: package
-      base: packages/state_management/lib/src/
-      path: packages/state_management/
-      name: state_management
+      base: packages/core/lib/src/
+      path: packages/core/
+      name: core
       flutter_version: 3.22.2
     generate:
       run_build_runner: true
@@ -134,6 +64,26 @@ modules:
       base: apps/admin_app/lib/
       path: apps/admin_app/
       name: admin_app
+      flutter_version: 3.22.2
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/products/lib/src/
+      path: packages/products/
+      name: products
+      flutter_version: 3.22.2
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/orders/lib/src/
+      path: packages/orders/
+      name: orders
       flutter_version: 3.22.2
     generate:
       run_build_runner: true

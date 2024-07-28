@@ -8,7 +8,7 @@
 PRODUCT_NAME = admin_app
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.xfluttercli.adminApp
+PRODUCT_BUNDLE_IDENTIFIER = com.myorg.adminApp
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.xflutter_cli. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 com.myorg. All rights reserved.
