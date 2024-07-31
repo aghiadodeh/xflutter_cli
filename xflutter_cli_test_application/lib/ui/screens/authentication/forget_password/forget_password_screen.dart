@@ -51,8 +51,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen>
           appBar: (context, theme) => BaseAppBar(title: 'forget_password'.tr()),
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => ForgetPasswordMobileScreen(),
-              tablet: (context) => ForgetPasswordTabletScreen(),
+              mobile: (context) => const ForgetPasswordMobileScreen(),
+              tablet: (context) => const ForgetPasswordTabletScreen(),
             ),
           ),
         ),

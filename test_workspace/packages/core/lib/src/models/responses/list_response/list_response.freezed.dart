@@ -14,8 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-ListResponse<T> _$ListResponseFromJson<T>(
-    Map<String, dynamic> json, T Function(Object?) fromJsonT) {
+ListResponse<T> _$ListResponseFromJson<T>(Map<String, dynamic> json, T Function(Object?) fromJsonT) {
   return _ListResponse<T>.fromJson(json, fromJsonT);
 }
 
@@ -25,25 +24,21 @@ mixin _$ListResponse<T> {
   List<T>? get data => throw _privateConstructorUsedError;
   bool get cached => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson(Object? Function(T) toJsonT) =>
-      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson(Object? Function(T) toJsonT) => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ListResponseCopyWith<T, ListResponse<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ListResponseCopyWith<T, ListResponse<T>> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ListResponseCopyWith<T, $Res> {
-  factory $ListResponseCopyWith(
-          ListResponse<T> value, $Res Function(ListResponse<T>) then) =
+  factory $ListResponseCopyWith(ListResponse<T> value, $Res Function(ListResponse<T>) then) =
       _$ListResponseCopyWithImpl<T, $Res, ListResponse<T>>;
   @useResult
   $Res call({int? total, List<T>? data, bool cached});
 }
 
 /// @nodoc
-class _$ListResponseCopyWithImpl<T, $Res, $Val extends ListResponse<T>>
-    implements $ListResponseCopyWith<T, $Res> {
+class _$ListResponseCopyWithImpl<T, $Res, $Val extends ListResponse<T>> implements $ListResponseCopyWith<T, $Res> {
   _$ListResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -76,10 +71,8 @@ class _$ListResponseCopyWithImpl<T, $Res, $Val extends ListResponse<T>>
 }
 
 /// @nodoc
-abstract class _$$ListResponseImplCopyWith<T, $Res>
-    implements $ListResponseCopyWith<T, $Res> {
-  factory _$$ListResponseImplCopyWith(_$ListResponseImpl<T> value,
-          $Res Function(_$ListResponseImpl<T>) then) =
+abstract class _$$ListResponseImplCopyWith<T, $Res> implements $ListResponseCopyWith<T, $Res> {
+  factory _$$ListResponseImplCopyWith(_$ListResponseImpl<T> value, $Res Function(_$ListResponseImpl<T>) then) =
       __$$ListResponseImplCopyWithImpl<T, $Res>;
   @override
   @useResult
@@ -87,12 +80,9 @@ abstract class _$$ListResponseImplCopyWith<T, $Res>
 }
 
 /// @nodoc
-class __$$ListResponseImplCopyWithImpl<T, $Res>
-    extends _$ListResponseCopyWithImpl<T, $Res, _$ListResponseImpl<T>>
+class __$$ListResponseImplCopyWithImpl<T, $Res> extends _$ListResponseCopyWithImpl<T, $Res, _$ListResponseImpl<T>>
     implements _$$ListResponseImplCopyWith<T, $Res> {
-  __$$ListResponseImplCopyWithImpl(
-      _$ListResponseImpl<T> _value, $Res Function(_$ListResponseImpl<T>) _then)
-      : super(_value, _then);
+  __$$ListResponseImplCopyWithImpl(_$ListResponseImpl<T> _value, $Res Function(_$ListResponseImpl<T>) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -121,12 +111,9 @@ class __$$ListResponseImplCopyWithImpl<T, $Res>
 /// @nodoc
 @JsonSerializable(genericArgumentFactories: true)
 class _$ListResponseImpl<T> implements _ListResponse<T> {
-  const _$ListResponseImpl(
-      {this.total, final List<T>? data, this.cached = false})
-      : _data = data;
+  const _$ListResponseImpl({this.total, final List<T>? data, this.cached = false}) : _data = data;
 
-  factory _$ListResponseImpl.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
+  factory _$ListResponseImpl.fromJson(Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
       _$$ListResponseImplFromJson(json, fromJsonT);
 
   @override
@@ -162,15 +149,13 @@ class _$ListResponseImpl<T> implements _ListResponse<T> {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, total, const DeepCollectionEquality().hash(_data), cached);
+  int get hashCode => Object.hash(runtimeType, total, const DeepCollectionEquality().hash(_data), cached);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ListResponseImplCopyWith<T, _$ListResponseImpl<T>> get copyWith =>
-      __$$ListResponseImplCopyWithImpl<T, _$ListResponseImpl<T>>(
-          this, _$identity);
+      __$$ListResponseImplCopyWithImpl<T, _$ListResponseImpl<T>>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson(Object? Function(T) toJsonT) {
@@ -179,14 +164,9 @@ class _$ListResponseImpl<T> implements _ListResponse<T> {
 }
 
 abstract class _ListResponse<T> implements ListResponse<T> {
-  const factory _ListResponse(
-      {final int? total,
-      final List<T>? data,
-      final bool cached}) = _$ListResponseImpl<T>;
+  const factory _ListResponse({final int? total, final List<T>? data, final bool cached}) = _$ListResponseImpl<T>;
 
-  factory _ListResponse.fromJson(
-          Map<String, dynamic> json, T Function(Object?) fromJsonT) =
-      _$ListResponseImpl<T>.fromJson;
+  factory _ListResponse.fromJson(Map<String, dynamic> json, T Function(Object?) fromJsonT) = _$ListResponseImpl<T>.fromJson;
 
   @override
   int? get total;
@@ -196,6 +176,5 @@ abstract class _ListResponse<T> implements ListResponse<T> {
   bool get cached;
   @override
   @JsonKey(ignore: true)
-  _$$ListResponseImplCopyWith<T, _$ListResponseImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ListResponseImplCopyWith<T, _$ListResponseImpl<T>> get copyWith => throw _privateConstructorUsedError;
 }

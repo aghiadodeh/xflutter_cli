@@ -45,3 +45,13 @@ modules:
       # overwrite file if exists
       overwrite: false
     
+  - env:
+      architecture: mvvm
+      template: package
+      base: packages/shared/lib/src/
+      path: packages/shared/
+      name: shared
+      flutter_version: 3.22.2
+    generate:
+      run_build_runner: true
+      overwrite: false

@@ -24,8 +24,8 @@ class _ProductsScreenState extends State<ProductsScreen> with InstanceState<Prod
         BaseScaffold(
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => ProductsMobileScreen(),
-              tablet: (context) => ProductsTabletScreen(),
+              mobile: (context) => const ProductsMobileScreen(),
+              tablet: (context) => const ProductsTabletScreen(),
             ),
           ),
         ),

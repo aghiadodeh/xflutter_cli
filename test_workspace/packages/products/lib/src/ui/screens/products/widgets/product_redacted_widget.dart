@@ -14,7 +14,7 @@ class ProductRedactedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: itemCount,
-      itemBuilder: (context, index) => ProductCardWidget(Product()).redacted(
+      itemBuilder: (context, index) => const ProductCardWidget(Product()).redacted(
         context: context,
         redact: true,
       ),

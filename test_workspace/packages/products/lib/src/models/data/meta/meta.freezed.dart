@@ -32,19 +32,13 @@ mixin _$Meta {
 
 /// @nodoc
 abstract class $MetaCopyWith<$Res> {
-  factory $MetaCopyWith(Meta value, $Res Function(Meta) then) =
-      _$MetaCopyWithImpl<$Res, Meta>;
+  factory $MetaCopyWith(Meta value, $Res Function(Meta) then) = _$MetaCopyWithImpl<$Res, Meta>;
   @useResult
-  $Res call(
-      {DateTime? createdAt,
-      DateTime? updatedAt,
-      String? barcode,
-      String? qrCode});
+  $Res call({DateTime? createdAt, DateTime? updatedAt, String? barcode, String? qrCode});
 }
 
 /// @nodoc
-class _$MetaCopyWithImpl<$Res, $Val extends Meta>
-    implements $MetaCopyWith<$Res> {
+class _$MetaCopyWithImpl<$Res, $Val extends Meta> implements $MetaCopyWith<$Res> {
   _$MetaCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -83,24 +77,15 @@ class _$MetaCopyWithImpl<$Res, $Val extends Meta>
 
 /// @nodoc
 abstract class _$$MetaImplCopyWith<$Res> implements $MetaCopyWith<$Res> {
-  factory _$$MetaImplCopyWith(
-          _$MetaImpl value, $Res Function(_$MetaImpl) then) =
-      __$$MetaImplCopyWithImpl<$Res>;
+  factory _$$MetaImplCopyWith(_$MetaImpl value, $Res Function(_$MetaImpl) then) = __$$MetaImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {DateTime? createdAt,
-      DateTime? updatedAt,
-      String? barcode,
-      String? qrCode});
+  $Res call({DateTime? createdAt, DateTime? updatedAt, String? barcode, String? qrCode});
 }
 
 /// @nodoc
-class __$$MetaImplCopyWithImpl<$Res>
-    extends _$MetaCopyWithImpl<$Res, _$MetaImpl>
-    implements _$$MetaImplCopyWith<$Res> {
-  __$$MetaImplCopyWithImpl(_$MetaImpl _value, $Res Function(_$MetaImpl) _then)
-      : super(_value, _then);
+class __$$MetaImplCopyWithImpl<$Res> extends _$MetaCopyWithImpl<$Res, _$MetaImpl> implements _$$MetaImplCopyWith<$Res> {
+  __$$MetaImplCopyWithImpl(_$MetaImpl _value, $Res Function(_$MetaImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -136,8 +121,7 @@ class __$$MetaImplCopyWithImpl<$Res>
 class _$MetaImpl implements _Meta {
   const _$MetaImpl({this.createdAt, this.updatedAt, this.barcode, this.qrCode});
 
-  factory _$MetaImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MetaImplFromJson(json);
+  factory _$MetaImpl.fromJson(Map<String, dynamic> json) => _$$MetaImplFromJson(json);
 
   @override
   final DateTime? createdAt;
@@ -158,24 +142,20 @@ class _$MetaImpl implements _Meta {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MetaImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
+            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt) &&
             (identical(other.barcode, barcode) || other.barcode == barcode) &&
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, createdAt, updatedAt, barcode, qrCode);
+  int get hashCode => Object.hash(runtimeType, createdAt, updatedAt, barcode, qrCode);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MetaImplCopyWith<_$MetaImpl> get copyWith =>
-      __$$MetaImplCopyWithImpl<_$MetaImpl>(this, _$identity);
+  _$$MetaImplCopyWith<_$MetaImpl> get copyWith => __$$MetaImplCopyWithImpl<_$MetaImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -186,11 +166,7 @@ class _$MetaImpl implements _Meta {
 }
 
 abstract class _Meta implements Meta {
-  const factory _Meta(
-      {final DateTime? createdAt,
-      final DateTime? updatedAt,
-      final String? barcode,
-      final String? qrCode}) = _$MetaImpl;
+  const factory _Meta({final DateTime? createdAt, final DateTime? updatedAt, final String? barcode, final String? qrCode}) = _$MetaImpl;
 
   factory _Meta.fromJson(Map<String, dynamic> json) = _$MetaImpl.fromJson;
 
@@ -204,6 +180,5 @@ abstract class _Meta implements Meta {
   String? get qrCode;
   @override
   @JsonKey(ignore: true)
-  _$$MetaImplCopyWith<_$MetaImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MetaImplCopyWith<_$MetaImpl> get copyWith => throw _privateConstructorUsedError;
 }

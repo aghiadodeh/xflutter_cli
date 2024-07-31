@@ -48,8 +48,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen>
           appBar: (context, theme) => BaseAppBar(title: 'reset_password'.tr()),
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => ResetPasswordMobileScreen(),
-              tablet: (context) => ResetPasswordTabletScreen(),
+              mobile: (context) => const ResetPasswordMobileScreen(),
+              tablet: (context) => const ResetPasswordTabletScreen(),
             ),
           ),
         ),

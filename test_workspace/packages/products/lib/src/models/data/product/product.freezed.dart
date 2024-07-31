@@ -50,8 +50,7 @@ mixin _$Product {
 
 /// @nodoc
 abstract class $ProductCopyWith<$Res> {
-  factory $ProductCopyWith(Product value, $Res Function(Product) then) =
-      _$ProductCopyWithImpl<$Res, Product>;
+  factory $ProductCopyWith(Product value, $Res Function(Product) then) = _$ProductCopyWithImpl<$Res, Product>;
   @useResult
   $Res call(
       {int? id,
@@ -82,8 +81,7 @@ abstract class $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProductCopyWithImpl<$Res, $Val extends Product>
-    implements $ProductCopyWith<$Res> {
+class _$ProductCopyWithImpl<$Res, $Val extends Product> implements $ProductCopyWith<$Res> {
   _$ProductCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -236,9 +234,7 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
 
 /// @nodoc
 abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
-  factory _$$ProductImplCopyWith(
-          _$ProductImpl value, $Res Function(_$ProductImpl) then) =
-      __$$ProductImplCopyWithImpl<$Res>;
+  factory _$$ProductImplCopyWith(_$ProductImpl value, $Res Function(_$ProductImpl) then) = __$$ProductImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -272,12 +268,8 @@ abstract class _$$ProductImplCopyWith<$Res> implements $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ProductImplCopyWithImpl<$Res>
-    extends _$ProductCopyWithImpl<$Res, _$ProductImpl>
-    implements _$$ProductImplCopyWith<$Res> {
-  __$$ProductImplCopyWithImpl(
-      _$ProductImpl _value, $Res Function(_$ProductImpl) _then)
-      : super(_value, _then);
+class __$$ProductImplCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res, _$ProductImpl> implements _$$ProductImplCopyWith<$Res> {
+  __$$ProductImplCopyWithImpl(_$ProductImpl _value, $Res Function(_$ProductImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -428,8 +420,7 @@ class _$ProductImpl implements _Product {
         _reviews = reviews,
         _images = images;
 
-  factory _$ProductImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProductImplFromJson(json);
+  factory _$ProductImpl.fromJson(Map<String, dynamic> json) => _$$ProductImplFromJson(json);
 
   @override
   final int? id;
@@ -512,36 +503,26 @@ class _$ProductImpl implements _Product {
             other is _$ProductImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
+            (identical(other.description, description) || other.description == description) &&
+            (identical(other.category, category) || other.category == category) &&
             (identical(other.price, price) || other.price == price) &&
-            (identical(other.discountPercentage, discountPercentage) ||
-                other.discountPercentage == discountPercentage) &&
+            (identical(other.discountPercentage, discountPercentage) || other.discountPercentage == discountPercentage) &&
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.stock, stock) || other.stock == stock) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             (identical(other.brand, brand) || other.brand == brand) &&
             (identical(other.sku, sku) || other.sku == sku) &&
             (identical(other.weight, weight) || other.weight == weight) &&
-            (identical(other.dimensions, dimensions) ||
-                other.dimensions == dimensions) &&
-            (identical(other.warrantyInformation, warrantyInformation) ||
-                other.warrantyInformation == warrantyInformation) &&
-            (identical(other.shippingInformation, shippingInformation) ||
-                other.shippingInformation == shippingInformation) &&
-            (identical(other.availabilityStatus, availabilityStatus) ||
-                other.availabilityStatus == availabilityStatus) &&
+            (identical(other.dimensions, dimensions) || other.dimensions == dimensions) &&
+            (identical(other.warrantyInformation, warrantyInformation) || other.warrantyInformation == warrantyInformation) &&
+            (identical(other.shippingInformation, shippingInformation) || other.shippingInformation == shippingInformation) &&
+            (identical(other.availabilityStatus, availabilityStatus) || other.availabilityStatus == availabilityStatus) &&
             const DeepCollectionEquality().equals(other._reviews, _reviews) &&
-            (identical(other.returnPolicy, returnPolicy) ||
-                other.returnPolicy == returnPolicy) &&
-            (identical(other.minimumOrderQuantity, minimumOrderQuantity) ||
-                other.minimumOrderQuantity == minimumOrderQuantity) &&
+            (identical(other.returnPolicy, returnPolicy) || other.returnPolicy == returnPolicy) &&
+            (identical(other.minimumOrderQuantity, minimumOrderQuantity) || other.minimumOrderQuantity == minimumOrderQuantity) &&
             (identical(other.meta, meta) || other.meta == meta) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
-            (identical(other.thumbnail, thumbnail) ||
-                other.thumbnail == thumbnail));
+            (identical(other.thumbnail, thumbnail) || other.thumbnail == thumbnail));
   }
 
   @JsonKey(ignore: true)
@@ -575,8 +556,7 @@ class _$ProductImpl implements _Product {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
-      __$$ProductImplCopyWithImpl<_$ProductImpl>(this, _$identity);
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith => __$$ProductImplCopyWithImpl<_$ProductImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -659,6 +639,5 @@ abstract class _Product implements Product {
   String? get thumbnail;
   @override
   @JsonKey(ignore: true)
-  _$$ProductImplCopyWith<_$ProductImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ProductImplCopyWith<_$ProductImpl> get copyWith => throw _privateConstructorUsedError;
 }

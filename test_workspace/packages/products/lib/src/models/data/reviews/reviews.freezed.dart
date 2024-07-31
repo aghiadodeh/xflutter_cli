@@ -33,20 +33,13 @@ mixin _$Reviews {
 
 /// @nodoc
 abstract class $ReviewsCopyWith<$Res> {
-  factory $ReviewsCopyWith(Reviews value, $Res Function(Reviews) then) =
-      _$ReviewsCopyWithImpl<$Res, Reviews>;
+  factory $ReviewsCopyWith(Reviews value, $Res Function(Reviews) then) = _$ReviewsCopyWithImpl<$Res, Reviews>;
   @useResult
-  $Res call(
-      {int? rating,
-      String? comment,
-      DateTime? date,
-      String? reviewerName,
-      String? reviewerEmail});
+  $Res call({int? rating, String? comment, DateTime? date, String? reviewerName, String? reviewerEmail});
 }
 
 /// @nodoc
-class _$ReviewsCopyWithImpl<$Res, $Val extends Reviews>
-    implements $ReviewsCopyWith<$Res> {
+class _$ReviewsCopyWithImpl<$Res, $Val extends Reviews> implements $ReviewsCopyWith<$Res> {
   _$ReviewsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -90,26 +83,15 @@ class _$ReviewsCopyWithImpl<$Res, $Val extends Reviews>
 
 /// @nodoc
 abstract class _$$ReviewsImplCopyWith<$Res> implements $ReviewsCopyWith<$Res> {
-  factory _$$ReviewsImplCopyWith(
-          _$ReviewsImpl value, $Res Function(_$ReviewsImpl) then) =
-      __$$ReviewsImplCopyWithImpl<$Res>;
+  factory _$$ReviewsImplCopyWith(_$ReviewsImpl value, $Res Function(_$ReviewsImpl) then) = __$$ReviewsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int? rating,
-      String? comment,
-      DateTime? date,
-      String? reviewerName,
-      String? reviewerEmail});
+  $Res call({int? rating, String? comment, DateTime? date, String? reviewerName, String? reviewerEmail});
 }
 
 /// @nodoc
-class __$$ReviewsImplCopyWithImpl<$Res>
-    extends _$ReviewsCopyWithImpl<$Res, _$ReviewsImpl>
-    implements _$$ReviewsImplCopyWith<$Res> {
-  __$$ReviewsImplCopyWithImpl(
-      _$ReviewsImpl _value, $Res Function(_$ReviewsImpl) _then)
-      : super(_value, _then);
+class __$$ReviewsImplCopyWithImpl<$Res> extends _$ReviewsCopyWithImpl<$Res, _$ReviewsImpl> implements _$$ReviewsImplCopyWith<$Res> {
+  __$$ReviewsImplCopyWithImpl(_$ReviewsImpl _value, $Res Function(_$ReviewsImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -148,15 +130,9 @@ class __$$ReviewsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ReviewsImpl implements _Reviews {
-  const _$ReviewsImpl(
-      {this.rating,
-      this.comment,
-      this.date,
-      this.reviewerName,
-      this.reviewerEmail});
+  const _$ReviewsImpl({this.rating, this.comment, this.date, this.reviewerName, this.reviewerEmail});
 
-  factory _$ReviewsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReviewsImplFromJson(json);
+  factory _$ReviewsImpl.fromJson(Map<String, dynamic> json) => _$$ReviewsImplFromJson(json);
 
   @override
   final int? rating;
@@ -182,22 +158,18 @@ class _$ReviewsImpl implements _Reviews {
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.date, date) || other.date == date) &&
-            (identical(other.reviewerName, reviewerName) ||
-                other.reviewerName == reviewerName) &&
-            (identical(other.reviewerEmail, reviewerEmail) ||
-                other.reviewerEmail == reviewerEmail));
+            (identical(other.reviewerName, reviewerName) || other.reviewerName == reviewerName) &&
+            (identical(other.reviewerEmail, reviewerEmail) || other.reviewerEmail == reviewerEmail));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, rating, comment, date, reviewerName, reviewerEmail);
+  int get hashCode => Object.hash(runtimeType, rating, comment, date, reviewerName, reviewerEmail);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReviewsImplCopyWith<_$ReviewsImpl> get copyWith =>
-      __$$ReviewsImplCopyWithImpl<_$ReviewsImpl>(this, _$identity);
+  _$$ReviewsImplCopyWith<_$ReviewsImpl> get copyWith => __$$ReviewsImplCopyWithImpl<_$ReviewsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -229,6 +201,5 @@ abstract class _Reviews implements Reviews {
   String? get reviewerEmail;
   @override
   @JsonKey(ignore: true)
-  _$$ReviewsImplCopyWith<_$ReviewsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ReviewsImplCopyWith<_$ReviewsImpl> get copyWith => throw _privateConstructorUsedError;
 }

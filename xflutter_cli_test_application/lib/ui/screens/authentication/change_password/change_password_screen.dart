@@ -48,8 +48,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen>
           appBar: (context, theme) => BaseAppBar(title: 'change_password'.tr()),
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => ChangePasswordMobileScreen(),
-              tablet: (context) => ChangePasswordTabletScreen(),
+              mobile: (context) => const ChangePasswordMobileScreen(),
+              tablet: (context) => const ChangePasswordTabletScreen(),
             ),
           ),
         ),
