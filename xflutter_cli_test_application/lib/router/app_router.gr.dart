@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ForgetPasswordScreen(),
       );
     },
+    Home.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomeScreen(),
+      );
+    },
     Login.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -109,6 +115,20 @@ class ForgetPassword extends PageRouteInfo<void> {
         );
 
   static const String name = 'ForgetPassword';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [HomeScreen]
+class Home extends PageRouteInfo<void> {
+  const Home({List<PageRouteInfo>? children})
+      : super(
+          Home.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'Home';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
