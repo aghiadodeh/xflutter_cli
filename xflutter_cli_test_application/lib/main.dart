@@ -67,6 +67,7 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final themeMode = findInstance<ThemeNotifier>().themeMode.value;
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () => hideSoftKeyboard(context),
@@ -74,7 +75,7 @@ class _MyAppState extends State<MyApp> {
         routerDelegate: appRouter.delegate(),
         routeInformationParser: appRouter.defaultRouteParser(),
         debugShowCheckedModeBanner: false,
-        themeMode: findInstance<ThemeNotifier>().themeMode.value,
+        themeMode: themeMode,
         theme: lightTheme,
         darkTheme: darkTheme,
         locale: context.locale,
