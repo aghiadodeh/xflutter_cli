@@ -21,9 +21,10 @@ class IsarProduct {
   String? size;
   String? status;
   DateTime? createdAt;
-  IsarUser? user;
   List<IsarMedia>? media;
-  IsarCategory? category;
+
+  IsarLink<IsarUser> user = IsarLink();
+  IsarLink<IsarCategory> category = IsarLink();
 
   IsarProduct({
     this.id,
@@ -35,9 +36,7 @@ class IsarProduct {
     this.size,
     this.status,
     this.createdAt,
-    this.user,
     this.media,
-    this.category,
   });
 }
 
@@ -54,9 +53,9 @@ extension IsarProductConverter on IsarProduct {
       size: size,
       status: status,
       createdAt: createdAt,
-      user: user?.fromIsar(),
       media: media?.map((e) => e.fromIsar()).toList(),
-      category: category?.fromIsar(),
+      user: user.value?.fromIsar(),
+      category: category.value?.fromIsar(),
     );
   }
 }
@@ -74,9 +73,7 @@ extension ProductConverter on Product {
       size: size,
       status: status,
       createdAt: createdAt,
-      user: user?.toIsar(),
       media: media?.map((e) => e.toIsar()).toList(),
-      category: category?.toIsar(),
     );
   }
 }

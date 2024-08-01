@@ -17,68 +17,56 @@ const IsarProductSchema = CollectionSchema(
   name: r'IsarProduct',
   id: -2996814150483193120,
   properties: {
-    r'category': PropertySchema(
-      id: 0,
-      name: r'category',
-      type: IsarType.object,
-      target: r'IsarCategory',
-    ),
     r'color': PropertySchema(
-      id: 1,
+      id: 0,
       name: r'color',
       type: IsarType.string,
     ),
     r'createdAt': PropertySchema(
-      id: 2,
+      id: 1,
       name: r'createdAt',
       type: IsarType.dateTime,
     ),
     r'description': PropertySchema(
-      id: 3,
+      id: 2,
       name: r'description',
       type: IsarType.string,
     ),
     r'id': PropertySchema(
-      id: 4,
+      id: 3,
       name: r'id',
       type: IsarType.long,
     ),
     r'media': PropertySchema(
-      id: 5,
+      id: 4,
       name: r'media',
       type: IsarType.objectList,
       target: r'IsarMedia',
     ),
     r'name': PropertySchema(
-      id: 6,
+      id: 5,
       name: r'name',
       type: IsarType.string,
     ),
     r'originalPrice': PropertySchema(
-      id: 7,
+      id: 6,
       name: r'originalPrice',
       type: IsarType.double,
     ),
     r'price': PropertySchema(
-      id: 8,
+      id: 7,
       name: r'price',
       type: IsarType.double,
     ),
     r'size': PropertySchema(
-      id: 9,
+      id: 8,
       name: r'size',
       type: IsarType.string,
     ),
     r'status': PropertySchema(
-      id: 10,
+      id: 9,
       name: r'status',
       type: IsarType.string,
-    ),
-    r'user': PropertySchema(
-      id: 11,
-      name: r'user',
-      type: IsarType.object,
-      target: r'IsarUser',
     )
   },
   estimateSize: _isarProductEstimateSize,
@@ -101,8 +89,21 @@ const IsarProductSchema = CollectionSchema(
       ],
     )
   },
-  links: {},
-  embeddedSchemas: {r'IsarUser': IsarUserSchema, r'IsarMedia': IsarMediaSchema, r'IsarCategory': IsarCategorySchema},
+  links: {
+    r'user': LinkSchema(
+      id: -4249144025855863451,
+      name: r'user',
+      target: r'IsarUser',
+      single: true,
+    ),
+    r'category': LinkSchema(
+      id: 6828658151368585433,
+      name: r'category',
+      target: r'IsarCategory',
+      single: true,
+    )
+  },
+  embeddedSchemas: {r'IsarMedia': IsarMediaSchema},
   getId: _isarProductGetId,
   getLinks: _isarProductGetLinks,
   attach: _isarProductAttach,
@@ -115,12 +116,6 @@ int _isarProductEstimateSize(
   Map<Type, List<int>> allOffsets,
 ) {
   var bytesCount = offsets.last;
-  {
-    final value = object.category;
-    if (value != null) {
-      bytesCount += 3 + IsarCategorySchema.estimateSize(value, allOffsets[IsarCategory]!, allOffsets);
-    }
-  }
   {
     final value = object.color;
     if (value != null) {
@@ -164,12 +159,6 @@ int _isarProductEstimateSize(
       bytesCount += 3 + value.length * 3;
     }
   }
-  {
-    final value = object.user;
-    if (value != null) {
-      bytesCount += 3 + IsarUserSchema.estimateSize(value, allOffsets[IsarUser]!, allOffsets);
-    }
-  }
   return bytesCount;
 }
 
@@ -179,33 +168,21 @@ void _isarProductSerialize(
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  writer.writeObject<IsarCategory>(
-    offsets[0],
-    allOffsets,
-    IsarCategorySchema.serialize,
-    object.category,
-  );
-  writer.writeString(offsets[1], object.color);
-  writer.writeDateTime(offsets[2], object.createdAt);
-  writer.writeString(offsets[3], object.description);
-  writer.writeLong(offsets[4], object.id);
+  writer.writeString(offsets[0], object.color);
+  writer.writeDateTime(offsets[1], object.createdAt);
+  writer.writeString(offsets[2], object.description);
+  writer.writeLong(offsets[3], object.id);
   writer.writeObjectList<IsarMedia>(
-    offsets[5],
+    offsets[4],
     allOffsets,
     IsarMediaSchema.serialize,
     object.media,
   );
-  writer.writeString(offsets[6], object.name);
-  writer.writeDouble(offsets[7], object.originalPrice);
-  writer.writeDouble(offsets[8], object.price);
-  writer.writeString(offsets[9], object.size);
-  writer.writeString(offsets[10], object.status);
-  writer.writeObject<IsarUser>(
-    offsets[11],
-    allOffsets,
-    IsarUserSchema.serialize,
-    object.user,
-  );
+  writer.writeString(offsets[5], object.name);
+  writer.writeDouble(offsets[6], object.originalPrice);
+  writer.writeDouble(offsets[7], object.price);
+  writer.writeString(offsets[8], object.size);
+  writer.writeString(offsets[9], object.status);
 }
 
 IsarProduct _isarProductDeserialize(
@@ -215,31 +192,21 @@ IsarProduct _isarProductDeserialize(
   Map<Type, List<int>> allOffsets,
 ) {
   final object = IsarProduct(
-    category: reader.readObjectOrNull<IsarCategory>(
-      offsets[0],
-      IsarCategorySchema.deserialize,
-      allOffsets,
-    ),
-    color: reader.readStringOrNull(offsets[1]),
-    createdAt: reader.readDateTimeOrNull(offsets[2]),
-    description: reader.readStringOrNull(offsets[3]),
-    id: reader.readLongOrNull(offsets[4]),
+    color: reader.readStringOrNull(offsets[0]),
+    createdAt: reader.readDateTimeOrNull(offsets[1]),
+    description: reader.readStringOrNull(offsets[2]),
+    id: reader.readLongOrNull(offsets[3]),
     media: reader.readObjectList<IsarMedia>(
-      offsets[5],
+      offsets[4],
       IsarMediaSchema.deserialize,
       allOffsets,
       IsarMedia(),
     ),
-    name: reader.readStringOrNull(offsets[6]),
-    originalPrice: reader.readDoubleOrNull(offsets[7]),
-    price: reader.readDoubleOrNull(offsets[8]),
-    size: reader.readStringOrNull(offsets[9]),
-    status: reader.readStringOrNull(offsets[10]),
-    user: reader.readObjectOrNull<IsarUser>(
-      offsets[11],
-      IsarUserSchema.deserialize,
-      allOffsets,
-    ),
+    name: reader.readStringOrNull(offsets[5]),
+    originalPrice: reader.readDoubleOrNull(offsets[6]),
+    price: reader.readDoubleOrNull(offsets[7]),
+    size: reader.readStringOrNull(offsets[8]),
+    status: reader.readStringOrNull(offsets[9]),
   );
   object.isarId = id;
   return object;
@@ -253,42 +220,30 @@ P _isarProductDeserializeProp<P>(
 ) {
   switch (propertyId) {
     case 0:
-      return (reader.readObjectOrNull<IsarCategory>(
-        offset,
-        IsarCategorySchema.deserialize,
-        allOffsets,
-      )) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 1:
-      return (reader.readStringOrNull(offset)) as P;
-    case 2:
       return (reader.readDateTimeOrNull(offset)) as P;
-    case 3:
+    case 2:
       return (reader.readStringOrNull(offset)) as P;
-    case 4:
+    case 3:
       return (reader.readLongOrNull(offset)) as P;
-    case 5:
+    case 4:
       return (reader.readObjectList<IsarMedia>(
         offset,
         IsarMediaSchema.deserialize,
         allOffsets,
         IsarMedia(),
       )) as P;
-    case 6:
+    case 5:
       return (reader.readStringOrNull(offset)) as P;
+    case 6:
+      return (reader.readDoubleOrNull(offset)) as P;
     case 7:
       return (reader.readDoubleOrNull(offset)) as P;
     case 8:
-      return (reader.readDoubleOrNull(offset)) as P;
+      return (reader.readStringOrNull(offset)) as P;
     case 9:
       return (reader.readStringOrNull(offset)) as P;
-    case 10:
-      return (reader.readStringOrNull(offset)) as P;
-    case 11:
-      return (reader.readObjectOrNull<IsarUser>(
-        offset,
-        IsarUserSchema.deserialize,
-        allOffsets,
-      )) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
   }
@@ -299,11 +254,13 @@ Id _isarProductGetId(IsarProduct object) {
 }
 
 List<IsarLinkBase<dynamic>> _isarProductGetLinks(IsarProduct object) {
-  return [];
+  return [object.user, object.category];
 }
 
 void _isarProductAttach(IsarCollection<dynamic> col, Id id, IsarProduct object) {
   object.isarId = id;
+  object.user.attach(col, col.isar.collection<IsarUser>(), r'user', id);
+  object.category.attach(col, col.isar.collection<IsarCategory>(), r'category', id);
 }
 
 extension IsarProductByIndex on IsarCollection<IsarProduct> {
@@ -550,22 +507,6 @@ extension IsarProductQueryWhere on QueryBuilder<IsarProduct, IsarProduct, QWhere
 }
 
 extension IsarProductQueryFilter on QueryBuilder<IsarProduct, IsarProduct, QFilterCondition> {
-  QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> categoryIsNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNull(
-        property: r'category',
-      ));
-    });
-  }
-
-  QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> categoryIsNotNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNotNull(
-        property: r'category',
-      ));
-    });
-  }
-
   QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> colorIsNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNull(
@@ -1734,45 +1675,41 @@ extension IsarProductQueryFilter on QueryBuilder<IsarProduct, IsarProduct, QFilt
       ));
     });
   }
-
-  QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> userIsNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNull(
-        property: r'user',
-      ));
-    });
-  }
-
-  QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> userIsNotNull() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(const FilterCondition.isNotNull(
-        property: r'user',
-      ));
-    });
-  }
 }
 
 extension IsarProductQueryObject on QueryBuilder<IsarProduct, IsarProduct, QFilterCondition> {
-  QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> category(FilterQuery<IsarCategory> q) {
-    return QueryBuilder.apply(this, (query) {
-      return query.object(q, r'category');
-    });
-  }
-
   QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> mediaElement(FilterQuery<IsarMedia> q) {
     return QueryBuilder.apply(this, (query) {
       return query.object(q, r'media');
     });
   }
+}
 
+extension IsarProductQueryLinks on QueryBuilder<IsarProduct, IsarProduct, QFilterCondition> {
   QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> user(FilterQuery<IsarUser> q) {
     return QueryBuilder.apply(this, (query) {
-      return query.object(q, r'user');
+      return query.link(q, r'user');
+    });
+  }
+
+  QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> userIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.linkLength(r'user', 0, true, 0, true);
+    });
+  }
+
+  QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> category(FilterQuery<IsarCategory> q) {
+    return QueryBuilder.apply(this, (query) {
+      return query.link(q, r'category');
+    });
+  }
+
+  QueryBuilder<IsarProduct, IsarProduct, QAfterFilterCondition> categoryIsNull() {
+    return QueryBuilder.apply(this, (query) {
+      return query.linkLength(r'category', 0, true, 0, true);
     });
   }
 }
-
-extension IsarProductQueryLinks on QueryBuilder<IsarProduct, IsarProduct, QFilterCondition> {}
 
 extension IsarProductQuerySortBy on QueryBuilder<IsarProduct, IsarProduct, QSortBy> {
   QueryBuilder<IsarProduct, IsarProduct, QAfterSortBy> sortByColor() {
@@ -2069,12 +2006,6 @@ extension IsarProductQueryProperty on QueryBuilder<IsarProduct, IsarProduct, QQu
     });
   }
 
-  QueryBuilder<IsarProduct, IsarCategory?, QQueryOperations> categoryProperty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addPropertyName(r'category');
-    });
-  }
-
   QueryBuilder<IsarProduct, String?, QQueryOperations> colorProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'color');
@@ -2132,12 +2063,6 @@ extension IsarProductQueryProperty on QueryBuilder<IsarProduct, IsarProduct, QQu
   QueryBuilder<IsarProduct, String?, QQueryOperations> statusProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'status');
-    });
-  }
-
-  QueryBuilder<IsarProduct, IsarUser?, QQueryOperations> userProperty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addPropertyName(r'user');
     });
   }
 }

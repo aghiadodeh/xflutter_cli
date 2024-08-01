@@ -6,8 +6,11 @@ import 'package:xflutter_cli_test_application/models/models.dart';
 
 part 'user.g.dart';
 
-@embedded
+@collection
 class IsarUser {
+  Id? isarId;
+
+  @Index(unique: true, replace: true)
   int? id;
   String? fullName;
   String? email;

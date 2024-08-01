@@ -7,26 +7,27 @@ import '../models/isar_models.dart';
 import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/utilities/di/di.dart';
 import 'package:xflutter_cli_test_application/environment/environment.dart';
+import 'package:xflutter_cli_test_application/local/data_source/user_local_data_source.dart';
+import 'package:xflutter_cli_test_application/local/data_source/category_local_data_source.dart';
 
 class ProductLocalDataSource {
   Isar get isar => findInstance<Isar>();
+  final userLocalDataSource = UserLocalDataSource();
+  final categoryLocalDataSource = CategoryLocalDataSource();
 
   /// [Product] query builder with pagination
   QueryBuilder<IsarProduct, IsarProduct, QAfterLimit> _productQueryBuilder({int? page}) {
-    return isar.isarProducts
-        .where()
-        .sortById()
-        .optional(page != null, (q) => q.offset(offset(page!, Environment.perPage)).limit(Environment.perPage));
+    return isar.isarProducts.where().sortById().optional(page != null, (q) => q.offset(offset(page!, Environment.perPage)).limit(Environment.perPage));
   }
 
   /// find [Product] from local-database
-  Product? findOne(int? id) {
-    return isar.isarProducts.where().idEqualTo(id).findFirstSync()?.fromIsar();
+  IsarProduct? findOne(int? id) {
+    return isar.isarProducts.where().idEqualTo(id).findFirstSync();
   }
 
   /// fetch cached [Product] list from local-database
-  List<Product> findAll({int? page}) {
-    return _productQueryBuilder(page: page).findAllSync().map((e) => e.fromIsar()).toList();
+  List<IsarProduct> findAll({int? page}) {
+    return _productQueryBuilder(page: page).findAllSync();
   }
 
   /// add/update [Product] into local-database
@@ -36,14 +37,30 @@ class ProductLocalDataSource {
 
   /// save list of [Product] in local-database
   void insertAll(List<Product> data, {int? page}) {
+    // insert related [user] list
+    _insertUsers(data.map((e) => e.user));
+
+    // insert related [category] list
+    _insertCategories(data.map((e) => e.category));
+
     // convert data to isar-entities
-    final objects = data.map((e) => e.toIsar()).toList();
+    final objects = data.map((e) {
+      final item = e.toIsar();
+
+      final user = userLocalDataSource.findOne(item.id);
+      if (user != null) item.user.value = user;
+
+      final category = categoryLocalDataSource.findOne(item.id);
+      if (category != null) item.category.value = category;
+
+      return item;
+    }).toList();
 
     // find old cached list
     final local = findAll(page: page).map((e) => e.id).toList();
     final ids = data.map((e) => e.id).toList();
 
-    // find difference between new list and old list
+    // find difference between old list and new list
     final difference = local.where((element) => !ids.contains(element)).toList();
 
     isar.writeTxnSync(() {
@@ -63,5 +80,31 @@ class ProductLocalDataSource {
   /// count all documents in local-database
   int count() {
     return _productQueryBuilder().countSync();
+  }
+
+  /// insert related [User] list
+  void _insertUsers(Iterable<User?> data) {
+    for (final item in data) {
+      if (item == null) continue;
+
+      // check if item cached before
+      final cachedItem = userLocalDataSource.findOne(item.id);
+
+      // item not cached, insert into local-database
+      if (cachedItem == null) userLocalDataSource.insert(item);
+    }
+  }
+
+  /// insert related [Category] list
+  void _insertCategories(Iterable<Category?> data) {
+    for (final item in data) {
+      if (item == null) continue;
+
+      // check if item cached before
+      final cachedItem = categoryLocalDataSource.findOne(item.id);
+
+      // item not cached, insert into local-database
+      if (cachedItem == null) categoryLocalDataSource.insert(item);
+    }
   }
 }

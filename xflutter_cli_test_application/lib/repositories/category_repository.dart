@@ -2,20 +2,20 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:dio/dio.dart';
+import 'package:xflutter_cli_test_application/local/models/isar_models.dart';
 import 'dart:async';
 import 'package:xflutter_cli_test_application/repositories/base_repository.dart';
 import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/utilities/di/di.dart';
-import 'package:xflutter_cli_test_application/network/rest_clients/product_rest_client/product_rest_client.dart';
+import 'package:xflutter_cli_test_application/network/rest_clients/category_rest_client/category_rest_client.dart';
 import 'package:xflutter_cli_test_application/utilities/http/connectivity.dart';
-import 'package:xflutter_cli_test_application/local/data_source/product_local_data_source.dart';
-import 'package:xflutter_cli_test_application/local/models/isar_models.dart';
+import 'package:xflutter_cli_test_application/local/data_source/category_local_data_source.dart';
 
-class ProductRepository extends BaseRepository {
-  late final restClient = ProductRestClient(findInstance<Dio>());
-  late final localDataSource = ProductLocalDataSource();
+class CategoryRepository extends BaseRepository {
+  late final restClient = CategoryRestClient(findInstance<Dio>());
+  late final localDataSource = CategoryLocalDataSource();
 
-  Future<BaseResponse<Product>> create(Product data) async {
+  Future<BaseResponse<Category>> create(Category data) async {
     final cancelToken = CancelToken();
     final response = await getResponse(
       () => restClient.create(data: data.toJson(), cancelToken: cancelToken),
@@ -29,7 +29,7 @@ class ProductRepository extends BaseRepository {
     return response;
   }
 
-  Future<BaseResponse<Product>> update(int? id, Product data) async {
+  Future<BaseResponse<Category>> update(int? id, Category data) async {
     final cancelToken = CancelToken();
     final response = await getResponse(
       () => restClient.update(id: id, data: data.toJson(), cancelToken: cancelToken),
@@ -43,7 +43,7 @@ class ProductRepository extends BaseRepository {
     return response;
   }
 
-  Stream<BaseResponse<ListResponse<Product>>> findAll(int page, {String? query}) async* {
+  Stream<BaseResponse<ListResponse<Category>>> findAll(int page, {String? query}) async* {
     final cancelToken = CancelToken();
 
     // get cached data
@@ -84,7 +84,7 @@ class ProductRepository extends BaseRepository {
     yield BaseResponse(success: success, data: null);
   }
 
-  Future<BaseResponse<Product>> findOne(int? id) {
+  Future<BaseResponse<Category>> findOne(int? id) {
     final cancelToken = CancelToken();
     return getResponse(
       () => restClient.findOne(id: id, cancelToken: cancelToken),

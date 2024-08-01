@@ -7,8 +7,11 @@ import '../isar_models.dart';
 
 part 'category.g.dart';
 
-@embedded
+@collection
 class IsarCategory {
+  Id? isarId;
+
+  @Index(unique: true, replace: true)
   int? id;
   DateTime? createdAt;
   DateTime? updatedAt;
