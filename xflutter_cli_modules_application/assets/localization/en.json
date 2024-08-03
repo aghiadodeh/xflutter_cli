@@ -1,0 +1,11 @@
+{
+  "app_name": "XflutterCliModulesApplication",
+  "check_internet_connection": "Check Your Internet Connection",
+  "login": "Login",
+  "verify_pin_code": "Verify Pin Code",
+  "next": "Next",
+  "resend_code": "Resend Code",
+  "please_enter_code": "Please enter the code we’ve sent to ",
+  "code_resent": "The code has been re-sent",
+  "phone": "Phone"
+}
