@@ -4,7 +4,7 @@
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:xflutter_cli_test_application/utilities/di/di.dart';
-import '../models/isar_models.dart';
+import 'models/isar_models.dart';
 
 class AppIsar {
   /// initialize new [Isar] instance and make it singleton.

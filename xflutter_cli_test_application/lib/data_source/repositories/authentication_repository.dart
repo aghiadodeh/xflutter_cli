@@ -3,10 +3,10 @@
 // more info: https://xflutter-cli.com
 import 'package:dio/dio.dart';
 import 'dart:async';
-import 'package:xflutter_cli_test_application/repositories/base_repository.dart';
+import 'package:xflutter_cli_test_application/data_source/repositories/base_repository.dart';
 import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/utilities/di/di.dart';
-import 'package:xflutter_cli_test_application/network/rest_clients/authentication_rest_client/authentication_rest_client.dart';
+import 'package:xflutter_cli_test_application/data_source/remote/authentication_rest_client/authentication_rest_client.dart';
 
 class AuthRepository extends BaseRepository {
   late final restClient = AuthRestClient(findInstance<Dio>());

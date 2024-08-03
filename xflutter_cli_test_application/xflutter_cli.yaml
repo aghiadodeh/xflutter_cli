@@ -2,16 +2,16 @@
 #
 # If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
 # you can downgrade version manually by run command:
-# dart pub global activate xflutter_cli 2.1.8
-version: 2.1.8
+# dart pub global activate xflutter_cli 2.3.0
+version: 2.3.0
 
 # project modules
 modules:
   # module environment
   # Don't modify the env values, changes may throw exceptions when you run any command
   - env:
-      # only `mvvm` architecture is supported now
-      architecture: mvvm
+      # architecture of module
+      architecture: layers
       
       # module template (`app` or `package`)
       template: app

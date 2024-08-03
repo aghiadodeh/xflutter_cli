@@ -3,7 +3,7 @@
 // more info: https://xflutter-cli.com
 import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/events/event_bus.dart';
-import 'package:xflutter_cli_test_application/repositories/authentication_repository.dart';
+import 'package:xflutter_cli_test_application/data_source/repositories/authentication_repository.dart';
 import 'package:xflutter_cli_test_application/events/event_emitter.dart';
 import 'reset_password_params.dart';
 import 'package:xflutter_cli_test_application/viewmodels/base_viewmodel.dart';

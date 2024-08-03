@@ -2,13 +2,13 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:isar/isar.dart';
-import '../isar/isar.dart';
-import '../models/isar_models.dart';
+import 'package:xflutter_cli_test_application/data_source/local/isar.dart';
+import 'package:xflutter_cli_test_application/data_source/local/models/isar_models.dart';
 import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/utilities/di/di.dart';
 import 'package:xflutter_cli_test_application/environment/environment.dart';
 
-class UserLocalDataSource {
+class UserLocalDataProvider {
   Isar get isar => findInstance<Isar>();
 
   /// [User] query builder with pagination

@@ -3,17 +3,17 @@
 // more info: https://xflutter-cli.com
 import 'package:dio/dio.dart';
 import 'dart:async';
-import 'package:xflutter_cli_test_application/repositories/base_repository.dart';
+import 'package:xflutter_cli_test_application/data_source/repositories/base_repository.dart';
 import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/utilities/di/di.dart';
-import 'package:xflutter_cli_test_application/network/rest_clients/product_rest_client/product_rest_client.dart';
+import 'package:xflutter_cli_test_application/data_source/remote/product_rest_client/product_rest_client.dart';
 import 'package:xflutter_cli_test_application/utilities/http/connectivity.dart';
-import 'package:xflutter_cli_test_application/local/data_source/product_local_data_source.dart';
-import 'package:xflutter_cli_test_application/local/models/isar_models.dart';
+import 'package:xflutter_cli_test_application/data_source/local/providers/product_local_data_provider.dart';
+import 'package:xflutter_cli_test_application/data_source/local/models/isar_models.dart';
 
 class ProductRepository extends BaseRepository {
   late final restClient = ProductRestClient(findInstance<Dio>());
-  late final localDataSource = ProductLocalDataSource();
+  late final localDataProvider = ProductLocalDataProvider();
 
   Future<BaseResponse<Product>> create(Product data) async {
     final cancelToken = CancelToken();
@@ -23,7 +23,7 @@ class ProductRepository extends BaseRepository {
     );
 
     if (response.data != null) {
-      localDataSource.insert(response.data!);
+      localDataProvider.insert(response.data!);
     }
 
     return response;
@@ -37,7 +37,7 @@ class ProductRepository extends BaseRepository {
     );
 
     if (response.data != null) {
-      localDataSource.insert(response.data!);
+      localDataProvider.insert(response.data!);
     }
 
     return response;
@@ -47,7 +47,7 @@ class ProductRepository extends BaseRepository {
     final cancelToken = CancelToken();
 
     // get cached data
-    final cached = localDataSource.findAll(page: page).map((e) => e.fromIsar()).toList();
+    final cached = localDataProvider.findAll(page: page).map((e) => e.fromIsar()).toList();
     if (cached.isNotEmpty) {
       yield BaseResponse(
         success: true,
@@ -76,7 +76,7 @@ class ProductRepository extends BaseRepository {
 
       // insert all new data in local-database
       if (response.data?.data != null) {
-        localDataSource.insertAll(response.data!.data!, page: page);
+        localDataProvider.insertAll(response.data!.data!, page: page);
       }
     }
 
@@ -100,7 +100,7 @@ class ProductRepository extends BaseRepository {
     );
 
     if (response.isSuccess) {
-      localDataSource.delete(id);
+      localDataProvider.delete(id);
     }
 
     return response;
