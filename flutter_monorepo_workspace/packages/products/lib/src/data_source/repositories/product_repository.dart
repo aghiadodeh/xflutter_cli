@@ -5,7 +5,6 @@ import 'package:dio/dio.dart';
 import 'dart:async';
 import 'package:core/core.dart';
 import 'package:products/products.dart';
-import 'package:products/src/data_source/remote/product_rest_client/product_rest_client.dart';
 
 class ProductRepository extends BaseRepository {
   late final restClient = ProductRestClient(findInstance<Dio>());
