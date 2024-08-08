@@ -1,6 +1,0 @@
-name: flutter_monorepo_workspace
-environment:
-  sdk: ">=3.4.3 <4.0.0"
-dev_dependencies:
-  build_runner: ^2.2.1
-  melos: ^3.4.0

@@ -1,0 +1,28 @@
+# melos is a tool for managing Dart projects with multiple packages.
+# https://melos.invertase.dev
+name: flutter_monorepo_workspace
+
+packages:
+  - apps/*
+  - packages/*
+
+scripts:
+  analyze:
+    exec: dart analyze .
+    description: Run `dart analyze` in selected or all packages. Includes prompt for packages.
+    packageFilters:
+      dirExists:
+        - lib
+        
+  pub:get:
+    exec: flutter clean && flutter pub get
+    description: Run `flutter pub get` in selected or all packages. Includes prompt for packages.
+    packageFilters:
+      dirExists:
+        - lib
+        
+  build_runner:
+    exec: flutter clean && flutter pub get && dart run build_runner build --delete-conflicting-outputs
+    description: Run `dart run build_runner build --delete-conflicting-outputs` in selected or all packages. Includes prompt for packages.
+    packageFilters:
+      dependsOn: "build_runner"

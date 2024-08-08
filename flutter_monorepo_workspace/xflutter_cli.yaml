@@ -1,0 +1,90 @@
+# workspace name
+workspace: flutter_monorepo_workspace
+
+# xflutter_cli version when you initialize your application,
+#
+# If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
+# you can downgrade version manually by run command:
+# dart pub global activate xflutter_cli 2.3.0
+version: 2.3.0
+
+# project modules
+modules:
+  # module environment
+  # Don't modify the env values, changes may throw exceptions when you run any command
+  - env:
+      # architecture of module
+      architecture: modules
+      
+      # module template (`app` or `package`)
+      template: app
+      
+      # the tool will generate and modify all components which located in this directory 
+      # `main.dart` path for `app` template
+      # `{package_path}/src` for `package` template
+      base: apps/customer_app/lib/
+      
+      # path of `pubspec.yaml`
+      path: apps/customer_app/
+      
+      # project name (same of name in `pubspec.yaml`)
+      name: customer_app
+      
+      # machine Flutter version when initialize the module
+      flutter_version: 3.24.0
+
+    # xflutter_cli generate configuration
+    generate:
+      # avoid generate files
+      # skip:
+        # - ui/widgets/result/result_builder.dart
+        # - models/data/result/result.dart
+        # - models/responses/list_response/list_response.dart
+        
+      # run `dart run build_runner build --delete-conflicting-outputs`
+      # after generate screen, model or crud
+      run_build_runner: true
+
+      # overwrite file if exists
+      overwrite: false
+    
+  - env:
+      architecture: layers
+      template: package
+      base: packages/core/lib/src/
+      path: packages/core/
+      name: core
+      flutter_version: 3.24.0
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: layers
+      template: app
+      base: apps/admin_app/lib/
+      path: apps/admin_app/
+      name: admin_app
+      flutter_version: 3.24.0
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: modules
+      template: package
+      base: packages/orders/lib/src/
+      path: packages/orders/
+      name: orders
+      flutter_version: 3.24.0
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: layers
+      template: package
+      base: packages/products/lib/src/
+      path: packages/products/
+      name: products
+      flutter_version: 3.24.0
+    generate:
+      run_build_runner: true
+      overwrite: false
