@@ -2,12 +2,12 @@
 //
 // more info: https://xflutter-cli.com
 class Environment {
-  static const localhost = "http://192.168.1.8:3000";
+  static const localhost = "http://192.168.89.230:3000";
   static const developUrl = "https://www.develop.com";
   static const stagingUrl = "https://www.staging.com";
   static const liveUrl = "https://www.domain.com";
 
-  static const baseUrl = developUrl;
+  static const baseUrl = localhost;
   static const apiUrl = "$baseUrl/api";
 
   static const perPage = 15;
