@@ -2,6 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../models.dart';
 
 part 'product.freezed.dart';
 part 'product.g.dart';
@@ -10,18 +11,48 @@ part 'product.g.dart';
 /*
 {
   "id": 1,
-  "title": "iPhone 9",
-  "description": "An apple mobile which is nothing like apple",
-  "price": 549,
-  "discountPercentage": 12.96,
-  "rating": 4.69,
-  "stock": 94,
-  "brand": "Apple",
-  "category": "smartphones",
-  "thumbnail": "...",
+  "title": "Essence Mascara Lash Princess",
+  "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+  "category": "beauty",
+  "price": 9.99,
+  "discountPercentage": 7.17,
+  "rating": 4.94,
+  "stock": 5,
+  "tags": [
+    "beauty"
+  ],
+  "brand": "Essence",
+  "sku": "RCH45Q1A",
+  "weight": 2,
+  "dimensions": {
+    "width": 23.17,
+    "height": 14.43,
+    "depth": 28.01
+  },
+  "warrantyInformation": "1 month warranty",
+  "shippingInformation": "Ships in 1 month",
+  "availabilityStatus": "Low Stock",
+  "reviews": [
+    {
+      "rating": 2,
+      "comment": "Very unhappy with my purchase!",
+      "date": "2024-05-23T08:56:21.618Z",
+      "reviewerName": "John Doe",
+      "reviewerEmail": "john.doe@x.dummyjson.com"
+    }
+  ],
+  "returnPolicy": "30 days return policy",
+  "minimumOrderQuantity": 24,
+  "meta": {
+    "createdAt": "2024-05-23T08:56:21.618Z",
+    "updatedAt": "2024-05-23T08:56:21.618Z",
+    "barcode": "9164035109868",
+    "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+  },
   "images": [
-    "..."
-  ]
+    "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
 } 
 */
 // --------------------------
@@ -31,14 +62,25 @@ class Product with _$Product {
     int? id,
     String? title,
     String? description,
-    int? price,
+    String? category,
+    num? price,
     num? discountPercentage,
     num? rating,
     int? stock,
+    List<String>? tags,
     String? brand,
-    String? category,
-    String? thumbnail,
+    String? sku,
+    int? weight,
+    Dimensions? dimensions,
+    String? warrantyInformation,
+    String? shippingInformation,
+    String? availabilityStatus,
+    List<Reviews>? reviews,
+    String? returnPolicy,
+    int? minimumOrderQuantity,
+    Meta? meta,
     List<String>? images,
+    String? thumbnail,
   }) = _Product;
 
   factory Product.fromJson(Map<String, dynamic> json) => _$ProductFromJson(json);
