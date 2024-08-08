@@ -25,8 +25,15 @@ class ProductCardWidget extends StatelessWidget {
                 height: 100,
               ),
 
+            const SizedBox(width: 4),
+
             // product title
-            Text(product.title ?? ""),
+            Flexible(
+              child: Text(
+                product.title ?? "",
+                maxLines: 2,
+              ),
+            ),
           ],
         ),
       ),

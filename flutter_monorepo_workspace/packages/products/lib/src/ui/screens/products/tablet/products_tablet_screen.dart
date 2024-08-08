@@ -2,16 +2,13 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import '../viewmodels/products_viewmodel.dart';
-import 'package:core/core.dart';
+import '../widgets/product_list_widget.dart';
 
 class ProductsTabletScreen extends StatelessWidget {
   const ProductsTabletScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return InstanceBuilder<ProductsViewModel>(
-      builder: (viewModel) => SizedBox(),
-    );
+    return ProductListWidget();
   }
 }

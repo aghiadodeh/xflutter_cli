@@ -2,9 +2,9 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
+import '../../../../models/models.dart';
 import 'product_card_widget.dart';
 import 'product_redacted_widget.dart';
-import 'package:products/products.dart';
 import '../viewmodels/products_viewmodel.dart';
 import 'package:core/core.dart';
 

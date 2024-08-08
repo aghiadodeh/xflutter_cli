@@ -2,9 +2,9 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:products/src/data_source/repositories/product_repository.dart';
-import 'package:products/products.dart';
 import 'package:animated_infinite_scroll_pagination/animated_infinite_scroll_pagination.dart';
 import 'dart:async';
+import '../../../../models/models.dart';
 import 'products_params.dart';
 import 'package:core/core.dart';
 
