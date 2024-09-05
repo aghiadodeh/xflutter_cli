@@ -9,11 +9,11 @@ import 'package:xflutter_cli_modules_application/core/extensions/theme_extension
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool backVisibility;
   final String? title;
-  final Widget? child;
+  final List<Widget>? actions;
 
   const BaseAppBar({
     this.title,
-    this.child,
+    this.actions,
     this.backVisibility = false,
     super.key,
   }) : preferredSize = const Size.fromHeight(kToolbarHeight);
@@ -32,6 +32,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: AppBackButton(force: backVisibility),
       leadingWidth: 32,
       iconTheme: const IconThemeData(),
+      actions: actions,
     );
   }
 }

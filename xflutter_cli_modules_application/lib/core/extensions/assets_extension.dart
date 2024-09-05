@@ -5,7 +5,7 @@
 /// ```
 /// class MyWidget extends StatelessWidget {
 ///   const MyWidget({super.key});
-
+///
 ///   @override
 ///   Widget build(BuildContext context) {
 ///     return Image.network("logo".pngAsset); // <-- add here

@@ -12,7 +12,7 @@ import 'package:xflutter_cli_modules_application/common/viewmodels/base_viewmode
 class LoginViewModel extends BaseViewModel {
   late final params = LoginParams();
   late final eventEmitter = EventEmitter<dynamic>();
-  late final authRepository = AuthRepository();
+  late final authenticationRepository = AuthenticationRepository();
 
   @override
   void onInit() {
@@ -24,14 +24,14 @@ class LoginViewModel extends BaseViewModel {
   void onDispose() {
     // called immediately before the widget is disposed
     eventEmitter.dispose();
-    authRepository.dispose();
+    authenticationRepository.dispose();
     super.onDispose();
   }
 
   void submit() {
     eventBus.fire(const SoftKeyboardEvent());
     callHttpRequest(
-      () => authRepository.login(
+      () => authenticationRepository.login(
         LoginRequest(
           phone: params.loginForm.getPhoneNumber('phone')?.international,
         ),

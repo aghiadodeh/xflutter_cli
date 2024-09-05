@@ -4,22 +4,20 @@
 import 'package:flutter/material.dart';
 import 'product_card_widget.dart';
 import 'product_redacted_widget.dart';
+import 'package:xflutter_cli_modules_application/modules/products/data_source/paging/product_paging_data_source.dart';
 import 'package:xflutter_cli_modules_application/common/models/models.dart';
-import '../viewmodels/products_viewmodel.dart';
-import 'package:xflutter_cli_modules_application/common/ui/widgets/instance/instance_builder.dart';
 import 'package:xflutter_cli_modules_application/common/ui/widgets/infinite_scroll_view/infinite_scroll_view.dart';
 
 class ProductListWidget extends StatelessWidget {
-  const ProductListWidget({super.key});
+  final ProductsPagingDataSource controller;
+  const ProductListWidget({required this.controller, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return InstanceBuilder<ProductsViewModel>(
-      builder: (viewModel) => InfiniteScrollView<ProductsViewModel, Product>(
-        viewModel: viewModel,
-        loadingWidget: const ProductRedactedWidget(),
-        itemBuilder: (context, index, item) => ProductCardWidget(item),
-      ),
+    return InfiniteScrollView<Product, ProductsPagingDataSource>(
+      controller: controller,
+      loadingWidget: const ProductRedactedWidget(),
+      itemBuilder: (BuildContext context, Product item, int index) => ProductCardWidget(item),
     );
   }
 }

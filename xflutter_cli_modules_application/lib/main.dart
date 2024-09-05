@@ -50,7 +50,9 @@ class _MyAppState extends State<MyApp> {
     eventBus.on<ThemeChangedEvent>().listen((_) => setState(() {}));
 
     // hide soft keyboard when (non-context class) emit event
-    eventBus.on<SoftKeyboardEvent>().listen((_) => hideSoftKeyboard(context));
+    eventBus.on<SoftKeyboardEvent>().listen((_) {
+      if (mounted) hideSoftKeyboard(context);
+    });
 
     // handle unauthorizedEvent
     eventBus.on<UnauthorizedEvent>().listen((_) => handleUnauthorizedEvent());
@@ -74,13 +76,13 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp.router(
         routerDelegate: appRouter.delegate(),
         routeInformationParser: appRouter.defaultRouteParser(),
-        debugShowCheckedModeBanner: false,
-        themeMode: themeMode,
         theme: lightTheme,
         darkTheme: darkTheme,
+        themeMode: themeMode,
         locale: context.locale,
-        localizationsDelegates: context.localizationDelegates,
+        debugShowCheckedModeBanner: false,
         supportedLocales: context.supportedLocales,
+        localizationsDelegates: context.localizationDelegates,
       ),
     );
   }

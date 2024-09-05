@@ -10,5 +10,5 @@ class BaseParams {
   final loading = false.liveData;
 
   /// UI [SnackBar] message
-  final uiMessage = UiMessage().liveData;
+  final uiMessage = UiMessage().liveEvent;
 }

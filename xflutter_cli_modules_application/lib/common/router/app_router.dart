@@ -3,10 +3,10 @@
 // more info: https://xflutter-cli.com
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-
 import 'package:xflutter_cli_modules_application/modules/authentication/views/screens/login/login_screen.dart';
 import 'package:xflutter_cli_modules_application/modules/authentication/views/screens/verify_pin_code/verify_pin_code_screen.dart';
-import 'package:xflutter_cli_modules_application/modules/products/views/screens/products/products_screen.dart';
+
+import '../../modules/products/views/screens/products/products_screen.dart';
 part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Screen')
@@ -14,16 +14,16 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          path: '/products',
-          page: Products.page,
-        ),
-        AutoRoute(
           path: '/verify_pin_code',
           page: VerifyPinCode.page,
         ),
         AutoRoute(
           path: '/login',
           page: Login.page,
+        ),
+        AutoRoute(
+          path: '/products',
+          page: Products.page,
           initial: true,
         ),
       ];

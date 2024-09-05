@@ -2,7 +2,6 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme.dart';
 
 class CustomizedButton extends StatelessWidget {
   final Widget child;
@@ -20,13 +19,8 @@ class CustomizedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        if (!enabled) return;
-        callback();
-      },
-      style: (style ?? elevatedButtonTheme(darkMode: Theme.of(context).brightness == Brightness.dark).style)?.copyWith(
-        backgroundColor: WidgetStateProperty.all(enabled ? Theme.of(context).primaryColor : Colors.grey.shade400),
-      ),
+      onPressed: !enabled ? null : callback,
+      style: style ?? Theme.of(context).elevatedButtonTheme.style,
       child: child,
     );
   }

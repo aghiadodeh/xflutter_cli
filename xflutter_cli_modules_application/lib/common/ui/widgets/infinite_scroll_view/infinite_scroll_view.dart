@@ -3,29 +3,25 @@
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
 import 'package:animated_infinite_scroll_pagination/animated_infinite_scroll_pagination.dart';
-import 'package:xflutter_cli_modules_application/common/ui/widgets/core/base_scrollview.dart';
 import '../animations/customized_animated_widget.dart';
 import '../loaders/loader.dart';
 import 'pagination_load_widget.dart';
 import 'pagination_error_widget.dart';
 
-/// [VM] a view model extends [PaginationViewModel]
+/// [C] a controller extends [AnimatedInfinitePaginationController]
 /// [T] the Model of item
-class InfiniteScrollView<VM extends PaginationViewModel<T>, T extends Object> extends StatelessWidget {
-  /// [viewModel] a class extends [PaginationViewModel]
-  final VM viewModel;
+class InfiniteScrollView<T, C extends AnimatedInfinitePaginationController<T>> extends StatelessWidget {
+  /// [controller] a class extends [AnimatedInfinitePaginationController]
+  final C controller;
 
   /// [itemBuilder] callback return [Widget] with item [T].
-  final Widget Function(BuildContext context, int index, T item) itemBuilder;
+  final Widget Function(BuildContext context, T item, int index) itemBuilder;
 
-  /// pass [topWidget] when you want to place a widget at the top of the first [itemBuilder] widget.
-  final Widget? topWidget;
+  /// pass [topWidgets] when you want to place a widget at the top of the first [itemBuilder] widget.
+  final List<SliverCustomWidget>? topWidgets;
 
   /// [onRefresh] callback called when user swipe to refresh list.
   final Function()? onRefresh;
-
-  /// [ScrollPhysics] of pagination scrollView.
-  final ScrollPhysics? physics;
 
   /// [retry] callback called when pagination request failed and user press on [PaginationErrorWidget].
   final Function()? retry;
@@ -44,9 +40,6 @@ class InfiniteScrollView<VM extends PaginationViewModel<T>, T extends Object> ex
   /// Whether to spawn a new isolate on which to calculate the diff on.
   final bool? spawnIsolate;
 
-  /// scroll-view padding
-  final EdgeInsets? padding;
-
   /// [noItemsWidget] is a widget appears after fetch first page data and the result is empty
   final Widget? noItemsWidget;
 
@@ -55,18 +48,16 @@ class InfiniteScrollView<VM extends PaginationViewModel<T>, T extends Object> ex
 
   /// build [AnimatedInfiniteScrollView] with basic configuration
   const InfiniteScrollView({
-    required this.viewModel,
+    required this.controller,
     required this.itemBuilder,
     this.refreshIndicator = true,
     this.loadingWidget,
     this.onRefresh,
-    this.topWidget,
+    this.topWidgets,
     this.retry,
-    this.physics,
     this.scrollDirection = Axis.vertical,
     this.gridDelegate,
     this.spawnIsolate,
-    this.padding,
     this.noItemsWidget,
     super.key,
   });
@@ -74,22 +65,22 @@ class InfiniteScrollView<VM extends PaginationViewModel<T>, T extends Object> ex
   @override
   Widget build(BuildContext context) {
     return AnimatedInfiniteScrollView<T>(
-      viewModel: viewModel,
-      refreshIndicator: refreshIndicator,
-      topWidget: topWidget,
-      loadingWidget: loadingWidget ?? const CustomizedAnimatedWidget(child: Loader()),
-      footerLoadingWidget: const PaginationLoaderWidget(),
-      errorWidget: PaginationErrorWidget(
-        retry: retry ?? () => viewModel.fetchData(viewModel.paginationParams.page),
+      controller: controller,
+      options: AnimatedInfinitePaginationOptions(
+        refreshIndicator: refreshIndicator,
+        topWidgets: topWidgets,
+        footerLoadingWidget: const Center(child: PaginationLoaderWidget()),
+        loadingWidget: loadingWidget ?? const CustomizedAnimatedWidget(child: Loader()),
+        errorWidget: PaginationErrorWidget(
+          retry: retry ?? () => controller.fetchNewChunk(page: controller.page),
+        ),
+        onRefresh: onRefresh,
+        itemBuilder: itemBuilder,
+        gridDelegate: gridDelegate,
+        spawnIsolate: spawnIsolate,
+        noItemsWidget: noItemsWidget,
+        scrollDirection: scrollDirection,
       ),
-      physics: physics ?? scrollPhysics,
-      onRefresh: onRefresh,
-      gridDelegate: gridDelegate,
-      spawnIsolate: spawnIsolate,
-      scrollDirection: scrollDirection,
-      padding: padding,
-      noItemsWidget: noItemsWidget,
-      itemBuilder: itemBuilder,
     );
   }
 }

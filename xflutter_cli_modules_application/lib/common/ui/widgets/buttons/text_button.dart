@@ -2,7 +2,6 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme.dart';
 
 class AppTextButton extends StatelessWidget {
   final String text;
@@ -20,14 +19,11 @@ class AppTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = textStyle ?? textButtonTextStyle(darkMode: Theme.of(context).brightness == Brightness.dark);
-    final buttonTextStyle = enabled ? textStyle : style.copyWith(color: Colors.grey.shade400);
+    final buttonStyle = Theme.of(context).textButtonTheme.style;
+    final style = textStyle ?? buttonStyle?.textStyle?.resolve(enabled ? {} : {WidgetState.disabled});
     return TextButton(
-      child: Text(text, style: buttonTextStyle),
-      onPressed: () {
-        if (!enabled) return;
-        callback();
-      },
+      onPressed: !enabled ? null : callback,
+      child: Text(text, style: style),
     );
   }
 }
