@@ -61,7 +61,6 @@ class _BaseBottomSheetDialog extends StatelessWidget {
     required this.child,
     required this.isDismissible,
     this.onDismiss,
-    super.key,
   });
 
   @override
@@ -72,7 +71,12 @@ class _BaseBottomSheetDialog extends StatelessWidget {
       builder: (context, theme) {
         return PopScope(
           canPop: isDismissible,
-          onPopInvoked: (value) => Future.value(value),
+          onPopInvokedWithResult: (didPop, _) {
+            if (didPop) {
+              onDismiss?.call();
+              Navigator.pop(context);
+            }
+          },
           child: Container(
             padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top),
             child: Column(
