@@ -11,11 +11,33 @@ class ProductCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final media = product.media?.firstOrNull;
+    if (media?.originalUrl != null) {
+      precacheImage(NetworkImage(media!.originalUrl!), context);
+    }
     return ThemeWidget(
-      builder: (context, theme) => Container(
+      builder: (BuildContext context, ThemeData theme) => Container(
         margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         padding: const EdgeInsets.all(10),
-        child: const SizedBox(),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                if (media?.originalUrl != null)
+                  Image.network(
+                    media!.originalUrl!,
+                    fit: BoxFit.cover,
+                    width: 50,
+                    height: 50,
+                  ),
+                Flexible(
+                  child: Text(product.name ?? ""),
+                ),
+              ],
+            ),
+            const Divider()
+          ],
+        ),
       ),
     );
   }
