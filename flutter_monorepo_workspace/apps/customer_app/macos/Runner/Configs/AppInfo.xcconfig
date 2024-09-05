@@ -8,7 +8,7 @@
 PRODUCT_NAME = customer_app
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.myorg.customerApp
+PRODUCT_BUNDLE_IDENTIFIER = com.xfluttercli.customerApp
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.myorg. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 com.xflutter_cli. All rights reserved.

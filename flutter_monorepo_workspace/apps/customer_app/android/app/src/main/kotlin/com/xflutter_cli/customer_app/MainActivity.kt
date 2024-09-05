@@ -1,4 +1,4 @@
-package com.myorg.customer_app
+package com.xflutter_cli.customer_app
 
 import io.flutter.embedding.android.FlutterActivity
 
