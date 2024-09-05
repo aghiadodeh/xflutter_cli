@@ -4,13 +4,13 @@ homepage: none
 publish_to: none
 description: Shared Package
 environment: 
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: ^3.5.1
   flutter: '>=1.17.0'
 dependencies: 
   flutter: 
     sdk: flutter
 dev_dependencies: 
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
   flutter_test: 
     sdk: flutter
 flutter: null
