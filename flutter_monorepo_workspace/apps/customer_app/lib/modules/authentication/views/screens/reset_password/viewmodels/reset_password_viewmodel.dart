@@ -9,7 +9,7 @@ import 'reset_password_params.dart';
 class ResetPasswordViewModel extends BaseViewModel {
   late final params = ResetPasswordParams();
   late final eventEmitter = EventEmitter<dynamic>();
-  late final authRepository = AuthRepository();
+  late final authenticationRepository = AuthenticationRepository();
 
   @override
   void onInit() {
@@ -21,14 +21,14 @@ class ResetPasswordViewModel extends BaseViewModel {
   void onDispose() {
     // called immediately before the widget is disposed
     eventEmitter.dispose();
-    authRepository.dispose();
+    authenticationRepository.dispose();
     super.onDispose();
   }
 
   void submit() {
     eventBus.fire(const SoftKeyboardEvent());
     callHttpRequest(
-      () => authRepository.resetPassword(
+      () => authenticationRepository.resetPassword(
         ResetPasswordRequest.fromJson(params.resetPasswordForm.value),
       ),
       loading: baseParams.loading,

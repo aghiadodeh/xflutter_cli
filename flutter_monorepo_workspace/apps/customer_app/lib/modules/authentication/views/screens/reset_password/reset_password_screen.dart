@@ -20,8 +20,7 @@ class ResetPasswordScreen extends StatefulWidget {
   State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
 }
 
-class _ResetPasswordScreenState extends State<ResetPasswordScreen>
-    with InstanceState<ResetPasswordScreen, ResetPasswordViewModel>, ObserverMixin {
+class _ResetPasswordScreenState extends State<ResetPasswordScreen> with InstanceState<ResetPasswordScreen, ResetPasswordViewModel>, ObserverMixin {
   void observeEvents() {
     viewModel.eventEmitter.observe((value) {
       if (value != null) {
@@ -45,8 +44,8 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen>
           appBar: (context, theme) => BaseAppBar(title: 'reset_password'.tr()),
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => ResetPasswordMobileScreen(),
-              tablet: (context) => ResetPasswordTabletScreen(),
+              mobile: (context) => const ResetPasswordMobileScreen(),
+              tablet: (context) => const ResetPasswordTabletScreen(),
             ),
           ),
         ),

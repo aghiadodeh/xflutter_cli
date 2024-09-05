@@ -44,16 +44,8 @@ class _MyAppState extends State<MyApp> {
       if (mounted) hideSoftKeyboard(context);
     });
 
-    // handle unauthorizedEvent
-    eventBus.on<UnauthorizedEvent>().listen((_) => handleUnauthorizedEvent());
-
     // set application UI configuration
     runAfterBuild(() => uiConfig(context));
-  }
-
-  /// logOut
-  void handleUnauthorizedEvent() async {
-    // TODO: handle Unauthorized Event
   }
 
   // This widget is the root of your application.
@@ -64,15 +56,16 @@ class _MyAppState extends State<MyApp> {
       behavior: HitTestBehavior.translucent,
       onTap: () => hideSoftKeyboard(context),
       child: MaterialApp.router(
+        title: "Customer App",
         routerDelegate: appRouter.delegate(),
         routeInformationParser: appRouter.defaultRouteParser(),
-        debugShowCheckedModeBanner: false,
-        themeMode: themeMode,
         theme: lightTheme,
         darkTheme: darkTheme,
+        themeMode: themeMode,
         locale: context.locale,
-        localizationsDelegates: context.localizationDelegates,
+        debugShowCheckedModeBanner: false,
         supportedLocales: context.supportedLocales,
+        localizationsDelegates: context.localizationDelegates,
       ),
     );
   }

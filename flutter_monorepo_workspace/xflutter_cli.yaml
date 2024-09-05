@@ -5,8 +5,13 @@ workspace: flutter_monorepo_workspace
 #
 # If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
 # you can downgrade version manually by run command:
-# dart pub global activate xflutter_cli 2.3.0
-version: 2.3.0
+# dart pub global activate xflutter_cli 2.3.1
+version: 2.3.1
+
+# formatting line width
+# tool will format the dart files after Generating by running:
+# dart format . -l {format_line_width}
+format_line_width: 140
 
 # project modules
 modules:
@@ -31,7 +36,7 @@ modules:
       name: customer_app
       
       # machine Flutter version when initialize the module
-      flutter_version: 3.24.0
+      flutter_version: 3.24.1
 
     # xflutter_cli generate configuration
     generate:
@@ -54,7 +59,7 @@ modules:
       base: packages/core/lib/src/
       path: packages/core/
       name: core
-      flutter_version: 3.24.0
+      flutter_version: 3.24.1
     generate:
       run_build_runner: true
       overwrite: false
@@ -64,17 +69,7 @@ modules:
       base: apps/admin_app/lib/
       path: apps/admin_app/
       name: admin_app
-      flutter_version: 3.24.0
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: modules
-      template: package
-      base: packages/orders/lib/src/
-      path: packages/orders/
-      name: orders
-      flutter_version: 3.24.0
+      flutter_version: 3.24.1
     generate:
       run_build_runner: true
       overwrite: false
@@ -84,7 +79,17 @@ modules:
       base: packages/products/lib/src/
       path: packages/products/
       name: products
-      flutter_version: 3.24.0
+      flutter_version: 3.24.1
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: modules
+      template: package
+      base: packages/orders/lib/src/
+      path: packages/orders/
+      name: orders
+      flutter_version: 3.24.1
     generate:
       run_build_runner: true
       overwrite: false

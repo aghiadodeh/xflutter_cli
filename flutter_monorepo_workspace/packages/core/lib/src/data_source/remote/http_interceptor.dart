@@ -8,11 +8,7 @@ import 'package:core/src/events/event_bus.dart';
 class HttpInterceptor extends InterceptorsWrapper {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
-    final httpHeaders = {
-      'Accept': 'application/json',
-      // TODO: add authorization token to http-headers
-      'Authorization': 'Bearer {token}',
-    };
+    final httpHeaders = {'Accept': 'application/json'};
     options.headers.addAll(httpHeaders);
     options.connectTimeout = const Duration(seconds: 60);
     options.receiveTimeout = const Duration(seconds: 60);

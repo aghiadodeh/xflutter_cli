@@ -7,8 +7,8 @@ import 'package:core/core.dart';
 import 'package:customer_app/common/models/models.dart';
 import 'package:customer_app/modules/authentication/data_source/remote/authentication_rest_client/authentication_rest_client.dart';
 
-class AuthRepository extends BaseRepository {
-  late final restClient = AuthRestClient(findInstance<Dio>());
+class AuthenticationRepository extends BaseRepository {
+  late final restClient = AuthenticationRestClient(findInstance<Dio>());
 
   Future<BaseResponse<dynamic>> login(LoginRequest data) {
     final cancelToken = CancelToken();

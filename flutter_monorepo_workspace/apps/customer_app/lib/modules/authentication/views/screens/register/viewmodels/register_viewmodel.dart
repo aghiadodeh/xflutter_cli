@@ -9,7 +9,7 @@ import 'register_params.dart';
 class RegisterViewModel extends BaseViewModel {
   late final params = RegisterParams();
   late final eventEmitter = EventEmitter<dynamic>();
-  late final authRepository = AuthRepository();
+  late final authenticationRepository = AuthenticationRepository();
 
   @override
   void onInit() {
@@ -21,14 +21,14 @@ class RegisterViewModel extends BaseViewModel {
   void onDispose() {
     // called immediately before the widget is disposed
     eventEmitter.dispose();
-    authRepository.dispose();
+    authenticationRepository.dispose();
     super.onDispose();
   }
 
   void submit() {
     eventBus.fire(const SoftKeyboardEvent());
     callHttpRequest(
-      () => authRepository.register(
+      () => authenticationRepository.register(
         RegisterRequest.fromJson(params.registerForm.value),
       ),
       loading: baseParams.loading,

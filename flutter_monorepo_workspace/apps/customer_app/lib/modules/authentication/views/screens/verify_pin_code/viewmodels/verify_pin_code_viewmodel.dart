@@ -10,7 +10,7 @@ import 'verify_pin_code_params.dart';
 class VerifyPinCodeViewModel extends BaseViewModel {
   late final params = VerifyPinCodeParams();
   late final eventEmitter = EventEmitter<dynamic>();
-  late final authRepository = AuthRepository();
+  late final authenticationRepository = AuthenticationRepository();
 
   @override
   void onInit() {
@@ -22,7 +22,7 @@ class VerifyPinCodeViewModel extends BaseViewModel {
   void onDispose() {
     // called immediately before the widget is disposed
     eventEmitter.dispose();
-    authRepository.dispose();
+    authenticationRepository.dispose();
     super.onDispose();
   }
 
@@ -35,13 +35,14 @@ class VerifyPinCodeViewModel extends BaseViewModel {
   /// send request to re-send the verification code
   void requestVerificationCode() {
     callHttpRequest(
-      () => authRepository.resendVerificationCode(
+      () => authenticationRepository.resendVerificationCode(
         GetVerificationCodeRequest(email: params.email),
       ),
       loading: baseParams.loading,
       callback: (result, success) {
         if (result != null && success) {
-          baseParams.uiMessage.postValue(UiMessage(
+          showUiMessage(
+              uiMessage: UiMessage(
             message: 'code_resent'.tr(),
             state: UiMessageState.success,
           ));
@@ -54,7 +55,7 @@ class VerifyPinCodeViewModel extends BaseViewModel {
   void submitVerificationCode() {
     eventBus.fire(const SoftKeyboardEvent());
     callHttpRequest(
-      () => authRepository.verifyPinCode(
+      () => authenticationRepository.verifyPinCode(
         VerifyCodeRequest(
           email: params.email,
           verificationCode: params.code.value,

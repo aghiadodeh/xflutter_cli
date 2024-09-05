@@ -2,8 +2,8 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import 'package:products/products.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:products/products.dart';
 
 @RoutePage(name: 'adminProducts')
 class AdminProductsScreen extends StatefulWidget {

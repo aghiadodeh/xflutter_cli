@@ -41,8 +41,8 @@ class _LoginScreenState extends State<LoginScreen> with InstanceState<LoginScree
         BaseScaffold(
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => LoginMobileScreen(),
-              tablet: (context) => LoginTabletScreen(),
+              mobile: (context) => const LoginMobileScreen(),
+              tablet: (context) => const LoginTabletScreen(),
             ),
           ),
         ),

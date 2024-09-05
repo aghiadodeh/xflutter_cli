@@ -20,8 +20,7 @@ class ChangePasswordScreen extends StatefulWidget {
   State<ChangePasswordScreen> createState() => _ChangePasswordScreenState();
 }
 
-class _ChangePasswordScreenState extends State<ChangePasswordScreen>
-    with InstanceState<ChangePasswordScreen, ChangePasswordViewModel>, ObserverMixin {
+class _ChangePasswordScreenState extends State<ChangePasswordScreen> with InstanceState<ChangePasswordScreen, ChangePasswordViewModel>, ObserverMixin {
   void observeEvents() {
     viewModel.eventEmitter.observe((value) {
       if (value != null) {
@@ -45,8 +44,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen>
           appBar: (context, theme) => BaseAppBar(title: 'change_password'.tr()),
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => ChangePasswordMobileScreen(),
-              tablet: (context) => ChangePasswordTabletScreen(),
+              mobile: (context) => const ChangePasswordMobileScreen(),
+              tablet: (context) => const ChangePasswordTabletScreen(),
             ),
           ),
         ),

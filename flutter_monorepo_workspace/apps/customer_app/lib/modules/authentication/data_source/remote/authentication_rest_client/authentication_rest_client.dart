@@ -4,11 +4,12 @@
 import 'package:core/core.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+
 part 'authentication_rest_client.g.dart';
 
 @RestApi()
-abstract class AuthRestClient {
-  factory AuthRestClient(Dio dio) = _AuthRestClient;
+abstract class AuthenticationRestClient {
+  factory AuthenticationRestClient(Dio dio) = _AuthenticationRestClient;
 
   @POST("/auth/login")
   Future<BaseResponse<dynamic>> login({

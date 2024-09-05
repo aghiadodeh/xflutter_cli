@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 class Environment {
-  static const localhost = "http://192.168.89.230:3000";
+  static const localhost = "http://192.168.37.230:3000";
   static const developUrl = "https://www.develop.com";
   static const stagingUrl = "https://www.staging.com";
   static const liveUrl = "https://www.domain.com";

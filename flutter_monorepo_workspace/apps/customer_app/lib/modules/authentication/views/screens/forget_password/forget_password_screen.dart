@@ -20,8 +20,7 @@ class ForgetPasswordScreen extends StatefulWidget {
   State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
 }
 
-class _ForgetPasswordScreenState extends State<ForgetPasswordScreen>
-    with InstanceState<ForgetPasswordScreen, ForgetPasswordViewModel>, ObserverMixin {
+class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> with InstanceState<ForgetPasswordScreen, ForgetPasswordViewModel>, ObserverMixin {
   void observeEvents() {
     viewModel.eventEmitter.observe((value) {
       if (value != null) {
@@ -48,8 +47,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen>
           appBar: (context, theme) => BaseAppBar(title: 'forget_password'.tr()),
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => ForgetPasswordMobileScreen(),
-              tablet: (context) => ForgetPasswordTabletScreen(),
+              mobile: (context) => const ForgetPasswordMobileScreen(),
+              tablet: (context) => const ForgetPasswordTabletScreen(),
             ),
           ),
         ),

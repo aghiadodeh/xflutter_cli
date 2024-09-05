@@ -19,18 +19,13 @@ class ProductsScreen extends StatefulWidget {
 class _ProductsScreenState extends State<ProductsScreen> with InstanceState<ProductsScreen, ProductsViewModel>, ObserverMixin {
   @override
   Widget screen(context, viewModel) {
-    return Stack(
-      children: [
-        BaseScaffold(
-          builder: (context, theme) => SafeArea(
-            child: ScreenTypeLayout.builder(
-              mobile: (context) => ProductsMobileScreen(),
-              tablet: (context) => ProductsTabletScreen(),
-            ),
-          ),
+    return BaseScaffold(
+      builder: (context, theme) => SafeArea(
+        child: ScreenTypeLayout.builder(
+          mobile: (context) => const ProductsMobileScreen(),
+          tablet: (context) => const ProductsTabletScreen(),
         ),
-        LiveDataFullScreenLoader(loading: viewModel.baseParams.loading),
-      ],
+      ),
     );
   }
 

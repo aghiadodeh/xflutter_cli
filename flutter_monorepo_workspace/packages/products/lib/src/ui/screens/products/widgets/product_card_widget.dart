@@ -2,8 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import 'package:products/products.dart';
-import 'package:core/core.dart';
+import '../../../../models/data/product/product.dart';
 
 class ProductCardWidget extends StatelessWidget {
   final Product product;
@@ -11,31 +10,28 @@ class ProductCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeWidget(
-      builder: (BuildContext context, ThemeData theme) => Container(
-        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        padding: const EdgeInsets.all(10),
-        child: Row(
-          children: [
-            // product image
-            if (product.thumbnail != null)
-              Image.network(
-                product.thumbnail!,
-                width: 100,
-                height: 100,
-              ),
+    if (product.thumbnail != null) {
+      precacheImage(NetworkImage(product.thumbnail!), context);
+    }
 
-            const SizedBox(width: 4),
-
-            // product title
-            Flexible(
-              child: Text(
-                product.title ?? "",
-                maxLines: 2,
-              ),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      padding: const EdgeInsets.all(10),
+      child: Row(
+        children: [
+          // product image
+          if (product.thumbnail != null)
+            Image.network(
+              product.thumbnail!,
+              width: 100,
+              height: 100,
             ),
-          ],
-        ),
+
+          const SizedBox(width: 8),
+
+          // product title
+          Text(product.title ?? ""),
+        ],
       ),
     );
   }

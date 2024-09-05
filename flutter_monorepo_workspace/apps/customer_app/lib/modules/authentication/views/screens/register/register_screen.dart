@@ -45,8 +45,8 @@ class _RegisterScreenState extends State<RegisterScreen> with InstanceState<Regi
           appBar: (context, theme) => BaseAppBar(title: 'register'.tr()),
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => RegisterMobileScreen(),
-              tablet: (context) => RegisterTabletScreen(),
+              mobile: (context) => const RegisterMobileScreen(),
+              tablet: (context) => const RegisterTabletScreen(),
             ),
           ),
         ),

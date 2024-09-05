@@ -3,7 +3,8 @@
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
 import 'package:redacted/redacted.dart';
-import 'package:products/products.dart';
+import '../../../../models/models.dart';
+import 'product_card_widget.dart';
 
 class ProductRedactedWidget extends StatelessWidget {
   final int itemCount;
@@ -13,15 +14,12 @@ class ProductRedactedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: itemCount,
-      itemBuilder: (context, index) => ProductCardWidget(
+      itemBuilder: (context, index) => const ProductCardWidget(
         Product(
-          thumbnail: "https://placehold.co/600x400.png",
           title: "Product",
+          thumbnail: "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
         ),
-      ).redacted(
-        context: context,
-        redact: true,
-      ),
+      ).redacted(context: context, redact: true),
     );
   }
 }

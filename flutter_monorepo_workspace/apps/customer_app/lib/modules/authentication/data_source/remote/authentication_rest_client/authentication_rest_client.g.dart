@@ -8,8 +8,8 @@ part of 'authentication_rest_client.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _AuthRestClient implements AuthRestClient {
-  _AuthRestClient(
+class _AuthenticationRestClient implements AuthenticationRestClient {
+  _AuthenticationRestClient(
     this._dio, {
     this.baseUrl,
   });
@@ -19,7 +19,7 @@ class _AuthRestClient implements AuthRestClient {
   String? baseUrl;
 
   @override
-  Future<InvalidType> login({
+  Future<BaseResponse<dynamic>> login({
     required Map<String, dynamic> data,
     CancelToken? cancelToken,
   }) async {
@@ -29,7 +29,7 @@ class _AuthRestClient implements AuthRestClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<InvalidType>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<dynamic>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -46,12 +46,15 @@ class _AuthRestClient implements AuthRestClient {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = InvalidType.fromJson(_result.data!);
+    final value = BaseResponse<dynamic>.fromJson(
+      _result.data!,
+      (json) => json as dynamic,
+    );
     return value;
   }
 
   @override
-  Future<InvalidType> verifyPinCode({
+  Future<BaseResponse<dynamic>> verifyPinCode({
     required Map<String, dynamic> data,
     CancelToken? cancelToken,
   }) async {
@@ -61,7 +64,7 @@ class _AuthRestClient implements AuthRestClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<InvalidType>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<dynamic>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -78,12 +81,15 @@ class _AuthRestClient implements AuthRestClient {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = InvalidType.fromJson(_result.data!);
+    final value = BaseResponse<dynamic>.fromJson(
+      _result.data!,
+      (json) => json as dynamic,
+    );
     return value;
   }
 
   @override
-  Future<InvalidType> resendVerificationCode({
+  Future<BaseResponse<dynamic>> resendVerificationCode({
     required Map<String, dynamic> data,
     CancelToken? cancelToken,
   }) async {
@@ -93,7 +99,7 @@ class _AuthRestClient implements AuthRestClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<InvalidType>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<dynamic>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -110,12 +116,15 @@ class _AuthRestClient implements AuthRestClient {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = InvalidType.fromJson(_result.data!);
+    final value = BaseResponse<dynamic>.fromJson(
+      _result.data!,
+      (json) => json as dynamic,
+    );
     return value;
   }
 
   @override
-  Future<InvalidType> register({
+  Future<BaseResponse<dynamic>> register({
     required Map<String, dynamic> data,
     CancelToken? cancelToken,
   }) async {
@@ -125,7 +134,7 @@ class _AuthRestClient implements AuthRestClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<InvalidType>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<dynamic>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -142,12 +151,15 @@ class _AuthRestClient implements AuthRestClient {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = InvalidType.fromJson(_result.data!);
+    final value = BaseResponse<dynamic>.fromJson(
+      _result.data!,
+      (json) => json as dynamic,
+    );
     return value;
   }
 
   @override
-  Future<InvalidType> forgetPassword({
+  Future<BaseResponse<dynamic>> forgetPassword({
     required Map<String, dynamic> data,
     CancelToken? cancelToken,
   }) async {
@@ -157,7 +169,7 @@ class _AuthRestClient implements AuthRestClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<InvalidType>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<dynamic>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -174,12 +186,15 @@ class _AuthRestClient implements AuthRestClient {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = InvalidType.fromJson(_result.data!);
+    final value = BaseResponse<dynamic>.fromJson(
+      _result.data!,
+      (json) => json as dynamic,
+    );
     return value;
   }
 
   @override
-  Future<InvalidType> resetPassword({
+  Future<BaseResponse<dynamic>> resetPassword({
     required Map<String, dynamic> data,
     CancelToken? cancelToken,
   }) async {
@@ -189,7 +204,7 @@ class _AuthRestClient implements AuthRestClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<InvalidType>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<dynamic>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -206,12 +221,15 @@ class _AuthRestClient implements AuthRestClient {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = InvalidType.fromJson(_result.data!);
+    final value = BaseResponse<dynamic>.fromJson(
+      _result.data!,
+      (json) => json as dynamic,
+    );
     return value;
   }
 
   @override
-  Future<InvalidType> changePassword({
+  Future<BaseResponse<dynamic>> changePassword({
     required Map<String, dynamic> data,
     CancelToken? cancelToken,
   }) async {
@@ -221,7 +239,7 @@ class _AuthRestClient implements AuthRestClient {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<InvalidType>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<dynamic>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -238,7 +256,10 @@ class _AuthRestClient implements AuthRestClient {
           _dio.options.baseUrl,
           baseUrl,
         ))));
-    final value = InvalidType.fromJson(_result.data!);
+    final value = BaseResponse<dynamic>.fromJson(
+      _result.data!,
+      (json) => json as dynamic,
+    );
     return value;
   }
 

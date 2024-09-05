@@ -3,7 +3,6 @@
 // more info: https://xflutter-cli.com
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-
 import 'package:customer_app/modules/products/views/screens/customer_products/customer_products_screen.dart';
 import 'package:customer_app/modules/authentication/views/screens/login/login_screen.dart';
 import 'package:customer_app/modules/authentication/views/screens/register/register_screen.dart';
