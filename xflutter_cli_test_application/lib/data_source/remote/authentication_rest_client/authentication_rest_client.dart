@@ -8,8 +8,8 @@ import 'package:xflutter_cli_test_application/models/models.dart';
 part 'authentication_rest_client.g.dart';
 
 @RestApi()
-abstract class AuthRestClient {
-  factory AuthRestClient(Dio dio) = _AuthRestClient;
+abstract class AuthenticationRestClient {
+  factory AuthenticationRestClient(Dio dio) = _AuthenticationRestClient;
 
   @POST("/auth/login")
   Future<BaseResponse<dynamic>> login({

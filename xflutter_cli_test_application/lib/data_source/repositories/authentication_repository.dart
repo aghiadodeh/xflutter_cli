@@ -8,16 +8,13 @@ import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/utilities/di/di.dart';
 import 'package:xflutter_cli_test_application/data_source/remote/authentication_rest_client/authentication_rest_client.dart';
 
-class AuthRepository extends BaseRepository {
-  late final restClient = AuthRestClient(findInstance<Dio>());
+class AuthenticationRepository extends BaseRepository {
+  late final restClient = AuthenticationRestClient(findInstance<Dio>());
 
   Future<BaseResponse<dynamic>> login(LoginRequest data) {
     final cancelToken = CancelToken();
     return getResponse(
-      () => restClient.login(
-        data: data.toJson(),
-        cancelToken: cancelToken,
-      ),
+      () => restClient.login(data: data.toJson(), cancelToken: cancelToken),
       cancelToken: cancelToken,
     );
   }
@@ -25,10 +22,7 @@ class AuthRepository extends BaseRepository {
   Future<BaseResponse<dynamic>> verifyPinCode(VerifyCodeRequest data) {
     final cancelToken = CancelToken();
     return getResponse(
-      () => restClient.verifyPinCode(
-        data: data.toJson(),
-        cancelToken: cancelToken,
-      ),
+      () => restClient.verifyPinCode(data: data.toJson(), cancelToken: cancelToken),
       cancelToken: cancelToken,
     );
   }
@@ -36,10 +30,7 @@ class AuthRepository extends BaseRepository {
   Future<BaseResponse<dynamic>> resendVerificationCode(GetVerificationCodeRequest data) {
     final cancelToken = CancelToken();
     return getResponse(
-      () => restClient.resendVerificationCode(
-        data: data.toJson(),
-        cancelToken: cancelToken,
-      ),
+      () => restClient.resendVerificationCode(data: data.toJson(), cancelToken: cancelToken),
       cancelToken: cancelToken,
     );
   }
@@ -47,10 +38,7 @@ class AuthRepository extends BaseRepository {
   Future<BaseResponse<dynamic>> register(RegisterRequest data) {
     final cancelToken = CancelToken();
     return getResponse(
-      () => restClient.register(
-        data: data.toJson(),
-        cancelToken: cancelToken,
-      ),
+      () => restClient.register(data: data.toJson(), cancelToken: cancelToken),
       cancelToken: cancelToken,
     );
   }
@@ -58,10 +46,7 @@ class AuthRepository extends BaseRepository {
   Future<BaseResponse<dynamic>> forgetPassword(GetVerificationCodeRequest data) {
     final cancelToken = CancelToken();
     return getResponse(
-      () => restClient.forgetPassword(
-        data: data.toJson(),
-        cancelToken: cancelToken,
-      ),
+      () => restClient.forgetPassword(data: data.toJson(), cancelToken: cancelToken),
       cancelToken: cancelToken,
     );
   }
@@ -69,10 +54,7 @@ class AuthRepository extends BaseRepository {
   Future<BaseResponse<dynamic>> resetPassword(ResetPasswordRequest data) {
     final cancelToken = CancelToken();
     return getResponse(
-      () => restClient.resetPassword(
-        data: data.toJson(),
-        cancelToken: cancelToken,
-      ),
+      () => restClient.resetPassword(data: data.toJson(), cancelToken: cancelToken),
       cancelToken: cancelToken,
     );
   }
@@ -80,10 +62,7 @@ class AuthRepository extends BaseRepository {
   Future<BaseResponse<dynamic>> changePassword(ChangePasswordRequest data) {
     final cancelToken = CancelToken();
     return getResponse(
-      () => restClient.changePassword(
-        data: data.toJson(),
-        cancelToken: cancelToken,
-      ),
+      () => restClient.changePassword(data: data.toJson(), cancelToken: cancelToken),
       cancelToken: cancelToken,
     );
   }
