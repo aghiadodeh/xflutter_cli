@@ -2,8 +2,8 @@
 #
 # If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
 # you can downgrade version manually by run command:
-# dart pub global activate xflutter_cli 2.3.1
-version: 2.3.1
+# dart pub global activate xflutter_cli 2.3.2
+version: 2.3.2
 
 # formatting line width
 # tool will format the dart files after Generating by running:
