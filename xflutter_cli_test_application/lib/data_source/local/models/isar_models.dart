@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 
-export 'user/user.dart';
 export 'media/media.dart';
 export 'category/category.dart';
+export 'user/user.dart';
 export 'product/product.dart';

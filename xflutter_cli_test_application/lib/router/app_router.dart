@@ -11,8 +11,8 @@ import 'package:xflutter_cli_test_application/ui/screens/authentication/verify_p
 import 'package:xflutter_cli_test_application/ui/screens/authentication/forget_password/forget_password_screen.dart';
 import 'package:xflutter_cli_test_application/ui/screens/authentication/reset_password/reset_password_screen.dart';
 import 'package:xflutter_cli_test_application/ui/screens/authentication/change_password/change_password_screen.dart';
-import 'package:xflutter_cli_test_application/ui/screens/addresses/addresses_screen.dart';
 import 'package:xflutter_cli_test_application/ui/screens/home/home_screen.dart';
+import 'package:xflutter_cli_test_application/ui/screens/addresses/addresses_screen.dart';
 part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Screen')
@@ -20,12 +20,12 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          path: '/home',
-          page: Home.page,
-        ),
-        AutoRoute(
           path: '/addresses',
           page: Addresses.page,
+        ),
+        AutoRoute(
+          path: '/home',
+          page: Home.page,
         ),
         AutoRoute(
           path: '/change_password',

@@ -3,7 +3,6 @@
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
-import 'package:xflutter_cli_test_application/ui/screens/addresses/tablet/addresses_tablet_screen.dart';
 import './viewmodels/addresses_viewmodel.dart';
 import 'package:xflutter_cli_test_application/ui/widgets/loaders/live_data_loader.dart';
 import 'package:xflutter_cli_test_application/ui/widgets/instance/instance_state.dart';
@@ -11,6 +10,7 @@ import 'package:xflutter_cli_test_application/ui/widgets/core/base_scaffold.dart
 import 'package:auto_route/auto_route.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'mobile/addresses_mobile_screen.dart';
+import 'tablet/addresses_tablet_screen.dart';
 
 @RoutePage(name: 'addresses')
 class AddressesScreen extends StatefulWidget {

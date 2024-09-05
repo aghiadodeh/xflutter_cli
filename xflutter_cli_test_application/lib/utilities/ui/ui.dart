@@ -68,9 +68,7 @@ void showSnackBar({
         action: SnackBarAction(
           label: action ?? "Ok",
           textColor: Colors.white,
-          onPressed: () {
-            callback?.call();
-          },
+          onPressed: callback ?? () {},
         ),
       ),
     );

@@ -18,9 +18,9 @@ class AppIsar {
     final directory = await getApplicationDocumentsDirectory();
     final isar = await Isar.open(
       [
-        IsarUserSchema,
         IsarCategorySchema,
         IsarProductSchema,
+        IsarUserSchema,
       ],
       directory: directory.path,
     );

@@ -45,6 +45,7 @@ class ProductLocalDataProvider {
 
     // insert related categories list
     _insertCategories(data.map((e) => e.category));
+
     // convert data to isar-entities
     final objects = data.map((e) {
       final item = e.toIsar();

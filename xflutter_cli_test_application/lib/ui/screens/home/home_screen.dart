@@ -28,8 +28,8 @@ class _HomeScreenState extends State<HomeScreen> with InstanceState<HomeScreen, 
         BaseScaffold(
           builder: (context, theme) => SafeArea(
             child: ScreenTypeLayout.builder(
-              mobile: (context) => HomeMobileScreen(),
-              tablet: (context) => HomeTabletScreen(),
+              mobile: (context) => const HomeMobileScreen(),
+              tablet: (context) => const HomeTabletScreen(),
             ),
           ),
         ),
