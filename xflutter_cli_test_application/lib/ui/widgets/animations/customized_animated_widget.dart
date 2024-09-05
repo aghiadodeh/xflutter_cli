@@ -30,15 +30,16 @@ class CustomizedAnimatedWidgetState extends State<CustomizedAnimatedWidget> {
     return TweenAnimationBuilder(
       duration: widget.duration,
       tween: Tween<double>(begin: widget.from, end: 0),
-      builder: (BuildContext context, double value, Widget? child) => Transform.translate(
+      child: widget.child,
+      builder: (context, value, child) => Transform.translate(
         offset: Offset(0, value),
         child: TweenAnimationBuilder(
           duration: widget.duration,
           tween: Tween<double>(begin: 0, end: 1),
-          builder: (BuildContext context, double opacity, Widget? child) => AnimatedOpacity(
+          child: child,
+          builder: (context, opacity, child) => Opacity(
             opacity: opacity,
-            duration: widget.duration,
-            child: widget.child,
+            child: child,
           ),
         ),
       ),
