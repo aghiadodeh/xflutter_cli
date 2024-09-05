@@ -12,4 +12,7 @@ extension MutableLiveDataUtils<T> on T {
 
   /// create new [MediatorMutableLiveData] instance with initialValue from passed variable value
   MediatorMutableLiveData<T> get mediatorLiveData => MediatorMutableLiveData<T>(value: this);
+
+  /// create new [LiveEvent] instance
+  LiveEvent<T> get liveEvent => LiveEvent<T>();
 }
