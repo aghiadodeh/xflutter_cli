@@ -7,7 +7,6 @@ import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/utilities/http/connectivity.dart';
 import 'package:xflutter_cli_test_application/extensions/nullable_extension.dart';
 import 'package:xflutter_cli_test_application/ui/widgets/result/result_builder.dart';
-import 'package:xflutter_cli_test_application/ui/widgets/instance/instance_state.dart';
 import 'base_params.dart';
 
 abstract class BaseViewModel extends LifeCycle {
@@ -44,8 +43,8 @@ abstract class BaseViewModel extends LifeCycle {
       } else {
         // error response
         result?.postValue(Result<X>.error(response.message));
-        baseParams.uiMessage.postValue(
-          UiMessage(
+        showUiMessage(
+          uiMessage: UiMessage(
             message: response.message,
             state: UiMessageState.error,
           ),
@@ -56,8 +55,8 @@ abstract class BaseViewModel extends LifeCycle {
     } else {
       // notify error message
       result?.postValue(Result<X>.error("check_internet_connection"));
-      baseParams.uiMessage.postValue(
-        UiMessage(
+      showUiMessage(
+        uiMessage: UiMessage(
           message: "check_internet_connection",
           state: UiMessageState.error,
         ),
@@ -79,21 +78,17 @@ abstract class BaseViewModel extends LifeCycle {
     Function()? loading,
     Function(X? result, bool success)? callback,
   }) async {
-    late StreamSubscription<BaseResponse<X>> subscription;
-
     // notify ui to show loader
     loading?.call();
     if (result?.value is ResultIdle<X>) {
       result?.postValue(Result<X>.loading());
     }
 
-    // call http request
-    subscription = request.call().listen((response) {
+    await for (final response in request.call()) {
       if (response.data == null) {
         if (response.success == false) {
           callback?.call(null, false);
         }
-        subscription.cancel();
       } else if (response.success == true) {
         // success response
         response.data?.let((it) => result?.postValue(Result<X>.data(it)));
@@ -101,12 +96,20 @@ abstract class BaseViewModel extends LifeCycle {
       } else {
         // error response
         result?.postValue(Result<X>.error(response.message));
-        baseParams.uiMessage.postValue(
-          UiMessage(message: response.message, state: UiMessageState.error),
+        showUiMessage(
+          uiMessage: UiMessage(
+            message: response.message,
+            state: UiMessageState.error,
+          ),
         );
         callback?.call(null, false);
       }
-    });
+    }
+  }
+
+  /// show message through snackbar
+  void showUiMessage({required UiMessage uiMessage}) {
+    baseParams.uiMessage.send(uiMessage);
   }
 }
 
