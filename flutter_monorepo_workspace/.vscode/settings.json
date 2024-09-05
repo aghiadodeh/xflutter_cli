@@ -1,3 +1,7 @@
 {
-    "java.compile.nullAnalysis.mode": "disabled"
+    "cSpell.words": [
+        "flutterx",
+        "viewmodel",
+        "viewmodels"
+    ]
 }
