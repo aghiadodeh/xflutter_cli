@@ -133,16 +133,25 @@ InputDecoration textInputDecoration(ThemeData theme) => InputDecoration(
 /// -------------------- Buttons Theme -------------------- ///
 TextButtonThemeData textButtonTheme({bool darkMode = false}) {
   final primaryColor = darkMode ? DesignColorsDark.primaryColor : DesignColors.primaryColor;
+  final textStyle = textButtonTextStyle(darkMode: darkMode);
   return TextButtonThemeData(
     style: ButtonStyle(
       foregroundColor: WidgetStateProperty.all<Color>(primaryColor),
-      overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
       shape: WidgetStateProperty.all<OutlinedBorder>(
         const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(buttonCorner)),
         ),
       ),
-      textStyle: WidgetStateProperty.all<TextStyle>(textButtonTextStyle(darkMode: darkMode)),
+      textStyle: WidgetStateTextStyle.resolveWith(
+        (states) {
+          // disabled TextStyle
+          if (states.contains(WidgetState.disabled)) {
+            return textStyle.copyWith(color: Colors.grey.shade400);
+          }
+          // default TextStyle
+          return textStyle;
+        },
+      ),
     ),
   );
 }
@@ -153,7 +162,6 @@ OutlinedButtonThemeData outlinedButtonTheme({bool darkMode = false}) {
     style: ButtonStyle(
       textStyle: WidgetStateProperty.all<TextStyle>(outlinedButtonTextStyle(darkMode: darkMode)),
       foregroundColor: WidgetStateProperty.all<Color>(primaryColor),
-      overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
       side: WidgetStateProperty.all<BorderSide>(BorderSide(color: primaryColor)),
       padding: WidgetStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.all(buttonPadding)),
       shape: WidgetStateProperty.all<OutlinedBorder>(
@@ -169,6 +177,8 @@ ElevatedButtonThemeData elevatedButtonTheme({bool darkMode = false}) {
   final primaryColor = darkMode ? DesignColorsDark.primaryColor : DesignColors.primaryColor;
   return ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
+      disabledBackgroundColor: Colors.grey.shade400,
+      backgroundColor: primaryColor,
       foregroundColor: Colors.white,
       surfaceTintColor: primaryColor,
       padding: const EdgeInsets.all(buttonPadding),
