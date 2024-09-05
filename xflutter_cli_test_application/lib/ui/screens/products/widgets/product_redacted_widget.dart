@@ -14,10 +14,16 @@ class ProductRedactedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: itemCount,
-      itemBuilder: (context, index) => const ProductCardWidget(Product()).redacted(
-        context: context,
-        redact: true,
-      ),
+      itemBuilder: (context, index) => const ProductCardWidget(
+        Product(
+          name: "Test Product",
+          media: [
+            Media(
+              originalUrl: "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+            ),
+          ],
+        ),
+      ).redacted(context: context, redact: true),
     );
   }
 }
