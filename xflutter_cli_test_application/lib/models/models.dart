@@ -16,3 +16,4 @@ export 'requests/verify_code_request/verify_code_request.dart';
 export 'requests/get_verification_code_request/get_verification_code_request.dart';
 export 'requests/reset_password_request/reset_password_request.dart';
 export 'requests/change_password_request/change_password_request.dart';
+export 'responses/login_response/login_response.dart';
