@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import 'package:xflutter_cli_test_application/ui/screens/products/widgets/product_list_widget.dart';
+import '../widgets/product_list_widget.dart';
 import '../viewmodels/products_viewmodel.dart';
 import 'package:xflutter_cli_test_application/ui/widgets/instance/instance_builder.dart';
 
@@ -12,7 +12,9 @@ class ProductsMobileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InstanceBuilder<ProductsViewModel>(
-      builder: (viewModel) => const ProductListWidget(),
+      builder: (viewModel) => ProductListWidget(
+        controller: viewModel.productsPagingDataSource,
+      ),
     );
   }
 }
