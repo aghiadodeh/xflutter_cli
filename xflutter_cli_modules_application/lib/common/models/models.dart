@@ -13,3 +13,6 @@ export 'data/product/product.dart';
 export 'requests/login_request/login_request.dart';
 export 'requests/verify_code_request/verify_code_request.dart';
 export 'requests/get_verification_code_request/get_verification_code_request.dart';
+export 'data/file_type/file_type.dart';
+export 'data/media/media.dart';
+export 'data/blog/blog.dart';
