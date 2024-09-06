@@ -1,3 +1,9 @@
+# backend authorization
+# it will be used every time you run: xflutter_cli generate model
+# and the model path start with "http" or "https"
+# xflutter_cli will send this value in Http Request Headers for fetch response
+authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODJjOWFmMTQwMDJjNzY0MTExMmZiYiIsImlhdCI6MTcyNDk2MjgzNn0.XFwrsi2vklCzzQzxrennvcAENdsf4amOAn-OJwR94M4'
+
 # xflutter_cli version when you initialize your application,
 #
 # If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
