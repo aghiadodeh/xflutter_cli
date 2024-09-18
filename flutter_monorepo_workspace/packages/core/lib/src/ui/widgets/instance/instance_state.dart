@@ -7,7 +7,7 @@ import 'package:flutterx_live_data/flutterx_live_data.dart';
 import 'package:core/src/models/models.dart';
 import 'package:core/src/viewmodels/base_viewmodel.dart';
 import 'package:core/src/utilities/ui/ui.dart';
-import 'package:core/src/utilities/di/di.dart';
+import 'package:core/src/utilities/dependencies/dependencies_management.dart';
 import 'instance_builder.dart';
 import 'instance_use.dart';
 

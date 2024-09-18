@@ -7,7 +7,7 @@ import 'package:flutterx_live_data/flutterx_live_data.dart';
 import 'package:xflutter_cli_test_application/models/models.dart';
 import 'package:xflutter_cli_test_application/viewmodels/base_viewmodel.dart';
 import 'package:xflutter_cli_test_application/utilities/ui/ui.dart';
-import 'package:xflutter_cli_test_application/utilities/di/di.dart';
+import 'package:xflutter_cli_test_application/utilities/dependencies/dependencies_management.dart';
 import 'instance_builder.dart';
 import 'instance_use.dart';
 

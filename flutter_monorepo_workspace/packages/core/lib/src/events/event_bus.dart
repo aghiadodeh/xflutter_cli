@@ -11,6 +11,12 @@ class SoftKeyboardEvent {
   const SoftKeyboardEvent();
 }
 
+/// Send event from non-context class to ui for back to previous screen
+class RouterBackEvent<T> {
+  T? data;
+  RouterBackEvent(this.data);
+}
+
 /// Send event from non-context class to ui for logOut
 class UnauthorizedEvent {
   const UnauthorizedEvent();

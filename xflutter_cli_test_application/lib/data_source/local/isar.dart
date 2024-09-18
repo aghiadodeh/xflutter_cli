@@ -3,7 +3,7 @@
 // more info: https://xflutter-cli.com
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:xflutter_cli_test_application/utilities/di/di.dart';
+import 'package:xflutter_cli_test_application/utilities/dependencies/dependencies_management.dart';
 import 'models/isar_models.dart';
 
 class AppIsar {

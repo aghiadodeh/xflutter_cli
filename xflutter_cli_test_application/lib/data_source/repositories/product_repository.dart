@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'dart:async';
 import 'package:xflutter_cli_test_application/data_source/repositories/base_repository.dart';
 import 'package:xflutter_cli_test_application/models/models.dart';
-import 'package:xflutter_cli_test_application/utilities/di/di.dart';
+import 'package:xflutter_cli_test_application/utilities/dependencies/dependencies_management.dart';
 import 'package:xflutter_cli_test_application/data_source/remote/product_rest_client/product_rest_client.dart';
 import 'package:xflutter_cli_test_application/utilities/http/connectivity.dart';
 import 'package:xflutter_cli_test_application/data_source/local/providers/product_local_data_provider.dart';
@@ -79,17 +79,29 @@ class ProductRepository extends BaseRepository {
         localDataProvider.insertAll(response.data!.data!, page: page);
       }
     }
-
-    // emit value to notify listener that the operation is finished
-    yield BaseResponse(success: success, data: null);
   }
 
-  Future<BaseResponse<Product>> findOne(int? id) {
+  Stream<BaseResponse<Product>> findOne(int? id) async* {
     final cancelToken = CancelToken();
-    return getResponse(
+
+    // get item from cache
+    final cached = localDataProvider.findOne(id);
+    if (cached != null) {
+      yield BaseResponse(success: true, data: cached.fromIsar());
+    }
+
+    // get item from remote server
+    final response = await getResponse(
       () => restClient.findOne(id: id, cancelToken: cancelToken),
       cancelToken: cancelToken,
     );
+
+    // update cache with new fetched item
+    if (response.data != null) {
+      localDataProvider.insertAll([response.data!]);
+    }
+
+    yield response;
   }
 
   Future<BaseResponse<dynamic>> delete(int? id) async {

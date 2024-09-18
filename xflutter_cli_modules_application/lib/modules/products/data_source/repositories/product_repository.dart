@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'dart:async';
 import 'package:xflutter_cli_modules_application/common/data_source/repositories/base_repository.dart';
 import 'package:xflutter_cli_modules_application/common/models/models.dart';
-import 'package:xflutter_cli_modules_application/core/utilities/di/di.dart';
+import 'package:xflutter_cli_modules_application/core/utilities/dependencies/dependencies_management.dart';
 import 'package:xflutter_cli_modules_application/modules/products/data_source/remote/product_rest_client/product_rest_client.dart';
 import 'package:xflutter_cli_modules_application/core/utilities/http/connectivity.dart';
 import 'package:xflutter_cli_modules_application/modules/products/data_source/local/product_local_data_provider.dart';

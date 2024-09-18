@@ -5,7 +5,7 @@ import 'package:isar/isar.dart';
 import 'package:xflutter_cli_test_application/data_source/local/isar.dart';
 import 'package:xflutter_cli_test_application/data_source/local/models/isar_models.dart';
 import 'package:xflutter_cli_test_application/models/models.dart';
-import 'package:xflutter_cli_test_application/utilities/di/di.dart';
+import 'package:xflutter_cli_test_application/utilities/dependencies/dependencies_management.dart';
 import 'package:xflutter_cli_test_application/environment/environment.dart';
 
 class UserLocalDataProvider {
@@ -13,10 +13,7 @@ class UserLocalDataProvider {
 
   /// [User] query builder with pagination
   QueryBuilder<IsarUser, IsarUser, QAfterLimit> _userQueryBuilder({int? page}) {
-    return isar.isarUsers
-        .where()
-        .sortById()
-        .optional(page != null, (q) => q.offset(offset(page!, Environment.perPage)).limit(Environment.perPage));
+    return isar.isarUsers.where().sortById().optional(page != null, (q) => q.offset(offset(page!, Environment.perPage)).limit(Environment.perPage));
   }
 
   /// find [User] from local-database

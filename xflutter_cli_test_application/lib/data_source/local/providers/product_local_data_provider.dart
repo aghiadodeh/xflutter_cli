@@ -5,7 +5,7 @@ import 'package:isar/isar.dart';
 import 'package:xflutter_cli_test_application/data_source/local/isar.dart';
 import 'package:xflutter_cli_test_application/data_source/local/models/isar_models.dart';
 import 'package:xflutter_cli_test_application/models/models.dart';
-import 'package:xflutter_cli_test_application/utilities/di/di.dart';
+import 'package:xflutter_cli_test_application/utilities/dependencies/dependencies_management.dart';
 import 'package:xflutter_cli_test_application/environment/environment.dart';
 import 'package:xflutter_cli_test_application/data_source/local/providers/user_local_data_provider.dart';
 import 'package:xflutter_cli_test_application/data_source/local/providers/category_local_data_provider.dart';
@@ -17,10 +17,7 @@ class ProductLocalDataProvider {
 
   /// [Product] query builder with pagination
   QueryBuilder<IsarProduct, IsarProduct, QAfterLimit> _productQueryBuilder({int? page}) {
-    return isar.isarProducts
-        .where()
-        .sortById()
-        .optional(page != null, (q) => q.offset(offset(page!, Environment.perPage)).limit(Environment.perPage));
+    return isar.isarProducts.where().sortById().optional(page != null, (q) => q.offset(offset(page!, Environment.perPage)).limit(Environment.perPage));
   }
 
   /// find [Product] from local-database

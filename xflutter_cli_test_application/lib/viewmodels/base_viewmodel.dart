@@ -74,28 +74,22 @@ abstract class BaseViewModel extends LifeCycle {
   /// [callback] return nullable [X] result if [request] success else return `null`
   Future<void> callStreamRequest<X>(
     Stream<BaseResponse<X>> Function() request, {
-    MutableLiveData<Result<X>>? result,
+    LiveResult<X>? result,
     Function()? loading,
     Function(X? result, bool success)? callback,
   }) async {
     // notify ui to show loader
     loading?.call();
-    if (result?.value is ResultIdle<X>) {
-      result?.postValue(Result<X>.loading());
-    }
+    result?.setLoading();
 
     await for (final response in request.call()) {
-      if (response.data == null) {
-        if (response.success == false) {
-          callback?.call(null, false);
-        }
-      } else if (response.success == true) {
+      if (response.success == true) {
         // success response
-        response.data?.let((it) => result?.postValue(Result<X>.data(it)));
+        response.data?.let((it) => result?.setResult(it));
         callback?.call(response.data, true);
       } else {
         // error response
-        result?.postValue(Result<X>.error(response.message));
+        result?.setError(response.message ?? "error");
         showUiMessage(
           uiMessage: UiMessage(
             message: response.message,

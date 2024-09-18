@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:core/src/utilities/di/di.dart';
+import 'package:core/src/utilities/dependencies/dependencies_management.dart';
 import 'package:core/src/events/event_bus.dart';
 import 'theme.dart';
 import 'dark_theme.dart';

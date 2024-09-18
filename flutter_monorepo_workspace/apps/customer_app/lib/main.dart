@@ -36,6 +36,11 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
+    // back to previous screen
+    eventBus.on<RouterBackEvent<dynamic>>().listen((event) {
+      appRouter.maybePop(event.data);
+    });
+
     // change Material-App current theme
     eventBus.on<ThemeChangedEvent>().listen((_) => setState(() {}));
 

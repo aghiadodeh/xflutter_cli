@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:xflutter_cli_modules_application/core/utilities/di/di.dart';
+import 'package:xflutter_cli_modules_application/core/utilities/dependencies/dependencies_management.dart';
 
 class AppStorage {
   /// get global instance from [SharedPreferences] which registered by [putInstance]

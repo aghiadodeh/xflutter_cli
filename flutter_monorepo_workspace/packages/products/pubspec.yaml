@@ -8,7 +8,7 @@ environment:
   flutter: '>=1.17.0'
 dependencies:
   redacted: ^1.0.12
-  animated_infinite_scroll_pagination: ^1.0.1
+  animated_infinite_scroll_pagination: ^1.0.2
   retrofit: ^4.0.1
   get_it: ^7.2.0
   dio: ^5.1.2

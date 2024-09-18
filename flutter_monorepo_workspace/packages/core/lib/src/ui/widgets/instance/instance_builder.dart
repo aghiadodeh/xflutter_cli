@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import 'package:core/src/utilities/di/di.dart';
+import 'package:core/src/utilities/dependencies/dependencies_management.dart';
 import 'instance_state.dart';
 
 class InstanceBuilder<T extends Object> extends StatefulWidget {

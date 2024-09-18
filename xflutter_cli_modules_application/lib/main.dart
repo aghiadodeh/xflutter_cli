@@ -5,7 +5,7 @@ import 'package:xflutter_cli_modules_application/common/data_source/local/isar.d
 import 'package:xflutter_cli_modules_application/common/ui/resources/themes/dark_theme.dart';
 import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme.dart';
 import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme_notifier.dart';
-import 'package:xflutter_cli_modules_application/core/utilities/di/di.dart';
+import 'package:xflutter_cli_modules_application/core/utilities/dependencies/dependencies_management.dart';
 import 'common/router/app_router.dart';
 import 'package:xflutter_cli_modules_application/core/events/event_bus.dart';
 import 'package:xflutter_cli_modules_application/core/storage/storage.dart';

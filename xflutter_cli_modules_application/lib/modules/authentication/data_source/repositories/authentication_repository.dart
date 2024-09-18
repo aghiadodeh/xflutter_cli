@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'dart:async';
 import 'package:xflutter_cli_modules_application/common/data_source/repositories/base_repository.dart';
 import 'package:xflutter_cli_modules_application/common/models/models.dart';
-import 'package:xflutter_cli_modules_application/core/utilities/di/di.dart';
+import 'package:xflutter_cli_modules_application/core/utilities/dependencies/dependencies_management.dart';
 import 'package:xflutter_cli_modules_application/modules/authentication/data_source/remote/authentication_rest_client/authentication_rest_client.dart';
 
 class AuthenticationRepository extends BaseRepository {

@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
 import 'package:core/src/viewmodels/base_viewmodel.dart';
-import 'package:core/src/utilities/di/di.dart';
+import 'package:core/src/utilities/dependencies/dependencies_management.dart';
 import 'instance_state.dart';
 
 /// wrap your [StatefulWidget] children widgets with the same global instance which registered in [InstanceState].
