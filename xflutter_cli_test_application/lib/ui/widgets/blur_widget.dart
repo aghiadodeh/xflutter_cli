@@ -2,7 +2,6 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-
 import 'dart:ui' as ui;
 
 class BlurWidget extends StatelessWidget {

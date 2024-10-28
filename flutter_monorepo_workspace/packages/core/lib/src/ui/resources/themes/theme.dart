@@ -7,7 +7,7 @@ import 'dart:io';
 import '../colors/colors.dart';
 import '../dimensions/dimensions.dart';
 
-const fontFamily = "Poppins"; // change as you wish
+const fontFamily = 'Poppins'; // change as you wish
 
 /// -------------- App Theme -------------- ///
 final lightTheme = ThemeData(
@@ -68,8 +68,8 @@ TextStyle outlinedButtonTextStyle({bool darkMode = false}) {
 TextStyle textButtonTextStyle({bool darkMode = false}) {
   final primaryColor = darkMode ? DesignColorsDark.primaryColor : DesignColors.primaryColor;
   return TextStyle(
+    fontSize: 16,
     color: primaryColor,
-    fontSize: 20,
     fontFamily: fontFamily,
     fontWeight: FontWeight.w400,
   );
@@ -82,16 +82,13 @@ TextStyle titleStyle(ThemeData theme) => TextStyle(
     );
 
 /// ----------------- [TextFormField] default styles ----------------- ///
-TextStyle hintStyle() => const TextStyle(fontSize: smallText, color: DesignColors.grey);
+const hintStyle = TextStyle(fontSize: smallText, color: DesignColors.grey);
 
-TextStyle errorStyle() => const TextStyle(fontSize: smallText, color: Colors.red);
+const errorStyle = TextStyle(fontSize: smallText, color: Colors.red);
 
-TextStyle labelStyle() => const TextStyle(
-      fontSize: smallText,
-      fontWeight: FontWeight.w500,
-    );
+const labelStyle = TextStyle(fontSize: smallText, fontWeight: FontWeight.w500);
 
-TextStyle textFieldStyle() => const TextStyle(fontSize: 15, fontWeight: FontWeight.w500);
+const textFieldStyle = TextStyle(fontSize: 15, fontWeight: FontWeight.w500);
 
 /// ----------------- [TextFormField] default border ----------------- ///
 OutlineInputBorder textFormFieldEnabledBorder() => OutlineInputBorder(
@@ -112,9 +109,9 @@ OutlineInputBorder textFormFieldErrorBorder(ThemeData themeData) => OutlineInput
     );
 
 InputDecoration textInputDecoration(ThemeData theme) => InputDecoration(
-      labelStyle: labelStyle(),
-      hintStyle: hintStyle(),
-      errorStyle: errorStyle(),
+      labelStyle: labelStyle,
+      hintStyle: hintStyle,
+      errorStyle: errorStyle,
       enabledBorder: textFormFieldEnabledBorder(),
       focusedBorder: textFormFieldFocusedBorder(theme),
       errorBorder: textFormFieldErrorBorder(theme),

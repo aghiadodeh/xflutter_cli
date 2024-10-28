@@ -4,10 +4,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'theme_widget.dart';
 
 class BaseScaffold extends StatefulWidget {
-  final Brightness? statusBarIconBrightness;
   final Widget? drawer;
   final PreferredSizeWidget? Function(BuildContext context, ThemeData theme)? appBar;
   final Widget? floatingActionButton;
@@ -23,7 +21,6 @@ class BaseScaffold extends StatefulWidget {
     this.appBar,
     this.drawer,
     this.floatingActionButton,
-    this.statusBarIconBrightness,
     this.backgroundColor,
     this.bottomNavigationBar,
     this.resizeToAvoidBottomInset,
@@ -41,27 +38,23 @@ class BaseScaffoldState extends State<BaseScaffold> {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeWidget(
-      builder: (context, theme) {
-        final systemUiOverlayStyle = theme.brightness == Brightness.dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark;
-
-        return AnnotatedRegion<SystemUiOverlayStyle>(
-          value: Platform.isIOS ? systemUiOverlayStyle : systemUiOverlayStyle.copyWith(statusBarColor: Colors.transparent),
-          child: Scaffold(
-            key: scaffoldKey,
-            extendBody: true,
-            extendBodyBehindAppBar: widget.extendBodyBehindAppBar,
-            backgroundColor: widget.backgroundColor ?? theme.scaffoldBackgroundColor,
-            drawer: widget.drawer,
-            body: widget.builder(context, theme),
-            appBar: widget.appBar?.call(context, theme),
-            floatingActionButton: widget.floatingActionButton,
-            bottomNavigationBar: widget.bottomNavigationBar,
-            resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
-            floatingActionButtonLocation: widget.floatingActionButtonLocation,
-          ),
-        );
-      },
+    final theme = Theme.of(context);
+    final systemUiOverlayStyle = theme.brightness == Brightness.dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark;
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: Platform.isIOS ? systemUiOverlayStyle : systemUiOverlayStyle.copyWith(statusBarColor: Colors.transparent),
+      child: Scaffold(
+        key: scaffoldKey,
+        extendBody: true,
+        extendBodyBehindAppBar: widget.extendBodyBehindAppBar,
+        backgroundColor: widget.backgroundColor ?? theme.scaffoldBackgroundColor,
+        drawer: widget.drawer,
+        body: widget.builder(context, theme),
+        appBar: widget.appBar?.call(context, theme),
+        floatingActionButton: widget.floatingActionButton,
+        bottomNavigationBar: widget.bottomNavigationBar,
+        resizeToAvoidBottomInset: widget.resizeToAvoidBottomInset,
+        floatingActionButtonLocation: widget.floatingActionButtonLocation,
+      ),
     );
   }
 }

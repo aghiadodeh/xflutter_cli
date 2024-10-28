@@ -15,7 +15,7 @@ class PaginationErrorWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: AppTextButton(
-          text: "Error try again",
+          text: 'Error try again',
           callback: () {
             retry?.call();
           },

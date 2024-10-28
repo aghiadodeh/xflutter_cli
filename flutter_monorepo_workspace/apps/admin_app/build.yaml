@@ -18,3 +18,7 @@ targets:
           enable_cached_builds: true
         generate_for:
           - lib/**_screen.dart
+      injectable_generator:injectable_builder:  
+        options:  
+          auto_register: true
+          file_name_pattern: "_module$" 

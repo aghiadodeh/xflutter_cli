@@ -9,11 +9,7 @@ import '../blur_widget.dart';
 class LiveDataFullScreenLoader extends StatelessWidget {
   final LiveData<bool> loading;
   final double blur;
-  const LiveDataFullScreenLoader({
-    required this.loading,
-    this.blur = 1.8,
-    super.key,
-  });
+  const LiveDataFullScreenLoader({required this.loading, this.blur = 1.8, super.key});
 
   @override
   Widget build(BuildContext context) {

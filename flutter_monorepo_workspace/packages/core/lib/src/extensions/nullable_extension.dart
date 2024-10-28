@@ -10,7 +10,7 @@ extension ObjectExt<T> on T {
   R let<R>(R Function(T it) op) => op(this);
 }
 
-extension ListUtils<T> on List<T?>? {
+extension ListUtils<T> on Iterable<T?>? {
   /// return empty list if the list is null
   List<T> get orEmpty {
     return filterNotNull;

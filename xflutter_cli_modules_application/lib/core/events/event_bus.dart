@@ -20,3 +20,9 @@ class UnauthorizedEvent {
 class ThemeChangedEvent {
   const ThemeChangedEvent();
 }
+
+/// Send event from non-context class to ui for back to previous screen
+class RouterBackEvent<T> {
+  T? data;
+  RouterBackEvent(this.data);
+}

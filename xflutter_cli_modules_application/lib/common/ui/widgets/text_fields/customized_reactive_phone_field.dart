@@ -9,11 +9,8 @@ class CustomizedReactivePhoneField extends StatelessWidget {
   final String formControlName;
   final String? labelText;
   final TextInputAction textInputAction;
-  final TextAlign textAlign;
   final TextStyle? textStyle;
   final bool editable;
-  final int maxLines;
-  final int minLines;
   final Widget? prefix;
   final Widget? suffix;
   final Widget? prefixIcon;
@@ -25,12 +22,9 @@ class CustomizedReactivePhoneField extends StatelessWidget {
   const CustomizedReactivePhoneField({
     required this.formControlName,
     this.labelText,
-    this.textAlign = TextAlign.start,
     this.textStyle,
     this.textInputAction = TextInputAction.next,
     this.editable = true,
-    this.maxLines = 1,
-    this.minLines = 1,
     this.prefix,
     this.suffix,
     this.prefixIcon,
@@ -49,25 +43,25 @@ class CustomizedReactivePhoneField extends StatelessWidget {
       formControlName: formControlName,
       textInputAction: textInputAction,
       onSubmitted: onSubmitted,
-      style: textStyle ?? textFieldStyle(),
+      style: textStyle ?? textFieldStyle,
       keyboardAppearance: Brightness.dark,
-      textAlign: textAlign,
+      textAlignVertical: TextAlignVertical.center,
       autocorrect: false,
-      maxLines: maxLines,
-      minLines: minLines,
       autofocus: false,
-      isCountryChipPersistent: true,
+      isCountryButtonPersistent: true,
       validationMessages: validationMessages ??
           {
-            'phone.required': (error) => "$labelText is required",
-            'phone.validMobile': (error) => "$labelText is not valid",
+            'phone.required': (error) => '$labelText is required',
+            'phone.validMobile': (error) => '$labelText is not valid',
           },
       countrySelectorNavigator: const CountrySelectorNavigator.draggableBottomSheet(
         initialChildSize: .8,
         maxChildSize: .95,
         minChildSize: .6,
+        addSeparator: true,
         titleStyle: smallTextStyle,
         subtitleStyle: verySmallTextStyle,
+        searchBoxTextStyle: normalTextStyle,
       ),
       decoration: textInputDecoration(theme).copyWith(
         labelText: labelText,

@@ -7,20 +7,28 @@ const scrollPhysics = BouncingScrollPhysics();
 
 class BaseScrollView extends StatelessWidget {
   final Widget child;
+  final EdgeInsets? padding;
   final ScrollPhysics? physics;
-  const BaseScrollView({required this.child, this.physics, super.key});
+  const BaseScrollView({
+    required this.child,
+    this.padding,
+    this.physics,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return LayoutBuilder(
       builder: (context, constraint) {
+        final height = constraint.maxHeight - (padding?.vertical ?? 0);
         return SingleChildScrollView(
+          padding: padding,
           physics: physics ?? scrollPhysics,
           child: ConstrainedBox(
             // expand child
             constraints: BoxConstraints(
-              minHeight: constraint.maxHeight,
+              minHeight: height,
               minWidth: screenSize.width,
             ),
             child: child,

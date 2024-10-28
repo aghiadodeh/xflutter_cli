@@ -1,8 +1,4 @@
-# melos_managed_dependency_overrides: core,products,orders
+# melos_managed_dependency_overrides: core
 dependency_overrides:
   core:
     path: ../../packages/core
-  orders:
-    path: ../../packages/orders
-  products:
-    path: ../../packages/products

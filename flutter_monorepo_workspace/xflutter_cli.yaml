@@ -5,13 +5,17 @@ workspace: flutter_monorepo_workspace
 #
 # If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
 # you can downgrade version manually by run command:
-# dart pub global activate xflutter_cli 2.3.2
-version: 2.3.2
+# dart pub global activate xflutter_cli 2.5.0
+version: 2.5.0
 
 # formatting line width
 # tool will format the dart files after Generating by running:
 # dart format . -l {format_line_width}
 format_line_width: 140
+
+# run "dart fix --apply" after execute generate and make commands
+# this will make your code more clear, you can configure linter with `analysis_options.yaml`
+apply_dart_fix: true
 
 # project modules
 modules:
@@ -27,10 +31,10 @@ modules:
       # the tool will generate and modify all components which located in this directory 
       # `main.dart` path for `app` template
       # `{package_path}/src` for `package` template
-      base: apps/customer_app/lib/
+      base: apps/customer_app/lib
       
       # path of `pubspec.yaml`
-      path: apps/customer_app/
+      path: apps/customer_app
       
       # project name (same of name in `pubspec.yaml`)
       name: customer_app
@@ -56,39 +60,19 @@ modules:
   - env:
       architecture: layers
       template: package
-      base: packages/core/lib/src/
-      path: packages/core/
+      base: packages/core/lib/src
+      path: packages/core
       name: core
-      flutter_version: 3.24.1
+      flutter_version: null
     generate:
       run_build_runner: true
       overwrite: false
   - env:
       architecture: layers
       template: app
-      base: apps/admin_app/lib/
-      path: apps/admin_app/
+      base: apps/admin_app/lib
+      path: apps/admin_app
       name: admin_app
-      flutter_version: 3.24.1
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: layers
-      template: package
-      base: packages/products/lib/src/
-      path: packages/products/
-      name: products
-      flutter_version: 3.24.1
-    generate:
-      run_build_runner: true
-      overwrite: false
-  - env:
-      architecture: modules
-      template: package
-      base: packages/orders/lib/src/
-      path: packages/orders/
-      name: orders
       flutter_version: 3.24.1
     generate:
       run_build_runner: true

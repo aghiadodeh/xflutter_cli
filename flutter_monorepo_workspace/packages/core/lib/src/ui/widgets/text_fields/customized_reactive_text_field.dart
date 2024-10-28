@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:core/src/ui/resources/themes/theme.dart';
 
-class CustomizedReactiveFormField extends StatelessWidget {
+class CustomizedReactiveFormField<T> extends StatelessWidget {
   final String formControlName;
   final String? labelText;
   final TextInputAction textInputAction;
@@ -51,11 +51,11 @@ class CustomizedReactiveFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return ReactiveTextField(
+    return ReactiveTextField<T>(
       formControlName: formControlName,
       textInputAction: textInputAction,
       onSubmitted: onSubmitted,
-      style: textStyle ?? textFieldStyle(),
+      style: textStyle ?? textFieldStyle,
       keyboardAppearance: Brightness.dark,
       textCapitalization: textCapitalization ?? TextCapitalization.none,
       textAlign: textAlign,
@@ -67,8 +67,8 @@ class CustomizedReactiveFormField extends StatelessWidget {
       autofocus: false,
       validationMessages: validationMessages ??
           {
-            'required': (error) => "$labelText is required",
-            'email': (error) => "Email is invalid",
+            'required': (error) => '$labelText is required',
+            'email': (error) => 'Email is invalid',
           },
       decoration: textInputDecoration(theme).copyWith(
         labelText: labelText,

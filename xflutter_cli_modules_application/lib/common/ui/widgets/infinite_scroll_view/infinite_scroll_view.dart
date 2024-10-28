@@ -71,8 +71,13 @@ class InfiniteScrollView<T, C extends AnimatedInfinitePaginationController<T>> e
         topWidgets: topWidgets,
         footerLoadingWidget: const Center(child: PaginationLoaderWidget()),
         loadingWidget: loadingWidget ?? const CustomizedAnimatedWidget(child: Loader()),
-        errorWidget: PaginationErrorWidget(
-          retry: retry ?? () => controller.fetchNewChunk(page: controller.page),
+        errorWidget: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            PaginationErrorWidget(
+              retry: retry ?? () => controller.fetchNewChunk(page: controller.page),
+            ),
+          ],
         ),
         onRefresh: onRefresh,
         itemBuilder: itemBuilder,

@@ -22,7 +22,7 @@ class SecureStorage {
   }
 
   /// Read value
-  static Future<dynamic> read({required String key}) async {
+  static Future<String?> read({required String key}) async {
     return await _storage.read(
       key: key,
       aOptions: _androidOptions,

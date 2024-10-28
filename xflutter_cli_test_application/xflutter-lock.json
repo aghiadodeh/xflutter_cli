@@ -1,0 +1,453 @@
+{
+  "w": null,
+  "m": [
+    {
+      "id": "1730118949723377",
+      "utc": "2024-10-28T12:35:49.723695Z",
+      "e": {
+        "a": "layers",
+        "t": "app",
+        "b": "lib",
+        "p": "",
+        "n": "xflutter_cli_test_application",
+        "fv": "3.24.1"
+      },
+      "mo": [
+        {
+          "id": "1730118949751439",
+          "cn": "",
+          "p": "flutter_native_splash.yaml",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949755378",
+          "cn": "",
+          "p": "flutter_launcher_icons.yaml",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949759626",
+          "cn": "",
+          "p": "assets/localization/en.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949761660",
+          "cn": "",
+          "p": "assets/images/.gitignore",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949762352",
+          "cn": "",
+          "p": "assets/svgs/.gitkeep",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949763107",
+          "cn": "",
+          "p": "router/app_router.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949777108",
+          "cn": "",
+          "p": "build.yaml",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949780132",
+          "cn": "",
+          "p": "di/app_injectable.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949785695",
+          "cn": "",
+          "p": "di/modules/app_module.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "provideDio",
+              "n": "",
+              "nullable": false,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1730118949787518",
+          "cn": "",
+          "p": "data/models/responses/base_response/base_response.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949789903",
+          "cn": "",
+          "p": "data/models/responses/list_response/list_response.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949791788",
+          "cn": "",
+          "p": "data/models/ui_models/ui_message/ui_message.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949792770",
+          "cn": "",
+          "p": "utilities/ui/ui.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949793830",
+          "cn": "",
+          "p": "utilities/di/dependency_locator.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949795433",
+          "cn": "",
+          "p": "utilities/async/debouncer.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949796786",
+          "cn": "",
+          "p": "utilities/network/connectivity.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949798571",
+          "cn": "",
+          "p": "extensions/di_extension.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949799574",
+          "cn": "",
+          "p": "extensions/view_extension.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949800246",
+          "cn": "",
+          "p": "extensions/assets_extension.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949801093",
+          "cn": "",
+          "p": "extensions/nullable_extension.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949801778",
+          "cn": "",
+          "p": "extensions/live_data_extension.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949802889",
+          "cn": "",
+          "p": "extensions/reactive_form_extension.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949803712",
+          "cn": "",
+          "p": "events/event_bus.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949805166",
+          "cn": "",
+          "p": "storage/storage.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949871301",
+          "cn": "",
+          "p": "storage/secure_storage.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949874619",
+          "cn": "",
+          "p": "extensions/theme_extension.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118949876555",
+          "cn": "",
+          "p": "ui/resources/colors/colors.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118952029273",
+          "cn": "",
+          "p": "ui/resources/colors/dark_colors.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953440776",
+          "cn": "",
+          "p": "ui/resources/themes/theme.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953444296",
+          "cn": "",
+          "p": "ui/resources/themes/dark_theme.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953446309",
+          "cn": "",
+          "p": "ui/resources/dimensions/dimensions.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953448706",
+          "cn": "",
+          "p": "ui/resources/themes/theme_notifier.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953454265",
+          "cn": "",
+          "p": "ui/widgets/text_fields/customized_text_form_field.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953456180",
+          "cn": "",
+          "p": "ui/widgets/text_fields/customized_reactive_text_field.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953459265",
+          "cn": "",
+          "p": "ui/widgets/text_fields/customized_reactive_phone_field.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953462193",
+          "cn": "",
+          "p": "utilities/validators/matching_validator.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953463779",
+          "cn": "",
+          "p": "ui/widgets/buttons/back_button.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953464613",
+          "cn": "",
+          "p": "ui/widgets/core/theme_widget.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953465240",
+          "cn": "",
+          "p": "ui/widgets/core/base_scaffold.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953465869",
+          "cn": "",
+          "p": "ui/widgets/core/base_scrollview.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953466483",
+          "cn": "",
+          "p": "ui/widgets/core/base_appbar.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953467626",
+          "cn": "",
+          "p": "ui/widgets/blur_widget.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118953468667",
+          "cn": "",
+          "p": "ui/widgets/infinite_scroll_view/infinite_scroll_view.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965152597",
+          "cn": "",
+          "p": "ui/widgets/infinite_scroll_view/pagination_error_widget.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965153942",
+          "cn": "",
+          "p": "ui/widgets/infinite_scroll_view/pagination_load_widget.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965155087",
+          "cn": "",
+          "p": "ui/widgets/loaders/full_screen_loader.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965156080",
+          "cn": "",
+          "p": "ui/widgets/loaders/live_data_loader.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965158972",
+          "cn": "",
+          "p": "ui/widgets/loaders/loader.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965160906",
+          "cn": "",
+          "p": "ui/widgets/buttons/text_button.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965161542",
+          "cn": "",
+          "p": "ui/widgets/buttons/customized_button.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965162295",
+          "cn": "",
+          "p": "ui/widgets/animations/customized_animated_widget.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965164211",
+          "cn": "",
+          "p": "ui/widgets/animations/animated_column.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965165133",
+          "cn": "",
+          "p": "data/models/di/di_scope/di_scope.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965169602",
+          "cn": "",
+          "p": "viewmodels/base_params.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965171567",
+          "cn": "",
+          "p": "viewmodels/base_viewmodel.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965177023",
+          "cn": "",
+          "p": "ui/widgets/instance/lifecycle_owner.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965219325",
+          "cn": "",
+          "p": "ui/widgets/instance/instance_builder.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965220855",
+          "cn": "",
+          "p": "environments/environments.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118965241957",
+          "cn": "",
+          "p": "utilities/network/http_interceptor.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118966394342",
+          "cn": "",
+          "p": "data/repositories/base_repository.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730118966400948",
+          "cn": "",
+          "p": "main.dart",
+          "e": false,
+          "pr": []
+        }
+      ]
+    }
+  ]
+}

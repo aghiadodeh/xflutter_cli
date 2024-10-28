@@ -2,21 +2,16 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import 'package:xflutter_cli_test_application/utilities/dependencies/dependencies_management.dart';
-import 'instance_state.dart';
+import 'package:get_it/get_it.dart';
 
 class InstanceBuilder<T extends Object> extends StatefulWidget {
-  /// callback which wrap your widgets with the same global instance you registered in [InstanceState].
+  /// callback which wrap your widgets with the same global instance you registered with [GetIt].
   final Widget Function(T viewModel) builder;
 
   /// pass [instanceName] if you want to register more than one instance in same lifeCycle
   final String? instanceName;
 
-  /// wrap child widgets with the same global instance which registered in [InstanceState].
-  ///
-  /// no more passing variables from parent to children.
-  ///
-  /// just create instance in the parent in use this instance in the children widgets.
+  /// wrap child widgets with the same global instance which registered with [GetIt].
   const InstanceBuilder({this.instanceName, required this.builder, super.key});
 
   @override
@@ -26,6 +21,6 @@ class InstanceBuilder<T extends Object> extends StatefulWidget {
 class _InstanceBuilderState<T extends Object> extends State<InstanceBuilder<T>> {
   @override
   Widget build(BuildContext context) {
-    return widget.builder.call(findInstance<T>(instanceName: widget.instanceName));
+    return widget.builder.call(GetIt.instance.get<T>(instanceName: widget.instanceName));
   }
 }

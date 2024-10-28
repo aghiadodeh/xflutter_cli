@@ -3,22 +3,21 @@
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:xflutter_cli_modules_application/core/utilities/dependencies/dependencies_management.dart';
-import 'package:xflutter_cli_modules_application/core/events/event_bus.dart';
 import 'theme.dart';
 import 'dark_theme.dart';
+import 'package:xflutter_cli_modules_application/core/events/event_bus.dart';
+import 'package:xflutter_cli_modules_application/core/extensions/di_extension.dart';
 
+@lazySingleton
 class ThemeNotifier {
-  final themeMode = MutableLiveData(value: ThemeMode.light);
+  final _themeMode = MutableLiveData(value: ThemeMode.light);
+  LiveData<ThemeMode> get themeMode => _themeMode;
+
   ThemeData get theme => themeMode.value == ThemeMode.dark ? darkTheme : lightTheme;
 
-  SharedPreferences get _sharedPreferences => findInstance<SharedPreferences>();
-
-  /// register global instance of [ThemeNotifier].
-  static Future<void> initialize() async {
-    putInstance(ThemeNotifier());
-  }
+  SharedPreferences get _sharedPreferences => getIt<SharedPreferences>();
 
   ThemeNotifier() {
     initializeThemeMode();
@@ -26,17 +25,17 @@ class ThemeNotifier {
 
   /// check last saved [ThemeMode] from localStorage
   void initializeThemeMode() {
-    final darkMode = _sharedPreferences.getBool("dark_theme") ?? false;
+    final darkMode = _sharedPreferences.getBool('dark_theme') ?? false;
     final themeMode = darkMode ? ThemeMode.dark : ThemeMode.light;
     if (themeMode != this.themeMode.value) {
-      this.themeMode.postValue(themeMode);
+      _themeMode.postValue(themeMode);
     }
   }
 
   /// change [ThemeMode]
   Future<void> changeThemeMode(ThemeMode mode) async {
     await _sharedPreferences.setBool('dark_theme', mode == ThemeMode.dark);
-    themeMode.postValue(mode);
+    _themeMode.postValue(mode);
     eventBus.fire(const ThemeChangedEvent());
   }
 }

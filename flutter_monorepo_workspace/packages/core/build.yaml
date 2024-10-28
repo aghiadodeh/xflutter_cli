@@ -13,8 +13,8 @@ targets:
           ignore_unannotated: false
           include_if_null: true
           generic_argument_factories: true
-      auto_route_generator:auto_route_generator:
-        options:
-          enable_cached_builds: true
-        generate_for:
-          - lib/**_screen.dart
+      
+      injectable_generator:injectable_builder:  
+        options:  
+          auto_register: true
+          file_name_pattern: "_module$" 

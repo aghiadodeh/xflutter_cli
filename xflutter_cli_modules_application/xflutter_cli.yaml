@@ -1,20 +1,18 @@
-# backend authorization
-# it will be used every time you run: xflutter_cli generate model
-# and the model path start with "http" or "https"
-# xflutter_cli will send this value in Http Request Headers for fetch response
-authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODJjOWFmMTQwMDJjNzY0MTExMmZiYiIsImlhdCI6MTcyNDk2MjgzNn0.XFwrsi2vklCzzQzxrennvcAENdsf4amOAn-OJwR94M4'
-
 # xflutter_cli version when you initialize your application,
 #
 # If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
 # you can downgrade version manually by run command:
-# dart pub global activate xflutter_cli 2.3.2
-version: 2.3.2
+# dart pub global activate xflutter_cli 2.5.0
+version: 2.5.0
 
 # formatting line width
 # tool will format the dart files after Generating by running:
 # dart format . -l {format_line_width}
 format_line_width: 140
+
+# run "dart fix --apply" after execute generate and make commands
+# this will make your code more clear, you can configure linter with `analysis_options.yaml`
+apply_dart_fix: true
 
 # project modules
 modules:
@@ -30,7 +28,7 @@ modules:
       # the tool will generate and modify all components which located in this directory 
       # `main.dart` path for `app` template
       # `{package_path}/src` for `package` template
-      base: lib/
+      base: lib
       
       # path of `pubspec.yaml`
       path: 

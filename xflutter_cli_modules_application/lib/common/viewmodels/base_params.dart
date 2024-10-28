@@ -2,13 +2,26 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import 'package:xflutter_cli_modules_application/common/models/models.dart';
+import 'package:flutterx_live_data/flutterx_live_data.dart';
+import '../data/models/ui_models/ui_message/ui_message.dart';
 import 'package:xflutter_cli_modules_application/core/extensions/live_data_extension.dart';
 
 class BaseParams {
-  /// request in progress
-  final loading = false.liveData;
+  /// display progress widget
+  final _loading = false.liveData;
+  LiveData<bool> get loading => _loading;
 
-  /// UI [SnackBar] message
-  final uiMessage = UiMessage().liveEvent;
+  /// UI [SnackBar] event emitter
+  final _uiMessage = const UiMessage().liveEvent;
+  ObservableData<UiMessage> get uiMessage => _uiMessage;
+
+  /// update [_loading] with new [value]
+  void setLoading(bool value) {
+    _loading.postValue(value);
+  }
+
+  /// emit new [UiMessage]
+  void emitUiMessage(UiMessage value) {
+    _uiMessage.send(value);
+  }
 }

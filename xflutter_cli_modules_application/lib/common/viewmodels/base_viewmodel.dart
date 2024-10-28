@@ -3,99 +3,76 @@
 // more info: https://xflutter-cli.com
 import 'dart:async';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
-import 'package:xflutter_cli_modules_application/common/models/models.dart';
-import 'package:xflutter_cli_modules_application/core/utilities/http/connectivity.dart';
-import 'package:xflutter_cli_modules_application/core/extensions/nullable_extension.dart';
-import 'package:xflutter_cli_modules_application/common/ui/widgets/result/result_builder.dart';
 import 'base_params.dart';
+import '../data/models/ui_models/ui_message/ui_message.dart';
+import '../data/models/responses/base_response/base_response.dart';
+import 'package:xflutter_cli_modules_application/core/extensions/nullable_extension.dart';
 
 abstract class BaseViewModel extends LifeCycle {
-  late final baseParams = BaseParams();
+  final baseParams = BaseParams();
 
-  /// call http request, check if user connecting to internet
+  /// handle calling http request
   ///
-  /// [loading] is optional [MutableLiveData] params which control your ui-loader (ProgressBar) while request in-progress.
-  /// [result] is optional [MutableLiveData].[Result] params which control your [ResultBuilder].
+  /// [result] is optional [LiveResult] params which control your [LiveResultBuilder].
+  /// [setLoading] is optional [Function] which control your ui-loader while request in-progress.
   /// [request] is a [Future] return type of [BaseResponse] called inside [callHttpRequest].
   /// [callback] is a [Function] called after [request] fetched,
   /// [callback] return nullable [X] result if [request] success else return `null`
   Future<void> callHttpRequest<X>(
     Future<BaseResponse<X>> Function() request, {
-    MutableLiveData<Result<X>>? result,
-    MutableLiveData<bool>? loading,
+    LiveResult<X>? result,
+    Function(bool value)? setLoading,
     Function(X? result, bool success)? callback,
   }) async {
-    // check if connecting to internet
-    bool isOnline = await isConnectingToInternet();
-    if (isOnline) {
-      // notify ui to show loader
-      loading?.postValue(true);
-      if (result?.value is ResultIdle<X>) {
-        result?.postValue(Result<X>.loading());
-      }
+    // notify ui to show loader
+    setLoading?.call(true);
+    result?.setLoading();
 
-      // call http request
-      final response = await request.call();
-      if (response.isSuccess) {
-        // success response
-        response.data?.let((it) => result?.postValue(Result<X>.data(it)));
-        callback?.call(response.data, true);
-      } else {
-        // error response
-        result?.postValue(Result<X>.error(response.message));
-        showUiMessage(
-          uiMessage: UiMessage(
-            message: response.message,
-            state: UiMessageState.error,
-          ),
-        );
-        callback?.call(null, false);
-      }
-      loading?.postValue(false);
+    // call http request
+    final response = await request.call();
+    if (response.isSuccess) {
+      // success response
+      response.data?.let((it) => result?.setResult(it));
+      callback?.call(response.data, true);
     } else {
-      // notify error message
-      result?.postValue(Result<X>.error("check_internet_connection"));
+      // error response
+      result?.setError(response.message ?? 'error');
       showUiMessage(
         uiMessage: UiMessage(
-          message: "check_internet_connection",
+          message: response.message,
           state: UiMessageState.error,
         ),
       );
       callback?.call(null, false);
     }
+    setLoading?.call(false);
   }
 
   /// call http request with stream, this function used if your repository fetch data from multiple data-source (local and remote)
   ///
-  /// [loading] is optional [Function] params which control your ui-loader (ProgressBar) while request in-progress.
-  /// [result] is optional [MutableLiveData].[Result] params which control your [ResultBuilder].
+  /// [setLoading] is optional [Function] which control your ui-loader while request in-progress.
+  /// [result] is optional [LiveResult] params which control your [LiveResultBuilder].
   /// [request] is a [Future] return type of [BaseResponse] called inside [callStreamRequest].
   /// [callback] is a [Function] called after [request] fetched,
   /// [callback] return nullable [X] result if [request] success else return `null`
   Future<void> callStreamRequest<X>(
     Stream<BaseResponse<X>> Function() request, {
-    MutableLiveData<Result<X>>? result,
-    Function()? loading,
+    LiveResult<X>? result,
+    Function(bool value)? setLoading,
     Function(X? result, bool success)? callback,
   }) async {
     // notify ui to show loader
-    loading?.call();
-    if (result?.value is ResultIdle<X>) {
-      result?.postValue(Result<X>.loading());
-    }
+    setLoading?.call(true);
+    result?.setLoading();
 
     await for (final response in request.call()) {
-      if (response.data == null) {
-        if (response.success == false) {
-          callback?.call(null, false);
-        }
-      } else if (response.success == true) {
+      if (response.success == true) {
         // success response
-        response.data?.let((it) => result?.postValue(Result<X>.data(it)));
+        response.data?.let((it) => result?.setResult(it));
         callback?.call(response.data, true);
       } else {
         // error response
-        result?.postValue(Result<X>.error(response.message));
+        result?.setError(response.message ?? 'error');
         showUiMessage(
           uiMessage: UiMessage(
             message: response.message,
@@ -104,24 +81,24 @@ abstract class BaseViewModel extends LifeCycle {
         );
         callback?.call(null, false);
       }
+      setLoading?.call(false);
     }
   }
 
   /// show message through snackbar
   void showUiMessage({required UiMessage uiMessage}) {
-    baseParams.uiMessage.send(uiMessage);
+    baseParams.emitUiMessage(uiMessage);
   }
 }
 
-/// controlled from you custom widget or [InstanceState]
+/// Controlled from [LifecycleOwner] widget
 abstract class LifeCycle {
   /// Called immediately after the widget is allocated in memory.
   void onInit() {}
 
-  /// Called 1 frame after onInit(). It is the perfect place to enter
-  /// navigation, events, like snackBar, dialogs, or a new route
+  /// Called 1 frame after onInit(). It is the perfect place to enter navigation, events, like snackBar, dialogs, or a new route.
   void onReady() {}
 
-  /// Called immediately before the widget is disposed
+  /// Called immediately before the widget is disposed.
   void onDispose() {}
 }

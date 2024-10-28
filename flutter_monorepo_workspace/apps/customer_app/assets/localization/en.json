@@ -1,23 +1,4 @@
 {
   "app_name": "CustomerApp",
-  "check_internet_connection": "Check Your Internet Connection",
-  "login": "Login",
-  "email": "Email",
-  "password": "Password",
-  "next": "Next",
-  "not_have_account": "Don't have an account?",
-  "create_account": "Create new Account",
-  "already_have_account": "Already have an account?",
-  "register": "Register",
-  "name": "Name",
-  "confirm_password": "Confirm password",
-  "verify_pin_code": "Verify Pin Code",
-  "resend_code": "Resend Code",
-  "please_enter_code": "Please enter the code we’ve sent to ",
-  "code_resent": "The code has been re-sent",
-  "forget_password": "Forget Password",
-  "reset_password": "Reset Password",
-  "new_password": "New password",
-  "change_password": "Change Password",
-  "old_password": "Old password"
+  "check_internet_connection": "Check Your Internet Connection"
 }
