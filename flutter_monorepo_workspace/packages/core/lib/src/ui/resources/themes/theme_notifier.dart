@@ -38,4 +38,13 @@ class ThemeNotifier {
     _themeMode.postValue(mode);
     eventBus.fire(const ThemeChangedEvent());
   }
+
+  /// Change [ThemeMode] depending on [themeMode] value
+  ///
+  /// change to [ThemeMode.dark] if [themeMode] == [ThemeMode.light]
+  /// change to [ThemeMode.light] if [themeMode] == [ThemeMode.dark]
+  Future<void> toggleThemeMode() async {
+    final mode = themeMode.value == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+    await changeThemeMode(mode);
+  }
 }

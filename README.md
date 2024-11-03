@@ -19,16 +19,16 @@ If activation doesn't work, Check dart docs:
 
 Available commands:
 
-1- create: Create new Flutter App, Package or MonoRepo workspace and Initialize it.
+1- create: Create new Flutter Application, Package or Monorepo workspace and Initialize it.
 ```sh
 # create new app
-xflutter_cli create --name=my_app --package=com.my_package_name
+xflutter_cli create --name=my_app --package=com.my_org
 
 # create new package
 xflutter_cli create --name=test_package --template=package
 
 # create monorepo workspace (multiple apps with shared packages)
-xflutter_cli create --name=test_workspace --template=workspace
+xflutter_cli create --name=monorepo_workspace --template=workspace
 ```
 - generate: Generates and/or modifies files based on a schematic.
 ```sh
@@ -38,11 +38,11 @@ xflutter_cli g screen --path=ui/screens/login
 # generate new form
 xflutter_cli g form --path=ui/screens/login
 
-# generate @Freezed model from json file
+# generate @freezed model from http response or json file
 xflutter_cli g model
 
-# generate CRUD (create, read, update and delete) apis
-xflutter_cli g crud
+# generate data layer (repository and retrofit rest-client) for (create, read, update and delete) APIs
+xflutter_cli g remote
 
 # generate --help
 xflutter_cli g --help
@@ -50,11 +50,21 @@ xflutter_cli g --help
 - make: generates new module depending on xflutter-cli commands.
 ```sh
 # generate login, register, forget-password and reset-password screens with network-layer
-xflutter_cli make auth --type=credentials
+xflutter_cli make auth --auth-type=credentials
 
 # generate login with phone and verify-otp screens with network-layer
-xflutter_cli make auth --type=phone
+xflutter_cli make auth --auth-type=phone
 ```
+- graph: generate workspace graph to display applications and packages relations
+```sh
+xflutter_cli graph
+```
+
+- git: manage git repository with automatic configurations like formatting, commit type before push
+```sh
+xflutter_cli git
+```
+
 - init: Initialize your project with necessary packages and reusable files.
 ```sh
 xflutter_cli initialize
@@ -70,22 +80,26 @@ xflutter_cli --help
 
 - (form): generate form inside your screen widgets with inputs such as (email, password) with state management.
 
-- (model): generate @freezed models from json file.
+- (model): generate @freezed models from http response or json file.
 
-- (crud): generate (RestClient and repository) for specific data model.
+- (remote): generate remote data layer for (create, read, update and delete) APIs for specific data model.
 
-- (isar): generate local-database layer for specific data model. 
+- (offline): generate local-database layer for specific data model. 
 
-- (paging): make a viewModel extends (PaginationViewModel) after generate CRUD.
+- (paging): generate paging data-source layer to by generating infinite pagination widgets and link them with generated CRUD.
 
 ### generate flags:
 
-- (responsive): used with (generate screen), give you the ability to wrap tablet and mobile layouts in your screen (tablet screen will not generated).
+- (mobile): used with (generate screen), give you the ability to wrap tablet and mobile layouts in your screen (tablet screen will not generated).
 
 - (tablet): used with (generate screen), give you the ability to wrap tablet and mobile layouts in your screen (generate mobile and tablet screens).
 
-- (di): used with (generate screen), state management with dependency injection to manage variables between screen and children widgets.
+- (state-management): used with (generate screen), state management with dependency injection to manage variables between screen and children widgets.
 
 - (theme): used with (generate screen), initialize your global app theme.
 
 - (router): used with (generate screen), give you ability to manage navigation between screens, initialize (auto_route) package and wrap the generated screen in app routes.
+
+## [Library](https://pub.dev/packages/xflutter_cli)
+
+## [Monorepo Article](https://medium.com/p/4b307b80ab91)
