@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutterx_live_data/flutterx_live_data.dart';
 import 'extensions/di_extension.dart';
 import 'events/event_bus.dart';
 import 'router/app_router.dart';
@@ -47,9 +48,6 @@ class _MyAppState extends State<MyApp> {
       appRouter.maybePop(event.data);
     });
 
-    // change Material-App current theme
-    eventBus.on<ThemeChangedEvent>().listen((_) => setState(() {}));
-
     // hide soft keyboard when (non-context class) emit event
     eventBus.on<SoftKeyboardEvent>().listen((_) {
       if (mounted) hideSoftKeyboard(context);
@@ -70,20 +68,22 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final themeMode = getIt<ThemeNotifier>().themeMode.value;
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onTap: () => hideSoftKeyboard(context),
-      child: MaterialApp.router(
-        routerDelegate: appRouter.delegate(),
-        routeInformationParser: appRouter.defaultRouteParser(),
-        theme: lightTheme,
-        darkTheme: darkTheme,
-        themeMode: themeMode,
-        locale: context.locale,
-        debugShowCheckedModeBanner: false,
-        supportedLocales: context.supportedLocales,
-        localizationsDelegates: context.localizationDelegates,
+      child: LiveDataBuilder<ThemeMode>(
+        data: getIt<ThemeNotifier>().themeMode,
+        builder: (context, themeMode) => MaterialApp.router(
+          routerDelegate: appRouter.delegate(),
+          routeInformationParser: appRouter.defaultRouteParser(),
+          theme: lightTheme,
+          darkTheme: darkTheme,
+          themeMode: themeMode,
+          locale: context.locale,
+          debugShowCheckedModeBanner: false,
+          supportedLocales: context.supportedLocales,
+          localizationsDelegates: context.localizationDelegates,
+        ),
       ),
     );
   }

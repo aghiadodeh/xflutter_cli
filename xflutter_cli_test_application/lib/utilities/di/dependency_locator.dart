@@ -4,7 +4,7 @@
 import 'package:get_it/get_it.dart';
 
 class DependencyLocator {
-  /// create a global instance inside [GetIt]
+  /// create a global instance with [GetIt]
   static void putLazyInstance<T extends Object>(T Function() instance, {String? instanceName}) {
     /// avoid register more than one time.
     if (isRegistered<T>(instanceName: instanceName)) return;
@@ -14,7 +14,7 @@ class DependencyLocator {
     } catch (_) {}
   }
 
-  /// create a global instance inside [GetIt] in async way
+  /// create a global instance with [GetIt] in async way
   static void putLazyInstanceAsync<T extends Object>(Future<T> Function() instance, {String? instanceName}) {
     /// avoid register more than one time.
     if (isRegistered<T>(instanceName: instanceName)) return;
@@ -36,7 +36,7 @@ class DependencyLocator {
     }
   }
 
-  /// check if instance already registered inside [GetIt]
+  /// check if instance already registered with [GetIt]
   static bool isRegistered<T extends Object>({T? instance, String? instanceName}) {
     return GetIt.I.isRegistered<T>(instance: instance, instanceName: instanceName);
   }

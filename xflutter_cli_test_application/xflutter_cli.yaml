@@ -54,3 +54,13 @@ modules:
       # overwrite file if exists
       overwrite: false
     
+  - env:
+      architecture: modules
+      template: package
+      base: packages/products/lib/src
+      path: packages/products
+      name: products
+      flutter_version: 3.24.1
+    generate:
+      run_build_runner: true
+      overwrite: false

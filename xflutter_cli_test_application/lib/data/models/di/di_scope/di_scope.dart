@@ -14,13 +14,13 @@ class DiScope with _$DiScope {
     /// scope factory.
     required GetIt Function() factory,
 
-    /// drop scope on dispose
+    /// drop scope on dispose.
     @Default(false) bool dispose,
 
-    /// drop scope on lifeCycle-Owner dispose
+    /// drop scope on lifeCycle-Owner dispose.
     @Default(true) bool disposeOwner,
 
-    /// instances that [DiScope] depends on, this array will be register before register [DiScope].
+    /// instances that [DiScope] depends on, this dependencies will be registered before register this [DiScope].
     @Default([]) List<DiScope> dependencies,
   }) = _DiScope;
 }

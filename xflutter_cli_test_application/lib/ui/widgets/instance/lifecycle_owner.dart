@@ -124,12 +124,4 @@ mixin LifecycleOwner<T extends StatefulWidget, VM extends BaseViewModel> on Stat
       viewModel.onReady();
     });
   }
-
-  /// callback which wrap your widgets
-  Widget screen(BuildContext context, VM viewModel);
-
-  @override
-  Widget build(BuildContext context) {
-    return screen(context, viewModel);
-  }
 }

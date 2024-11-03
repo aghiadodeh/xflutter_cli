@@ -11,7 +11,6 @@ enum UiMessageState {
   initial,
 }
 
-// UiMessage class with @freezed annotation
 @freezed
 class UiMessage with _$UiMessage {
   Color? get color {
