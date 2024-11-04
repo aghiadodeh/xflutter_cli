@@ -586,6 +586,248 @@
           "p": "common/ui/widgets/text_fields/verify_pin_code_widget.dart",
           "e": false,
           "pr": []
+        },
+        {
+          "id": "1730747017673571",
+          "cn": "Review",
+          "p": "modules/products/data/models/entities/review/review.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "rating",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "comment",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "DateTime",
+              "n": "date",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "reviewerName",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "reviewerEmail",
+              "nullable": true,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1730747017701623",
+          "cn": "Meta",
+          "p": "modules/products/data/models/entities/meta/meta.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "DateTime",
+              "n": "createdAt",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "DateTime",
+              "n": "updatedAt",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "barcode",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "qrCode",
+              "nullable": true,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1730747017706088",
+          "cn": "Dimensions",
+          "p": "modules/products/data/models/entities/dimensions/dimensions.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "num",
+              "n": "width",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "num",
+              "n": "height",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "num",
+              "n": "depth",
+              "nullable": true,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1730747017709471",
+          "cn": "Product",
+          "p": "modules/products/data/models/entities/product/product.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "title",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "description",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "category",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "num",
+              "n": "price",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "num",
+              "n": "discountPercentage",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "num",
+              "n": "rating",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "stock",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "tags",
+              "nullable": true,
+              "l": true
+            },
+            {
+              "t": "String",
+              "n": "brand",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "sku",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "weight",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "Dimensions",
+              "n": "dimensions",
+              "nullable": true,
+              "l": false,
+              "p": "modules/products/data/models/entities/dimensions/dimensions.dart",
+              "m": "1730719554306514"
+            },
+            {
+              "t": "String",
+              "n": "warrantyInformation",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "shippingInformation",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "availabilityStatus",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "Review",
+              "n": "reviews",
+              "nullable": true,
+              "l": true,
+              "p": "modules/products/data/models/entities/review/review.dart",
+              "m": "1730719554306514"
+            },
+            {
+              "t": "String",
+              "n": "returnPolicy",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "minimumOrderQuantity",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "Meta",
+              "n": "meta",
+              "nullable": true,
+              "l": false,
+              "p": "modules/products/data/models/entities/meta/meta.dart",
+              "m": "1730719554306514"
+            },
+            {
+              "t": "String",
+              "n": "images",
+              "nullable": true,
+              "l": true
+            },
+            {
+              "t": "String",
+              "n": "thumbnail",
+              "nullable": true,
+              "l": false
+            }
+          ]
         }
       ]
     }
