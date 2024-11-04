@@ -20,7 +20,7 @@ GetVerificationCodeRequest _$GetVerificationCodeRequestFromJson(Map<String, dyna
 
 /// @nodoc
 mixin _$GetVerificationCodeRequest {
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
 
   /// Serializes this GetVerificationCodeRequest to a JSON map.
@@ -37,7 +37,7 @@ abstract class $GetVerificationCodeRequestCopyWith<$Res> {
   factory $GetVerificationCodeRequestCopyWith(GetVerificationCodeRequest value, $Res Function(GetVerificationCodeRequest) then) =
       _$GetVerificationCodeRequestCopyWithImpl<$Res, GetVerificationCodeRequest>;
   @useResult
-  $Res call({@JsonKey(name: "email") String? email});
+  $Res call({@JsonKey(name: 'email') String? email});
 }
 
 /// @nodoc
@@ -73,7 +73,7 @@ abstract class _$$GetVerificationCodeRequestImplCopyWith<$Res> implements $GetVe
       __$$GetVerificationCodeRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: "email") String? email});
+  $Res call({@JsonKey(name: 'email') String? email});
 }
 
 /// @nodoc
@@ -103,12 +103,12 @@ class __$$GetVerificationCodeRequestImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$GetVerificationCodeRequestImpl implements _GetVerificationCodeRequest {
-  const _$GetVerificationCodeRequestImpl({@JsonKey(name: "email") this.email});
+  const _$GetVerificationCodeRequestImpl({@JsonKey(name: 'email') this.email});
 
   factory _$GetVerificationCodeRequestImpl.fromJson(Map<String, dynamic> json) => _$$GetVerificationCodeRequestImplFromJson(json);
 
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   final String? email;
 
   @override
@@ -145,12 +145,12 @@ class _$GetVerificationCodeRequestImpl implements _GetVerificationCodeRequest {
 }
 
 abstract class _GetVerificationCodeRequest implements GetVerificationCodeRequest {
-  const factory _GetVerificationCodeRequest({@JsonKey(name: "email") final String? email}) = _$GetVerificationCodeRequestImpl;
+  const factory _GetVerificationCodeRequest({@JsonKey(name: 'email') final String? email}) = _$GetVerificationCodeRequestImpl;
 
   factory _GetVerificationCodeRequest.fromJson(Map<String, dynamic> json) = _$GetVerificationCodeRequestImpl.fromJson;
 
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email;
 
   /// Create a copy of GetVerificationCodeRequest

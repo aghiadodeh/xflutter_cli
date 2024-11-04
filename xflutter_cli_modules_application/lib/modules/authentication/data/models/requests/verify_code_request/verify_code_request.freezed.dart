@@ -20,9 +20,9 @@ VerifyCodeRequest _$VerifyCodeRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$VerifyCodeRequest {
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
-  @JsonKey(name: "verification_code")
+  @JsonKey(name: 'verification_code')
   String? get verificationCode => throw _privateConstructorUsedError;
 
   /// Serializes this VerifyCodeRequest to a JSON map.
@@ -39,7 +39,7 @@ abstract class $VerifyCodeRequestCopyWith<$Res> {
   factory $VerifyCodeRequestCopyWith(VerifyCodeRequest value, $Res Function(VerifyCodeRequest) then) =
       _$VerifyCodeRequestCopyWithImpl<$Res, VerifyCodeRequest>;
   @useResult
-  $Res call({@JsonKey(name: "email") String? email, @JsonKey(name: "verification_code") String? verificationCode});
+  $Res call({@JsonKey(name: 'email') String? email, @JsonKey(name: 'verification_code') String? verificationCode});
 }
 
 /// @nodoc
@@ -78,7 +78,7 @@ abstract class _$$VerifyCodeRequestImplCopyWith<$Res> implements $VerifyCodeRequ
       __$$VerifyCodeRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: "email") String? email, @JsonKey(name: "verification_code") String? verificationCode});
+  $Res call({@JsonKey(name: 'email') String? email, @JsonKey(name: 'verification_code') String? verificationCode});
 }
 
 /// @nodoc
@@ -111,15 +111,15 @@ class __$$VerifyCodeRequestImplCopyWithImpl<$Res> extends _$VerifyCodeRequestCop
 /// @nodoc
 @JsonSerializable()
 class _$VerifyCodeRequestImpl implements _VerifyCodeRequest {
-  const _$VerifyCodeRequestImpl({@JsonKey(name: "email") this.email, @JsonKey(name: "verification_code") this.verificationCode});
+  const _$VerifyCodeRequestImpl({@JsonKey(name: 'email') this.email, @JsonKey(name: 'verification_code') this.verificationCode});
 
   factory _$VerifyCodeRequestImpl.fromJson(Map<String, dynamic> json) => _$$VerifyCodeRequestImplFromJson(json);
 
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   final String? email;
   @override
-  @JsonKey(name: "verification_code")
+  @JsonKey(name: 'verification_code')
   final String? verificationCode;
 
   @override
@@ -158,16 +158,16 @@ class _$VerifyCodeRequestImpl implements _VerifyCodeRequest {
 
 abstract class _VerifyCodeRequest implements VerifyCodeRequest {
   const factory _VerifyCodeRequest(
-      {@JsonKey(name: "email") final String? email,
-      @JsonKey(name: "verification_code") final String? verificationCode}) = _$VerifyCodeRequestImpl;
+      {@JsonKey(name: 'email') final String? email,
+      @JsonKey(name: 'verification_code') final String? verificationCode}) = _$VerifyCodeRequestImpl;
 
   factory _VerifyCodeRequest.fromJson(Map<String, dynamic> json) = _$VerifyCodeRequestImpl.fromJson;
 
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email;
   @override
-  @JsonKey(name: "verification_code")
+  @JsonKey(name: 'verification_code')
   String? get verificationCode;
 
   /// Create a copy of VerifyCodeRequest

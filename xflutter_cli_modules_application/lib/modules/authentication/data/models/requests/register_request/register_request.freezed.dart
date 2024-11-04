@@ -20,15 +20,15 @@ RegisterRequest _$RegisterRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RegisterRequest {
-  @JsonKey(name: "name")
+  @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
-  @JsonKey(name: "password")
+  @JsonKey(name: 'password')
   String? get password => throw _privateConstructorUsedError;
-  @JsonKey(name: "country_code")
+  @JsonKey(name: 'country_code')
   String? get countryCode => throw _privateConstructorUsedError;
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   String? get phone => throw _privateConstructorUsedError;
 
   /// Serializes this RegisterRequest to a JSON map.
@@ -46,11 +46,11 @@ abstract class $RegisterRequestCopyWith<$Res> {
       _$RegisterRequestCopyWithImpl<$Res, RegisterRequest>;
   @useResult
   $Res call(
-      {@JsonKey(name: "name") String? name,
-      @JsonKey(name: "email") String? email,
-      @JsonKey(name: "password") String? password,
-      @JsonKey(name: "country_code") String? countryCode,
-      @JsonKey(name: "phone") String? phone});
+      {@JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'email') String? email,
+      @JsonKey(name: 'password') String? password,
+      @JsonKey(name: 'country_code') String? countryCode,
+      @JsonKey(name: 'phone') String? phone});
 }
 
 /// @nodoc
@@ -105,11 +105,11 @@ abstract class _$$RegisterRequestImplCopyWith<$Res> implements $RegisterRequestC
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "name") String? name,
-      @JsonKey(name: "email") String? email,
-      @JsonKey(name: "password") String? password,
-      @JsonKey(name: "country_code") String? countryCode,
-      @JsonKey(name: "phone") String? phone});
+      {@JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'email') String? email,
+      @JsonKey(name: 'password') String? password,
+      @JsonKey(name: 'country_code') String? countryCode,
+      @JsonKey(name: 'phone') String? phone});
 }
 
 /// @nodoc
@@ -157,28 +157,28 @@ class __$$RegisterRequestImplCopyWithImpl<$Res> extends _$RegisterRequestCopyWit
 @JsonSerializable()
 class _$RegisterRequestImpl implements _RegisterRequest {
   const _$RegisterRequestImpl(
-      {@JsonKey(name: "name") this.name,
-      @JsonKey(name: "email") this.email,
-      @JsonKey(name: "password") this.password,
-      @JsonKey(name: "country_code") this.countryCode,
-      @JsonKey(name: "phone") this.phone});
+      {@JsonKey(name: 'name') this.name,
+      @JsonKey(name: 'email') this.email,
+      @JsonKey(name: 'password') this.password,
+      @JsonKey(name: 'country_code') this.countryCode,
+      @JsonKey(name: 'phone') this.phone});
 
   factory _$RegisterRequestImpl.fromJson(Map<String, dynamic> json) => _$$RegisterRequestImplFromJson(json);
 
   @override
-  @JsonKey(name: "name")
+  @JsonKey(name: 'name')
   final String? name;
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   final String? email;
   @override
-  @JsonKey(name: "password")
+  @JsonKey(name: 'password')
   final String? password;
   @override
-  @JsonKey(name: "country_code")
+  @JsonKey(name: 'country_code')
   final String? countryCode;
   @override
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   final String? phone;
 
   @override
@@ -220,28 +220,28 @@ class _$RegisterRequestImpl implements _RegisterRequest {
 
 abstract class _RegisterRequest implements RegisterRequest {
   const factory _RegisterRequest(
-      {@JsonKey(name: "name") final String? name,
-      @JsonKey(name: "email") final String? email,
-      @JsonKey(name: "password") final String? password,
-      @JsonKey(name: "country_code") final String? countryCode,
-      @JsonKey(name: "phone") final String? phone}) = _$RegisterRequestImpl;
+      {@JsonKey(name: 'name') final String? name,
+      @JsonKey(name: 'email') final String? email,
+      @JsonKey(name: 'password') final String? password,
+      @JsonKey(name: 'country_code') final String? countryCode,
+      @JsonKey(name: 'phone') final String? phone}) = _$RegisterRequestImpl;
 
   factory _RegisterRequest.fromJson(Map<String, dynamic> json) = _$RegisterRequestImpl.fromJson;
 
   @override
-  @JsonKey(name: "name")
+  @JsonKey(name: 'name')
   String? get name;
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email;
   @override
-  @JsonKey(name: "password")
+  @JsonKey(name: 'password')
   String? get password;
   @override
-  @JsonKey(name: "country_code")
+  @JsonKey(name: 'country_code')
   String? get countryCode;
   @override
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   String? get phone;
 
   /// Create a copy of RegisterRequest

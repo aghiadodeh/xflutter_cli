@@ -20,15 +20,15 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
-  @JsonKey(name: "id")
+  @JsonKey(name: 'id')
   int? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: "full_name")
+  @JsonKey(name: 'full_name')
   String? get fullName => throw _privateConstructorUsedError;
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   String? get phone => throw _privateConstructorUsedError;
-  @JsonKey(name: "created_at")
+  @JsonKey(name: 'created_at')
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
   /// Serializes this User to a JSON map.
@@ -45,11 +45,11 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {@JsonKey(name: "id") int? id,
-      @JsonKey(name: "full_name") String? fullName,
-      @JsonKey(name: "email") String? email,
-      @JsonKey(name: "phone") String? phone,
-      @JsonKey(name: "created_at") DateTime? createdAt});
+      {@JsonKey(name: 'id') int? id,
+      @JsonKey(name: 'full_name') String? fullName,
+      @JsonKey(name: 'email') String? email,
+      @JsonKey(name: 'phone') String? phone,
+      @JsonKey(name: 'created_at') DateTime? createdAt});
 }
 
 /// @nodoc
@@ -103,11 +103,11 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "id") int? id,
-      @JsonKey(name: "full_name") String? fullName,
-      @JsonKey(name: "email") String? email,
-      @JsonKey(name: "phone") String? phone,
-      @JsonKey(name: "created_at") DateTime? createdAt});
+      {@JsonKey(name: 'id') int? id,
+      @JsonKey(name: 'full_name') String? fullName,
+      @JsonKey(name: 'email') String? email,
+      @JsonKey(name: 'phone') String? phone,
+      @JsonKey(name: 'created_at') DateTime? createdAt});
 }
 
 /// @nodoc
@@ -154,28 +154,28 @@ class __$$UserImplCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$UserImpl
 @JsonSerializable()
 class _$UserImpl implements _User {
   const _$UserImpl(
-      {@JsonKey(name: "id") this.id,
-      @JsonKey(name: "full_name") this.fullName,
-      @JsonKey(name: "email") this.email,
-      @JsonKey(name: "phone") this.phone,
-      @JsonKey(name: "created_at") this.createdAt});
+      {@JsonKey(name: 'id') this.id,
+      @JsonKey(name: 'full_name') this.fullName,
+      @JsonKey(name: 'email') this.email,
+      @JsonKey(name: 'phone') this.phone,
+      @JsonKey(name: 'created_at') this.createdAt});
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) => _$$UserImplFromJson(json);
 
   @override
-  @JsonKey(name: "id")
+  @JsonKey(name: 'id')
   final int? id;
   @override
-  @JsonKey(name: "full_name")
+  @JsonKey(name: 'full_name')
   final String? fullName;
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   final String? email;
   @override
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   final String? phone;
   @override
-  @JsonKey(name: "created_at")
+  @JsonKey(name: 'created_at')
   final DateTime? createdAt;
 
   @override
@@ -216,28 +216,28 @@ class _$UserImpl implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {@JsonKey(name: "id") final int? id,
-      @JsonKey(name: "full_name") final String? fullName,
-      @JsonKey(name: "email") final String? email,
-      @JsonKey(name: "phone") final String? phone,
-      @JsonKey(name: "created_at") final DateTime? createdAt}) = _$UserImpl;
+      {@JsonKey(name: 'id') final int? id,
+      @JsonKey(name: 'full_name') final String? fullName,
+      @JsonKey(name: 'email') final String? email,
+      @JsonKey(name: 'phone') final String? phone,
+      @JsonKey(name: 'created_at') final DateTime? createdAt}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
-  @JsonKey(name: "id")
+  @JsonKey(name: 'id')
   int? get id;
   @override
-  @JsonKey(name: "full_name")
+  @JsonKey(name: 'full_name')
   String? get fullName;
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email;
   @override
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   String? get phone;
   @override
-  @JsonKey(name: "created_at")
+  @JsonKey(name: 'created_at')
   DateTime? get createdAt;
 
   /// Create a copy of User

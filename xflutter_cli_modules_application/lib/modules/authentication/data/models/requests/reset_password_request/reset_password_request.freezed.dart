@@ -20,11 +20,11 @@ ResetPasswordRequest _$ResetPasswordRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ResetPasswordRequest {
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email => throw _privateConstructorUsedError;
-  @JsonKey(name: "reset_password_code")
+  @JsonKey(name: 'reset_password_code')
   String? get resetPasswordCode => throw _privateConstructorUsedError;
-  @JsonKey(name: "new_password")
+  @JsonKey(name: 'new_password')
   String? get newPassword => throw _privateConstructorUsedError;
 
   /// Serializes this ResetPasswordRequest to a JSON map.
@@ -42,9 +42,9 @@ abstract class $ResetPasswordRequestCopyWith<$Res> {
       _$ResetPasswordRequestCopyWithImpl<$Res, ResetPasswordRequest>;
   @useResult
   $Res call(
-      {@JsonKey(name: "email") String? email,
-      @JsonKey(name: "reset_password_code") String? resetPasswordCode,
-      @JsonKey(name: "new_password") String? newPassword});
+      {@JsonKey(name: 'email') String? email,
+      @JsonKey(name: 'reset_password_code') String? resetPasswordCode,
+      @JsonKey(name: 'new_password') String? newPassword});
 }
 
 /// @nodoc
@@ -89,9 +89,9 @@ abstract class _$$ResetPasswordRequestImplCopyWith<$Res> implements $ResetPasswo
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "email") String? email,
-      @JsonKey(name: "reset_password_code") String? resetPasswordCode,
-      @JsonKey(name: "new_password") String? newPassword});
+      {@JsonKey(name: 'email') String? email,
+      @JsonKey(name: 'reset_password_code') String? resetPasswordCode,
+      @JsonKey(name: 'new_password') String? newPassword});
 }
 
 /// @nodoc
@@ -130,20 +130,20 @@ class __$$ResetPasswordRequestImplCopyWithImpl<$Res> extends _$ResetPasswordRequ
 @JsonSerializable()
 class _$ResetPasswordRequestImpl implements _ResetPasswordRequest {
   const _$ResetPasswordRequestImpl(
-      {@JsonKey(name: "email") this.email,
-      @JsonKey(name: "reset_password_code") this.resetPasswordCode,
-      @JsonKey(name: "new_password") this.newPassword});
+      {@JsonKey(name: 'email') this.email,
+      @JsonKey(name: 'reset_password_code') this.resetPasswordCode,
+      @JsonKey(name: 'new_password') this.newPassword});
 
   factory _$ResetPasswordRequestImpl.fromJson(Map<String, dynamic> json) => _$$ResetPasswordRequestImplFromJson(json);
 
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   final String? email;
   @override
-  @JsonKey(name: "reset_password_code")
+  @JsonKey(name: 'reset_password_code')
   final String? resetPasswordCode;
   @override
-  @JsonKey(name: "new_password")
+  @JsonKey(name: 'new_password')
   final String? newPassword;
 
   @override
@@ -183,20 +183,20 @@ class _$ResetPasswordRequestImpl implements _ResetPasswordRequest {
 
 abstract class _ResetPasswordRequest implements ResetPasswordRequest {
   const factory _ResetPasswordRequest(
-      {@JsonKey(name: "email") final String? email,
-      @JsonKey(name: "reset_password_code") final String? resetPasswordCode,
-      @JsonKey(name: "new_password") final String? newPassword}) = _$ResetPasswordRequestImpl;
+      {@JsonKey(name: 'email') final String? email,
+      @JsonKey(name: 'reset_password_code') final String? resetPasswordCode,
+      @JsonKey(name: 'new_password') final String? newPassword}) = _$ResetPasswordRequestImpl;
 
   factory _ResetPasswordRequest.fromJson(Map<String, dynamic> json) = _$ResetPasswordRequestImpl.fromJson;
 
   @override
-  @JsonKey(name: "email")
+  @JsonKey(name: 'email')
   String? get email;
   @override
-  @JsonKey(name: "reset_password_code")
+  @JsonKey(name: 'reset_password_code')
   String? get resetPasswordCode;
   @override
-  @JsonKey(name: "new_password")
+  @JsonKey(name: 'new_password')
   String? get newPassword;
 
   /// Create a copy of ResetPasswordRequest

@@ -20,9 +20,9 @@ ChangePasswordRequest _$ChangePasswordRequestFromJson(Map<String, dynamic> json)
 
 /// @nodoc
 mixin _$ChangePasswordRequest {
-  @JsonKey(name: "old_password")
+  @JsonKey(name: 'old_password')
   String? get oldPassword => throw _privateConstructorUsedError;
-  @JsonKey(name: "new_password")
+  @JsonKey(name: 'new_password')
   String? get newPassword => throw _privateConstructorUsedError;
 
   /// Serializes this ChangePasswordRequest to a JSON map.
@@ -39,7 +39,7 @@ abstract class $ChangePasswordRequestCopyWith<$Res> {
   factory $ChangePasswordRequestCopyWith(ChangePasswordRequest value, $Res Function(ChangePasswordRequest) then) =
       _$ChangePasswordRequestCopyWithImpl<$Res, ChangePasswordRequest>;
   @useResult
-  $Res call({@JsonKey(name: "old_password") String? oldPassword, @JsonKey(name: "new_password") String? newPassword});
+  $Res call({@JsonKey(name: 'old_password') String? oldPassword, @JsonKey(name: 'new_password') String? newPassword});
 }
 
 /// @nodoc
@@ -78,7 +78,7 @@ abstract class _$$ChangePasswordRequestImplCopyWith<$Res> implements $ChangePass
       __$$ChangePasswordRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: "old_password") String? oldPassword, @JsonKey(name: "new_password") String? newPassword});
+  $Res call({@JsonKey(name: 'old_password') String? oldPassword, @JsonKey(name: 'new_password') String? newPassword});
 }
 
 /// @nodoc
@@ -111,15 +111,15 @@ class __$$ChangePasswordRequestImplCopyWithImpl<$Res> extends _$ChangePasswordRe
 /// @nodoc
 @JsonSerializable()
 class _$ChangePasswordRequestImpl implements _ChangePasswordRequest {
-  const _$ChangePasswordRequestImpl({@JsonKey(name: "old_password") this.oldPassword, @JsonKey(name: "new_password") this.newPassword});
+  const _$ChangePasswordRequestImpl({@JsonKey(name: 'old_password') this.oldPassword, @JsonKey(name: 'new_password') this.newPassword});
 
   factory _$ChangePasswordRequestImpl.fromJson(Map<String, dynamic> json) => _$$ChangePasswordRequestImplFromJson(json);
 
   @override
-  @JsonKey(name: "old_password")
+  @JsonKey(name: 'old_password')
   final String? oldPassword;
   @override
-  @JsonKey(name: "new_password")
+  @JsonKey(name: 'new_password')
   final String? newPassword;
 
   @override
@@ -158,16 +158,16 @@ class _$ChangePasswordRequestImpl implements _ChangePasswordRequest {
 
 abstract class _ChangePasswordRequest implements ChangePasswordRequest {
   const factory _ChangePasswordRequest(
-      {@JsonKey(name: "old_password") final String? oldPassword,
-      @JsonKey(name: "new_password") final String? newPassword}) = _$ChangePasswordRequestImpl;
+      {@JsonKey(name: 'old_password') final String? oldPassword,
+      @JsonKey(name: 'new_password') final String? newPassword}) = _$ChangePasswordRequestImpl;
 
   factory _ChangePasswordRequest.fromJson(Map<String, dynamic> json) = _$ChangePasswordRequestImpl.fromJson;
 
   @override
-  @JsonKey(name: "old_password")
+  @JsonKey(name: 'old_password')
   String? get oldPassword;
   @override
-  @JsonKey(name: "new_password")
+  @JsonKey(name: 'new_password')
   String? get newPassword;
 
   /// Create a copy of ChangePasswordRequest
