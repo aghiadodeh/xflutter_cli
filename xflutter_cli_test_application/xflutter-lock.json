@@ -495,6 +495,139 @@
           "p": "di/app_injectable.config.dart",
           "e": false,
           "pr": []
+        },
+        {
+          "id": "1730716830239049",
+          "cn": "",
+          "p": "json/auth/login_request.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716837760012",
+          "cn": "",
+          "p": "json/auth/register_request.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716843485093",
+          "cn": "",
+          "p": "json/auth/verify_code_request.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716849040480",
+          "cn": "",
+          "p": "json/auth/get_verification_code_request.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716854649262",
+          "cn": "",
+          "p": "json/auth/reset_password_request.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716860251415",
+          "cn": "",
+          "p": "json/auth/change_password_request.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730718737190819",
+          "cn": "",
+          "p": "data/data_sources/remote/authentication_rest_client/authentication_rest_client.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716871278722",
+          "cn": "",
+          "p": "data/models/requests/login_request/login_request.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716871287451",
+          "cn": "",
+          "p": "data/models/requests/verify_code_request/verify_code_request.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716871295987",
+          "cn": "",
+          "p": "data/models/requests/get_verification_code_request/get_verification_code_request.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716871305163",
+          "cn": "",
+          "p": "data/models/requests/register_request/register_request.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716871313139",
+          "cn": "",
+          "p": "data/models/requests/reset_password_request/reset_password_request.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716871320862",
+          "cn": "",
+          "p": "data/models/requests/change_password_request/change_password_request.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730718737203775",
+          "cn": "",
+          "p": "data/repositories/authentication/authentication_repository.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730718737205322",
+          "cn": "",
+          "p": "data/repositories/authentication/authentication_repository_impl.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716871330213",
+          "cn": "",
+          "p": "mediators/controllers/authentication_controller.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730718720372657",
+          "cn": "User",
+          "p": "data/models/entities/user/user.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716876587610",
+          "cn": "",
+          "p": "ui/widgets/text_fields/pin_code_field.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730716876589726",
+          "cn": "",
+          "p": "ui/widgets/text_fields/verify_pin_code_widget.dart",
+          "e": false,
+          "pr": []
         }
       ]
     },
