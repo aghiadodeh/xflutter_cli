@@ -446,6 +446,55 @@
           "p": "main.dart",
           "e": false,
           "pr": []
+        },
+        {
+          "id": "1730713651629363",
+          "cn": "",
+          "p": "ui/screens/home/mobile/home_mobile_screen.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730713651645878",
+          "cn": "",
+          "p": "ui/screens/home/tablet/home_tablet_screen.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730713651647327",
+          "cn": "",
+          "p": "ui/screens/home/viewmodels/home_viewmodel.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730713651648116",
+          "cn": "",
+          "p": "ui/screens/home/viewmodels/home_params.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730713651648713",
+          "cn": "",
+          "p": "ui/screens/home/widgets/.gitkeep",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730713651650101",
+          "cn": "",
+          "p": "ui/screens/home/home_screen.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730713651709102",
+          "cn": "",
+          "p": "di/app_injectable.config.dart",
+          "e": false,
+          "pr": []
         }
       ]
     },

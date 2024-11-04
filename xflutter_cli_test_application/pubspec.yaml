@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  responsive_builder: ^0.7.0
   products:
     path: ./packages/products
   flutter_native_splash: ^2.4.1
