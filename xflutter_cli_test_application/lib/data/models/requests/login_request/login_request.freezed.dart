@@ -20,7 +20,7 @@ LoginRequest _$LoginRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LoginRequest {
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   String? get phone => throw _privateConstructorUsedError;
 
   /// Serializes this LoginRequest to a JSON map.
@@ -36,7 +36,7 @@ mixin _$LoginRequest {
 abstract class $LoginRequestCopyWith<$Res> {
   factory $LoginRequestCopyWith(LoginRequest value, $Res Function(LoginRequest) then) = _$LoginRequestCopyWithImpl<$Res, LoginRequest>;
   @useResult
-  $Res call({@JsonKey(name: "phone") String? phone});
+  $Res call({@JsonKey(name: 'phone') String? phone});
 }
 
 /// @nodoc
@@ -70,7 +70,7 @@ abstract class _$$LoginRequestImplCopyWith<$Res> implements $LoginRequestCopyWit
       __$$LoginRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: "phone") String? phone});
+  $Res call({@JsonKey(name: 'phone') String? phone});
 }
 
 /// @nodoc
@@ -97,12 +97,12 @@ class __$$LoginRequestImplCopyWithImpl<$Res> extends _$LoginRequestCopyWithImpl<
 /// @nodoc
 @JsonSerializable()
 class _$LoginRequestImpl implements _LoginRequest {
-  const _$LoginRequestImpl({@JsonKey(name: "phone") this.phone});
+  const _$LoginRequestImpl({@JsonKey(name: 'phone') this.phone});
 
   factory _$LoginRequestImpl.fromJson(Map<String, dynamic> json) => _$$LoginRequestImplFromJson(json);
 
   @override
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   final String? phone;
 
   @override
@@ -136,12 +136,12 @@ class _$LoginRequestImpl implements _LoginRequest {
 }
 
 abstract class _LoginRequest implements LoginRequest {
-  const factory _LoginRequest({@JsonKey(name: "phone") final String? phone}) = _$LoginRequestImpl;
+  const factory _LoginRequest({@JsonKey(name: 'phone') final String? phone}) = _$LoginRequestImpl;
 
   factory _LoginRequest.fromJson(Map<String, dynamic> json) = _$LoginRequestImpl.fromJson;
 
   @override
-  @JsonKey(name: "phone")
+  @JsonKey(name: 'phone')
   String? get phone;
 
   /// Create a copy of LoginRequest
