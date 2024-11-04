@@ -15,11 +15,11 @@ class AppRouter extends RootStackRouter {
         AutoRoute(
           path: '/verify_pin_code',
           page: VerifyPinCode.page,
-          initial: true,
         ),
         AutoRoute(
           path: '/login',
           page: Login.page,
+          initial: true,
         ),
         AutoRoute(
           path: '/home',
