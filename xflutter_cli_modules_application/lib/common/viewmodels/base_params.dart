@@ -11,7 +11,7 @@ class BaseParams {
   final _loading = false.liveData;
   LiveData<bool> get loading => _loading;
 
-  /// UI [SnackBar] event emitter
+  /// event emitter for display [SnackBar] or [Dialog]
   final _uiMessage = const UiMessage().liveEvent;
   ObservableData<UiMessage> get uiMessage => _uiMessage;
 

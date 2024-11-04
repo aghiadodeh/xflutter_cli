@@ -2,8 +2,8 @@
   "w": null,
   "m": [
     {
-      "id": "1730119161277588",
-      "utc": "2024-10-28T12:39:21.278089Z",
+      "id": "1730719554306514",
+      "utc": "2024-11-04T11:25:54.306867Z",
       "e": {
         "a": "modules",
         "t": "app",
@@ -14,63 +14,63 @@
       },
       "mo": [
         {
-          "id": "1730119161339434",
+          "id": "1730719554336841",
           "cn": "",
           "p": "flutter_native_splash.yaml",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161349124",
+          "id": "1730719554339902",
           "cn": "",
           "p": "flutter_launcher_icons.yaml",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161354256",
+          "id": "1730719554344524",
           "cn": "",
           "p": "assets/localization/en.json",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161360013",
+          "id": "1730719554347282",
           "cn": "",
           "p": "assets/images/.gitignore",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161361925",
+          "id": "1730719554348164",
           "cn": "",
           "p": "assets/svgs/.gitkeep",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161363759",
+          "id": "1730719554349646",
           "cn": "",
           "p": "common/router/app_router.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161384994",
+          "id": "1730719554361337",
           "cn": "",
           "p": "build.yaml",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161390211",
+          "id": "1730719554363237",
           "cn": "",
           "p": "common/di/app_injectable.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161426954",
+          "id": "1730719554370051",
           "cn": "",
           "p": "common/di/modules/app_module.dart",
           "e": false,
@@ -84,506 +84,366 @@
           ]
         },
         {
-          "id": "1730119161447336",
+          "id": "1730719554373594",
           "cn": "",
           "p": "common/data/models/responses/base_response/base_response.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161598911",
+          "id": "1730719554377191",
           "cn": "",
           "p": "common/data/models/responses/list_response/list_response.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161608677",
+          "id": "1730719554379087",
           "cn": "",
           "p": "common/data/models/ui_models/ui_message/ui_message.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161614273",
+          "id": "1730719554380386",
           "cn": "",
           "p": "core/utilities/ui/ui.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161621300",
+          "id": "1730719554381632",
           "cn": "",
           "p": "core/utilities/di/dependency_locator.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161639966",
+          "id": "1730719554383008",
           "cn": "",
           "p": "core/utilities/async/debouncer.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161647000",
+          "id": "1730719554384194",
           "cn": "",
           "p": "core/utilities/network/connectivity.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161780364",
+          "id": "1730719554387811",
           "cn": "",
           "p": "core/extensions/di_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161782791",
+          "id": "1730719554389033",
           "cn": "",
           "p": "core/extensions/view_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161785742",
+          "id": "1730719554389802",
           "cn": "",
           "p": "core/extensions/assets_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161787260",
+          "id": "1730719554390645",
           "cn": "",
           "p": "core/extensions/nullable_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161788740",
+          "id": "1730719554391463",
           "cn": "",
           "p": "core/extensions/live_data_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161792082",
+          "id": "1730719554392999",
           "cn": "",
           "p": "core/extensions/reactive_form_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161797330",
+          "id": "1730719554394128",
           "cn": "",
           "p": "core/events/event_bus.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161802404",
+          "id": "1730719554396080",
           "cn": "",
           "p": "core/storage/storage.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119161988923",
+          "id": "1730719554474574",
           "cn": "",
           "p": "core/storage/secure_storage.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119162005785",
+          "id": "1730719554487191",
           "cn": "",
           "p": "core/extensions/theme_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119162077187",
+          "id": "1730719554503213",
           "cn": "",
           "p": "common/ui/resources/colors/colors.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119163877683",
+          "id": "1730719556519682",
           "cn": "",
           "p": "common/ui/resources/colors/dark_colors.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164814334",
+          "id": "1730719557112514",
           "cn": "",
           "p": "common/ui/resources/themes/theme.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164816966",
+          "id": "1730719557113421",
           "cn": "",
           "p": "common/ui/resources/themes/dark_theme.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164838487",
+          "id": "1730719557114229",
           "cn": "",
           "p": "common/ui/resources/dimensions/dimensions.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164841236",
+          "id": "1730719557115373",
           "cn": "",
           "p": "common/ui/resources/themes/theme_notifier.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164889782",
+          "id": "1730719557119247",
           "cn": "",
           "p": "common/ui/widgets/text_fields/customized_text_form_field.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164916750",
+          "id": "1730719557120365",
           "cn": "",
           "p": "common/ui/widgets/text_fields/customized_reactive_text_field.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164936069",
+          "id": "1730719557122549",
           "cn": "",
           "p": "common/ui/widgets/text_fields/customized_reactive_phone_field.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164959668",
+          "id": "1730719557124828",
           "cn": "",
           "p": "core/utilities/validators/matching_validator.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164961623",
+          "id": "1730719557125533",
           "cn": "",
           "p": "common/ui/widgets/buttons/back_button.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164964211",
+          "id": "1730719557126116",
           "cn": "",
           "p": "common/ui/widgets/core/theme_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164965368",
+          "id": "1730719557126574",
           "cn": "",
           "p": "common/ui/widgets/core/base_scaffold.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164968847",
+          "id": "1730719557127055",
           "cn": "",
           "p": "common/ui/widgets/core/base_scrollview.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164970734",
+          "id": "1730719557127527",
           "cn": "",
           "p": "common/ui/widgets/core/base_appbar.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164973047",
+          "id": "1730719557128683",
           "cn": "",
           "p": "common/ui/widgets/blur_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119164975479",
+          "id": "1730719557130030",
           "cn": "",
           "p": "common/ui/widgets/infinite_scroll_view/infinite_scroll_view.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167523326",
+          "id": "1730719558921058",
           "cn": "",
           "p": "common/ui/widgets/infinite_scroll_view/pagination_error_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167525457",
+          "id": "1730719558921779",
           "cn": "",
           "p": "common/ui/widgets/infinite_scroll_view/pagination_load_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167528543",
+          "id": "1730719558922673",
           "cn": "",
           "p": "common/ui/widgets/loaders/full_screen_loader.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167530083",
+          "id": "1730719558923179",
           "cn": "",
           "p": "common/ui/widgets/loaders/live_data_loader.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167533301",
+          "id": "1730719558924014",
           "cn": "",
           "p": "common/ui/widgets/loaders/loader.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167537220",
+          "id": "1730719558926463",
           "cn": "",
           "p": "common/ui/widgets/buttons/text_button.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167538676",
+          "id": "1730719558927046",
           "cn": "",
           "p": "common/ui/widgets/buttons/customized_button.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167540248",
+          "id": "1730719558928118",
           "cn": "",
           "p": "common/ui/widgets/animations/customized_animated_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167543939",
+          "id": "1730719558929884",
           "cn": "",
           "p": "common/ui/widgets/animations/animated_column.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167545858",
+          "id": "1730719558931723",
           "cn": "",
           "p": "common/data/models/di/di_scope/di_scope.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167549255",
+          "id": "1730719558932913",
           "cn": "",
           "p": "common/viewmodels/base_params.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167552029",
+          "id": "1730719558934367",
           "cn": "",
           "p": "common/viewmodels/base_viewmodel.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167557290",
+          "id": "1730719558937557",
           "cn": "",
           "p": "common/ui/widgets/instance/lifecycle_owner.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167559754",
+          "id": "1730719558938794",
           "cn": "",
           "p": "common/ui/widgets/instance/instance_builder.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167561575",
+          "id": "1730719558939383",
           "cn": "",
           "p": "common/environments/environments.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119167584163",
+          "id": "1730719558950169",
           "cn": "",
           "p": "core/utilities/network/http_interceptor.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119169031532",
+          "id": "1730719559798370",
           "cn": "",
           "p": "common/data/repositories/base_repository.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730119169038641",
+          "id": "1730719559802164",
           "cn": "",
           "p": "main.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718831432514",
-          "cn": "",
-          "p": "modules/authentication/data/models/responses/.gitkeep",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718831437604",
-          "cn": "",
-          "p": "json/auth/login_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718837831698",
-          "cn": "",
-          "p": "json/auth/register_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718843655088",
-          "cn": "",
-          "p": "json/auth/verify_code_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718849389475",
-          "cn": "",
-          "p": "json/auth/get_verification_code_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718855427498",
-          "cn": "",
-          "p": "json/auth/reset_password_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718861075877",
-          "cn": "",
-          "p": "json/auth/change_password_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872637746",
-          "cn": "",
-          "p": "modules/authentication/data/data_sources/remote/authentication_rest_client/authentication_rest_client.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872658965",
-          "cn": "",
-          "p": "modules/authentication/data/models/requests/login_request/login_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872667719",
-          "cn": "",
-          "p": "modules/authentication/data/models/requests/verify_code_request/verify_code_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872676372",
-          "cn": "",
-          "p": "modules/authentication/data/models/requests/get_verification_code_request/get_verification_code_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872685485",
-          "cn": "",
-          "p": "modules/authentication/data/models/requests/register_request/register_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872694034",
-          "cn": "",
-          "p": "modules/authentication/data/models/requests/reset_password_request/reset_password_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872701810",
-          "cn": "",
-          "p": "modules/authentication/data/models/requests/change_password_request/change_password_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872707717",
-          "cn": "",
-          "p": "modules/authentication/data/repositories/authentication/authentication_repository.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872708945",
-          "cn": "",
-          "p": "modules/authentication/data/repositories/authentication/authentication_repository_impl.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872713255",
-          "cn": "",
-          "p": "common/mediators/controllers/authentication_controller.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718872722253",
-          "cn": "",
-          "p": "common/data/models/entities/user/user.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718882794168",
-          "cn": "",
-          "p": "common/ui/widgets/text_fields/pin_code_field.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718882797456",
-          "cn": "",
-          "p": "common/ui/widgets/text_fields/verify_pin_code_widget.dart",
           "e": false,
           "pr": []
         }

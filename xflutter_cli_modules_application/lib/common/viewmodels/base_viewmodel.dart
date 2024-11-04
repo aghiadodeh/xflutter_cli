@@ -96,7 +96,7 @@ abstract class LifeCycle {
   /// Called immediately after the widget is allocated in memory.
   void onInit() {}
 
-  /// Called 1 frame after onInit(). It is the perfect place to enter navigation, events, like snackBar, dialogs, or a new route.
+  /// Called 1 frame after onInit().
   void onReady() {}
 
   /// Called immediately before the widget is disposed.
