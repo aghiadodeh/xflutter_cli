@@ -46,6 +46,15 @@ import 'package:xflutter_cli_modules_application/modules/products/data/data_sour
     as _i423;
 import 'package:xflutter_cli_modules_application/modules/products/data/repositories/products/products_repository.dart' as _i694;
 import 'package:xflutter_cli_modules_application/modules/products/data/repositories/products/products_repository_impl.dart' as _i345;
+import 'package:xflutter_cli_modules_application/modules/products/mediators/paging/products_paging_controller.dart' as _i772;
+import 'package:xflutter_cli_modules_application/modules/products/presentation/screens/create_product/viewmodels/create_product_viewmodel.dart'
+    as _i260;
+import 'package:xflutter_cli_modules_application/modules/products/presentation/screens/products_list/viewmodels/products_list_viewmodel.dart'
+    as _i1002;
+import 'package:xflutter_cli_modules_application/modules/products/presentation/screens/update_product/viewmodels/update_product_viewmodel.dart'
+    as _i1003;
+import 'package:xflutter_cli_modules_application/modules/products/presentation/screens/view_product_details/viewmodels/view_product_details_viewmodel.dart'
+    as _i502;
 
 const String _dev = 'dev';
 const String _test = 'test';
@@ -120,6 +129,39 @@ extension GetItInjectableX on _i174.GetIt {
     );
   }
 
+// initializes the registration of updateProduct-scope dependencies inside of GetIt
+  _i174.GetIt initUpdateProductScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'updateProduct',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i1003.UpdateProductViewModel>(() => _i1003.UpdateProductViewModel(gh<_i694.ProductsRepository>()));
+      },
+    );
+  }
+
+// initializes the registration of viewProductDetails-scope dependencies inside of GetIt
+  _i174.GetIt initViewProductDetailsScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'viewProductDetails',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i502.ViewProductDetailsViewModel>(() => _i502.ViewProductDetailsViewModel(gh<_i694.ProductsRepository>()));
+      },
+    );
+  }
+
+// initializes the registration of createProduct-scope dependencies inside of GetIt
+  _i174.GetIt initCreateProductScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'createProduct',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i260.CreateProductViewModel>(() => _i260.CreateProductViewModel(gh<_i694.ProductsRepository>()));
+      },
+    );
+  }
+
 // initializes the registration of register-scope dependencies inside of GetIt
   _i174.GetIt initRegisterScope({_i174.ScopeDisposeFunc? dispose}) {
     return _i526.GetItHelper(this).initScope(
@@ -182,6 +224,31 @@ extension GetItInjectableX on _i174.GetIt {
       dispose: dispose,
       init: (_i526.GetItHelper gh) {
         gh.lazySingleton<_i171.LoginViewModel>(() => _i171.LoginViewModel(gh<_i583.AuthenticationRepository>()));
+      },
+    );
+  }
+
+// initializes the registration of productsPaging-scope dependencies inside of GetIt
+  _i174.GetIt initProductsPagingScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'productsPaging',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i772.ProductsPagingController>(() => _i772.ProductsPagingController(gh<_i694.ProductsRepository>()));
+      },
+    );
+  }
+
+// initializes the registration of productsList-scope dependencies inside of GetIt
+  _i174.GetIt initProductsListScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'productsList',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i1002.ProductsListViewModel>(() => _i1002.ProductsListViewModel(
+              gh<_i694.ProductsRepository>(),
+              gh<_i772.ProductsPagingController>(),
+            ));
       },
     );
   }

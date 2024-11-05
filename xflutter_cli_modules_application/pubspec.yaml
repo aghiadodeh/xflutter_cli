@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  redacted: ^1.0.12
   path: ^1.9.0
   path_provider: ^2.1.1
   objectbox_flutter_libs: ^4.0.2

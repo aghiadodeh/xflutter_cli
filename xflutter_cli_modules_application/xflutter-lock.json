@@ -1235,6 +1235,20 @@
           "p": "common/data/database/objectbox.g.dart",
           "e": false,
           "pr": []
+        },
+        {
+          "id": "1730808968037739",
+          "cn": "",
+          "p": "modules/products/mediators/paging/products_paging_controller.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730808981992029",
+          "cn": "",
+          "p": "modules/products/presentation/widgets/product_form.dart",
+          "e": false,
+          "pr": []
         }
       ]
     }
