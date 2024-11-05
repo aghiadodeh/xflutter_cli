@@ -448,42 +448,42 @@
           "pr": []
         },
         {
-          "id": "1730713651629363",
+          "id": "1730810257204717",
           "cn": "",
           "p": "ui/screens/home/mobile/home_mobile_screen.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730713651645878",
+          "id": "1730810257219633",
           "cn": "",
           "p": "ui/screens/home/tablet/home_tablet_screen.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730713651647327",
+          "id": "1730810257220846",
           "cn": "",
           "p": "ui/screens/home/viewmodels/home_viewmodel.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730713651648116",
+          "id": "1730810257221915",
           "cn": "",
           "p": "ui/screens/home/viewmodels/home_params.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730713651648713",
+          "id": "1730810257222640",
           "cn": "",
           "p": "ui/screens/home/widgets/.gitkeep",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730713651650101",
+          "id": "1730810257223861",
           "cn": "",
           "p": "ui/screens/home/home_screen.dart",
           "e": false,
@@ -1656,6 +1656,13 @@
           "id": "1730808122067584",
           "cn": "",
           "p": "ui/screens/home/widgets/product_redacted_widget.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730810412707888",
+          "cn": "",
+          "p": "ui/screens/products/widgets/product_form.dart",
           "e": false,
           "pr": []
         }

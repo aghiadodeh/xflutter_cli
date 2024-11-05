@@ -36,7 +36,7 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     )
         .compose(
           _dio.options,
-          '/product',
+          '/shop/products',
           queryParameters: queryParameters,
           data: _data,
           cancelToken: cancelToken,
@@ -72,7 +72,7 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     )
         .compose(
           _dio.options,
-          '/product/${id}',
+          '/shop/products/${id}',
           queryParameters: queryParameters,
           data: _data,
           cancelToken: cancelToken,
@@ -110,7 +110,7 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     )
         .compose(
           _dio.options,
-          '/product',
+          '/shop/products',
           queryParameters: queryParameters,
           data: _data,
           cancelToken: cancelToken,
@@ -147,7 +147,7 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     )
         .compose(
           _dio.options,
-          '/product/${id}',
+          '/shop/products/${id}',
           queryParameters: queryParameters,
           data: _data,
           cancelToken: cancelToken,
@@ -181,7 +181,7 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     )
         .compose(
           _dio.options,
-          '/product/${id}',
+          '/shop/products/${id}',
           queryParameters: queryParameters,
           data: _data,
           cancelToken: cancelToken,

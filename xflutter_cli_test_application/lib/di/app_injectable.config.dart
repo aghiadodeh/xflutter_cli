@@ -35,6 +35,11 @@ import 'package:xflutter_cli_test_application/ui/resources/themes/theme_notifier
 import 'package:xflutter_cli_test_application/ui/screens/authentication/login/viewmodels/login_viewmodel.dart' as _i799;
 import 'package:xflutter_cli_test_application/ui/screens/authentication/verify_pin_code/viewmodels/verify_pin_code_viewmodel.dart' as _i712;
 import 'package:xflutter_cli_test_application/ui/screens/home/viewmodels/home_viewmodel.dart' as _i139;
+import 'package:xflutter_cli_test_application/ui/screens/products/create_product/viewmodels/create_product_viewmodel.dart' as _i434;
+import 'package:xflutter_cli_test_application/ui/screens/products/products_list/viewmodels/products_list_viewmodel.dart' as _i566;
+import 'package:xflutter_cli_test_application/ui/screens/products/update_product/viewmodels/update_product_viewmodel.dart' as _i923;
+import 'package:xflutter_cli_test_application/ui/screens/products/view_product_details/viewmodels/view_product_details_viewmodel.dart'
+    as _i525;
 import 'package:xflutter_cli_test_application/utilities/network/connectivity.dart' as _i1037;
 
 const String _dev = 'dev';
@@ -80,6 +85,17 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i701.ObjectBoxAppStore>(() => _i701.ObjectBoxAppStore(gh<_i497.Directory>(instanceName: 'AppDocumentsDirectory')));
     return this;
+  }
+
+// initializes the registration of home-scope dependencies inside of GetIt
+  _i174.GetIt initHomeScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'home',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i139.HomeViewModel>(() => _i139.HomeViewModel());
+      },
+    );
   }
 
 // initializes the registration of products-scope dependencies inside of GetIt
@@ -144,6 +160,39 @@ extension GetItInjectableX on _i174.GetIt {
     );
   }
 
+// initializes the registration of createProduct-scope dependencies inside of GetIt
+  _i174.GetIt initCreateProductScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'createProduct',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i434.CreateProductViewModel>(() => _i434.CreateProductViewModel(gh<_i724.ProductsRepository>()));
+      },
+    );
+  }
+
+// initializes the registration of viewProductDetails-scope dependencies inside of GetIt
+  _i174.GetIt initViewProductDetailsScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'viewProductDetails',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i525.ViewProductDetailsViewModel>(() => _i525.ViewProductDetailsViewModel(gh<_i724.ProductsRepository>()));
+      },
+    );
+  }
+
+// initializes the registration of updateProduct-scope dependencies inside of GetIt
+  _i174.GetIt initUpdateProductScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'updateProduct',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i923.UpdateProductViewModel>(() => _i923.UpdateProductViewModel(gh<_i724.ProductsRepository>()));
+      },
+    );
+  }
+
 // initializes the registration of productsPaging-scope dependencies inside of GetIt
   _i174.GetIt initProductsPagingScope({_i174.ScopeDisposeFunc? dispose}) {
     return _i526.GetItHelper(this).initScope(
@@ -155,13 +204,16 @@ extension GetItInjectableX on _i174.GetIt {
     );
   }
 
-// initializes the registration of home-scope dependencies inside of GetIt
-  _i174.GetIt initHomeScope({_i174.ScopeDisposeFunc? dispose}) {
+// initializes the registration of productsList-scope dependencies inside of GetIt
+  _i174.GetIt initProductsListScope({_i174.ScopeDisposeFunc? dispose}) {
     return _i526.GetItHelper(this).initScope(
-      'home',
+      'productsList',
       dispose: dispose,
       init: (_i526.GetItHelper gh) {
-        gh.lazySingleton<_i139.HomeViewModel>(() => _i139.HomeViewModel(gh<_i440.ProductsPagingController>()));
+        gh.lazySingleton<_i566.ProductsListViewModel>(() => _i566.ProductsListViewModel(
+              gh<_i724.ProductsRepository>(),
+              gh<_i440.ProductsPagingController>(),
+            ));
       },
     );
   }
