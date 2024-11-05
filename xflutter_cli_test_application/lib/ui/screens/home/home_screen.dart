@@ -48,6 +48,15 @@ class _HomeScreenState extends State<HomeScreen> with LifecycleOwner<HomeScreen,
   DiScope get diScope => DiScope(
         name: 'home',
         factory: getIt.initHomeScope,
-        dependencies: [],
+        dependencies: [
+          DiScope(
+            name: 'products',
+            factory: getIt.initProductsScope,
+          ),
+          DiScope(
+            name: 'productsPaging',
+            factory: getIt.initProductsPagingScope,
+          ),
+        ],
       );
 }

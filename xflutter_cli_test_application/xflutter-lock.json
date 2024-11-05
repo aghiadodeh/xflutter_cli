@@ -1630,6 +1630,34 @@
           "p": "data/repositories/categories/categories_repository_impl.dart",
           "e": false,
           "pr": []
+        },
+        {
+          "id": "1730808122035328",
+          "cn": "",
+          "p": "mediators/paging/products_paging_controller.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730808122064674",
+          "cn": "",
+          "p": "ui/screens/home/widgets/products_list_widget.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730808122066734",
+          "cn": "",
+          "p": "ui/screens/home/widgets/product_card_widget.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730808122067584",
+          "cn": "",
+          "p": "ui/screens/home/widgets/product_redacted_widget.dart",
+          "e": false,
+          "pr": []
         }
       ]
     },

@@ -30,6 +30,7 @@ import 'package:xflutter_cli_test_application/data/repositories/products/product
 import 'package:xflutter_cli_test_application/di/modules/app_module.dart' as _i596;
 import 'package:xflutter_cli_test_application/environments/environments.dart' as _i446;
 import 'package:xflutter_cli_test_application/mediators/controllers/authentication_controller.dart' as _i563;
+import 'package:xflutter_cli_test_application/mediators/paging/products_paging_controller.dart' as _i440;
 import 'package:xflutter_cli_test_application/ui/resources/themes/theme_notifier.dart' as _i0;
 import 'package:xflutter_cli_test_application/ui/screens/authentication/login/viewmodels/login_viewmodel.dart' as _i799;
 import 'package:xflutter_cli_test_application/ui/screens/authentication/verify_pin_code/viewmodels/verify_pin_code_viewmodel.dart' as _i712;
@@ -79,17 +80,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i701.ObjectBoxAppStore>(() => _i701.ObjectBoxAppStore(gh<_i497.Directory>(instanceName: 'AppDocumentsDirectory')));
     return this;
-  }
-
-// initializes the registration of home-scope dependencies inside of GetIt
-  _i174.GetIt initHomeScope({_i174.ScopeDisposeFunc? dispose}) {
-    return _i526.GetItHelper(this).initScope(
-      'home',
-      dispose: dispose,
-      init: (_i526.GetItHelper gh) {
-        gh.lazySingleton<_i139.HomeViewModel>(() => _i139.HomeViewModel());
-      },
-    );
   }
 
 // initializes the registration of products-scope dependencies inside of GetIt
@@ -150,6 +140,28 @@ extension GetItInjectableX on _i174.GetIt {
       dispose: dispose,
       init: (_i526.GetItHelper gh) {
         gh.lazySingleton<_i712.VerifyPinCodeViewModel>(() => _i712.VerifyPinCodeViewModel(gh<_i574.AuthenticationRepository>()));
+      },
+    );
+  }
+
+// initializes the registration of productsPaging-scope dependencies inside of GetIt
+  _i174.GetIt initProductsPagingScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'productsPaging',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i440.ProductsPagingController>(() => _i440.ProductsPagingController(gh<_i724.ProductsRepository>()));
+      },
+    );
+  }
+
+// initializes the registration of home-scope dependencies inside of GetIt
+  _i174.GetIt initHomeScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'home',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i139.HomeViewModel>(() => _i139.HomeViewModel(gh<_i440.ProductsPagingController>()));
       },
     );
   }
