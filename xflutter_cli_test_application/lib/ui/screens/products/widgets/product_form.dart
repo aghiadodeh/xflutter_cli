@@ -145,7 +145,7 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // discountpercentage
+              // discount percentage
               CustomizedReactiveFormField<double>(
                 formControlName: 'discountPercentage',
                 labelText: 'discountPercentage'.tr(),
@@ -205,7 +205,7 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // warrantyinformation
+              // warranty information
               CustomizedReactiveFormField<String>(
                 formControlName: 'warrantyInformation',
                 labelText: 'warrantyInformation'.tr(),
@@ -215,7 +215,7 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // shippinginformation
+              // shipping information
               CustomizedReactiveFormField<String>(
                 formControlName: 'shippingInformation',
                 labelText: 'shippingInformation'.tr(),
@@ -225,7 +225,7 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // availabilitystatus
+              // availability status
               CustomizedReactiveFormField<String>(
                 formControlName: 'availabilityStatus',
                 labelText: 'availabilityStatus'.tr(),
@@ -235,7 +235,7 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // returnpolicy
+              // return policy
               CustomizedReactiveFormField<String>(
                 formControlName: 'returnPolicy',
                 labelText: 'returnPolicy'.tr(),
@@ -245,7 +245,7 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // minimumorderquantity
+              // minimum order quantity
               CustomizedReactiveFormField<int>(
                 formControlName: 'minimumOrderQuantity',
                 labelText: 'minimumOrderQuantity'.tr(),
