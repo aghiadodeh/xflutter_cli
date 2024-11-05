@@ -76,7 +76,7 @@
           "e": false,
           "pr": [
             {
-              "t": "provideDio",
+              "t": "provideDocumentsDirectory",
               "n": "",
               "nullable": false,
               "l": false
@@ -828,6 +828,413 @@
               "l": false
             }
           ]
+        },
+        {
+          "id": "1730799609287478",
+          "cn": "LocalDimensions",
+          "p": "modules/products/data/models/local/dimensions/local_dimensions.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": false,
+              "l": false,
+              "meta": [
+                "primary"
+              ],
+              "a": [
+                "Id()"
+              ]
+            },
+            {
+              "t": "double",
+              "n": "width",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "double",
+              "n": "height",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "double",
+              "n": "depth",
+              "nullable": true,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1730799609303152",
+          "cn": "LocalReview",
+          "p": "modules/products/data/models/local/review/local_review.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": false,
+              "l": false,
+              "meta": [
+                "primary"
+              ],
+              "a": [
+                "Id()"
+              ]
+            },
+            {
+              "t": "int",
+              "n": "rating",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "comment",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "DateTime",
+              "n": "date",
+              "nullable": true,
+              "l": false,
+              "a": [
+                "Property(type: PropertyType.date)"
+              ]
+            },
+            {
+              "t": "String",
+              "n": "reviewerName",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "reviewerEmail",
+              "nullable": true,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1730799609305729",
+          "cn": "LocalMeta",
+          "p": "modules/products/data/models/local/meta/local_meta.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": false,
+              "l": false,
+              "meta": [
+                "primary"
+              ],
+              "a": [
+                "Id()"
+              ]
+            },
+            {
+              "t": "DateTime",
+              "n": "createdAt",
+              "nullable": true,
+              "l": false,
+              "a": [
+                "Property(type: PropertyType.date)"
+              ]
+            },
+            {
+              "t": "DateTime",
+              "n": "updatedAt",
+              "nullable": true,
+              "l": false,
+              "a": [
+                "Property(type: PropertyType.date)"
+              ]
+            },
+            {
+              "t": "String",
+              "n": "barcode",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "qrCode",
+              "nullable": true,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1730799609307701",
+          "cn": "",
+          "p": "common/data/database/app_store.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730799609332329",
+          "cn": "LocalProduct",
+          "p": "modules/products/data/models/local/product/local_product.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": false,
+              "l": false,
+              "meta": [
+                "primary"
+              ],
+              "a": [
+                "Id()"
+              ]
+            },
+            {
+              "t": "int",
+              "n": "productId",
+              "nullable": true,
+              "l": false,
+              "meta": [
+                "unique"
+              ],
+              "a": [
+                "Unique(onConflict: ConflictStrategy.replace)"
+              ]
+            },
+            {
+              "t": "String",
+              "n": "title",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "description",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "category",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "double",
+              "n": "price",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "double",
+              "n": "discountPercentage",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "double",
+              "n": "rating",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "stock",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "tags",
+              "nullable": true,
+              "l": true
+            },
+            {
+              "t": "String",
+              "n": "brand",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "sku",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "weight",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "LocalDimensions",
+              "ft": "",
+              "n": "toOneDimensions",
+              "nullable": false,
+              "l": false,
+              "p": "lib/modules/products/data/models/local/dimensions/local_dimensions.dart",
+              "m": "1730719554306514",
+              "meta": [
+                "toOne"
+              ]
+            },
+            {
+              "t": "String",
+              "n": "warrantyInformation",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "shippingInformation",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "availabilityStatus",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "LocalReview",
+              "ft": "",
+              "n": "toManyReviews",
+              "nullable": false,
+              "l": true,
+              "p": "lib/modules/products/data/models/local/review/local_review.dart",
+              "m": "1730719554306514",
+              "meta": [
+                "toMany"
+              ]
+            },
+            {
+              "t": "String",
+              "n": "returnPolicy",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "minimumOrderQuantity",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "LocalMeta",
+              "ft": "",
+              "n": "toOneMeta",
+              "nullable": false,
+              "l": false,
+              "p": "lib/modules/products/data/models/local/meta/local_meta.dart",
+              "m": "1730719554306514",
+              "meta": [
+                "toOne"
+              ]
+            },
+            {
+              "t": "String",
+              "n": "images",
+              "nullable": true,
+              "l": true
+            },
+            {
+              "t": "String",
+              "n": "thumbnail",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "LocalDimensions",
+              "n": "dimensions",
+              "nullable": true,
+              "l": false,
+              "p": "lib/modules/products/data/models/local/dimensions/local_dimensions.dart",
+              "m": "1730719554306514",
+              "meta": []
+            },
+            {
+              "t": "LocalReview",
+              "n": "reviews",
+              "nullable": true,
+              "l": true,
+              "p": "lib/modules/products/data/models/local/review/local_review.dart",
+              "m": "1730719554306514",
+              "meta": []
+            },
+            {
+              "t": "LocalMeta",
+              "n": "meta",
+              "nullable": true,
+              "l": false,
+              "p": "lib/modules/products/data/models/local/meta/local_meta.dart",
+              "m": "1730719554306514",
+              "meta": []
+            }
+          ]
+        },
+        {
+          "id": "1730799609359923",
+          "cn": "",
+          "p": "modules/products/data/data_sources/local/products/queries/products_query_parameters.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730799894585706",
+          "cn": "Products",
+          "p": "modules/products/data/data_sources/local/products/products_local_data_source.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730799894588823",
+          "cn": "",
+          "p": "modules/products/data/data_sources/local/products/products_local_data_source_impl.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730799894609380",
+          "cn": "Products",
+          "p": "modules/products/data/data_sources/remote/products/products_remote_data_source.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730799894616576",
+          "cn": "ProductsRepository",
+          "p": "modules/products/data/repositories/products/products_repository.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730799894617961",
+          "cn": "ProductsRepositoryImpl",
+          "p": "modules/products/data/repositories/products/products_repository_impl.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730799894580701",
+          "cn": "",
+          "p": "modules/products/data/data_sources/local/products/queries/local_products_query_parameters.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730799894608039",
+          "cn": "",
+          "p": "common/data/database/objectbox.g.dart",
+          "e": false,
+          "pr": []
         }
       ]
     }

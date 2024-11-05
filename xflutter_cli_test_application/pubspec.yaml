@@ -28,6 +28,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  path_provider: ^2.1.1
+  objectbox_flutter_libs: ^4.0.2
+  objectbox: ^4.0.2
   pinput: ^5.0.0
   retrofit: ^4.0.1
   responsive_builder: ^0.7.0
@@ -62,6 +65,7 @@ dependencies:
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
+  objectbox_generator: ^4.0.2
   retrofit_generator: ^7.0.1
   flutter_launcher_icons: ^0.13.1
   freezed: ^2.5.7
@@ -123,3 +127,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+objectbox:
+  # Writes objectbox-model.json and objectbox.g.dart to lib/{custom}
+  output_dir: data/database

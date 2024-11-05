@@ -1,0 +1,253 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:2122160908577252228",
+      "lastPropertyId": "4:5570296253084072915",
+      "name": "LocalDimensions",
+      "properties": [
+        {
+          "id": "1:7367378304943420629",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:725525659083692558",
+          "name": "width",
+          "type": 8
+        },
+        {
+          "id": "3:4901943516027974532",
+          "name": "height",
+          "type": 8
+        },
+        {
+          "id": "4:5570296253084072915",
+          "name": "depth",
+          "type": 8
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:6276929962951983797",
+      "lastPropertyId": "5:4148288451652044199",
+      "name": "LocalMeta",
+      "properties": [
+        {
+          "id": "1:8258615690161606195",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2975092823442895155",
+          "name": "createdAt",
+          "type": 10
+        },
+        {
+          "id": "3:3161399512787844555",
+          "name": "updatedAt",
+          "type": 10
+        },
+        {
+          "id": "4:8778189847716892143",
+          "name": "barcode",
+          "type": 9
+        },
+        {
+          "id": "5:4148288451652044199",
+          "name": "qrCode",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:8714101394009378796",
+      "lastPropertyId": "22:5295875058168480462",
+      "name": "LocalProduct",
+      "properties": [
+        {
+          "id": "1:4950305005857020540",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5785837506382813284",
+          "name": "productId",
+          "type": 6,
+          "flags": 32808,
+          "indexId": "1:2628685097833672000"
+        },
+        {
+          "id": "3:3864100186061919005",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "4:8549972555162116882",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "5:641962031009408866",
+          "name": "category",
+          "type": 9
+        },
+        {
+          "id": "6:2498210399809801300",
+          "name": "price",
+          "type": 8
+        },
+        {
+          "id": "7:6290856439237576945",
+          "name": "discountPercentage",
+          "type": 8
+        },
+        {
+          "id": "8:1231556052923784109",
+          "name": "rating",
+          "type": 8
+        },
+        {
+          "id": "9:3707184211110616307",
+          "name": "stock",
+          "type": 6
+        },
+        {
+          "id": "10:2333198293225650761",
+          "name": "tags",
+          "type": 30
+        },
+        {
+          "id": "11:3827112290753941347",
+          "name": "brand",
+          "type": 9
+        },
+        {
+          "id": "12:2957570007312386489",
+          "name": "sku",
+          "type": 9
+        },
+        {
+          "id": "13:4144384176469534476",
+          "name": "weight",
+          "type": 6
+        },
+        {
+          "id": "14:2316847073759280543",
+          "name": "toOneDimensionsId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "2:9107861225221601972",
+          "relationTarget": "LocalDimensions"
+        },
+        {
+          "id": "15:1934741029761377464",
+          "name": "warrantyInformation",
+          "type": 9
+        },
+        {
+          "id": "16:6043429016929366377",
+          "name": "shippingInformation",
+          "type": 9
+        },
+        {
+          "id": "17:336167009869936693",
+          "name": "availabilityStatus",
+          "type": 9
+        },
+        {
+          "id": "18:399134745622610973",
+          "name": "returnPolicy",
+          "type": 9
+        },
+        {
+          "id": "19:151516259473102985",
+          "name": "minimumOrderQuantity",
+          "type": 6
+        },
+        {
+          "id": "20:6606229142364230771",
+          "name": "toOneMetaId",
+          "type": 11,
+          "flags": 520,
+          "indexId": "3:6644423280066972976",
+          "relationTarget": "LocalMeta"
+        },
+        {
+          "id": "21:6363087237868859008",
+          "name": "images",
+          "type": 30
+        },
+        {
+          "id": "22:5295875058168480462",
+          "name": "thumbnail",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "1:939601381664599836",
+          "name": "toManyReviews",
+          "targetId": "4:2553504931193802387"
+        }
+      ]
+    },
+    {
+      "id": "4:2553504931193802387",
+      "lastPropertyId": "6:848291459264687046",
+      "name": "LocalReview",
+      "properties": [
+        {
+          "id": "1:618133941657042797",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2038614113387283736",
+          "name": "rating",
+          "type": 6
+        },
+        {
+          "id": "3:5595383768533117153",
+          "name": "comment",
+          "type": 9
+        },
+        {
+          "id": "4:8620874365921770796",
+          "name": "date",
+          "type": 10
+        },
+        {
+          "id": "5:5208266462371234448",
+          "name": "reviewerName",
+          "type": 9
+        },
+        {
+          "id": "6:848291459264687046",
+          "name": "reviewerEmail",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "4:2553504931193802387",
+  "lastIndexId": "3:6644423280066972976",
+  "lastRelationId": "1:939601381664599836",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

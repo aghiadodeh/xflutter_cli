@@ -8,10 +8,13 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'dart:io' as _i497;
+
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
+import 'package:xflutter_cli_modules_application/common/data/database/app_store.dart' as _i715;
 import 'package:xflutter_cli_modules_application/common/di/modules/app_module.dart' as _i207;
 import 'package:xflutter_cli_modules_application/common/environments/environments.dart' as _i607;
 import 'package:xflutter_cli_modules_application/common/mediators/controllers/authentication_controller.dart' as _i272;
@@ -35,6 +38,14 @@ import 'package:xflutter_cli_modules_application/modules/authentication/presenta
     as _i756;
 import 'package:xflutter_cli_modules_application/modules/authentication/presentation/screens/verify_pin_code/viewmodels/verify_pin_code_viewmodel.dart'
     as _i199;
+import 'package:xflutter_cli_modules_application/modules/products/data/data_sources/local/products/products_local_data_source.dart'
+    as _i299;
+import 'package:xflutter_cli_modules_application/modules/products/data/data_sources/local/products/products_local_data_source_impl.dart'
+    as _i56;
+import 'package:xflutter_cli_modules_application/modules/products/data/data_sources/remote/products/products_remote_data_source.dart'
+    as _i423;
+import 'package:xflutter_cli_modules_application/modules/products/data/repositories/products/products_repository.dart' as _i694;
+import 'package:xflutter_cli_modules_application/modules/products/data/repositories/products/products_repository_impl.dart' as _i345;
 
 const String _dev = 'dev';
 const String _test = 'test';
@@ -63,6 +74,11 @@ extension GetItInjectableX on _i174.GetIt {
       () => appModule.developmentEnvironment,
       registerFor: {_dev},
     );
+    await gh.lazySingletonAsync<_i497.Directory>(
+      () => appModule.provideDocumentsDirectory(),
+      instanceName: 'AppDocumentsDirectory',
+      preResolve: true,
+    );
     gh.factory<_i607.AppEnvironment>(
       () => appModule.testEnvironment,
       registerFor: {_test},
@@ -71,6 +87,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => appModule.productionEnvironment,
       registerFor: {_prod},
     );
+    gh.lazySingleton<_i715.ObjectBoxAppStore>(() => _i715.ObjectBoxAppStore(gh<_i497.Directory>(instanceName: 'AppDocumentsDirectory')));
     gh.lazySingleton<_i361.Dio>(() => appModule.provideDio(gh<_i607.AppEnvironment>()));
     return this;
   }
@@ -83,6 +100,22 @@ extension GetItInjectableX on _i174.GetIt {
       init: (_i526.GetItHelper gh) {
         gh.lazySingleton<_i125.AuthenticationRestClient>(() => _i125.AuthenticationRestClient(gh<_i361.Dio>()));
         gh.lazySingleton<_i583.AuthenticationRepository>(() => _i582.AuthenticationRepositoryImpl(gh<_i125.AuthenticationRestClient>()));
+      },
+    );
+  }
+
+// initializes the registration of products-scope dependencies inside of GetIt
+  _i174.GetIt initProductsScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'products',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i423.ProductsRemoteDataSource>(() => _i423.ProductsRemoteDataSource(gh<_i361.Dio>()));
+        gh.lazySingleton<_i299.ProductsLocalDataSource>(() => _i56.ProductsLocalDataSourceImpl(gh<_i715.ObjectBoxAppStore>()));
+        gh.lazySingleton<_i694.ProductsRepository>(() => _i345.ProductsRepositoryImpl(
+              gh<_i423.ProductsRemoteDataSource>(),
+              gh<_i299.ProductsLocalDataSource>(),
+            ));
       },
     );
   }
