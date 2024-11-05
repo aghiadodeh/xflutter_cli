@@ -237,11 +237,139 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "5:375651560509988347",
+      "lastPropertyId": "5:9148444812458880813",
+      "name": "LocalCategory",
+      "properties": [
+        {
+          "id": "1:5913083623691760444",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8057946323461754703",
+          "name": "categoryId",
+          "type": 6,
+          "flags": 32808,
+          "indexId": "4:2200595000049842859"
+        },
+        {
+          "id": "3:6697123857214744849",
+          "name": "createdAt",
+          "type": 10
+        },
+        {
+          "id": "4:366686160947593600",
+          "name": "updatedAt",
+          "type": 10
+        },
+        {
+          "id": "5:9148444812458880813",
+          "name": "name",
+          "type": 9
+        }
+      ],
+      "relations": [
+        {
+          "id": "2:708319826038669072",
+          "name": "toManyMedia",
+          "targetId": "6:3774412174994005624"
+        }
+      ]
+    },
+    {
+      "id": "6:3774412174994005624",
+      "lastPropertyId": "15:6580214447565428903",
+      "name": "LocalMedia",
+      "properties": [
+        {
+          "id": "1:4565188149601715370",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5310041720997095107",
+          "name": "mediaId",
+          "type": 6,
+          "flags": 32808,
+          "indexId": "5:1107375134484598022"
+        },
+        {
+          "id": "3:4329983741655590257",
+          "name": "modelType",
+          "type": 9
+        },
+        {
+          "id": "4:119104122522959569",
+          "name": "modelId",
+          "type": 6
+        },
+        {
+          "id": "5:8367608828625421631",
+          "name": "collectionName",
+          "type": 9
+        },
+        {
+          "id": "6:7092726018965814613",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "7:4069574980435296782",
+          "name": "fileName",
+          "type": 9
+        },
+        {
+          "id": "8:2137809934784632091",
+          "name": "mimeType",
+          "type": 9
+        },
+        {
+          "id": "9:951254410710791412",
+          "name": "disk",
+          "type": 9
+        },
+        {
+          "id": "10:760580877908470602",
+          "name": "conversionsDisk",
+          "type": 9
+        },
+        {
+          "id": "11:3117596727464962142",
+          "name": "size",
+          "type": 6
+        },
+        {
+          "id": "12:668570001116775834",
+          "name": "createdAt",
+          "type": 10
+        },
+        {
+          "id": "13:7235687343385421892",
+          "name": "updatedAt",
+          "type": 10
+        },
+        {
+          "id": "14:5845095206738802150",
+          "name": "originalUrl",
+          "type": 9
+        },
+        {
+          "id": "15:6580214447565428903",
+          "name": "previewUrl",
+          "type": 9
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "4:7672683399921358147",
-  "lastIndexId": "3:220250082353935189",
-  "lastRelationId": "1:5257384903813425365",
+  "lastEntityId": "6:3774412174994005624",
+  "lastIndexId": "5:1107375134484598022",
+  "lastRelationId": "2:708319826038669072",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
   "modelVersionParserMinimum": 5,

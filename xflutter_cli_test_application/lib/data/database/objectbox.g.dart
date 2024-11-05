@@ -13,7 +13,9 @@ import 'package:objectbox/internal.dart' as obx_int; // generated code can acces
 import 'package:objectbox/objectbox.dart' as obx;
 import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
+import '../../data/models/local/category/local_category.dart';
 import '../../data/models/local/dimensions/local_dimensions.dart';
+import '../../data/models/local/media/local_media.dart';
 import '../../data/models/local/meta/local_meta.dart';
 import '../../data/models/local/product/local_product.dart';
 import '../../data/models/local/review/local_review.dart';
@@ -113,6 +115,57 @@ final _entities = <obx_int.ModelEntity>[
         obx_int.ModelProperty(id: const obx_int.IdUid(6, 2840076151743254875), name: 'reviewerEmail', type: 9, flags: 0)
       ],
       relations: <obx_int.ModelRelation>[],
+      backlinks: <obx_int.ModelBacklink>[]),
+  obx_int.ModelEntity(
+      id: const obx_int.IdUid(5, 375651560509988347),
+      name: 'LocalCategory',
+      lastPropertyId: const obx_int.IdUid(5, 9148444812458880813),
+      flags: 0,
+      properties: <obx_int.ModelProperty>[
+        obx_int.ModelProperty(id: const obx_int.IdUid(1, 5913083623691760444), name: 'id', type: 6, flags: 1),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(2, 8057946323461754703),
+            name: 'categoryId',
+            type: 6,
+            flags: 32808,
+            indexId: const obx_int.IdUid(4, 2200595000049842859)),
+        obx_int.ModelProperty(id: const obx_int.IdUid(3, 6697123857214744849), name: 'createdAt', type: 10, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(4, 366686160947593600), name: 'updatedAt', type: 10, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(5, 9148444812458880813), name: 'name', type: 9, flags: 0)
+      ],
+      relations: <obx_int.ModelRelation>[
+        obx_int.ModelRelation(
+            id: const obx_int.IdUid(2, 708319826038669072), name: 'toManyMedia', targetId: const obx_int.IdUid(6, 3774412174994005624))
+      ],
+      backlinks: <obx_int.ModelBacklink>[]),
+  obx_int.ModelEntity(
+      id: const obx_int.IdUid(6, 3774412174994005624),
+      name: 'LocalMedia',
+      lastPropertyId: const obx_int.IdUid(15, 6580214447565428903),
+      flags: 0,
+      properties: <obx_int.ModelProperty>[
+        obx_int.ModelProperty(id: const obx_int.IdUid(1, 4565188149601715370), name: 'id', type: 6, flags: 1),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(2, 5310041720997095107),
+            name: 'mediaId',
+            type: 6,
+            flags: 32808,
+            indexId: const obx_int.IdUid(5, 1107375134484598022)),
+        obx_int.ModelProperty(id: const obx_int.IdUid(3, 4329983741655590257), name: 'modelType', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(4, 119104122522959569), name: 'modelId', type: 6, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(5, 8367608828625421631), name: 'collectionName', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(6, 7092726018965814613), name: 'name', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(7, 4069574980435296782), name: 'fileName', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(8, 2137809934784632091), name: 'mimeType', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(9, 951254410710791412), name: 'disk', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(10, 760580877908470602), name: 'conversionsDisk', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(11, 3117596727464962142), name: 'size', type: 6, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(12, 668570001116775834), name: 'createdAt', type: 10, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(13, 7235687343385421892), name: 'updatedAt', type: 10, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(14, 5845095206738802150), name: 'originalUrl', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(15, 6580214447565428903), name: 'previewUrl', type: 9, flags: 0)
+      ],
+      relations: <obx_int.ModelRelation>[],
       backlinks: <obx_int.ModelBacklink>[])
 ];
 
@@ -151,9 +204,9 @@ Future<obx.Store> openStore(
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
       entities: _entities,
-      lastEntityId: const obx_int.IdUid(4, 7672683399921358147),
-      lastIndexId: const obx_int.IdUid(3, 220250082353935189),
-      lastRelationId: const obx_int.IdUid(1, 5257384903813425365),
+      lastEntityId: const obx_int.IdUid(6, 3774412174994005624),
+      lastIndexId: const obx_int.IdUid(5, 1107375134484598022),
+      lastRelationId: const obx_int.IdUid(2, 708319826038669072),
       lastSequenceId: const obx_int.IdUid(0, 0),
       retiredEntityUids: const [],
       retiredIndexUids: const [],
@@ -369,6 +422,117 @@ obx_int.ModelDefinition getObjectBoxModel() {
               reviewerEmail: reviewerEmailParam);
 
           return object;
+        }),
+    LocalCategory: obx_int.EntityDefinition<LocalCategory>(
+        model: _entities[4],
+        toOneRelations: (LocalCategory object) => [],
+        toManyRelations: (LocalCategory object) => {obx_int.RelInfo<LocalCategory>.toMany(2, object.id): object.toManyMedia},
+        getId: (LocalCategory object) => object.id,
+        setId: (LocalCategory object, int id) {
+          object.id = id;
+        },
+        objectToFB: (LocalCategory object, fb.Builder fbb) {
+          final nameOffset = object.name == null ? null : fbb.writeString(object.name!);
+          fbb.startTable(6);
+          fbb.addInt64(0, object.id);
+          fbb.addInt64(1, object.categoryId);
+          fbb.addInt64(2, object.createdAt?.millisecondsSinceEpoch);
+          fbb.addInt64(3, object.updatedAt?.millisecondsSinceEpoch);
+          fbb.addOffset(4, nameOffset);
+          fbb.finish(fbb.endTable());
+          return object.id;
+        },
+        objectFromFB: (obx.Store store, ByteData fbData) {
+          final buffer = fb.BufferContext(fbData);
+          final rootOffset = buffer.derefObject(0);
+          final createdAtValue = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 8);
+          final updatedAtValue = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 10);
+          final idParam = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+          final categoryIdParam = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 6);
+          final createdAtParam = createdAtValue == null ? null : DateTime.fromMillisecondsSinceEpoch(createdAtValue);
+          final updatedAtParam = updatedAtValue == null ? null : DateTime.fromMillisecondsSinceEpoch(updatedAtValue);
+          final nameParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 12);
+          final object = LocalCategory(
+              id: idParam, categoryId: categoryIdParam, createdAt: createdAtParam, updatedAt: updatedAtParam, name: nameParam);
+          obx_int.InternalToManyAccess.setRelInfo<LocalCategory>(
+              object.toManyMedia, store, obx_int.RelInfo<LocalCategory>.toMany(2, object.id));
+          return object;
+        }),
+    LocalMedia: obx_int.EntityDefinition<LocalMedia>(
+        model: _entities[5],
+        toOneRelations: (LocalMedia object) => [],
+        toManyRelations: (LocalMedia object) => {},
+        getId: (LocalMedia object) => object.id,
+        setId: (LocalMedia object, int id) {
+          object.id = id;
+        },
+        objectToFB: (LocalMedia object, fb.Builder fbb) {
+          final modelTypeOffset = object.modelType == null ? null : fbb.writeString(object.modelType!);
+          final collectionNameOffset = object.collectionName == null ? null : fbb.writeString(object.collectionName!);
+          final nameOffset = object.name == null ? null : fbb.writeString(object.name!);
+          final fileNameOffset = object.fileName == null ? null : fbb.writeString(object.fileName!);
+          final mimeTypeOffset = object.mimeType == null ? null : fbb.writeString(object.mimeType!);
+          final diskOffset = object.disk == null ? null : fbb.writeString(object.disk!);
+          final conversionsDiskOffset = object.conversionsDisk == null ? null : fbb.writeString(object.conversionsDisk!);
+          final originalUrlOffset = object.originalUrl == null ? null : fbb.writeString(object.originalUrl!);
+          final previewUrlOffset = object.previewUrl == null ? null : fbb.writeString(object.previewUrl!);
+          fbb.startTable(16);
+          fbb.addInt64(0, object.id);
+          fbb.addInt64(1, object.mediaId);
+          fbb.addOffset(2, modelTypeOffset);
+          fbb.addInt64(3, object.modelId);
+          fbb.addOffset(4, collectionNameOffset);
+          fbb.addOffset(5, nameOffset);
+          fbb.addOffset(6, fileNameOffset);
+          fbb.addOffset(7, mimeTypeOffset);
+          fbb.addOffset(8, diskOffset);
+          fbb.addOffset(9, conversionsDiskOffset);
+          fbb.addInt64(10, object.size);
+          fbb.addInt64(11, object.createdAt?.millisecondsSinceEpoch);
+          fbb.addInt64(12, object.updatedAt?.millisecondsSinceEpoch);
+          fbb.addOffset(13, originalUrlOffset);
+          fbb.addOffset(14, previewUrlOffset);
+          fbb.finish(fbb.endTable());
+          return object.id;
+        },
+        objectFromFB: (obx.Store store, ByteData fbData) {
+          final buffer = fb.BufferContext(fbData);
+          final rootOffset = buffer.derefObject(0);
+          final createdAtValue = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 26);
+          final updatedAtValue = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 28);
+          final idParam = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+          final mediaIdParam = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 6);
+          final modelTypeParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 8);
+          final modelIdParam = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 10);
+          final collectionNameParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 12);
+          final nameParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 14);
+          final fileNameParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 16);
+          final mimeTypeParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 18);
+          final diskParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 20);
+          final conversionsDiskParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 22);
+          final sizeParam = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 24);
+          final createdAtParam = createdAtValue == null ? null : DateTime.fromMillisecondsSinceEpoch(createdAtValue);
+          final updatedAtParam = updatedAtValue == null ? null : DateTime.fromMillisecondsSinceEpoch(updatedAtValue);
+          final originalUrlParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 30);
+          final previewUrlParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 32);
+          final object = LocalMedia(
+              id: idParam,
+              mediaId: mediaIdParam,
+              modelType: modelTypeParam,
+              modelId: modelIdParam,
+              collectionName: collectionNameParam,
+              name: nameParam,
+              fileName: fileNameParam,
+              mimeType: mimeTypeParam,
+              disk: diskParam,
+              conversionsDisk: conversionsDiskParam,
+              size: sizeParam,
+              createdAt: createdAtParam,
+              updatedAt: updatedAtParam,
+              originalUrl: originalUrlParam,
+              previewUrl: previewUrlParam);
+
+          return object;
         })
   };
 
@@ -499,4 +663,73 @@ class LocalReview_ {
 
   /// See [LocalReview.reviewerEmail].
   static final reviewerEmail = obx.QueryStringProperty<LocalReview>(_entities[3].properties[5]);
+}
+
+/// [LocalCategory] entity fields to define ObjectBox queries.
+class LocalCategory_ {
+  /// See [LocalCategory.id].
+  static final id = obx.QueryIntegerProperty<LocalCategory>(_entities[4].properties[0]);
+
+  /// See [LocalCategory.categoryId].
+  static final categoryId = obx.QueryIntegerProperty<LocalCategory>(_entities[4].properties[1]);
+
+  /// See [LocalCategory.createdAt].
+  static final createdAt = obx.QueryDateProperty<LocalCategory>(_entities[4].properties[2]);
+
+  /// See [LocalCategory.updatedAt].
+  static final updatedAt = obx.QueryDateProperty<LocalCategory>(_entities[4].properties[3]);
+
+  /// See [LocalCategory.name].
+  static final name = obx.QueryStringProperty<LocalCategory>(_entities[4].properties[4]);
+
+  /// see [LocalCategory.toManyMedia]
+  static final toManyMedia = obx.QueryRelationToMany<LocalCategory, LocalMedia>(_entities[4].relations[0]);
+}
+
+/// [LocalMedia] entity fields to define ObjectBox queries.
+class LocalMedia_ {
+  /// See [LocalMedia.id].
+  static final id = obx.QueryIntegerProperty<LocalMedia>(_entities[5].properties[0]);
+
+  /// See [LocalMedia.mediaId].
+  static final mediaId = obx.QueryIntegerProperty<LocalMedia>(_entities[5].properties[1]);
+
+  /// See [LocalMedia.modelType].
+  static final modelType = obx.QueryStringProperty<LocalMedia>(_entities[5].properties[2]);
+
+  /// See [LocalMedia.modelId].
+  static final modelId = obx.QueryIntegerProperty<LocalMedia>(_entities[5].properties[3]);
+
+  /// See [LocalMedia.collectionName].
+  static final collectionName = obx.QueryStringProperty<LocalMedia>(_entities[5].properties[4]);
+
+  /// See [LocalMedia.name].
+  static final name = obx.QueryStringProperty<LocalMedia>(_entities[5].properties[5]);
+
+  /// See [LocalMedia.fileName].
+  static final fileName = obx.QueryStringProperty<LocalMedia>(_entities[5].properties[6]);
+
+  /// See [LocalMedia.mimeType].
+  static final mimeType = obx.QueryStringProperty<LocalMedia>(_entities[5].properties[7]);
+
+  /// See [LocalMedia.disk].
+  static final disk = obx.QueryStringProperty<LocalMedia>(_entities[5].properties[8]);
+
+  /// See [LocalMedia.conversionsDisk].
+  static final conversionsDisk = obx.QueryStringProperty<LocalMedia>(_entities[5].properties[9]);
+
+  /// See [LocalMedia.size].
+  static final size = obx.QueryIntegerProperty<LocalMedia>(_entities[5].properties[10]);
+
+  /// See [LocalMedia.createdAt].
+  static final createdAt = obx.QueryDateProperty<LocalMedia>(_entities[5].properties[11]);
+
+  /// See [LocalMedia.updatedAt].
+  static final updatedAt = obx.QueryDateProperty<LocalMedia>(_entities[5].properties[12]);
+
+  /// See [LocalMedia.originalUrl].
+  static final originalUrl = obx.QueryStringProperty<LocalMedia>(_entities[5].properties[13]);
+
+  /// See [LocalMedia.previewUrl].
+  static final previewUrl = obx.QueryStringProperty<LocalMedia>(_entities[5].properties[14]);
 }
