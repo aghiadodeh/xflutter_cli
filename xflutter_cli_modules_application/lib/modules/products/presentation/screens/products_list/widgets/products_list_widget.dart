@@ -17,7 +17,13 @@ class ProductsListWidget extends StatelessWidget {
   final Function(Product product) onDelete;
   final Function(Product product) onPressed;
 
-  const ProductsListWidget({required this.onUpdate, required this.onDelete, required this.onPressed, required this.controller, super.key});
+  const ProductsListWidget({
+    required this.onUpdate,
+    required this.onDelete,
+    required this.onPressed,
+    required this.controller,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
