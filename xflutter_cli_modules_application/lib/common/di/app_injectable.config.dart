@@ -38,6 +38,12 @@ import 'package:xflutter_cli_modules_application/modules/authentication/presenta
     as _i756;
 import 'package:xflutter_cli_modules_application/modules/authentication/presentation/screens/verify_pin_code/viewmodels/verify_pin_code_viewmodel.dart'
     as _i199;
+import 'package:xflutter_cli_modules_application/modules/categories/data/data_sources/local/categories/categories_local_data_source.dart'
+    as _i503;
+import 'package:xflutter_cli_modules_application/modules/categories/data/data_sources/local/categories/categories_local_data_source_impl.dart'
+    as _i433;
+import 'package:xflutter_cli_modules_application/modules/categories/data/repositories/categories/categories_repository.dart' as _i648;
+import 'package:xflutter_cli_modules_application/modules/categories/data/repositories/categories/categories_repository_impl.dart' as _i681;
 import 'package:xflutter_cli_modules_application/modules/products/data/data_sources/local/products/products_local_data_source.dart'
     as _i299;
 import 'package:xflutter_cli_modules_application/modules/products/data/data_sources/local/products/products_local_data_source_impl.dart'
@@ -125,6 +131,18 @@ extension GetItInjectableX on _i174.GetIt {
               gh<_i423.ProductsRemoteDataSource>(),
               gh<_i299.ProductsLocalDataSource>(),
             ));
+      },
+    );
+  }
+
+// initializes the registration of categories-scope dependencies inside of GetIt
+  _i174.GetIt initCategoriesScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'categories',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i503.CategoriesLocalDataSource>(() => _i433.CategoriesLocalDataSourceImpl(gh<_i715.ObjectBoxAppStore>()));
+        gh.lazySingleton<_i648.CategoriesRepository>(() => _i681.CategoriesRepositoryImpl(gh<_i503.CategoriesLocalDataSource>()));
       },
     );
   }

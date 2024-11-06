@@ -27,7 +27,8 @@ class UpdateProductScreen extends StatefulWidget {
   State<UpdateProductScreen> createState() => _UpdateProductScreenState();
 }
 
-class _UpdateProductScreenState extends State<UpdateProductScreen> with LifecycleOwner<UpdateProductScreen, UpdateProductViewModel>, ObserverMixin {
+class _UpdateProductScreenState extends State<UpdateProductScreen>
+    with LifecycleOwner<UpdateProductScreen, UpdateProductViewModel>, ObserverMixin {
   @override
   void onInitState() {
     viewModel.params.id = widget.id;

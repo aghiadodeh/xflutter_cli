@@ -1249,6 +1249,366 @@
           "p": "modules/products/presentation/widgets/product_form.dart",
           "e": false,
           "pr": []
+        },
+        {
+          "id": "1730878470368466",
+          "cn": "Media",
+          "p": "modules/categories/data/models/entities/media/media.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "modelType",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "modelId",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "collectionName",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "name",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "fileName",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "mimeType",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "disk",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "conversionsDisk",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "size",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "DateTime",
+              "n": "createdAt",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "DateTime",
+              "n": "updatedAt",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "originalUrl",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "previewUrl",
+              "nullable": true,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1730878470384678",
+          "cn": "Category",
+          "p": "modules/categories/data/models/entities/category/category.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "DateTime",
+              "n": "createdAt",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "DateTime",
+              "n": "updatedAt",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "name",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "Media",
+              "n": "media",
+              "nullable": true,
+              "l": true,
+              "p": "modules/categories/data/models/entities/media/media.dart",
+              "m": "1730719554306514"
+            }
+          ]
+        },
+        {
+          "id": "1730878512333540",
+          "cn": "LocalMedia",
+          "p": "modules/categories/data/models/local/media/local_media.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": false,
+              "l": false,
+              "meta": [
+                "primary"
+              ],
+              "a": [
+                "Id()"
+              ]
+            },
+            {
+              "t": "int",
+              "n": "mediaId",
+              "nullable": true,
+              "l": false,
+              "meta": [
+                "unique"
+              ],
+              "a": [
+                "Unique(onConflict: ConflictStrategy.replace)"
+              ]
+            },
+            {
+              "t": "String",
+              "n": "modelType",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "modelId",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "collectionName",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "name",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "fileName",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "mimeType",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "disk",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "conversionsDisk",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "int",
+              "n": "size",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "DateTime",
+              "n": "createdAt",
+              "nullable": true,
+              "l": false,
+              "a": [
+                "Property(type: PropertyType.date)"
+              ]
+            },
+            {
+              "t": "DateTime",
+              "n": "updatedAt",
+              "nullable": true,
+              "l": false,
+              "a": [
+                "Property(type: PropertyType.date)"
+              ]
+            },
+            {
+              "t": "String",
+              "n": "originalUrl",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "previewUrl",
+              "nullable": true,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1730878512349713",
+          "cn": "LocalCategory",
+          "p": "modules/categories/data/models/local/category/local_category.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": false,
+              "l": false,
+              "meta": [
+                "primary"
+              ],
+              "a": [
+                "Id()"
+              ]
+            },
+            {
+              "t": "int",
+              "n": "categoryId",
+              "nullable": true,
+              "l": false,
+              "meta": [
+                "unique"
+              ],
+              "a": [
+                "Unique(onConflict: ConflictStrategy.replace)"
+              ]
+            },
+            {
+              "t": "DateTime",
+              "n": "createdAt",
+              "nullable": true,
+              "l": false,
+              "a": [
+                "Property(type: PropertyType.date)"
+              ]
+            },
+            {
+              "t": "DateTime",
+              "n": "updatedAt",
+              "nullable": true,
+              "l": false,
+              "a": [
+                "Property(type: PropertyType.date)"
+              ]
+            },
+            {
+              "t": "String",
+              "n": "name",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "LocalMedia",
+              "ft": "",
+              "n": "toManyMedia",
+              "nullable": false,
+              "l": true,
+              "p": "lib/modules/categories/data/models/local/media/local_media.dart",
+              "m": "1730719554306514",
+              "meta": [
+                "toMany"
+              ]
+            },
+            {
+              "t": "LocalMedia",
+              "n": "media",
+              "nullable": true,
+              "l": true,
+              "p": "lib/modules/categories/data/models/local/media/local_media.dart",
+              "m": "1730719554306514",
+              "meta": []
+            }
+          ]
+        },
+        {
+          "id": "1730878512380129",
+          "cn": "",
+          "p": "modules/categories/data/data_sources/local/categories/queries/local_categories_query_parameters.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730878512382933",
+          "cn": "Categories",
+          "p": "modules/categories/data/data_sources/local/categories/categories_local_data_source.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730878512384511",
+          "cn": "",
+          "p": "modules/categories/data/data_sources/local/categories/categories_local_data_source_impl.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730878512388871",
+          "cn": "CategoriesRepository",
+          "p": "modules/categories/data/repositories/categories/categories_repository.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730878512390636",
+          "cn": "CategoriesRepositoryImpl",
+          "p": "modules/categories/data/repositories/categories/categories_repository_impl.dart",
+          "e": false,
+          "pr": []
         }
       ]
     }

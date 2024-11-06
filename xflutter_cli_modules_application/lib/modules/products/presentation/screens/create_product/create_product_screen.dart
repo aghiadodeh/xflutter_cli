@@ -24,7 +24,8 @@ class CreateProductScreen extends StatefulWidget {
   State<CreateProductScreen> createState() => _CreateProductScreenState();
 }
 
-class _CreateProductScreenState extends State<CreateProductScreen> with LifecycleOwner<CreateProductScreen, CreateProductViewModel>, ObserverMixin {
+class _CreateProductScreenState extends State<CreateProductScreen>
+    with LifecycleOwner<CreateProductScreen, CreateProductViewModel>, ObserverMixin {
   @override
   Widget build(BuildContext context) {
     return Stack(
