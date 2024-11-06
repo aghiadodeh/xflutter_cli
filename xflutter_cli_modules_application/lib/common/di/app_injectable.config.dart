@@ -44,6 +44,8 @@ import 'package:xflutter_cli_modules_application/modules/categories/data/data_so
     as _i433;
 import 'package:xflutter_cli_modules_application/modules/categories/data/repositories/categories/categories_repository.dart' as _i648;
 import 'package:xflutter_cli_modules_application/modules/categories/data/repositories/categories/categories_repository_impl.dart' as _i681;
+import 'package:xflutter_cli_modules_application/modules/categories/presentation/screens/categories_list/viewmodels/categories_list_viewmodel.dart'
+    as _i851;
 import 'package:xflutter_cli_modules_application/modules/products/data/data_sources/local/products/products_local_data_source.dart'
     as _i299;
 import 'package:xflutter_cli_modules_application/modules/products/data/data_sources/local/products/products_local_data_source_impl.dart'
@@ -105,6 +107,17 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i715.ObjectBoxAppStore>(() => _i715.ObjectBoxAppStore(gh<_i497.Directory>(instanceName: 'AppDocumentsDirectory')));
     gh.lazySingleton<_i361.Dio>(() => appModule.provideDio(gh<_i607.AppEnvironment>()));
     return this;
+  }
+
+// initializes the registration of categoriesList-scope dependencies inside of GetIt
+  _i174.GetIt initCategoriesListScope({_i174.ScopeDisposeFunc? dispose}) {
+    return _i526.GetItHelper(this).initScope(
+      'categoriesList',
+      dispose: dispose,
+      init: (_i526.GetItHelper gh) {
+        gh.lazySingleton<_i851.CategoriesListViewModel>(() => _i851.CategoriesListViewModel());
+      },
+    );
   }
 
 // initializes the registration of authentication-scope dependencies inside of GetIt

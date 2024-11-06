@@ -10,6 +10,25 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [CategoriesListScreen]
+class CategoriesList extends PageRouteInfo<void> {
+  const CategoriesList({List<PageRouteInfo>? children})
+      : super(
+          CategoriesList.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CategoriesList';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CategoriesListScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [ChangePasswordScreen]
 class ChangePassword extends PageRouteInfo<void> {
   const ChangePassword({List<PageRouteInfo>? children})
