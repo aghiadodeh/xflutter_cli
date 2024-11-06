@@ -12,8 +12,8 @@ import 'package:xflutter_cli_modules_application/common/viewmodels/base_viewmode
 class ProductsListViewModel extends BaseViewModel {
   final params = ProductsListParams();
   final ProductsRepository _repository;
-  ProductsListViewModel(this._repository, this._productsPagingController);
   final ProductsPagingController _productsPagingController;
+  ProductsListViewModel(this._repository, this._productsPagingController);
 
   @override
   void onInit() {
