@@ -1609,6 +1609,48 @@
           "p": "modules/categories/data/repositories/categories/categories_repository_impl.dart",
           "e": false,
           "pr": []
+        },
+        {
+          "id": "1730879802386576",
+          "cn": "",
+          "p": "modules/categories/presentation/screens/categories_list/mobile/categories_list_mobile_screen.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730879802397558",
+          "cn": "",
+          "p": "modules/categories/presentation/screens/categories_list/viewmodels/categories_list_viewmodel.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730879802398502",
+          "cn": "",
+          "p": "modules/categories/presentation/screens/categories_list/viewmodels/categories_list_params.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730879802399091",
+          "cn": "",
+          "p": "modules/categories/presentation/screens/categories_list/widgets/.gitkeep",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730879802400946",
+          "cn": "",
+          "p": "modules/categories/presentation/screens/categories_list/categories_list_screen.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1730879802474779",
+          "cn": "",
+          "p": "common/di/app_injectable.config.dart",
+          "e": false,
+          "pr": []
         }
       ]
     }
