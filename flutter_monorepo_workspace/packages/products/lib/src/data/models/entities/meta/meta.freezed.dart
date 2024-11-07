@@ -40,8 +40,7 @@ mixin _$Meta {
 
 /// @nodoc
 abstract class $MetaCopyWith<$Res> {
-  factory $MetaCopyWith(Meta value, $Res Function(Meta) then) =
-      _$MetaCopyWithImpl<$Res, Meta>;
+  factory $MetaCopyWith(Meta value, $Res Function(Meta) then) = _$MetaCopyWithImpl<$Res, Meta>;
   @useResult
   $Res call(
       {@JsonKey(name: 'createdAt') DateTime? createdAt,
@@ -51,8 +50,7 @@ abstract class $MetaCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MetaCopyWithImpl<$Res, $Val extends Meta>
-    implements $MetaCopyWith<$Res> {
+class _$MetaCopyWithImpl<$Res, $Val extends Meta> implements $MetaCopyWith<$Res> {
   _$MetaCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -93,9 +91,7 @@ class _$MetaCopyWithImpl<$Res, $Val extends Meta>
 
 /// @nodoc
 abstract class _$$MetaImplCopyWith<$Res> implements $MetaCopyWith<$Res> {
-  factory _$$MetaImplCopyWith(
-          _$MetaImpl value, $Res Function(_$MetaImpl) then) =
-      __$$MetaImplCopyWithImpl<$Res>;
+  factory _$$MetaImplCopyWith(_$MetaImpl value, $Res Function(_$MetaImpl) then) = __$$MetaImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -106,11 +102,8 @@ abstract class _$$MetaImplCopyWith<$Res> implements $MetaCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$MetaImplCopyWithImpl<$Res>
-    extends _$MetaCopyWithImpl<$Res, _$MetaImpl>
-    implements _$$MetaImplCopyWith<$Res> {
-  __$$MetaImplCopyWithImpl(_$MetaImpl _value, $Res Function(_$MetaImpl) _then)
-      : super(_value, _then);
+class __$$MetaImplCopyWithImpl<$Res> extends _$MetaCopyWithImpl<$Res, _$MetaImpl> implements _$$MetaImplCopyWith<$Res> {
+  __$$MetaImplCopyWithImpl(_$MetaImpl _value, $Res Function(_$MetaImpl) _then) : super(_value, _then);
 
   /// Create a copy of Meta
   /// with the given fields replaced by the non-null parameter values.
@@ -152,8 +145,7 @@ class _$MetaImpl implements _Meta {
       @JsonKey(name: 'barcode') this.barcode,
       @JsonKey(name: 'qrCode') this.qrCode});
 
-  factory _$MetaImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MetaImplFromJson(json);
+  factory _$MetaImpl.fromJson(Map<String, dynamic> json) => _$$MetaImplFromJson(json);
 
   @override
   @JsonKey(name: 'createdAt')
@@ -178,26 +170,22 @@ class _$MetaImpl implements _Meta {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MetaImpl &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
+            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt) &&
             (identical(other.barcode, barcode) || other.barcode == barcode) &&
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, createdAt, updatedAt, barcode, qrCode);
+  int get hashCode => Object.hash(runtimeType, createdAt, updatedAt, barcode, qrCode);
 
   /// Create a copy of Meta
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MetaImplCopyWith<_$MetaImpl> get copyWith =>
-      __$$MetaImplCopyWithImpl<_$MetaImpl>(this, _$identity);
+  _$$MetaImplCopyWith<_$MetaImpl> get copyWith => __$$MetaImplCopyWithImpl<_$MetaImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -233,6 +221,5 @@ abstract class _Meta implements Meta {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MetaImplCopyWith<_$MetaImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MetaImplCopyWith<_$MetaImpl> get copyWith => throw _privateConstructorUsedError;
 }

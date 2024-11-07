@@ -29,24 +29,23 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<Product>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<Product>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/shop/products',
-              queryParameters: queryParameters,
-              data: _data,
-              cancelToken: cancelToken,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
+        .compose(
+          _dio.options,
+          '/shop/products',
+          queryParameters: queryParameters,
+          data: _data,
+          cancelToken: cancelToken,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
     final value = BaseResponse<Product>.fromJson(
       _result.data!,
       (json) => Product.fromJson(json as Map<String, dynamic>),
@@ -66,24 +65,23 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(data);
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<Product>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<Product>>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/shop/products/${id}',
-              queryParameters: queryParameters,
-              data: _data,
-              cancelToken: cancelToken,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
+        .compose(
+          _dio.options,
+          '/shop/products/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+          cancelToken: cancelToken,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
     final value = BaseResponse<Product>.fromJson(
       _result.data!,
       (json) => Product.fromJson(json as Map<String, dynamic>),
@@ -105,24 +103,23 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<ListResponse<Product>>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<ListResponse<Product>>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/shop/products',
-              queryParameters: queryParameters,
-              data: _data,
-              cancelToken: cancelToken,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
+        .compose(
+          _dio.options,
+          '/shop/products',
+          queryParameters: queryParameters,
+          data: _data,
+          cancelToken: cancelToken,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
     final value = BaseResponse<ListResponse<Product>>.fromJson(
       _result.data!,
       (json) => ListResponse<Product>.fromJson(
@@ -143,24 +140,23 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<Product>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<Product>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/shop/products/${id}',
-              queryParameters: queryParameters,
-              data: _data,
-              cancelToken: cancelToken,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
+        .compose(
+          _dio.options,
+          '/shop/products/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+          cancelToken: cancelToken,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
     final value = BaseResponse<Product>.fromJson(
       _result.data!,
       (json) => Product.fromJson(json as Map<String, dynamic>),
@@ -178,24 +174,23 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<dynamic>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<dynamic>>(Options(
       method: 'DELETE',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/shop/products/${id}',
-              queryParameters: queryParameters,
-              data: _data,
-              cancelToken: cancelToken,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
+        .compose(
+          _dio.options,
+          '/shop/products/${id}',
+          queryParameters: queryParameters,
+          data: _data,
+          cancelToken: cancelToken,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
     final value = BaseResponse<dynamic>.fromJson(
       _result.data!,
       (json) => json as dynamic,
@@ -204,9 +199,7 @@ class _ProductsRemoteDataSource implements ProductsRemoteDataSource {
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
-    if (T != dynamic &&
-        !(requestOptions.responseType == ResponseType.bytes ||
-            requestOptions.responseType == ResponseType.stream)) {
+    if (T != dynamic && !(requestOptions.responseType == ResponseType.bytes || requestOptions.responseType == ResponseType.stream)) {
       if (T == String) {
         requestOptions.responseType = ResponseType.plain;
       } else {

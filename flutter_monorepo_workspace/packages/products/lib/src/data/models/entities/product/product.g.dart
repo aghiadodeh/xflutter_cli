@@ -19,28 +19,19 @@ _$ProductImpl _$$ProductImplFromJson(Map json) => _$ProductImpl(
       brand: json['brand'] as String?,
       sku: json['sku'] as String?,
       weight: (json['weight'] as num?)?.toInt(),
-      dimensions: json['dimensions'] == null
-          ? null
-          : Dimensions.fromJson(
-              Map<String, dynamic>.from(json['dimensions'] as Map)),
+      dimensions: json['dimensions'] == null ? null : Dimensions.fromJson(Map<String, dynamic>.from(json['dimensions'] as Map)),
       warrantyInformation: json['warrantyInformation'] as String?,
       shippingInformation: json['shippingInformation'] as String?,
       availabilityStatus: json['availabilityStatus'] as String?,
-      reviews: (json['reviews'] as List<dynamic>?)
-          ?.map((e) => Review.fromJson(Map<String, dynamic>.from(e as Map)))
-          .toList(),
+      reviews: (json['reviews'] as List<dynamic>?)?.map((e) => Review.fromJson(Map<String, dynamic>.from(e as Map))).toList(),
       returnPolicy: json['returnPolicy'] as String?,
       minimumOrderQuantity: (json['minimumOrderQuantity'] as num?)?.toInt(),
-      meta: json['meta'] == null
-          ? null
-          : Meta.fromJson(Map<String, dynamic>.from(json['meta'] as Map)),
-      images:
-          (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      meta: json['meta'] == null ? null : Meta.fromJson(Map<String, dynamic>.from(json['meta'] as Map)),
+      images: (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
       thumbnail: json['thumbnail'] as String?,
     );
 
-Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$ProductImplToJson(_$ProductImpl instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'description': instance.description,

@@ -12,8 +12,7 @@ _$DimensionsImpl _$$DimensionsImplFromJson(Map json) => _$DimensionsImpl(
       depth: json['depth'] as num?,
     );
 
-Map<String, dynamic> _$$DimensionsImplToJson(_$DimensionsImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$DimensionsImplToJson(_$DimensionsImpl instance) => <String, dynamic>{
       'width': instance.width,
       'height': instance.height,
       'depth': instance.depth,

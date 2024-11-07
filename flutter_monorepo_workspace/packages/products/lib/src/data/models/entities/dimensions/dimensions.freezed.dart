@@ -33,25 +33,18 @@ mixin _$Dimensions {
   /// Create a copy of Dimensions
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $DimensionsCopyWith<Dimensions> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DimensionsCopyWith<Dimensions> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DimensionsCopyWith<$Res> {
-  factory $DimensionsCopyWith(
-          Dimensions value, $Res Function(Dimensions) then) =
-      _$DimensionsCopyWithImpl<$Res, Dimensions>;
+  factory $DimensionsCopyWith(Dimensions value, $Res Function(Dimensions) then) = _$DimensionsCopyWithImpl<$Res, Dimensions>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'width') num? width,
-      @JsonKey(name: 'height') num? height,
-      @JsonKey(name: 'depth') num? depth});
+  $Res call({@JsonKey(name: 'width') num? width, @JsonKey(name: 'height') num? height, @JsonKey(name: 'depth') num? depth});
 }
 
 /// @nodoc
-class _$DimensionsCopyWithImpl<$Res, $Val extends Dimensions>
-    implements $DimensionsCopyWith<$Res> {
+class _$DimensionsCopyWithImpl<$Res, $Val extends Dimensions> implements $DimensionsCopyWith<$Res> {
   _$DimensionsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -86,26 +79,17 @@ class _$DimensionsCopyWithImpl<$Res, $Val extends Dimensions>
 }
 
 /// @nodoc
-abstract class _$$DimensionsImplCopyWith<$Res>
-    implements $DimensionsCopyWith<$Res> {
-  factory _$$DimensionsImplCopyWith(
-          _$DimensionsImpl value, $Res Function(_$DimensionsImpl) then) =
-      __$$DimensionsImplCopyWithImpl<$Res>;
+abstract class _$$DimensionsImplCopyWith<$Res> implements $DimensionsCopyWith<$Res> {
+  factory _$$DimensionsImplCopyWith(_$DimensionsImpl value, $Res Function(_$DimensionsImpl) then) = __$$DimensionsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'width') num? width,
-      @JsonKey(name: 'height') num? height,
-      @JsonKey(name: 'depth') num? depth});
+  $Res call({@JsonKey(name: 'width') num? width, @JsonKey(name: 'height') num? height, @JsonKey(name: 'depth') num? depth});
 }
 
 /// @nodoc
-class __$$DimensionsImplCopyWithImpl<$Res>
-    extends _$DimensionsCopyWithImpl<$Res, _$DimensionsImpl>
+class __$$DimensionsImplCopyWithImpl<$Res> extends _$DimensionsCopyWithImpl<$Res, _$DimensionsImpl>
     implements _$$DimensionsImplCopyWith<$Res> {
-  __$$DimensionsImplCopyWithImpl(
-      _$DimensionsImpl _value, $Res Function(_$DimensionsImpl) _then)
-      : super(_value, _then);
+  __$$DimensionsImplCopyWithImpl(_$DimensionsImpl _value, $Res Function(_$DimensionsImpl) _then) : super(_value, _then);
 
   /// Create a copy of Dimensions
   /// with the given fields replaced by the non-null parameter values.
@@ -136,13 +120,9 @@ class __$$DimensionsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DimensionsImpl implements _Dimensions {
-  const _$DimensionsImpl(
-      {@JsonKey(name: 'width') this.width,
-      @JsonKey(name: 'height') this.height,
-      @JsonKey(name: 'depth') this.depth});
+  const _$DimensionsImpl({@JsonKey(name: 'width') this.width, @JsonKey(name: 'height') this.height, @JsonKey(name: 'depth') this.depth});
 
-  factory _$DimensionsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DimensionsImplFromJson(json);
+  factory _$DimensionsImpl.fromJson(Map<String, dynamic> json) => _$$DimensionsImplFromJson(json);
 
   @override
   @JsonKey(name: 'width')
@@ -178,8 +158,7 @@ class _$DimensionsImpl implements _Dimensions {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DimensionsImplCopyWith<_$DimensionsImpl> get copyWith =>
-      __$$DimensionsImplCopyWithImpl<_$DimensionsImpl>(this, _$identity);
+  _$$DimensionsImplCopyWith<_$DimensionsImpl> get copyWith => __$$DimensionsImplCopyWithImpl<_$DimensionsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -195,8 +174,7 @@ abstract class _Dimensions implements Dimensions {
       @JsonKey(name: 'height') final num? height,
       @JsonKey(name: 'depth') final num? depth}) = _$DimensionsImpl;
 
-  factory _Dimensions.fromJson(Map<String, dynamic> json) =
-      _$DimensionsImpl.fromJson;
+  factory _Dimensions.fromJson(Map<String, dynamic> json) = _$DimensionsImpl.fromJson;
 
   @override
   @JsonKey(name: 'width')
@@ -212,6 +190,5 @@ abstract class _Dimensions implements Dimensions {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DimensionsImplCopyWith<_$DimensionsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DimensionsImplCopyWith<_$DimensionsImpl> get copyWith => throw _privateConstructorUsedError;
 }

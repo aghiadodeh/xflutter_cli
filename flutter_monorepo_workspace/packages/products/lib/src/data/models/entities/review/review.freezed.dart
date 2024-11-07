@@ -42,8 +42,7 @@ mixin _$Review {
 
 /// @nodoc
 abstract class $ReviewCopyWith<$Res> {
-  factory $ReviewCopyWith(Review value, $Res Function(Review) then) =
-      _$ReviewCopyWithImpl<$Res, Review>;
+  factory $ReviewCopyWith(Review value, $Res Function(Review) then) = _$ReviewCopyWithImpl<$Res, Review>;
   @useResult
   $Res call(
       {@JsonKey(name: 'rating') int? rating,
@@ -54,8 +53,7 @@ abstract class $ReviewCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ReviewCopyWithImpl<$Res, $Val extends Review>
-    implements $ReviewCopyWith<$Res> {
+class _$ReviewCopyWithImpl<$Res, $Val extends Review> implements $ReviewCopyWith<$Res> {
   _$ReviewCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -101,9 +99,7 @@ class _$ReviewCopyWithImpl<$Res, $Val extends Review>
 
 /// @nodoc
 abstract class _$$ReviewImplCopyWith<$Res> implements $ReviewCopyWith<$Res> {
-  factory _$$ReviewImplCopyWith(
-          _$ReviewImpl value, $Res Function(_$ReviewImpl) then) =
-      __$$ReviewImplCopyWithImpl<$Res>;
+  factory _$$ReviewImplCopyWith(_$ReviewImpl value, $Res Function(_$ReviewImpl) then) = __$$ReviewImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,12 +111,8 @@ abstract class _$$ReviewImplCopyWith<$Res> implements $ReviewCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ReviewImplCopyWithImpl<$Res>
-    extends _$ReviewCopyWithImpl<$Res, _$ReviewImpl>
-    implements _$$ReviewImplCopyWith<$Res> {
-  __$$ReviewImplCopyWithImpl(
-      _$ReviewImpl _value, $Res Function(_$ReviewImpl) _then)
-      : super(_value, _then);
+class __$$ReviewImplCopyWithImpl<$Res> extends _$ReviewCopyWithImpl<$Res, _$ReviewImpl> implements _$$ReviewImplCopyWith<$Res> {
+  __$$ReviewImplCopyWithImpl(_$ReviewImpl _value, $Res Function(_$ReviewImpl) _then) : super(_value, _then);
 
   /// Create a copy of Review
   /// with the given fields replaced by the non-null parameter values.
@@ -168,8 +160,7 @@ class _$ReviewImpl implements _Review {
       @JsonKey(name: 'reviewerName') this.reviewerName,
       @JsonKey(name: 'reviewerEmail') this.reviewerEmail});
 
-  factory _$ReviewImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReviewImplFromJson(json);
+  factory _$ReviewImpl.fromJson(Map<String, dynamic> json) => _$$ReviewImplFromJson(json);
 
   @override
   @JsonKey(name: 'rating')
@@ -200,24 +191,20 @@ class _$ReviewImpl implements _Review {
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.comment, comment) || other.comment == comment) &&
             (identical(other.date, date) || other.date == date) &&
-            (identical(other.reviewerName, reviewerName) ||
-                other.reviewerName == reviewerName) &&
-            (identical(other.reviewerEmail, reviewerEmail) ||
-                other.reviewerEmail == reviewerEmail));
+            (identical(other.reviewerName, reviewerName) || other.reviewerName == reviewerName) &&
+            (identical(other.reviewerEmail, reviewerEmail) || other.reviewerEmail == reviewerEmail));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, rating, comment, date, reviewerName, reviewerEmail);
+  int get hashCode => Object.hash(runtimeType, rating, comment, date, reviewerName, reviewerEmail);
 
   /// Create a copy of Review
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReviewImplCopyWith<_$ReviewImpl> get copyWith =>
-      __$$ReviewImplCopyWithImpl<_$ReviewImpl>(this, _$identity);
+  _$$ReviewImplCopyWith<_$ReviewImpl> get copyWith => __$$ReviewImplCopyWithImpl<_$ReviewImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -229,12 +216,11 @@ class _$ReviewImpl implements _Review {
 
 abstract class _Review implements Review {
   const factory _Review(
-          {@JsonKey(name: 'rating') final int? rating,
-          @JsonKey(name: 'comment') final String? comment,
-          @JsonKey(name: 'date') final DateTime? date,
-          @JsonKey(name: 'reviewerName') final String? reviewerName,
-          @JsonKey(name: 'reviewerEmail') final String? reviewerEmail}) =
-      _$ReviewImpl;
+      {@JsonKey(name: 'rating') final int? rating,
+      @JsonKey(name: 'comment') final String? comment,
+      @JsonKey(name: 'date') final DateTime? date,
+      @JsonKey(name: 'reviewerName') final String? reviewerName,
+      @JsonKey(name: 'reviewerEmail') final String? reviewerEmail}) = _$ReviewImpl;
 
   factory _Review.fromJson(Map<String, dynamic> json) = _$ReviewImpl.fromJson;
 
@@ -258,6 +244,5 @@ abstract class _Review implements Review {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ReviewImplCopyWith<_$ReviewImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ReviewImplCopyWith<_$ReviewImpl> get copyWith => throw _privateConstructorUsedError;
 }

@@ -87,3 +87,13 @@ modules:
     generate:
       run_build_runner: true
       overwrite: false
+  - env:
+      architecture: modules
+      template: package
+      base: packages/orders/lib/src
+      path: packages/orders
+      name: orders
+      flutter_version: 3.24.1
+    generate:
+      run_build_runner: true
+      overwrite: false

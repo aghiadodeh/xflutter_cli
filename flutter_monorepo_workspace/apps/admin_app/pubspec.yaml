@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  orders:
   products:
   flutterx_live_data: ^1.9.6
   flutter_native_splash: ^2.4.1

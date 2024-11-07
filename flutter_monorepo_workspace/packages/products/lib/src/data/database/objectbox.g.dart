@@ -9,8 +9,7 @@
 import 'dart:typed_data';
 
 import 'package:flat_buffers/flat_buffers.dart' as fb;
-import 'package:objectbox/internal.dart'
-    as obx_int; // generated code can access "internal" functionality
+import 'package:objectbox/internal.dart' as obx_int; // generated code can access "internal" functionality
 import 'package:objectbox/objectbox.dart' as obx;
 import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 
@@ -28,26 +27,10 @@ final _entities = <obx_int.ModelEntity>[
       lastPropertyId: const obx_int.IdUid(4, 1007343065585237237),
       flags: 0,
       properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 2427269351450547254),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 2834669417861766369),
-            name: 'width',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 4276553167978561489),
-            name: 'height',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 1007343065585237237),
-            name: 'depth',
-            type: 8,
-            flags: 0)
+        obx_int.ModelProperty(id: const obx_int.IdUid(1, 2427269351450547254), name: 'id', type: 6, flags: 1),
+        obx_int.ModelProperty(id: const obx_int.IdUid(2, 2834669417861766369), name: 'width', type: 8, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(3, 4276553167978561489), name: 'height', type: 8, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(4, 1007343065585237237), name: 'depth', type: 8, flags: 0)
       ],
       relations: <obx_int.ModelRelation>[],
       backlinks: <obx_int.ModelBacklink>[]),
@@ -57,31 +40,11 @@ final _entities = <obx_int.ModelEntity>[
       lastPropertyId: const obx_int.IdUid(5, 5151416333088088226),
       flags: 0,
       properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 1516926710944987269),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 5516064470962560489),
-            name: 'createdAt',
-            type: 10,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 7308080326425366906),
-            name: 'updatedAt',
-            type: 10,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 5427297061882241837),
-            name: 'barcode',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 5151416333088088226),
-            name: 'qrCode',
-            type: 9,
-            flags: 0)
+        obx_int.ModelProperty(id: const obx_int.IdUid(1, 1516926710944987269), name: 'id', type: 6, flags: 1),
+        obx_int.ModelProperty(id: const obx_int.IdUid(2, 5516064470962560489), name: 'createdAt', type: 10, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(3, 7308080326425366906), name: 'updatedAt', type: 10, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(4, 5427297061882241837), name: 'barcode', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(5, 5151416333088088226), name: 'qrCode', type: 9, flags: 0)
       ],
       relations: <obx_int.ModelRelation>[],
       backlinks: <obx_int.ModelBacklink>[]),
@@ -91,72 +54,24 @@ final _entities = <obx_int.ModelEntity>[
       lastPropertyId: const obx_int.IdUid(22, 4196266553195181098),
       flags: 0,
       properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 4972658983867514393),
-            name: 'id',
-            type: 6,
-            flags: 1),
+        obx_int.ModelProperty(id: const obx_int.IdUid(1, 4972658983867514393), name: 'id', type: 6, flags: 1),
         obx_int.ModelProperty(
             id: const obx_int.IdUid(2, 6955308171029355251),
             name: 'productId',
             type: 6,
             flags: 32808,
             indexId: const obx_int.IdUid(1, 3120264038242039107)),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 4784613023133395038),
-            name: 'title',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 1302784380571467860),
-            name: 'description',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 7525591926013036560),
-            name: 'category',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(6, 8465408001589937642),
-            name: 'price',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(7, 7764754541488594160),
-            name: 'discountPercentage',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(8, 6629339648364370435),
-            name: 'rating',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(9, 2349603884616139837),
-            name: 'stock',
-            type: 6,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(10, 8119391241879612163),
-            name: 'tags',
-            type: 30,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(11, 2281286341351981432),
-            name: 'brand',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(12, 8767220746308184156),
-            name: 'sku',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(13, 2017056328683080150),
-            name: 'weight',
-            type: 6,
-            flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(3, 4784613023133395038), name: 'title', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(4, 1302784380571467860), name: 'description', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(5, 7525591926013036560), name: 'category', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(6, 8465408001589937642), name: 'price', type: 8, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(7, 7764754541488594160), name: 'discountPercentage', type: 8, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(8, 6629339648364370435), name: 'rating', type: 8, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(9, 2349603884616139837), name: 'stock', type: 6, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(10, 8119391241879612163), name: 'tags', type: 30, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(11, 2281286341351981432), name: 'brand', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(12, 8767220746308184156), name: 'sku', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(13, 2017056328683080150), name: 'weight', type: 6, flags: 0),
         obx_int.ModelProperty(
             id: const obx_int.IdUid(14, 884599317090874379),
             name: 'toOneDimensionsId',
@@ -164,31 +79,11 @@ final _entities = <obx_int.ModelEntity>[
             flags: 520,
             indexId: const obx_int.IdUid(2, 3559814990266936943),
             relationTarget: 'LocalDimensions'),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(15, 4023013464201222933),
-            name: 'warrantyInformation',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(16, 8913629005285196802),
-            name: 'shippingInformation',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(17, 6858596177971530222),
-            name: 'availabilityStatus',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(18, 8310467974179849018),
-            name: 'returnPolicy',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(19, 961854173669606922),
-            name: 'minimumOrderQuantity',
-            type: 6,
-            flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(15, 4023013464201222933), name: 'warrantyInformation', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(16, 8913629005285196802), name: 'shippingInformation', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(17, 6858596177971530222), name: 'availabilityStatus', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(18, 8310467974179849018), name: 'returnPolicy', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(19, 961854173669606922), name: 'minimumOrderQuantity', type: 6, flags: 0),
         obx_int.ModelProperty(
             id: const obx_int.IdUid(20, 6886056311581111631),
             name: 'toOneMetaId',
@@ -196,22 +91,12 @@ final _entities = <obx_int.ModelEntity>[
             flags: 520,
             indexId: const obx_int.IdUid(3, 6008899499864136397),
             relationTarget: 'LocalMeta'),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(21, 3966313286968183868),
-            name: 'images',
-            type: 30,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(22, 4196266553195181098),
-            name: 'thumbnail',
-            type: 9,
-            flags: 0)
+        obx_int.ModelProperty(id: const obx_int.IdUid(21, 3966313286968183868), name: 'images', type: 30, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(22, 4196266553195181098), name: 'thumbnail', type: 9, flags: 0)
       ],
       relations: <obx_int.ModelRelation>[
         obx_int.ModelRelation(
-            id: const obx_int.IdUid(1, 376875768947691967),
-            name: 'toManyReviews',
-            targetId: const obx_int.IdUid(4, 7210292186625575556))
+            id: const obx_int.IdUid(1, 376875768947691967), name: 'toManyReviews', targetId: const obx_int.IdUid(4, 7210292186625575556))
       ],
       backlinks: <obx_int.ModelBacklink>[]),
   obx_int.ModelEntity(
@@ -220,36 +105,12 @@ final _entities = <obx_int.ModelEntity>[
       lastPropertyId: const obx_int.IdUid(6, 6986672321678303859),
       flags: 0,
       properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 4402338203722494638),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 4668995509338867984),
-            name: 'rating',
-            type: 6,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 1355567413467959361),
-            name: 'comment',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 1626772397310555740),
-            name: 'date',
-            type: 10,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 3845403796838012709),
-            name: 'reviewerName',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(6, 6986672321678303859),
-            name: 'reviewerEmail',
-            type: 9,
-            flags: 0)
+        obx_int.ModelProperty(id: const obx_int.IdUid(1, 4402338203722494638), name: 'id', type: 6, flags: 1),
+        obx_int.ModelProperty(id: const obx_int.IdUid(2, 4668995509338867984), name: 'rating', type: 6, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(3, 1355567413467959361), name: 'comment', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(4, 1626772397310555740), name: 'date', type: 10, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(5, 3845403796838012709), name: 'reviewerName', type: 9, flags: 0),
+        obx_int.ModelProperty(id: const obx_int.IdUid(6, 6986672321678303859), name: 'reviewerEmail', type: 9, flags: 0)
       ],
       relations: <obx_int.ModelRelation>[],
       backlinks: <obx_int.ModelBacklink>[])
@@ -323,19 +184,11 @@ obx_int.ModelDefinition getObjectBoxModel() {
         objectFromFB: (obx.Store store, ByteData fbData) {
           final buffer = fb.BufferContext(fbData);
           final rootOffset = buffer.derefObject(0);
-          final idParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final widthParam =
-              const fb.Float64Reader().vTableGetNullable(buffer, rootOffset, 6);
-          final heightParam =
-              const fb.Float64Reader().vTableGetNullable(buffer, rootOffset, 8);
-          final depthParam = const fb.Float64Reader()
-              .vTableGetNullable(buffer, rootOffset, 10);
-          final object = LocalDimensions(
-              id: idParam,
-              width: widthParam,
-              height: heightParam,
-              depth: depthParam);
+          final idParam = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+          final widthParam = const fb.Float64Reader().vTableGetNullable(buffer, rootOffset, 6);
+          final heightParam = const fb.Float64Reader().vTableGetNullable(buffer, rootOffset, 8);
+          final depthParam = const fb.Float64Reader().vTableGetNullable(buffer, rootOffset, 10);
+          final object = LocalDimensions(id: idParam, width: widthParam, height: heightParam, depth: depthParam);
 
           return object;
         }),
@@ -348,10 +201,8 @@ obx_int.ModelDefinition getObjectBoxModel() {
           object.id = id;
         },
         objectToFB: (LocalMeta object, fb.Builder fbb) {
-          final barcodeOffset =
-              object.barcode == null ? null : fbb.writeString(object.barcode!);
-          final qrCodeOffset =
-              object.qrCode == null ? null : fbb.writeString(object.qrCode!);
+          final barcodeOffset = object.barcode == null ? null : fbb.writeString(object.barcode!);
+          final qrCodeOffset = object.qrCode == null ? null : fbb.writeString(object.qrCode!);
           fbb.startTable(6);
           fbb.addInt64(0, object.id);
           fbb.addInt64(1, object.createdAt?.millisecondsSinceEpoch);
@@ -364,79 +215,39 @@ obx_int.ModelDefinition getObjectBoxModel() {
         objectFromFB: (obx.Store store, ByteData fbData) {
           final buffer = fb.BufferContext(fbData);
           final rootOffset = buffer.derefObject(0);
-          final createdAtValue =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 6);
-          final updatedAtValue =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 8);
-          final idParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final createdAtParam = createdAtValue == null
-              ? null
-              : DateTime.fromMillisecondsSinceEpoch(createdAtValue);
-          final updatedAtParam = updatedAtValue == null
-              ? null
-              : DateTime.fromMillisecondsSinceEpoch(updatedAtValue);
-          final barcodeParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 10);
-          final qrCodeParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 12);
-          final object = LocalMeta(
-              id: idParam,
-              createdAt: createdAtParam,
-              updatedAt: updatedAtParam,
-              barcode: barcodeParam,
-              qrCode: qrCodeParam);
+          final createdAtValue = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 6);
+          final updatedAtValue = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 8);
+          final idParam = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+          final createdAtParam = createdAtValue == null ? null : DateTime.fromMillisecondsSinceEpoch(createdAtValue);
+          final updatedAtParam = updatedAtValue == null ? null : DateTime.fromMillisecondsSinceEpoch(updatedAtValue);
+          final barcodeParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 10);
+          final qrCodeParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 12);
+          final object =
+              LocalMeta(id: idParam, createdAt: createdAtParam, updatedAt: updatedAtParam, barcode: barcodeParam, qrCode: qrCodeParam);
 
           return object;
         }),
     LocalProduct: obx_int.EntityDefinition<LocalProduct>(
         model: _entities[2],
-        toOneRelations: (LocalProduct object) =>
-            [object.toOneDimensions, object.toOneMeta],
-        toManyRelations: (LocalProduct object) => {
-              obx_int.RelInfo<LocalProduct>.toMany(1, object.id):
-                  object.toManyReviews
-            },
+        toOneRelations: (LocalProduct object) => [object.toOneDimensions, object.toOneMeta],
+        toManyRelations: (LocalProduct object) => {obx_int.RelInfo<LocalProduct>.toMany(1, object.id): object.toManyReviews},
         getId: (LocalProduct object) => object.id,
         setId: (LocalProduct object, int id) {
           object.id = id;
         },
         objectToFB: (LocalProduct object, fb.Builder fbb) {
-          final titleOffset =
-              object.title == null ? null : fbb.writeString(object.title!);
-          final descriptionOffset = object.description == null
-              ? null
-              : fbb.writeString(object.description!);
-          final categoryOffset = object.category == null
-              ? null
-              : fbb.writeString(object.category!);
-          final tagsOffset = object.tags == null
-              ? null
-              : fbb.writeList(
-                  object.tags!.map(fbb.writeString).toList(growable: false));
-          final brandOffset =
-              object.brand == null ? null : fbb.writeString(object.brand!);
-          final skuOffset =
-              object.sku == null ? null : fbb.writeString(object.sku!);
-          final warrantyInformationOffset = object.warrantyInformation == null
-              ? null
-              : fbb.writeString(object.warrantyInformation!);
-          final shippingInformationOffset = object.shippingInformation == null
-              ? null
-              : fbb.writeString(object.shippingInformation!);
-          final availabilityStatusOffset = object.availabilityStatus == null
-              ? null
-              : fbb.writeString(object.availabilityStatus!);
-          final returnPolicyOffset = object.returnPolicy == null
-              ? null
-              : fbb.writeString(object.returnPolicy!);
-          final imagesOffset = object.images == null
-              ? null
-              : fbb.writeList(
-                  object.images!.map(fbb.writeString).toList(growable: false));
-          final thumbnailOffset = object.thumbnail == null
-              ? null
-              : fbb.writeString(object.thumbnail!);
+          final titleOffset = object.title == null ? null : fbb.writeString(object.title!);
+          final descriptionOffset = object.description == null ? null : fbb.writeString(object.description!);
+          final categoryOffset = object.category == null ? null : fbb.writeString(object.category!);
+          final tagsOffset = object.tags == null ? null : fbb.writeList(object.tags!.map(fbb.writeString).toList(growable: false));
+          final brandOffset = object.brand == null ? null : fbb.writeString(object.brand!);
+          final skuOffset = object.sku == null ? null : fbb.writeString(object.sku!);
+          final warrantyInformationOffset = object.warrantyInformation == null ? null : fbb.writeString(object.warrantyInformation!);
+          final shippingInformationOffset = object.shippingInformation == null ? null : fbb.writeString(object.shippingInformation!);
+          final availabilityStatusOffset = object.availabilityStatus == null ? null : fbb.writeString(object.availabilityStatus!);
+          final returnPolicyOffset = object.returnPolicy == null ? null : fbb.writeString(object.returnPolicy!);
+          final imagesOffset = object.images == null ? null : fbb.writeList(object.images!.map(fbb.writeString).toList(growable: false));
+          final thumbnailOffset = object.thumbnail == null ? null : fbb.writeString(object.thumbnail!);
           fbb.startTable(23);
           fbb.addInt64(0, object.id);
           fbb.addInt64(1, object.productId);
@@ -466,55 +277,28 @@ obx_int.ModelDefinition getObjectBoxModel() {
         objectFromFB: (obx.Store store, ByteData fbData) {
           final buffer = fb.BufferContext(fbData);
           final rootOffset = buffer.derefObject(0);
-          final idParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final productIdParam =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 6);
-          final titleParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 8);
-          final descriptionParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGetNullable(buffer, rootOffset, 10);
-          final categoryParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 12);
-          final priceParam = const fb.Float64Reader()
-              .vTableGetNullable(buffer, rootOffset, 14);
-          final discountPercentageParam = const fb.Float64Reader()
-              .vTableGetNullable(buffer, rootOffset, 16);
-          final ratingParam = const fb.Float64Reader()
-              .vTableGetNullable(buffer, rootOffset, 18);
-          final stockParam =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 20);
-          final tagsParam = const fb.ListReader<String>(
-                  fb.StringReader(asciiOptimization: true),
-                  lazy: false)
-              .vTableGetNullable(buffer, rootOffset, 22);
-          final brandParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 24);
-          final skuParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 26);
-          final weightParam =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 28);
-          final warrantyInformationParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGetNullable(buffer, rootOffset, 32);
-          final shippingInformationParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGetNullable(buffer, rootOffset, 34);
-          final availabilityStatusParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGetNullable(buffer, rootOffset, 36);
-          final returnPolicyParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGetNullable(buffer, rootOffset, 38);
-          final minimumOrderQuantityParam =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 40);
-          final imagesParam = const fb.ListReader<String>(
-                  fb.StringReader(asciiOptimization: true),
-                  lazy: false)
-              .vTableGetNullable(buffer, rootOffset, 44);
-          final thumbnailParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 46);
+          final idParam = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+          final productIdParam = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 6);
+          final titleParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 8);
+          final descriptionParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 10);
+          final categoryParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 12);
+          final priceParam = const fb.Float64Reader().vTableGetNullable(buffer, rootOffset, 14);
+          final discountPercentageParam = const fb.Float64Reader().vTableGetNullable(buffer, rootOffset, 16);
+          final ratingParam = const fb.Float64Reader().vTableGetNullable(buffer, rootOffset, 18);
+          final stockParam = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 20);
+          final tagsParam =
+              const fb.ListReader<String>(fb.StringReader(asciiOptimization: true), lazy: false).vTableGetNullable(buffer, rootOffset, 22);
+          final brandParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 24);
+          final skuParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 26);
+          final weightParam = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 28);
+          final warrantyInformationParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 32);
+          final shippingInformationParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 34);
+          final availabilityStatusParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 36);
+          final returnPolicyParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 38);
+          final minimumOrderQuantityParam = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 40);
+          final imagesParam =
+              const fb.ListReader<String>(fb.StringReader(asciiOptimization: true), lazy: false).vTableGetNullable(buffer, rootOffset, 44);
+          final thumbnailParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 46);
           final object = LocalProduct(
               id: idParam,
               productId: productIdParam,
@@ -536,16 +320,12 @@ obx_int.ModelDefinition getObjectBoxModel() {
               minimumOrderQuantity: minimumOrderQuantityParam,
               images: imagesParam,
               thumbnail: thumbnailParam);
-          object.toOneDimensions.targetId =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 30, 0);
+          object.toOneDimensions.targetId = const fb.Int64Reader().vTableGet(buffer, rootOffset, 30, 0);
           object.toOneDimensions.attach(store);
-          object.toOneMeta.targetId =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 42, 0);
+          object.toOneMeta.targetId = const fb.Int64Reader().vTableGet(buffer, rootOffset, 42, 0);
           object.toOneMeta.attach(store);
           obx_int.InternalToManyAccess.setRelInfo<LocalProduct>(
-              object.toManyReviews,
-              store,
-              obx_int.RelInfo<LocalProduct>.toMany(1, object.id));
+              object.toManyReviews, store, obx_int.RelInfo<LocalProduct>.toMany(1, object.id));
           return object;
         }),
     LocalReview: obx_int.EntityDefinition<LocalReview>(
@@ -557,14 +337,9 @@ obx_int.ModelDefinition getObjectBoxModel() {
           object.id = id;
         },
         objectToFB: (LocalReview object, fb.Builder fbb) {
-          final commentOffset =
-              object.comment == null ? null : fbb.writeString(object.comment!);
-          final reviewerNameOffset = object.reviewerName == null
-              ? null
-              : fbb.writeString(object.reviewerName!);
-          final reviewerEmailOffset = object.reviewerEmail == null
-              ? null
-              : fbb.writeString(object.reviewerEmail!);
+          final commentOffset = object.comment == null ? null : fbb.writeString(object.comment!);
+          final reviewerNameOffset = object.reviewerName == null ? null : fbb.writeString(object.reviewerName!);
+          final reviewerEmailOffset = object.reviewerEmail == null ? null : fbb.writeString(object.reviewerEmail!);
           fbb.startTable(7);
           fbb.addInt64(0, object.id);
           fbb.addInt64(1, object.rating);
@@ -578,23 +353,13 @@ obx_int.ModelDefinition getObjectBoxModel() {
         objectFromFB: (obx.Store store, ByteData fbData) {
           final buffer = fb.BufferContext(fbData);
           final rootOffset = buffer.derefObject(0);
-          final dateValue =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 10);
-          final idParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
-          final ratingParam =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 6);
-          final commentParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 8);
-          final dateParam = dateValue == null
-              ? null
-              : DateTime.fromMillisecondsSinceEpoch(dateValue);
-          final reviewerNameParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGetNullable(buffer, rootOffset, 12);
-          final reviewerEmailParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGetNullable(buffer, rootOffset, 14);
+          final dateValue = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 10);
+          final idParam = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+          final ratingParam = const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 6);
+          final commentParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 8);
+          final dateParam = dateValue == null ? null : DateTime.fromMillisecondsSinceEpoch(dateValue);
+          final reviewerNameParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 12);
+          final reviewerEmailParam = const fb.StringReader(asciiOptimization: true).vTableGetNullable(buffer, rootOffset, 14);
           final object = LocalReview(
               id: idParam,
               rating: ratingParam,
@@ -613,165 +378,125 @@ obx_int.ModelDefinition getObjectBoxModel() {
 /// [LocalDimensions] entity fields to define ObjectBox queries.
 class LocalDimensions_ {
   /// See [LocalDimensions.id].
-  static final id =
-      obx.QueryIntegerProperty<LocalDimensions>(_entities[0].properties[0]);
+  static final id = obx.QueryIntegerProperty<LocalDimensions>(_entities[0].properties[0]);
 
   /// See [LocalDimensions.width].
-  static final width =
-      obx.QueryDoubleProperty<LocalDimensions>(_entities[0].properties[1]);
+  static final width = obx.QueryDoubleProperty<LocalDimensions>(_entities[0].properties[1]);
 
   /// See [LocalDimensions.height].
-  static final height =
-      obx.QueryDoubleProperty<LocalDimensions>(_entities[0].properties[2]);
+  static final height = obx.QueryDoubleProperty<LocalDimensions>(_entities[0].properties[2]);
 
   /// See [LocalDimensions.depth].
-  static final depth =
-      obx.QueryDoubleProperty<LocalDimensions>(_entities[0].properties[3]);
+  static final depth = obx.QueryDoubleProperty<LocalDimensions>(_entities[0].properties[3]);
 }
 
 /// [LocalMeta] entity fields to define ObjectBox queries.
 class LocalMeta_ {
   /// See [LocalMeta.id].
-  static final id =
-      obx.QueryIntegerProperty<LocalMeta>(_entities[1].properties[0]);
+  static final id = obx.QueryIntegerProperty<LocalMeta>(_entities[1].properties[0]);
 
   /// See [LocalMeta.createdAt].
-  static final createdAt =
-      obx.QueryDateProperty<LocalMeta>(_entities[1].properties[1]);
+  static final createdAt = obx.QueryDateProperty<LocalMeta>(_entities[1].properties[1]);
 
   /// See [LocalMeta.updatedAt].
-  static final updatedAt =
-      obx.QueryDateProperty<LocalMeta>(_entities[1].properties[2]);
+  static final updatedAt = obx.QueryDateProperty<LocalMeta>(_entities[1].properties[2]);
 
   /// See [LocalMeta.barcode].
-  static final barcode =
-      obx.QueryStringProperty<LocalMeta>(_entities[1].properties[3]);
+  static final barcode = obx.QueryStringProperty<LocalMeta>(_entities[1].properties[3]);
 
   /// See [LocalMeta.qrCode].
-  static final qrCode =
-      obx.QueryStringProperty<LocalMeta>(_entities[1].properties[4]);
+  static final qrCode = obx.QueryStringProperty<LocalMeta>(_entities[1].properties[4]);
 }
 
 /// [LocalProduct] entity fields to define ObjectBox queries.
 class LocalProduct_ {
   /// See [LocalProduct.id].
-  static final id =
-      obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[0]);
+  static final id = obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[0]);
 
   /// See [LocalProduct.productId].
-  static final productId =
-      obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[1]);
+  static final productId = obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[1]);
 
   /// See [LocalProduct.title].
-  static final title =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[2]);
+  static final title = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[2]);
 
   /// See [LocalProduct.description].
-  static final description =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[3]);
+  static final description = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[3]);
 
   /// See [LocalProduct.category].
-  static final category =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[4]);
+  static final category = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[4]);
 
   /// See [LocalProduct.price].
-  static final price =
-      obx.QueryDoubleProperty<LocalProduct>(_entities[2].properties[5]);
+  static final price = obx.QueryDoubleProperty<LocalProduct>(_entities[2].properties[5]);
 
   /// See [LocalProduct.discountPercentage].
-  static final discountPercentage =
-      obx.QueryDoubleProperty<LocalProduct>(_entities[2].properties[6]);
+  static final discountPercentage = obx.QueryDoubleProperty<LocalProduct>(_entities[2].properties[6]);
 
   /// See [LocalProduct.rating].
-  static final rating =
-      obx.QueryDoubleProperty<LocalProduct>(_entities[2].properties[7]);
+  static final rating = obx.QueryDoubleProperty<LocalProduct>(_entities[2].properties[7]);
 
   /// See [LocalProduct.stock].
-  static final stock =
-      obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[8]);
+  static final stock = obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[8]);
 
   /// See [LocalProduct.tags].
-  static final tags =
-      obx.QueryStringVectorProperty<LocalProduct>(_entities[2].properties[9]);
+  static final tags = obx.QueryStringVectorProperty<LocalProduct>(_entities[2].properties[9]);
 
   /// See [LocalProduct.brand].
-  static final brand =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[10]);
+  static final brand = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[10]);
 
   /// See [LocalProduct.sku].
-  static final sku =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[11]);
+  static final sku = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[11]);
 
   /// See [LocalProduct.weight].
-  static final weight =
-      obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[12]);
+  static final weight = obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[12]);
 
   /// See [LocalProduct.toOneDimensions].
-  static final toOneDimensions =
-      obx.QueryRelationToOne<LocalProduct, LocalDimensions>(
-          _entities[2].properties[13]);
+  static final toOneDimensions = obx.QueryRelationToOne<LocalProduct, LocalDimensions>(_entities[2].properties[13]);
 
   /// See [LocalProduct.warrantyInformation].
-  static final warrantyInformation =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[14]);
+  static final warrantyInformation = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[14]);
 
   /// See [LocalProduct.shippingInformation].
-  static final shippingInformation =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[15]);
+  static final shippingInformation = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[15]);
 
   /// See [LocalProduct.availabilityStatus].
-  static final availabilityStatus =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[16]);
+  static final availabilityStatus = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[16]);
 
   /// See [LocalProduct.returnPolicy].
-  static final returnPolicy =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[17]);
+  static final returnPolicy = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[17]);
 
   /// See [LocalProduct.minimumOrderQuantity].
-  static final minimumOrderQuantity =
-      obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[18]);
+  static final minimumOrderQuantity = obx.QueryIntegerProperty<LocalProduct>(_entities[2].properties[18]);
 
   /// See [LocalProduct.toOneMeta].
-  static final toOneMeta = obx.QueryRelationToOne<LocalProduct, LocalMeta>(
-      _entities[2].properties[19]);
+  static final toOneMeta = obx.QueryRelationToOne<LocalProduct, LocalMeta>(_entities[2].properties[19]);
 
   /// See [LocalProduct.images].
-  static final images =
-      obx.QueryStringVectorProperty<LocalProduct>(_entities[2].properties[20]);
+  static final images = obx.QueryStringVectorProperty<LocalProduct>(_entities[2].properties[20]);
 
   /// See [LocalProduct.thumbnail].
-  static final thumbnail =
-      obx.QueryStringProperty<LocalProduct>(_entities[2].properties[21]);
+  static final thumbnail = obx.QueryStringProperty<LocalProduct>(_entities[2].properties[21]);
 
   /// see [LocalProduct.toManyReviews]
-  static final toManyReviews =
-      obx.QueryRelationToMany<LocalProduct, LocalReview>(
-          _entities[2].relations[0]);
+  static final toManyReviews = obx.QueryRelationToMany<LocalProduct, LocalReview>(_entities[2].relations[0]);
 }
 
 /// [LocalReview] entity fields to define ObjectBox queries.
 class LocalReview_ {
   /// See [LocalReview.id].
-  static final id =
-      obx.QueryIntegerProperty<LocalReview>(_entities[3].properties[0]);
+  static final id = obx.QueryIntegerProperty<LocalReview>(_entities[3].properties[0]);
 
   /// See [LocalReview.rating].
-  static final rating =
-      obx.QueryIntegerProperty<LocalReview>(_entities[3].properties[1]);
+  static final rating = obx.QueryIntegerProperty<LocalReview>(_entities[3].properties[1]);
 
   /// See [LocalReview.comment].
-  static final comment =
-      obx.QueryStringProperty<LocalReview>(_entities[3].properties[2]);
+  static final comment = obx.QueryStringProperty<LocalReview>(_entities[3].properties[2]);
 
   /// See [LocalReview.date].
-  static final date =
-      obx.QueryDateProperty<LocalReview>(_entities[3].properties[3]);
+  static final date = obx.QueryDateProperty<LocalReview>(_entities[3].properties[3]);
 
   /// See [LocalReview.reviewerName].
-  static final reviewerName =
-      obx.QueryStringProperty<LocalReview>(_entities[3].properties[4]);
+  static final reviewerName = obx.QueryStringProperty<LocalReview>(_entities[3].properties[4]);
 
   /// See [LocalReview.reviewerEmail].
-  static final reviewerEmail =
-      obx.QueryStringProperty<LocalReview>(_entities[3].properties[5]);
+  static final reviewerEmail = obx.QueryStringProperty<LocalReview>(_entities[3].properties[5]);
 }
