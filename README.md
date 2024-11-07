@@ -44,6 +44,12 @@ xflutter_cli g model
 # generate data layer (repository and retrofit rest-client) for (create, read, update and delete) APIs
 xflutter_cli g remote
 
+# generate offline data layer (repository and objectbox data-source) for (create, read, update and delete) APIs
+xflutter_cli g offline
+
+# generate infinite-paging-scroll controller with widgets
+xflutter_cli g paging
+
 # generate --help
 xflutter_cli g --help
 ```
@@ -54,6 +60,9 @@ xflutter_cli make auth --auth-type=credentials
 
 # generate login with phone and verify-otp screens with network-layer
 xflutter_cli make auth --auth-type=phone
+
+# generate data-layer and ui-layer from json 
+xflutter_cli make crud
 ```
 - graph: generate workspace graph to display applications and packages relations
 ```sh
@@ -90,11 +99,11 @@ xflutter_cli --help
 
 ### generate flags:
 
-- (mobile): used with (generate screen), give you the ability to wrap tablet and mobile layouts in your screen (tablet screen will not generated).
+- (mobile): used with (generate screen), give you the ability to wrap tablet and mobile layouts in your screen (only mobile screen will be generated).
 
 - (tablet): used with (generate screen), give you the ability to wrap tablet and mobile layouts in your screen (generate mobile and tablet screens).
 
-- (state-management): used with (generate screen), state management with dependency injection to manage variables between screen and children widgets.
+- (state-management): used with (generate screen), state-holder (viewModel) with dependency injection to manage variables between screen and children widgets.
 
 - (theme): used with (generate screen), initialize your global app theme.
 
