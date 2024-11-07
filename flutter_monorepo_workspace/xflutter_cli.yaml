@@ -23,7 +23,7 @@ modules:
   # Don't modify the env values, changes may throw exceptions when you run any command
   - env:
       # architecture of module
-      architecture: modules
+      architecture: layers
       
       # module template (`app` or `package`)
       template: app
@@ -63,7 +63,7 @@ modules:
       base: packages/core/lib/src
       path: packages/core
       name: core
-      flutter_version: null
+      flutter_version: 3.24.1
     generate:
       run_build_runner: true
       overwrite: false
@@ -73,6 +73,16 @@ modules:
       base: apps/admin_app/lib
       path: apps/admin_app
       name: admin_app
+      flutter_version: 3.24.1
+    generate:
+      run_build_runner: true
+      overwrite: false
+  - env:
+      architecture: layers
+      template: package
+      base: packages/products/lib/src
+      path: packages/products
+      name: products
       flutter_version: 3.24.1
     generate:
       run_build_runner: true

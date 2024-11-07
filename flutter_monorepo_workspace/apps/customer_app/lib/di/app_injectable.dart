@@ -8,5 +8,5 @@ import 'app_injectable.config.dart';
 /// manage dependencies
 @InjectableInit()
 Future<void> configureAppDependencies({Environment? environment}) async {
-  await GetIt.instance.init(environment: environment?.name);
+  GetIt.instance.init(environment: environment?.name);
 }

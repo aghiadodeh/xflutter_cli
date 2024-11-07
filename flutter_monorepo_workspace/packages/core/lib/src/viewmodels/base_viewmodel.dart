@@ -4,9 +4,9 @@
 import 'dart:async';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
 import 'base_params.dart';
-import '../data/models/ui_models/ui_message/ui_message.dart';
-import '../data/models/responses/base_response/base_response.dart';
-import '../extensions/nullable_extension.dart';
+import 'package:core/src/data/models/ui_models/ui_message/ui_message.dart';
+import 'package:core/src/data/models/responses/base_response/base_response.dart';
+import 'package:core/src/extensions/nullable_extension.dart';
 
 abstract class BaseViewModel extends LifeCycle {
   final baseParams = BaseParams();
@@ -96,7 +96,7 @@ abstract class LifeCycle {
   /// Called immediately after the widget is allocated in memory.
   void onInit() {}
 
-  /// Called 1 frame after onInit(). It is the perfect place to enter navigation, events, like snackBar, dialogs, or a new route.
+  /// Called 1 frame after onInit().
   void onReady() {}
 
   /// Called immediately before the widget is disposed.

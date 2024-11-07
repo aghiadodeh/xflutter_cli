@@ -37,7 +37,7 @@ final lightTheme = ThemeData(
 /// -------------- Page Transitions Animations -------------- ///
 PageTransitionsTheme pageTransitionsTheme() => const PageTransitionsTheme(
       builders: {
-        TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+        TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
         TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
       },
     );

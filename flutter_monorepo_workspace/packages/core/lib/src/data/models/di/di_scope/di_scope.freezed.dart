@@ -22,13 +22,13 @@ mixin _$DiScope {
   /// scope factory.
   GetIt Function() get factory => throw _privateConstructorUsedError;
 
-  /// drop scope on dispose
+  /// drop scope on dispose.
   bool get dispose => throw _privateConstructorUsedError;
 
-  /// drop scope on lifeCycle-Owner dispose
+  /// drop scope on lifeCycle-Owner dispose.
   bool get disposeOwner => throw _privateConstructorUsedError;
 
-  /// instances that [DiScope] depends on, this array will be register before register [DiScope].
+  /// instances that [DiScope] depends on, this dependencies will be registered before register this [DiScope].
   List<DiScope> get dependencies => throw _privateConstructorUsedError;
 
   /// Create a copy of DiScope
@@ -156,20 +156,20 @@ class _$DiScopeImpl implements _DiScope {
   @override
   final GetIt Function() factory;
 
-  /// drop scope on dispose
+  /// drop scope on dispose.
   @override
   @JsonKey()
   final bool dispose;
 
-  /// drop scope on lifeCycle-Owner dispose
+  /// drop scope on lifeCycle-Owner dispose.
   @override
   @JsonKey()
   final bool disposeOwner;
 
-  /// instances that [DiScope] depends on, this array will be register before register [DiScope].
+  /// instances that [DiScope] depends on, this dependencies will be registered before register this [DiScope].
   final List<DiScope> _dependencies;
 
-  /// instances that [DiScope] depends on, this array will be register before register [DiScope].
+  /// instances that [DiScope] depends on, this dependencies will be registered before register this [DiScope].
   @override
   @JsonKey()
   List<DiScope> get dependencies {
@@ -222,15 +222,15 @@ abstract class _DiScope implements DiScope {
   @override
   GetIt Function() get factory;
 
-  /// drop scope on dispose
+  /// drop scope on dispose.
   @override
   bool get dispose;
 
-  /// drop scope on lifeCycle-Owner dispose
+  /// drop scope on lifeCycle-Owner dispose.
   @override
   bool get disposeOwner;
 
-  /// instances that [DiScope] depends on, this array will be register before register [DiScope].
+  /// instances that [DiScope] depends on, this dependencies will be registered before register this [DiScope].
   @override
   List<DiScope> get dependencies;
 

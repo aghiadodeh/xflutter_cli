@@ -18,7 +18,7 @@ dependencies:
   reactive_forms: ^17.0.1
   flutter_secure_storage: ^9.2.2
   shared_preferences: ^2.0.15
-  event_bus: ^2.0.0
+  event_bus: ^2.0.1
   flutterx_live_data: ^1.9.6
   connectivity_plus: ^6.0.3
   json_annotation: ^4.9.0
