@@ -7,20 +7,32 @@ import '../../../data/models/di/di_scope/di_scope.dart';
 import '../../../viewmodels/base_viewmodel.dart';
 import 'lifecycle_owner.dart';
 
+/// manage widget life-cycle with your state-holder (viewModel) and observing data,
+/// and drop passed scope when widget destroyed.
 class LifecycleProvider<T extends BaseViewModel> extends StatefulWidget {
+  /// [DiScope] that [LifecycleOwner] will take care, register it on [initState] and drop it on [dispose]
   final DiScope diScope;
-  final Function(BuildContext context, T instance) builder;
+
+  /// [builder] is Your UI Tree after registering [diScope],
+  /// use your [T] registered [instance] inside the tree
+  final Widget Function(BuildContext context, T instance) builder;
+
+  /// [onInit] is callback fired immediately after the widget is allocated in memory.
   final Function(BuildContext context, T instance)? onInit;
+
+  /// [onReady] is callback fired 1 frame after onInit(). It is the perfect place to enter
+  /// navigation, events, like snackBar, dialogs, or a new route
   final Function(BuildContext context, T instance)? onReady;
+
+  /// [onDispose] is callback fired when widget destroyed.
   final Function(BuildContext context, T instance)? onDispose;
-  final Function(ObserverMixin observer, T instance)? listenChanges;
+
   const LifecycleProvider({
     required this.diScope,
     required this.builder,
     this.onInit,
     this.onReady,
     this.onDispose,
-    this.listenChanges,
     super.key,
   });
 
@@ -29,14 +41,6 @@ class LifecycleProvider<T extends BaseViewModel> extends StatefulWidget {
 }
 
 class LifecycleProviderState<T extends BaseViewModel> extends State<LifecycleProvider<T>> with LifecycleOwner<LifecycleProvider<T>, T>, ObserverMixin {
-  @override
-  void observeChanges(ObserverMixin observer) {
-    super.observeChanges(observer);
-    if (widget.listenChanges != null) {
-      widget.listenChanges!(observer, viewModel);
-    }
-  }
-
   @override
   void onInitState() {
     super.onInitState();
