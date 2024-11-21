@@ -37,12 +37,14 @@ mixin _$Category {
   /// Create a copy of Category
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $CategoryCopyWith<Category> get copyWith => throw _privateConstructorUsedError;
+  $CategoryCopyWith<Category> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CategoryCopyWith<$Res> {
-  factory $CategoryCopyWith(Category value, $Res Function(Category) then) = _$CategoryCopyWithImpl<$Res, Category>;
+  factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
+      _$CategoryCopyWithImpl<$Res, Category>;
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int? id,
@@ -53,7 +55,8 @@ abstract class $CategoryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CategoryCopyWithImpl<$Res, $Val extends Category> implements $CategoryCopyWith<$Res> {
+class _$CategoryCopyWithImpl<$Res, $Val extends Category>
+    implements $CategoryCopyWith<$Res> {
   _$CategoryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -98,8 +101,11 @@ class _$CategoryCopyWithImpl<$Res, $Val extends Category> implements $CategoryCo
 }
 
 /// @nodoc
-abstract class _$$CategoryImplCopyWith<$Res> implements $CategoryCopyWith<$Res> {
-  factory _$$CategoryImplCopyWith(_$CategoryImpl value, $Res Function(_$CategoryImpl) then) = __$$CategoryImplCopyWithImpl<$Res>;
+abstract class _$$CategoryImplCopyWith<$Res>
+    implements $CategoryCopyWith<$Res> {
+  factory _$$CategoryImplCopyWith(
+          _$CategoryImpl value, $Res Function(_$CategoryImpl) then) =
+      __$$CategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -111,8 +117,12 @@ abstract class _$$CategoryImplCopyWith<$Res> implements $CategoryCopyWith<$Res> 
 }
 
 /// @nodoc
-class __$$CategoryImplCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res, _$CategoryImpl> implements _$$CategoryImplCopyWith<$Res> {
-  __$$CategoryImplCopyWithImpl(_$CategoryImpl _value, $Res Function(_$CategoryImpl) _then) : super(_value, _then);
+class __$$CategoryImplCopyWithImpl<$Res>
+    extends _$CategoryCopyWithImpl<$Res, _$CategoryImpl>
+    implements _$$CategoryImplCopyWith<$Res> {
+  __$$CategoryImplCopyWithImpl(
+      _$CategoryImpl _value, $Res Function(_$CategoryImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Category
   /// with the given fields replaced by the non-null parameter values.
@@ -161,7 +171,8 @@ class _$CategoryImpl implements _Category {
       @JsonKey(name: 'media') final List<Media>? media})
       : _media = media;
 
-  factory _$CategoryImpl.fromJson(Map<String, dynamic> json) => _$$CategoryImplFromJson(json);
+  factory _$CategoryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CategoryImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -197,22 +208,26 @@ class _$CategoryImpl implements _Category {
         (other.runtimeType == runtimeType &&
             other is _$CategoryImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._media, _media));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt, name, const DeepCollectionEquality().hash(_media));
+  int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt, name,
+      const DeepCollectionEquality().hash(_media));
 
   /// Create a copy of Category
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith => __$$CategoryImplCopyWithImpl<_$CategoryImpl>(this, _$identity);
+  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
+      __$$CategoryImplCopyWithImpl<_$CategoryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -230,7 +245,8 @@ abstract class _Category implements Category {
       @JsonKey(name: 'name') final String? name,
       @JsonKey(name: 'media') final List<Media>? media}) = _$CategoryImpl;
 
-  factory _Category.fromJson(Map<String, dynamic> json) = _$CategoryImpl.fromJson;
+  factory _Category.fromJson(Map<String, dynamic> json) =
+      _$CategoryImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -252,5 +268,6 @@ abstract class _Category implements Category {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

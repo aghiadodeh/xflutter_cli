@@ -31,19 +31,24 @@ mixin _$VerifyCodeRequest {
   /// Create a copy of VerifyCodeRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $VerifyCodeRequestCopyWith<VerifyCodeRequest> get copyWith => throw _privateConstructorUsedError;
+  $VerifyCodeRequestCopyWith<VerifyCodeRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $VerifyCodeRequestCopyWith<$Res> {
-  factory $VerifyCodeRequestCopyWith(VerifyCodeRequest value, $Res Function(VerifyCodeRequest) then) =
+  factory $VerifyCodeRequestCopyWith(
+          VerifyCodeRequest value, $Res Function(VerifyCodeRequest) then) =
       _$VerifyCodeRequestCopyWithImpl<$Res, VerifyCodeRequest>;
   @useResult
-  $Res call({@JsonKey(name: 'phone') String? phone, @JsonKey(name: 'verification_code') String? verificationCode});
+  $Res call(
+      {@JsonKey(name: 'phone') String? phone,
+      @JsonKey(name: 'verification_code') String? verificationCode});
 }
 
 /// @nodoc
-class _$VerifyCodeRequestCopyWithImpl<$Res, $Val extends VerifyCodeRequest> implements $VerifyCodeRequestCopyWith<$Res> {
+class _$VerifyCodeRequestCopyWithImpl<$Res, $Val extends VerifyCodeRequest>
+    implements $VerifyCodeRequestCopyWith<$Res> {
   _$VerifyCodeRequestCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -73,18 +78,24 @@ class _$VerifyCodeRequestCopyWithImpl<$Res, $Val extends VerifyCodeRequest> impl
 }
 
 /// @nodoc
-abstract class _$$VerifyCodeRequestImplCopyWith<$Res> implements $VerifyCodeRequestCopyWith<$Res> {
-  factory _$$VerifyCodeRequestImplCopyWith(_$VerifyCodeRequestImpl value, $Res Function(_$VerifyCodeRequestImpl) then) =
+abstract class _$$VerifyCodeRequestImplCopyWith<$Res>
+    implements $VerifyCodeRequestCopyWith<$Res> {
+  factory _$$VerifyCodeRequestImplCopyWith(_$VerifyCodeRequestImpl value,
+          $Res Function(_$VerifyCodeRequestImpl) then) =
       __$$VerifyCodeRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'phone') String? phone, @JsonKey(name: 'verification_code') String? verificationCode});
+  $Res call(
+      {@JsonKey(name: 'phone') String? phone,
+      @JsonKey(name: 'verification_code') String? verificationCode});
 }
 
 /// @nodoc
-class __$$VerifyCodeRequestImplCopyWithImpl<$Res> extends _$VerifyCodeRequestCopyWithImpl<$Res, _$VerifyCodeRequestImpl>
+class __$$VerifyCodeRequestImplCopyWithImpl<$Res>
+    extends _$VerifyCodeRequestCopyWithImpl<$Res, _$VerifyCodeRequestImpl>
     implements _$$VerifyCodeRequestImplCopyWith<$Res> {
-  __$$VerifyCodeRequestImplCopyWithImpl(_$VerifyCodeRequestImpl _value, $Res Function(_$VerifyCodeRequestImpl) _then)
+  __$$VerifyCodeRequestImplCopyWithImpl(_$VerifyCodeRequestImpl _value,
+      $Res Function(_$VerifyCodeRequestImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of VerifyCodeRequest
@@ -111,9 +122,12 @@ class __$$VerifyCodeRequestImplCopyWithImpl<$Res> extends _$VerifyCodeRequestCop
 /// @nodoc
 @JsonSerializable()
 class _$VerifyCodeRequestImpl implements _VerifyCodeRequest {
-  const _$VerifyCodeRequestImpl({@JsonKey(name: 'phone') this.phone, @JsonKey(name: 'verification_code') this.verificationCode});
+  const _$VerifyCodeRequestImpl(
+      {@JsonKey(name: 'phone') this.phone,
+      @JsonKey(name: 'verification_code') this.verificationCode});
 
-  factory _$VerifyCodeRequestImpl.fromJson(Map<String, dynamic> json) => _$$VerifyCodeRequestImplFromJson(json);
+  factory _$VerifyCodeRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VerifyCodeRequestImplFromJson(json);
 
   @override
   @JsonKey(name: 'phone')
@@ -133,7 +147,8 @@ class _$VerifyCodeRequestImpl implements _VerifyCodeRequest {
         (other.runtimeType == runtimeType &&
             other is _$VerifyCodeRequestImpl &&
             (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.verificationCode, verificationCode) || other.verificationCode == verificationCode));
+            (identical(other.verificationCode, verificationCode) ||
+                other.verificationCode == verificationCode));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -146,7 +161,8 @@ class _$VerifyCodeRequestImpl implements _VerifyCodeRequest {
   @override
   @pragma('vm:prefer-inline')
   _$$VerifyCodeRequestImplCopyWith<_$VerifyCodeRequestImpl> get copyWith =>
-      __$$VerifyCodeRequestImplCopyWithImpl<_$VerifyCodeRequestImpl>(this, _$identity);
+      __$$VerifyCodeRequestImplCopyWithImpl<_$VerifyCodeRequestImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -158,10 +174,12 @@ class _$VerifyCodeRequestImpl implements _VerifyCodeRequest {
 
 abstract class _VerifyCodeRequest implements VerifyCodeRequest {
   const factory _VerifyCodeRequest(
-      {@JsonKey(name: 'phone') final String? phone,
-      @JsonKey(name: 'verification_code') final String? verificationCode}) = _$VerifyCodeRequestImpl;
+          {@JsonKey(name: 'phone') final String? phone,
+          @JsonKey(name: 'verification_code') final String? verificationCode}) =
+      _$VerifyCodeRequestImpl;
 
-  factory _VerifyCodeRequest.fromJson(Map<String, dynamic> json) = _$VerifyCodeRequestImpl.fromJson;
+  factory _VerifyCodeRequest.fromJson(Map<String, dynamic> json) =
+      _$VerifyCodeRequestImpl.fromJson;
 
   @override
   @JsonKey(name: 'phone')
@@ -174,5 +192,6 @@ abstract class _VerifyCodeRequest implements VerifyCodeRequest {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$VerifyCodeRequestImplCopyWith<_$VerifyCodeRequestImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$VerifyCodeRequestImplCopyWith<_$VerifyCodeRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

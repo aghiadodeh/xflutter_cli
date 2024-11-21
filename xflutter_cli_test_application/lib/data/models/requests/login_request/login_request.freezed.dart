@@ -29,18 +29,22 @@ mixin _$LoginRequest {
   /// Create a copy of LoginRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LoginRequestCopyWith<LoginRequest> get copyWith => throw _privateConstructorUsedError;
+  $LoginRequestCopyWith<LoginRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginRequestCopyWith<$Res> {
-  factory $LoginRequestCopyWith(LoginRequest value, $Res Function(LoginRequest) then) = _$LoginRequestCopyWithImpl<$Res, LoginRequest>;
+  factory $LoginRequestCopyWith(
+          LoginRequest value, $Res Function(LoginRequest) then) =
+      _$LoginRequestCopyWithImpl<$Res, LoginRequest>;
   @useResult
   $Res call({@JsonKey(name: 'phone') String? phone});
 }
 
 /// @nodoc
-class _$LoginRequestCopyWithImpl<$Res, $Val extends LoginRequest> implements $LoginRequestCopyWith<$Res> {
+class _$LoginRequestCopyWithImpl<$Res, $Val extends LoginRequest>
+    implements $LoginRequestCopyWith<$Res> {
   _$LoginRequestCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -65,8 +69,10 @@ class _$LoginRequestCopyWithImpl<$Res, $Val extends LoginRequest> implements $Lo
 }
 
 /// @nodoc
-abstract class _$$LoginRequestImplCopyWith<$Res> implements $LoginRequestCopyWith<$Res> {
-  factory _$$LoginRequestImplCopyWith(_$LoginRequestImpl value, $Res Function(_$LoginRequestImpl) then) =
+abstract class _$$LoginRequestImplCopyWith<$Res>
+    implements $LoginRequestCopyWith<$Res> {
+  factory _$$LoginRequestImplCopyWith(
+          _$LoginRequestImpl value, $Res Function(_$LoginRequestImpl) then) =
       __$$LoginRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -74,9 +80,12 @@ abstract class _$$LoginRequestImplCopyWith<$Res> implements $LoginRequestCopyWit
 }
 
 /// @nodoc
-class __$$LoginRequestImplCopyWithImpl<$Res> extends _$LoginRequestCopyWithImpl<$Res, _$LoginRequestImpl>
+class __$$LoginRequestImplCopyWithImpl<$Res>
+    extends _$LoginRequestCopyWithImpl<$Res, _$LoginRequestImpl>
     implements _$$LoginRequestImplCopyWith<$Res> {
-  __$$LoginRequestImplCopyWithImpl(_$LoginRequestImpl _value, $Res Function(_$LoginRequestImpl) _then) : super(_value, _then);
+  __$$LoginRequestImplCopyWithImpl(
+      _$LoginRequestImpl _value, $Res Function(_$LoginRequestImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of LoginRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -99,7 +108,8 @@ class __$$LoginRequestImplCopyWithImpl<$Res> extends _$LoginRequestCopyWithImpl<
 class _$LoginRequestImpl implements _LoginRequest {
   const _$LoginRequestImpl({@JsonKey(name: 'phone') this.phone});
 
-  factory _$LoginRequestImpl.fromJson(Map<String, dynamic> json) => _$$LoginRequestImplFromJson(json);
+  factory _$LoginRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoginRequestImplFromJson(json);
 
   @override
   @JsonKey(name: 'phone')
@@ -113,7 +123,9 @@ class _$LoginRequestImpl implements _LoginRequest {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginRequestImpl && (identical(other.phone, phone) || other.phone == phone));
+        (other.runtimeType == runtimeType &&
+            other is _$LoginRequestImpl &&
+            (identical(other.phone, phone) || other.phone == phone));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -125,7 +137,8 @@ class _$LoginRequestImpl implements _LoginRequest {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginRequestImplCopyWith<_$LoginRequestImpl> get copyWith => __$$LoginRequestImplCopyWithImpl<_$LoginRequestImpl>(this, _$identity);
+  _$$LoginRequestImplCopyWith<_$LoginRequestImpl> get copyWith =>
+      __$$LoginRequestImplCopyWithImpl<_$LoginRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -136,9 +149,11 @@ class _$LoginRequestImpl implements _LoginRequest {
 }
 
 abstract class _LoginRequest implements LoginRequest {
-  const factory _LoginRequest({@JsonKey(name: 'phone') final String? phone}) = _$LoginRequestImpl;
+  const factory _LoginRequest({@JsonKey(name: 'phone') final String? phone}) =
+      _$LoginRequestImpl;
 
-  factory _LoginRequest.fromJson(Map<String, dynamic> json) = _$LoginRequestImpl.fromJson;
+  factory _LoginRequest.fromJson(Map<String, dynamic> json) =
+      _$LoginRequestImpl.fromJson;
 
   @override
   @JsonKey(name: 'phone')
@@ -148,5 +163,6 @@ abstract class _LoginRequest implements LoginRequest {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoginRequestImplCopyWith<_$LoginRequestImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$LoginRequestImplCopyWith<_$LoginRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
