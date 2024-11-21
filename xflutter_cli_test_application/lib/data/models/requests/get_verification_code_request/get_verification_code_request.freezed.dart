@@ -14,7 +14,8 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-GetVerificationCodeRequest _$GetVerificationCodeRequestFromJson(Map<String, dynamic> json) {
+GetVerificationCodeRequest _$GetVerificationCodeRequestFromJson(
+    Map<String, dynamic> json) {
   return _GetVerificationCodeRequest.fromJson(json);
 }
 
@@ -29,19 +30,23 @@ mixin _$GetVerificationCodeRequest {
   /// Create a copy of GetVerificationCodeRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GetVerificationCodeRequestCopyWith<GetVerificationCodeRequest> get copyWith => throw _privateConstructorUsedError;
+  $GetVerificationCodeRequestCopyWith<GetVerificationCodeRequest>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetVerificationCodeRequestCopyWith<$Res> {
-  factory $GetVerificationCodeRequestCopyWith(GetVerificationCodeRequest value, $Res Function(GetVerificationCodeRequest) then) =
-      _$GetVerificationCodeRequestCopyWithImpl<$Res, GetVerificationCodeRequest>;
+  factory $GetVerificationCodeRequestCopyWith(GetVerificationCodeRequest value,
+          $Res Function(GetVerificationCodeRequest) then) =
+      _$GetVerificationCodeRequestCopyWithImpl<$Res,
+          GetVerificationCodeRequest>;
   @useResult
   $Res call({@JsonKey(name: 'phone') String? phone});
 }
 
 /// @nodoc
-class _$GetVerificationCodeRequestCopyWithImpl<$Res, $Val extends GetVerificationCodeRequest>
+class _$GetVerificationCodeRequestCopyWithImpl<$Res,
+        $Val extends GetVerificationCodeRequest>
     implements $GetVerificationCodeRequestCopyWith<$Res> {
   _$GetVerificationCodeRequestCopyWithImpl(this._value, this._then);
 
@@ -67,9 +72,11 @@ class _$GetVerificationCodeRequestCopyWithImpl<$Res, $Val extends GetVerificatio
 }
 
 /// @nodoc
-abstract class _$$GetVerificationCodeRequestImplCopyWith<$Res> implements $GetVerificationCodeRequestCopyWith<$Res> {
+abstract class _$$GetVerificationCodeRequestImplCopyWith<$Res>
+    implements $GetVerificationCodeRequestCopyWith<$Res> {
   factory _$$GetVerificationCodeRequestImplCopyWith(
-          _$GetVerificationCodeRequestImpl value, $Res Function(_$GetVerificationCodeRequestImpl) then) =
+          _$GetVerificationCodeRequestImpl value,
+          $Res Function(_$GetVerificationCodeRequestImpl) then) =
       __$$GetVerificationCodeRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -78,10 +85,12 @@ abstract class _$$GetVerificationCodeRequestImplCopyWith<$Res> implements $GetVe
 
 /// @nodoc
 class __$$GetVerificationCodeRequestImplCopyWithImpl<$Res>
-    extends _$GetVerificationCodeRequestCopyWithImpl<$Res, _$GetVerificationCodeRequestImpl>
+    extends _$GetVerificationCodeRequestCopyWithImpl<$Res,
+        _$GetVerificationCodeRequestImpl>
     implements _$$GetVerificationCodeRequestImplCopyWith<$Res> {
   __$$GetVerificationCodeRequestImplCopyWithImpl(
-      _$GetVerificationCodeRequestImpl _value, $Res Function(_$GetVerificationCodeRequestImpl) _then)
+      _$GetVerificationCodeRequestImpl _value,
+      $Res Function(_$GetVerificationCodeRequestImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of GetVerificationCodeRequest
@@ -105,7 +114,9 @@ class __$$GetVerificationCodeRequestImplCopyWithImpl<$Res>
 class _$GetVerificationCodeRequestImpl implements _GetVerificationCodeRequest {
   const _$GetVerificationCodeRequestImpl({@JsonKey(name: 'phone') this.phone});
 
-  factory _$GetVerificationCodeRequestImpl.fromJson(Map<String, dynamic> json) => _$$GetVerificationCodeRequestImplFromJson(json);
+  factory _$GetVerificationCodeRequestImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$GetVerificationCodeRequestImplFromJson(json);
 
   @override
   @JsonKey(name: 'phone')
@@ -133,8 +144,9 @@ class _$GetVerificationCodeRequestImpl implements _GetVerificationCodeRequest {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetVerificationCodeRequestImplCopyWith<_$GetVerificationCodeRequestImpl> get copyWith =>
-      __$$GetVerificationCodeRequestImplCopyWithImpl<_$GetVerificationCodeRequestImpl>(this, _$identity);
+  _$$GetVerificationCodeRequestImplCopyWith<_$GetVerificationCodeRequestImpl>
+      get copyWith => __$$GetVerificationCodeRequestImplCopyWithImpl<
+          _$GetVerificationCodeRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -144,10 +156,14 @@ class _$GetVerificationCodeRequestImpl implements _GetVerificationCodeRequest {
   }
 }
 
-abstract class _GetVerificationCodeRequest implements GetVerificationCodeRequest {
-  const factory _GetVerificationCodeRequest({@JsonKey(name: 'phone') final String? phone}) = _$GetVerificationCodeRequestImpl;
+abstract class _GetVerificationCodeRequest
+    implements GetVerificationCodeRequest {
+  const factory _GetVerificationCodeRequest(
+          {@JsonKey(name: 'phone') final String? phone}) =
+      _$GetVerificationCodeRequestImpl;
 
-  factory _GetVerificationCodeRequest.fromJson(Map<String, dynamic> json) = _$GetVerificationCodeRequestImpl.fromJson;
+  factory _GetVerificationCodeRequest.fromJson(Map<String, dynamic> json) =
+      _$GetVerificationCodeRequestImpl.fromJson;
 
   @override
   @JsonKey(name: 'phone')
@@ -157,5 +173,6 @@ abstract class _GetVerificationCodeRequest implements GetVerificationCodeRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GetVerificationCodeRequestImplCopyWith<_$GetVerificationCodeRequestImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$GetVerificationCodeRequestImplCopyWith<_$GetVerificationCodeRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

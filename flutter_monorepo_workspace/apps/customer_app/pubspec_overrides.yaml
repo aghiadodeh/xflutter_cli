@@ -1,4 +1,6 @@
-# melos_managed_dependency_overrides: core
+# melos_managed_dependency_overrides: core,products
 dependency_overrides:
   core:
     path: ../../packages/core
+  products:
+    path: ../../packages/products

@@ -17,13 +17,18 @@ _$MediaImpl _$$MediaImplFromJson(Map json) => _$MediaImpl(
       disk: json['disk'] as String?,
       conversionsDisk: json['conversions_disk'] as String?,
       size: (json['size'] as num?)?.toInt(),
-      createdAt: json['created_at'] == null ? null : DateTime.parse(json['created_at'] as String),
-      updatedAt: json['updated_at'] == null ? null : DateTime.parse(json['updated_at'] as String),
+      createdAt: json['created_at'] == null
+          ? null
+          : DateTime.parse(json['created_at'] as String),
+      updatedAt: json['updated_at'] == null
+          ? null
+          : DateTime.parse(json['updated_at'] as String),
       originalUrl: json['original_url'] as String?,
       previewUrl: json['preview_url'] as String?,
     );
 
-Map<String, dynamic> _$$MediaImplToJson(_$MediaImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$$MediaImplToJson(_$MediaImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'model_type': instance.modelType,
       'model_id': instance.modelId,

@@ -2,6 +2,8 @@ library core;
 
 export 'src/di/core_injectable.dart';
 export 'src/di/modules/core_module.dart';
+export 'src/data/models/responses/base_response/base_response.dart';
+export 'src/data/models/responses/list_response/list_response.dart';
 export 'src/utilities/ui/ui.dart';
 export 'src/utilities/di/dependency_locator.dart';
 export 'src/utilities/async/debouncer.dart';

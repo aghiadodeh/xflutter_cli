@@ -11,10 +11,13 @@ _$UserImpl _$$UserImplFromJson(Map json) => _$UserImpl(
       fullName: json['full_name'] as String?,
       email: json['email'] as String?,
       phone: json['phone'] as String?,
-      createdAt: json['created_at'] == null ? null : DateTime.parse(json['created_at'] as String),
+      createdAt: json['created_at'] == null
+          ? null
+          : DateTime.parse(json['created_at'] as String),
     );
 
-Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'full_name': instance.fullName,
       'email': instance.email,

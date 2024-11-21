@@ -23,18 +23,21 @@ mixin _$UiMessage {
   /// Create a copy of UiMessage
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $UiMessageCopyWith<UiMessage> get copyWith => throw _privateConstructorUsedError;
+  $UiMessageCopyWith<UiMessage> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UiMessageCopyWith<$Res> {
-  factory $UiMessageCopyWith(UiMessage value, $Res Function(UiMessage) then) = _$UiMessageCopyWithImpl<$Res, UiMessage>;
+  factory $UiMessageCopyWith(UiMessage value, $Res Function(UiMessage) then) =
+      _$UiMessageCopyWithImpl<$Res, UiMessage>;
   @useResult
   $Res call({String? message, String? action, UiMessageState state});
 }
 
 /// @nodoc
-class _$UiMessageCopyWithImpl<$Res, $Val extends UiMessage> implements $UiMessageCopyWith<$Res> {
+class _$UiMessageCopyWithImpl<$Res, $Val extends UiMessage>
+    implements $UiMessageCopyWith<$Res> {
   _$UiMessageCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -69,16 +72,23 @@ class _$UiMessageCopyWithImpl<$Res, $Val extends UiMessage> implements $UiMessag
 }
 
 /// @nodoc
-abstract class _$$UiMessageImplCopyWith<$Res> implements $UiMessageCopyWith<$Res> {
-  factory _$$UiMessageImplCopyWith(_$UiMessageImpl value, $Res Function(_$UiMessageImpl) then) = __$$UiMessageImplCopyWithImpl<$Res>;
+abstract class _$$UiMessageImplCopyWith<$Res>
+    implements $UiMessageCopyWith<$Res> {
+  factory _$$UiMessageImplCopyWith(
+          _$UiMessageImpl value, $Res Function(_$UiMessageImpl) then) =
+      __$$UiMessageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? message, String? action, UiMessageState state});
 }
 
 /// @nodoc
-class __$$UiMessageImplCopyWithImpl<$Res> extends _$UiMessageCopyWithImpl<$Res, _$UiMessageImpl> implements _$$UiMessageImplCopyWith<$Res> {
-  __$$UiMessageImplCopyWithImpl(_$UiMessageImpl _value, $Res Function(_$UiMessageImpl) _then) : super(_value, _then);
+class __$$UiMessageImplCopyWithImpl<$Res>
+    extends _$UiMessageCopyWithImpl<$Res, _$UiMessageImpl>
+    implements _$$UiMessageImplCopyWith<$Res> {
+  __$$UiMessageImplCopyWithImpl(
+      _$UiMessageImpl _value, $Res Function(_$UiMessageImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of UiMessage
   /// with the given fields replaced by the non-null parameter values.
@@ -109,7 +119,9 @@ class __$$UiMessageImplCopyWithImpl<$Res> extends _$UiMessageCopyWithImpl<$Res, 
 /// @nodoc
 
 class _$UiMessageImpl extends _UiMessage {
-  const _$UiMessageImpl({this.message, this.action, this.state = UiMessageState.initial}) : super._();
+  const _$UiMessageImpl(
+      {this.message, this.action, this.state = UiMessageState.initial})
+      : super._();
 
   @override
   final String? message;
@@ -142,11 +154,15 @@ class _$UiMessageImpl extends _UiMessage {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UiMessageImplCopyWith<_$UiMessageImpl> get copyWith => __$$UiMessageImplCopyWithImpl<_$UiMessageImpl>(this, _$identity);
+  _$$UiMessageImplCopyWith<_$UiMessageImpl> get copyWith =>
+      __$$UiMessageImplCopyWithImpl<_$UiMessageImpl>(this, _$identity);
 }
 
 abstract class _UiMessage extends UiMessage {
-  const factory _UiMessage({final String? message, final String? action, final UiMessageState state}) = _$UiMessageImpl;
+  const factory _UiMessage(
+      {final String? message,
+      final String? action,
+      final UiMessageState state}) = _$UiMessageImpl;
   const _UiMessage._() : super._();
 
   @override
@@ -160,5 +176,6 @@ abstract class _UiMessage extends UiMessage {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UiMessageImplCopyWith<_$UiMessageImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$UiMessageImplCopyWith<_$UiMessageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -60,7 +60,8 @@ mixin _$Media {
 
 /// @nodoc
 abstract class $MediaCopyWith<$Res> {
-  factory $MediaCopyWith(Media value, $Res Function(Media) then) = _$MediaCopyWithImpl<$Res, Media>;
+  factory $MediaCopyWith(Media value, $Res Function(Media) then) =
+      _$MediaCopyWithImpl<$Res, Media>;
   @useResult
   $Res call(
       {@JsonKey(name: 'id') int? id,
@@ -80,7 +81,8 @@ abstract class $MediaCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MediaCopyWithImpl<$Res, $Val extends Media> implements $MediaCopyWith<$Res> {
+class _$MediaCopyWithImpl<$Res, $Val extends Media>
+    implements $MediaCopyWith<$Res> {
   _$MediaCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -171,7 +173,9 @@ class _$MediaCopyWithImpl<$Res, $Val extends Media> implements $MediaCopyWith<$R
 
 /// @nodoc
 abstract class _$$MediaImplCopyWith<$Res> implements $MediaCopyWith<$Res> {
-  factory _$$MediaImplCopyWith(_$MediaImpl value, $Res Function(_$MediaImpl) then) = __$$MediaImplCopyWithImpl<$Res>;
+  factory _$$MediaImplCopyWith(
+          _$MediaImpl value, $Res Function(_$MediaImpl) then) =
+      __$$MediaImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -192,8 +196,12 @@ abstract class _$$MediaImplCopyWith<$Res> implements $MediaCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$MediaImplCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res, _$MediaImpl> implements _$$MediaImplCopyWith<$Res> {
-  __$$MediaImplCopyWithImpl(_$MediaImpl _value, $Res Function(_$MediaImpl) _then) : super(_value, _then);
+class __$$MediaImplCopyWithImpl<$Res>
+    extends _$MediaCopyWithImpl<$Res, _$MediaImpl>
+    implements _$$MediaImplCopyWith<$Res> {
+  __$$MediaImplCopyWithImpl(
+      _$MediaImpl _value, $Res Function(_$MediaImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of Media
   /// with the given fields replaced by the non-null parameter values.
@@ -295,7 +303,8 @@ class _$MediaImpl implements _Media {
       @JsonKey(name: 'original_url') this.originalUrl,
       @JsonKey(name: 'preview_url') this.previewUrl});
 
-  factory _$MediaImpl.fromJson(Map<String, dynamic> json) => _$$MediaImplFromJson(json);
+  factory _$MediaImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MediaImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -351,32 +360,56 @@ class _$MediaImpl implements _Media {
         (other.runtimeType == runtimeType &&
             other is _$MediaImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.modelType, modelType) || other.modelType == modelType) &&
+            (identical(other.modelType, modelType) ||
+                other.modelType == modelType) &&
             (identical(other.modelId, modelId) || other.modelId == modelId) &&
-            (identical(other.collectionName, collectionName) || other.collectionName == collectionName) &&
+            (identical(other.collectionName, collectionName) ||
+                other.collectionName == collectionName) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.fileName, fileName) || other.fileName == fileName) &&
-            (identical(other.mimeType, mimeType) || other.mimeType == mimeType) &&
+            (identical(other.fileName, fileName) ||
+                other.fileName == fileName) &&
+            (identical(other.mimeType, mimeType) ||
+                other.mimeType == mimeType) &&
             (identical(other.disk, disk) || other.disk == disk) &&
-            (identical(other.conversionsDisk, conversionsDisk) || other.conversionsDisk == conversionsDisk) &&
+            (identical(other.conversionsDisk, conversionsDisk) ||
+                other.conversionsDisk == conversionsDisk) &&
             (identical(other.size, size) || other.size == size) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt) &&
-            (identical(other.originalUrl, originalUrl) || other.originalUrl == originalUrl) &&
-            (identical(other.previewUrl, previewUrl) || other.previewUrl == previewUrl));
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.originalUrl, originalUrl) ||
+                other.originalUrl == originalUrl) &&
+            (identical(other.previewUrl, previewUrl) ||
+                other.previewUrl == previewUrl));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, modelType, modelId, collectionName, name, fileName, mimeType, disk, conversionsDisk,
-      size, createdAt, updatedAt, originalUrl, previewUrl);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      modelType,
+      modelId,
+      collectionName,
+      name,
+      fileName,
+      mimeType,
+      disk,
+      conversionsDisk,
+      size,
+      createdAt,
+      updatedAt,
+      originalUrl,
+      previewUrl);
 
   /// Create a copy of Media
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MediaImplCopyWith<_$MediaImpl> get copyWith => __$$MediaImplCopyWithImpl<_$MediaImpl>(this, _$identity);
+  _$$MediaImplCopyWith<_$MediaImpl> get copyWith =>
+      __$$MediaImplCopyWithImpl<_$MediaImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -452,5 +485,6 @@ abstract class _Media implements Media {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MediaImplCopyWith<_$MediaImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$MediaImplCopyWith<_$MediaImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

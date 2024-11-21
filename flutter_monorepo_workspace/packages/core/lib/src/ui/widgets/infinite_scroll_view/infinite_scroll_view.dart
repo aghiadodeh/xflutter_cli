@@ -26,7 +26,7 @@ class InfiniteScrollView<T, C extends AnimatedInfinitePaginationController<T>> e
   /// [retry] callback called when pagination request failed and user press on [PaginationErrorWidget].
   final Function()? retry;
 
-  /// warp [ScrollView] in [RefreshIndicator] when [refreshIndicator] == `true`
+  /// wrap [ScrollView] in [RefreshIndicator] when [refreshIndicator] == `true`
   ///
   /// default value is `true`
   final bool refreshIndicator;

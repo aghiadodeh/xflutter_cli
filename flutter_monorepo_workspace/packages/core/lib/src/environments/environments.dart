@@ -18,7 +18,7 @@ class TestEnvironment extends AppEnvironment {
 
 class DevelopmentEnvironment extends AppEnvironment {
   @override
-  String get baseUrl => 'https://development.backend.com';
+  String get baseUrl => 'http://192.168.0.3:3000';
 }
 
 class ProductionEnvironment extends AppEnvironment {

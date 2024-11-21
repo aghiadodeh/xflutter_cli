@@ -6,23 +6,22 @@ import 'package:injectable/injectable.dart';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-final connectivity = Connectivity();
-
-/// check if device is connected to internet
-Future<bool> isConnectingToInternet() async {
-  final connectivityResult = await connectivity.checkConnectivity();
-  return !connectivityResult.contains(ConnectivityResult.none);
-}
-
 @lazySingleton
 class AppConnectivity {
+  final _connectivity = Connectivity();
   final _isConnected = MutableLiveData<bool>(value: false);
   LiveData<bool> get isConnected => _isConnected;
+
+  /// check if device is connected to internet
+  Future<bool> isConnectingToInternet() async {
+    final connectivityResult = await _connectivity.checkConnectivity();
+    return !connectivityResult.contains(ConnectivityResult.none);
+  }
 
   /// listen for connection changes
   void initialize() {
     // check if device is connected to internet
-    connectivity.onConnectivityChanged.listen((List<ConnectivityResult> event) {
+    _connectivity.onConnectivityChanged.listen((List<ConnectivityResult> event) {
       _isConnected.postValue(!event.contains(ConnectivityResult.none));
     });
   }

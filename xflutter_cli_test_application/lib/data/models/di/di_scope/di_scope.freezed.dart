@@ -39,13 +39,20 @@ mixin _$DiScope {
 
 /// @nodoc
 abstract class $DiScopeCopyWith<$Res> {
-  factory $DiScopeCopyWith(DiScope value, $Res Function(DiScope) then) = _$DiScopeCopyWithImpl<$Res, DiScope>;
+  factory $DiScopeCopyWith(DiScope value, $Res Function(DiScope) then) =
+      _$DiScopeCopyWithImpl<$Res, DiScope>;
   @useResult
-  $Res call({String name, GetIt Function() factory, bool dispose, bool disposeOwner, List<DiScope> dependencies});
+  $Res call(
+      {String name,
+      GetIt Function() factory,
+      bool dispose,
+      bool disposeOwner,
+      List<DiScope> dependencies});
 }
 
 /// @nodoc
-class _$DiScopeCopyWithImpl<$Res, $Val extends DiScope> implements $DiScopeCopyWith<$Res> {
+class _$DiScopeCopyWithImpl<$Res, $Val extends DiScope>
+    implements $DiScopeCopyWith<$Res> {
   _$DiScopeCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -91,15 +98,26 @@ class _$DiScopeCopyWithImpl<$Res, $Val extends DiScope> implements $DiScopeCopyW
 
 /// @nodoc
 abstract class _$$DiScopeImplCopyWith<$Res> implements $DiScopeCopyWith<$Res> {
-  factory _$$DiScopeImplCopyWith(_$DiScopeImpl value, $Res Function(_$DiScopeImpl) then) = __$$DiScopeImplCopyWithImpl<$Res>;
+  factory _$$DiScopeImplCopyWith(
+          _$DiScopeImpl value, $Res Function(_$DiScopeImpl) then) =
+      __$$DiScopeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, GetIt Function() factory, bool dispose, bool disposeOwner, List<DiScope> dependencies});
+  $Res call(
+      {String name,
+      GetIt Function() factory,
+      bool dispose,
+      bool disposeOwner,
+      List<DiScope> dependencies});
 }
 
 /// @nodoc
-class __$$DiScopeImplCopyWithImpl<$Res> extends _$DiScopeCopyWithImpl<$Res, _$DiScopeImpl> implements _$$DiScopeImplCopyWith<$Res> {
-  __$$DiScopeImplCopyWithImpl(_$DiScopeImpl _value, $Res Function(_$DiScopeImpl) _then) : super(_value, _then);
+class __$$DiScopeImplCopyWithImpl<$Res>
+    extends _$DiScopeCopyWithImpl<$Res, _$DiScopeImpl>
+    implements _$$DiScopeImplCopyWith<$Res> {
+  __$$DiScopeImplCopyWithImpl(
+      _$DiScopeImpl _value, $Res Function(_$DiScopeImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of DiScope
   /// with the given fields replaced by the non-null parameter values.
@@ -191,19 +209,23 @@ class _$DiScopeImpl implements _DiScope {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.factory, factory) || other.factory == factory) &&
             (identical(other.dispose, dispose) || other.dispose == dispose) &&
-            (identical(other.disposeOwner, disposeOwner) || other.disposeOwner == disposeOwner) &&
-            const DeepCollectionEquality().equals(other._dependencies, _dependencies));
+            (identical(other.disposeOwner, disposeOwner) ||
+                other.disposeOwner == disposeOwner) &&
+            const DeepCollectionEquality()
+                .equals(other._dependencies, _dependencies));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, factory, dispose, disposeOwner, const DeepCollectionEquality().hash(_dependencies));
+  int get hashCode => Object.hash(runtimeType, name, factory, dispose,
+      disposeOwner, const DeepCollectionEquality().hash(_dependencies));
 
   /// Create a copy of DiScope
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DiScopeImplCopyWith<_$DiScopeImpl> get copyWith => __$$DiScopeImplCopyWithImpl<_$DiScopeImpl>(this, _$identity);
+  _$$DiScopeImplCopyWith<_$DiScopeImpl> get copyWith =>
+      __$$DiScopeImplCopyWithImpl<_$DiScopeImpl>(this, _$identity);
 }
 
 abstract class _DiScope implements DiScope {
@@ -238,5 +260,6 @@ abstract class _DiScope implements DiScope {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DiScopeImplCopyWith<_$DiScopeImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$DiScopeImplCopyWith<_$DiScopeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

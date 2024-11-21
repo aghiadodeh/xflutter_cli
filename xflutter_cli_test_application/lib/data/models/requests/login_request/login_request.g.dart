@@ -10,6 +10,7 @@ _$LoginRequestImpl _$$LoginRequestImplFromJson(Map json) => _$LoginRequestImpl(
       phone: json['phone'] as String?,
     );
 
-Map<String, dynamic> _$$LoginRequestImplToJson(_$LoginRequestImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$$LoginRequestImplToJson(_$LoginRequestImpl instance) =>
+    <String, dynamic>{
       'phone': instance.phone,
     };

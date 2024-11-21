@@ -1,0 +1,42 @@
+name: products
+version: 0.0.1
+homepage: none
+publish_to: none
+description: Products Package
+environment: 
+  sdk: ^3.5.1
+  flutter: '>=1.17.0'
+dependencies:
+  redacted: ^1.0.12
+  animated_infinite_scroll_pagination: ^1.0.3
+  flutterx_live_data: ^1.9.6
+  responsive_builder: ^0.7.0
+  dio: ^5.1.2
+  retrofit: ^4.0.1
+  path: ^1.9.0
+  core:
+  path_provider: ^2.1.1
+  objectbox_flutter_libs: ^4.0.2
+  objectbox: ^4.0.2
+  injectable: ^2.5.0
+  get_it: ^8.0.1
+  json_annotation: ^4.9.0
+  freezed_annotation: ^2.1.0 
+  flutter: 
+    sdk: flutter
+dev_dependencies:
+  retrofit_generator: ^7.0.1
+  injectable_generator: ^2.6.2
+  objectbox_generator: ^4.0.2
+  json_serializable: ^6.4.1
+  build_runner: ^2.4.11
+  freezed: ^2.5.7 
+  flutter_lints: ^4.0.0
+  flutter_test: 
+    sdk: flutter
+flutter: 
+  uses-material-design: true
+
+objectbox:
+  # Writes objectbox-model.json and objectbox.g.dart to lib/{custom}
+  output_dir: src/data/database
