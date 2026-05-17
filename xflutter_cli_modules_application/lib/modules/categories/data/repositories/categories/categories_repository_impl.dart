@@ -12,7 +12,7 @@ import 'package:xflutter_cli_modules_application/common/data/repositories/base_r
 import 'package:xflutter_cli_modules_application/common/environments/environments.dart';
 import 'package:xflutter_cli_modules_application/core/extensions/di_extension.dart';
 
-@LazySingleton(scope: 'categories', as: CategoriesRepository)
+@LazySingleton(as: CategoriesRepository)
 class CategoriesRepositoryImpl extends BaseRepository implements CategoriesRepository {
   final CategoriesLocalDataSource _localDataSource;
 

@@ -2,3 +2,4 @@
 .xflutter-cli
 .idea
 .dart_tool
+package.json

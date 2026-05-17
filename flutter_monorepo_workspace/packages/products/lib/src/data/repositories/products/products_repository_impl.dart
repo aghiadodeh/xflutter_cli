@@ -3,6 +3,7 @@
 // more info: https://xflutter-cli.com
 import 'package:dio/dio.dart';
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'products_repository.dart';
 import 'package:products/src/data/models/entities/product/product.dart';
@@ -30,7 +31,11 @@ class ProductsRepositoryImpl extends BaseRepository implements ProductsRepositor
 
     if (response.data != null) {
       // save item in the cache
-      _localDataSource.insert(LocalProduct.fromEntity(response.data!));
+      try {
+        _localDataSource.insert(LocalProduct.fromEntity(response.data!));
+      } catch (error) {
+        if (kDebugMode) print('ProductsRepository: $error');
+      }
     }
 
     return response;
@@ -47,23 +52,38 @@ class ProductsRepositoryImpl extends BaseRepository implements ProductsRepositor
 
     if (response.data != null) {
       // update item in the cache
-      _localDataSource.insert(LocalProduct.fromEntity(response.data!));
+      try {
+        _localDataSource.insert(LocalProduct.fromEntity(response.data!));
+      } catch (error) {
+        if (kDebugMode) print('ProductsRepository: $error');
+      }
     }
 
     return response;
   }
 
   @override
-  Stream<BaseResponse<ListResponse<Product>>> findAll(int page) async* {
+  Stream<BaseResponse<ListResponse<Product>>> findAll(int page, {String? query}) async* {
     final perPage = getIt<AppEnvironment>().perPage;
+
     // get cached data from local dataSource
-    final cached = await _localDataSource.findAll(LocalProductsListQueryParameters(page: page, perPage: perPage));
-    if (cached.isNotEmpty) {
-      // emit cached data
-      yield BaseResponse(
-        success: true,
-        data: ListResponse(data: cached.map((e) => e.fromLocal()).toList(), total: null, cached: true),
-      );
+    try {
+      final cacheQueryParameters = LocalProductsListQueryParameters(page: page, perPage: perPage);
+      final cached = await _localDataSource.findAll(cacheQueryParameters);
+      if (cached.isNotEmpty) {
+        final data = await compute((cached) => cached.map((e) => e.fromLocal()).toList(), cached);
+        final total = isConnectingToInternet ? null : cached.length;
+        // emit cached data
+        yield BaseResponse(
+          cached: true,
+          success: true,
+          data: ListResponse(total: total, cached: true, data: data),
+        );
+      } else if (!isConnectingToInternet) {
+        yield BaseResponse(cached: false, success: true, data: ListResponse(total: 0, cached: false, data: []));
+      }
+    } catch (error) {
+      if (kDebugMode) print('ProductsRepository: $error');
     }
 
     // check internet connection
@@ -80,7 +100,12 @@ class ProductsRepositoryImpl extends BaseRepository implements ProductsRepositor
 
       // insert fetched data into cache
       if (response.data?.data != null) {
-        await _localDataSource.insertAll(response.data!.data!.map((e) => LocalProduct.fromEntity(e)));
+        try {
+          final data = await compute((data) => data.map((e) => LocalProduct.fromEntity(e)), response.data!.data!);
+          await _localDataSource.insertAll(data);
+        } catch (error) {
+          if (kDebugMode) print('ProductsRepository: $error');
+        }
       }
     }
   }
@@ -89,9 +114,13 @@ class ProductsRepositoryImpl extends BaseRepository implements ProductsRepositor
   Stream<BaseResponse<Product>> findOne(int? id, {bool withCache = true}) async* {
     if (withCache) {
       // get item from cache
-      final cached = await _localDataSource.findOne(LocalProductQueryParameters(id: id));
-      if (cached != null) {
-        yield BaseResponse(success: true, data: cached.fromLocal());
+      try {
+        final cached = await _localDataSource.findOne(LocalProductQueryParameters(id: id));
+        if (cached != null) {
+          yield BaseResponse(success: true, data: cached.fromLocal(), cached: true);
+        }
+      } catch (error) {
+        if (kDebugMode) print('ProductsRepository: $error');
       }
     }
 
@@ -109,7 +138,11 @@ class ProductsRepositoryImpl extends BaseRepository implements ProductsRepositor
 
       // update cache with new fetched data
       if (response.data != null) {
-        await _localDataSource.insert(LocalProduct.fromEntity(response.data!));
+        try {
+          await _localDataSource.insert(LocalProduct.fromEntity(response.data!));
+        } catch (error) {
+          if (kDebugMode) print('ProductsRepository: $error');
+        }
       }
     }
   }
@@ -124,7 +157,11 @@ class ProductsRepositoryImpl extends BaseRepository implements ProductsRepositor
 
     // remove item from cache
     if (response.isSuccess) {
-      await _localDataSource.delete(id);
+      try {
+        await _localDataSource.delete(id);
+      } catch (error) {
+        if (kDebugMode) print('ProductsRepository: $error');
+      }
     }
 
     return response;

@@ -9,17 +9,14 @@ import 'package:xflutter_cli_test_application/data/models/responses/list_respons
 import 'package:xflutter_cli_test_application/data/models/entities/product/product.dart';
 part 'products_remote_data_source.g.dart';
 
-@LazySingleton(scope: 'products')
+@Injectable()
 @RestApi()
 abstract class ProductsRemoteDataSource {
   @factoryMethod
   factory ProductsRemoteDataSource(Dio dio) = _ProductsRemoteDataSource;
 
   @POST('/shop/products')
-  Future<BaseResponse<Product>> create({
-    @Body() required Map<String, dynamic> data,
-    @CancelRequest() CancelToken? cancelToken,
-  });
+  Future<BaseResponse<Product>> create({@Body() required Map<String, dynamic> data, @CancelRequest() CancelToken? cancelToken});
 
   @PUT('/shop/products/{id}')
   Future<BaseResponse<Product>> update({
@@ -36,14 +33,8 @@ abstract class ProductsRemoteDataSource {
   });
 
   @GET('/shop/products/{id}')
-  Future<BaseResponse<Product>> findOne({
-    @Path('id') required int? id,
-    @CancelRequest() CancelToken? cancelToken,
-  });
+  Future<BaseResponse<Product>> findOne({@Path('id') required int? id, @CancelRequest() CancelToken? cancelToken});
 
   @DELETE('/shop/products/{id}')
-  Future<BaseResponse<dynamic>> delete({
-    @Path('id') required int? id,
-    @CancelRequest() CancelToken? cancelToken,
-  });
+  Future<BaseResponse<dynamic>> delete({@Path('id') required int? id, @CancelRequest() CancelToken? cancelToken});
 }

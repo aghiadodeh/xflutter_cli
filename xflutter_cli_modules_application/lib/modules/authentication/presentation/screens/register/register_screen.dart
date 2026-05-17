@@ -16,7 +16,6 @@ import 'package:xflutter_cli_modules_application/common/ui/widgets/loaders/live_
 import 'package:xflutter_cli_modules_application/common/ui/widgets/instance/lifecycle_owner.dart';
 import 'package:xflutter_cli_modules_application/core/extensions/di_extension.dart';
 import 'package:xflutter_cli_modules_application/common/di/app_injectable.config.dart';
-import 'package:xflutter_cli_modules_application/common/ui/widgets/core/base_scaffold.dart';
 import 'package:xflutter_cli_modules_application/common/ui/widgets/core/base_appbar.dart';
 
 @RoutePage(name: 'register')
@@ -28,14 +27,24 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> with LifecycleOwner<RegisterScreen, RegisterViewModel>, ObserverMixin {
+  /// handle register response, navigate to verify page
+  void _handleRegisterResponse(dynamic result) {
+    if (result == null) return;
+
+    // register success, navigate to verify-pin-code screen
+    final email = viewModel.params.registerForm.getControlValue<String>('email');
+    appRouter.push(
+      VerifyPinCode(
+        email: email ?? '',
+        // pageRoute: Home(),
+      ),
+    );
+  }
+
   @override
   void observeChanges(ObserverMixin observer) {
     viewModel.params.result.observe(observer, (value) {
-      if (value != null) {
-        // register success, navigate to verify-pin-code screen
-        final email = viewModel.params.registerForm.getControlValue<String>('email');
-        appRouter.push(VerifyPinCode(email: email ?? ''));
-      }
+      _handleRegisterResponse(value);
     });
   }
 
@@ -44,13 +53,10 @@ class _RegisterScreenState extends State<RegisterScreen> with LifecycleOwner<Reg
     return Stack(
       children: [
         // screen body
-        BaseScaffold(
-          appBar: (context, theme) => BaseAppBar(title: 'register'.tr()),
-          builder: (context, theme) => SafeArea(
-            child: ScreenTypeLayout.builder(
-              mobile: (_) => const RegisterMobileScreen(),
-              tablet: (_) => const RegisterTabletScreen(),
-            ),
+        Scaffold(
+          appBar: BaseAppBar(title: 'register'.tr()),
+          body: SafeArea(
+            child: ScreenTypeLayout.builder(mobile: (_) => RegisterMobileScreen(), tablet: (_) => RegisterTabletScreen()),
           ),
         ),
 
@@ -61,9 +67,5 @@ class _RegisterScreenState extends State<RegisterScreen> with LifecycleOwner<Reg
   }
 
   @override
-  DiScope get diScope => DiScope(
-        name: 'register',
-        factory: getIt.initRegisterScope,
-        dependencies: [],
-      );
+  DiScope get diScope => DiScope(name: 'register', factory: getIt.initRegisterScope, dependencies: []);
 }

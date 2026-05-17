@@ -1,38 +1,40 @@
+resolution: workspace
 name: core
 version: 0.0.1
 homepage: none
 publish_to: none
 description: Core Package
 environment: 
-  sdk: ^3.5.1
+  sdk: ^3.10.7
   flutter: '>=1.17.0'
 dependencies: 
   pretty_dio_logger: ^1.4.0
-  dio: ^5.1.2
-  easy_localization: ^3.0.1
-  flutter_animate: ^4.1.1+1
+  dio: ^5.9.0
+  easy_localization: ^3.0.8
+  flutter_animate: ^4.5.2
   flutter_spinkit: ^5.1.0
   implicitly_animated_reorderable_list_2: ^0.6.0
-  animated_infinite_scroll_pagination: ^1.0.3
-  reactive_phone_form_field: ^4.0.0
-  reactive_forms: ^17.0.1
-  flutter_secure_storage: ^9.2.2
-  shared_preferences: ^2.0.15
+  animated_infinite_scroll_pagination: ^1.0.14
+  reactive_phone_form_field: ^5.0.2
+  reactive_forms: ^18.1.1
+  google_fonts: ^6.2.1
+  flutter_secure_storage: ^9.2.4
+  shared_preferences: ^2.5.3
   event_bus: ^2.0.1
-  flutterx_live_data: ^1.9.6
-  connectivity_plus: ^6.0.3
+  flutterx_live_data: ^1.10.6
+  connectivity_plus: ^6.1.5
   json_annotation: ^4.9.0
-  freezed_annotation: ^2.1.0
-  injectable: ^2.5.0
-  get_it: ^8.0.1
+  freezed_annotation: ^3.1.0
+  injectable: ^2.5.1
+  get_it: ^8.2.0
   flutter: 
     sdk: flutter
 dev_dependencies: 
-  freezed: ^2.5.7
-  build_runner: ^2.4.11
+  freezed: ^3.1.0
+  build_runner: ^2.5.4
   json_serializable: ^6.4.1
   injectable_generator: ^2.6.2
-  flutter_lints: ^4.0.0
+  flutter_lints: ^6.0.0
   flutter_test: 
     sdk: flutter
 flutter: 

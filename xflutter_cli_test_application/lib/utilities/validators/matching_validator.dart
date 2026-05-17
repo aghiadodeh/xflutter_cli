@@ -8,10 +8,7 @@ class MatchingValidator extends Validator<dynamic> {
   final String controlName;
   final String matchingControlName;
 
-  const MatchingValidator({
-    required this.controlName,
-    required this.matchingControlName,
-  }) : super();
+  const MatchingValidator({required this.controlName, required this.matchingControlName}) : super();
 
   @override
   Map<String, dynamic>? validate(AbstractControl<dynamic> control) {

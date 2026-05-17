@@ -17,13 +17,7 @@ class ProductsListWidget extends StatelessWidget {
   final Function(Product product) onDelete;
   final Function(Product product) onPressed;
 
-  const ProductsListWidget({
-    required this.onUpdate,
-    required this.onDelete,
-    required this.onPressed,
-    required this.controller,
-    super.key,
-  });
+  const ProductsListWidget({required this.onUpdate, required this.onDelete, required this.onPressed, required this.controller, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +34,7 @@ class ProductsListWidget extends StatelessWidget {
           cancelText: 'cancel'.tr(),
           confirmText: 'delete'.tr(),
           onConfirm: () => onDelete(item),
-          conformTextStyle: const TextStyle(color: Colors.red),
+          confirmTextStyle: const TextStyle(color: Colors.red),
         ),
       ).onClick(() => onPressed(item)),
     );

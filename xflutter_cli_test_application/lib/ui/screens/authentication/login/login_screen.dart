@@ -16,7 +16,6 @@ import 'package:xflutter_cli_test_application/ui/widgets/loaders/live_data_loade
 import 'package:xflutter_cli_test_application/ui/widgets/instance/lifecycle_owner.dart';
 import 'package:xflutter_cli_test_application/extensions/di_extension.dart';
 import 'package:xflutter_cli_test_application/di/app_injectable.config.dart';
-import 'package:xflutter_cli_test_application/ui/widgets/core/base_scaffold.dart';
 
 @RoutePage(name: 'login')
 class LoginScreen extends StatefulWidget {
@@ -27,14 +26,24 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> with LifecycleOwner<LoginScreen, LoginViewModel>, ObserverMixin {
+  /// handle login response, navigate to verify page
+  void _handleLoginResponse(dynamic result) {
+    if (result == null) return;
+
+    // login success, navigate to verify-pin-code screen
+    final phone = viewModel.params.loginForm.getControlValue<PhoneNumber>('phone')?.international;
+    appRouter.push(
+      VerifyPinCode(
+        phone: phone ?? '',
+        // pageRoute: Home(),
+      ),
+    );
+  }
+
   @override
   void observeChanges(ObserverMixin observer) {
     viewModel.params.result.observe(observer, (value) {
-      if (value != null) {
-        // login success, navigate to verify-pin-code screen
-        final phone = viewModel.params.loginForm.getControlValue<PhoneNumber>('phone')?.international;
-        appRouter.push(VerifyPinCode(phone: phone ?? ''));
-      }
+      _handleLoginResponse(value);
     });
   }
 
@@ -43,12 +52,9 @@ class _LoginScreenState extends State<LoginScreen> with LifecycleOwner<LoginScre
     return Stack(
       children: [
         // screen body
-        BaseScaffold(
-          builder: (context, theme) => SafeArea(
-            child: ScreenTypeLayout.builder(
-              mobile: (_) => const LoginMobileScreen(),
-              tablet: (_) => const LoginTabletScreen(),
-            ),
+        Scaffold(
+          body: SafeArea(
+            child: ScreenTypeLayout.builder(mobile: (_) => LoginMobileScreen(), tablet: (_) => LoginTabletScreen()),
           ),
         ),
 
@@ -60,13 +66,8 @@ class _LoginScreenState extends State<LoginScreen> with LifecycleOwner<LoginScre
 
   @override
   DiScope get diScope => DiScope(
-        name: 'login',
-        factory: getIt.initLoginScope,
-        dependencies: [
-          DiScope(
-            name: 'authentication',
-            factory: getIt.initAuthenticationScope,
-          ),
-        ],
-      );
+    name: 'login',
+    factory: getIt.initLoginScope,
+    dependencies: [DiScope(name: 'authentication', factory: getIt.initAuthenticationScope)],
+  );
 }

@@ -14,11 +14,6 @@ class ForgetPasswordParams {
   }
 
   late final forgetPasswordForm = FormGroup({
-    'email': FormControl<String>(
-      validators: [
-        Validators.required,
-        Validators.email,
-      ],
-    ),
+    'email': FormControl<String>(validators: [Validators.required, Validators.email]),
   });
 }

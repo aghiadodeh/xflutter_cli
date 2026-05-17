@@ -42,6 +42,7 @@ class LoginForm extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: CustomizedButton(
+                  key: const Key('submit'),
                   child: Text('next'.tr()),
                   callback: () {
                     if (formGroup.valid) {

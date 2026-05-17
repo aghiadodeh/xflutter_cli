@@ -5,8 +5,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'register_request.freezed.dart';
 part 'register_request.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [RegisterRequest] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class RegisterRequest with _$RegisterRequest {
+abstract class RegisterRequest with _$RegisterRequest {
   const factory RegisterRequest({
     @JsonKey(name: 'name') String? name,
     @JsonKey(name: 'email') String? email,

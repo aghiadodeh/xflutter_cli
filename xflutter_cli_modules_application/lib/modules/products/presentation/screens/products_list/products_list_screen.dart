@@ -43,11 +43,7 @@ class _ProductsListScreenState extends State<ProductsListScreen>
               }
             },
           ),
-          builder: (context, theme) => SafeArea(
-            child: ScreenTypeLayout.builder(
-              mobile: (_) => const ProductsListMobileScreen(),
-            ),
-          ),
+          builder: (context, theme) => SafeArea(child: ScreenTypeLayout.builder(mobile: (_) => ProductsListMobileScreen())),
         ),
 
         // full-screen loader
@@ -58,17 +54,11 @@ class _ProductsListScreenState extends State<ProductsListScreen>
 
   @override
   DiScope get diScope => DiScope(
-        name: 'productsList',
-        factory: getIt.initProductsListScope,
-        dependencies: [
-          DiScope(
-            name: 'products',
-            factory: getIt.initProductsScope,
-          ),
-          DiScope(
-            name: 'productsPaging',
-            factory: getIt.initProductsPagingScope,
-          ),
-        ],
-      );
+    name: 'productsList',
+    factory: getIt.initProductsListScope,
+    dependencies: [
+      DiScope(name: 'products', factory: getIt.initProductsScope),
+      DiScope(name: 'productsPaging', factory: getIt.initProductsPagingScope),
+    ],
+  );
 }

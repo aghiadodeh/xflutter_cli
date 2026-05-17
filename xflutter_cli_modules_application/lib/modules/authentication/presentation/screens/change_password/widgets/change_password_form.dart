@@ -27,8 +27,9 @@ class ChangePasswordForm extends StatelessWidget {
               // form fields
               Column(
                 children: [
-                  // oldPassword
+                  // old_password
                   CustomizedReactiveFormField<String>(
+                    key: const Key('old_password'),
                     formControlName: 'old_password',
                     labelText: 'old_password'.tr(),
                     keyboardType: TextInputType.text,
@@ -38,8 +39,9 @@ class ChangePasswordForm extends StatelessWidget {
                   ),
                   const SizedBox(height: formSpacing),
 
-                  // newPassword
+                  // new_password
                   CustomizedReactiveFormField<String>(
+                    key: const Key('new_password'),
                     formControlName: 'new_password',
                     labelText: 'new_password'.tr(),
                     keyboardType: TextInputType.text,
@@ -49,8 +51,9 @@ class ChangePasswordForm extends StatelessWidget {
                   ),
                   const SizedBox(height: formSpacing),
 
-                  // confirmPassword
+                  // confirm_password
                   CustomizedReactiveFormField<String>(
+                    key: const Key('confirm_password'),
                     formControlName: 'confirm_password',
                     labelText: 'confirm_password'.tr(),
                     keyboardType: TextInputType.text,
@@ -66,6 +69,7 @@ class ChangePasswordForm extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: CustomizedButton(
+                  key: const Key('submit'),
                   child: Text('next'.tr()),
                   callback: () {
                     if (formGroup.valid) {

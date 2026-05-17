@@ -5,14 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'ui_message.freezed.dart';
 
-enum UiMessageState {
-  success,
-  error,
-  initial,
-}
+enum UiMessageState { success, error, initial }
 
 @freezed
-class UiMessage with _$UiMessage {
+abstract class UiMessage with _$UiMessage {
   Color? get color {
     if (state == UiMessageState.success) {
       return Colors.green;
@@ -24,9 +20,5 @@ class UiMessage with _$UiMessage {
 
   const UiMessage._();
 
-  const factory UiMessage({
-    String? message,
-    String? action,
-    @Default(UiMessageState.initial) UiMessageState state,
-  }) = _UiMessage;
+  const factory UiMessage({String? message, String? action, @Default(UiMessageState.initial) UiMessageState state}) = _UiMessage;
 }

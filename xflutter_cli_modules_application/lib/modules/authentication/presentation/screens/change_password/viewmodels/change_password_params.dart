@@ -14,26 +14,12 @@ class ChangePasswordParams {
     _result.send(value);
   }
 
-  late final changePasswordForm = FormGroup({
-    'old_password': FormControl<String>(
-      validators: [
-        Validators.required,
-        Validators.minLength(8),
-      ],
-    ),
-    'new_password': FormControl<String>(
-      validators: [
-        Validators.required,
-        Validators.minLength(8),
-      ],
-    ),
-    'confirm_password': FormControl<String>(
-      validators: [Validators.required],
-    ),
-  }, validators: [
-    const MatchingValidator(
-      controlName: 'old_password',
-      matchingControlName: 'confirm_password',
-    ),
-  ]);
+  late final changePasswordForm = FormGroup(
+    {
+      'old_password': FormControl<String>(validators: [Validators.required, Validators.minLength(8)]),
+      'new_password': FormControl<String>(validators: [Validators.required, Validators.minLength(8)]),
+      'confirm_password': FormControl<String>(validators: [Validators.required]),
+    },
+    validators: [const MatchingValidator(controlName: 'old_password', matchingControlName: 'confirm_password')],
+  );
 }

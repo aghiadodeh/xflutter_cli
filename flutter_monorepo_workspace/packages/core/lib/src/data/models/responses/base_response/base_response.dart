@@ -6,17 +6,12 @@ part 'base_response.freezed.dart';
 part 'base_response.g.dart';
 
 @Freezed(genericArgumentFactories: true)
-class BaseResponse<T> with _$BaseResponse<T> {
+abstract class BaseResponse<T> with _$BaseResponse<T> {
   bool get isSuccess => success == true;
 
   const BaseResponse._();
 
-  const factory BaseResponse({
-    int? statusCode,
-    String? message,
-    T? data,
-    bool? success,
-  }) = _BaseResponse<T>;
+  const factory BaseResponse({T? data, bool? success, String? message, int? statusCode, @Default(false) bool cached}) = _BaseResponse<T>;
 
   factory BaseResponse.fromJson(Map<String, dynamic> json, T Function(Object?) fromJsonT) => _$BaseResponseFromJson(json, fromJsonT);
 }

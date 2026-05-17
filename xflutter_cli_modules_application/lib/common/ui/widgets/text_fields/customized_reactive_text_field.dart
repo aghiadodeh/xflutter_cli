@@ -3,7 +3,7 @@
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme.dart';
+import 'package:xflutter_cli_modules_application/common/ui/resources/themes/base_theme.dart';
 
 class CustomizedReactiveFormField<T> extends StatelessWidget {
   final String formControlName;
@@ -16,6 +16,7 @@ class CustomizedReactiveFormField<T> extends StatelessWidget {
   final bool obscureText;
   final int maxLines;
   final int minLines;
+  final bool autofocus;
   final Widget? prefix;
   final Widget? suffix;
   final Widget? prefixIcon;
@@ -23,8 +24,10 @@ class CustomizedReactiveFormField<T> extends StatelessWidget {
   final BoxConstraints? prefixIconConstraints;
   final BoxConstraints? suffixIconConstraints;
   final TextCapitalization? textCapitalization;
+  final void Function(FormControl<T> control)? onChanged;
   final Function(FormControl<Object?> control)? onSubmitted;
   final Map<String, String Function(Object)>? validationMessages;
+
   const CustomizedReactiveFormField({
     required this.formControlName,
     this.labelText,
@@ -43,8 +46,10 @@ class CustomizedReactiveFormField<T> extends StatelessWidget {
     this.prefixIconConstraints,
     this.suffixIconConstraints,
     this.textCapitalization,
+    this.onChanged,
     this.onSubmitted,
     this.validationMessages,
+    this.autofocus = false,
     super.key,
   });
 
@@ -64,12 +69,9 @@ class CustomizedReactiveFormField<T> extends StatelessWidget {
       autocorrect: false,
       maxLines: maxLines,
       minLines: minLines,
-      autofocus: false,
-      validationMessages: validationMessages ??
-          {
-            'required': (error) => '$labelText is required',
-            'email': (error) => 'Email is invalid',
-          },
+      autofocus: autofocus,
+      onChanged: onChanged,
+      validationMessages: validationMessages,
       decoration: textInputDecoration(theme).copyWith(
         labelText: labelText,
         prefix: prefix,

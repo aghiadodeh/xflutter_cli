@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:xflutter_cli_test_application/ui/screens/products/widgets/product_form.dart';
-import 'package:xflutter_cli_test_application/ui/resources/themes/theme.dart';
+import 'package:xflutter_cli_test_application/ui/resources/themes/base_theme.dart';
 import 'package:xflutter_cli_test_application/ui/widgets/core/base_scrollview.dart';
 import 'package:flutter/material.dart';
 import '../viewmodels/create_product_viewmodel.dart';
@@ -17,9 +17,7 @@ class CreateProductMobileScreen extends StatelessWidget {
       builder: (CreateProductViewModel viewModel) {
         return BaseScrollView(
           padding: adaptivePadding,
-          child: ProductForm(
-            submit: viewModel.submit,
-          ),
+          child: ProductForm(submit: viewModel.submit),
         );
       },
     );

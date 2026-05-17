@@ -15,31 +15,15 @@ class LocalMeta {
   String? barcode;
   String? qrCode;
 
-  LocalMeta({
-    this.id = 0,
-    this.createdAt,
-    this.updatedAt,
-    this.barcode,
-    this.qrCode,
-  });
+  LocalMeta({this.id = 0, this.createdAt, this.updatedAt, this.barcode, this.qrCode});
 
   /// convert [Meta] to [LocalMeta]
-  factory LocalMeta.fromEntity(Meta meta) {
-    final item = LocalMeta(
-      createdAt: meta.createdAt,
-      updatedAt: meta.updatedAt,
-      barcode: meta.barcode,
-      qrCode: meta.qrCode,
-    );
+  factory LocalMeta.fromEntity(Meta entity) {
+    final item = LocalMeta(createdAt: entity.createdAt, updatedAt: entity.updatedAt, barcode: entity.barcode, qrCode: entity.qrCode);
 
     return item;
   }
 
   /// convert [LocalMeta] to [Meta]
-  Meta fromLocal() => Meta(
-        createdAt: createdAt,
-        updatedAt: updatedAt,
-        barcode: barcode,
-        qrCode: qrCode,
-      );
+  Meta fromLocal() => Meta(createdAt: createdAt, updatedAt: updatedAt, barcode: barcode, qrCode: qrCode);
 }

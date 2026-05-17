@@ -29,3 +29,5 @@ doc/api/
 .flutter-plugins-dependencies
 commands
 backup
+package.json
+analysis_options.yaml

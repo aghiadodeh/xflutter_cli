@@ -43,8 +43,45 @@ class InfiniteScrollView<T, C extends AnimatedInfinitePaginationController<T>> e
   /// [noItemsWidget] is a widget appears after fetch first page data and the result is empty
   final Widget? noItemsWidget;
 
+  /// [errorWidget] is a widget appears in the bottom of the scrollView when an exception thrown in [controller].
+  final Widget? errorWidget;
+
+  /// [footerLoadingWidget] is a widget appears when user scroll to bottom of the [AnimatedInfiniteScrollView] and the nextPage data is in loading state.
+  final Widget? footerLoadingWidget;
+
   /// [loadingWidget] is a widget appears when first page is in loading state.
   final Widget? loadingWidget;
+
+  /// {@macro flutter.rendering.RenderViewportBase.cacheExtent}
+  final double? cacheExtent;
+
+  /// {@macro flutter.material.Material.clipBehavior}
+  ///
+  /// Defaults to [Clip.hardEdge].
+  final Clip clipBehavior;
+
+  /// How the scroll view should respond to user input.
+  /// If an explicit [ScrollBehavior] is provided to [scrollBehavior], the
+  /// [ScrollPhysics] provided by that behavior will take precedence after
+  /// [physics].
+  final ScrollPhysics? physics;
+
+  /// {@macro flutter.widgets.shadow.scrollBehavior}
+  ///
+  /// [ScrollBehavior] also provide [ScrollPhysics]. If an explicit
+  /// [ScrollPhysics] is provided in [physics], it will take precedence,
+  /// followed by [scrollBehavior], and then the inherited ancestor
+  /// [ScrollBehavior].
+  final ScrollBehavior? scrollBehavior;
+
+  /// Whether the scroll view scrolls in the reading direction.
+  final bool reverse;
+
+  /// [AnimatedInfiniteScrollView] padding
+  final EdgeInsets padding;
+
+  /// key for access [AnimatedInfiniteScrollView] current [State]
+  final GlobalKey<AnimatedInfiniteScrollViewState>? globalKey;
 
   /// build [AnimatedInfiniteScrollView] with basic configuration
   const InfiniteScrollView({
@@ -55,36 +92,50 @@ class InfiniteScrollView<T, C extends AnimatedInfinitePaginationController<T>> e
     this.onRefresh,
     this.topWidgets,
     this.retry,
+    this.errorWidget,
     this.scrollDirection = Axis.vertical,
     this.gridDelegate,
     this.spawnIsolate,
     this.noItemsWidget,
+    this.cacheExtent,
+    this.clipBehavior = Clip.hardEdge,
+    this.padding = EdgeInsets.zero,
+    this.physics,
+    this.reverse = false,
+    this.scrollBehavior,
+    this.globalKey,
+    this.footerLoadingWidget,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return AnimatedInfiniteScrollView<T>(
+      key: globalKey,
       controller: controller,
       options: AnimatedInfinitePaginationOptions(
         refreshIndicator: refreshIndicator,
         topWidgets: topWidgets,
-        footerLoadingWidget: const Center(child: PaginationLoaderWidget()),
+        footerLoadingWidget: footerLoadingWidget ?? const Center(child: PaginationLoaderWidget()),
         loadingWidget: loadingWidget ?? const CustomizedAnimatedWidget(child: Loader()),
-        errorWidget: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            PaginationErrorWidget(
-              retry: retry ?? () => controller.fetchNewChunk(page: controller.page),
+        errorWidget:
+            errorWidget ??
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [PaginationErrorWidget(retry: retry ?? () => controller.fetchNewChunk(page: controller.page))],
             ),
-          ],
-        ),
         onRefresh: onRefresh,
         itemBuilder: itemBuilder,
         gridDelegate: gridDelegate,
         spawnIsolate: spawnIsolate,
         noItemsWidget: noItemsWidget,
         scrollDirection: scrollDirection,
+        cacheExtent: cacheExtent,
+        physics: physics,
+        scrollBehavior: scrollBehavior,
+        clipBehavior: clipBehavior,
+        reverse: reverse,
+        padding: padding,
       ),
     );
   }

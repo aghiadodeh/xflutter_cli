@@ -7,7 +7,7 @@ import 'package:easy_localization/easy_localization.dart';
 import '../buttons/text_button.dart';
 import '../buttons/customized_button.dart';
 import 'pin_code_field.dart';
-import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme.dart';
+import 'package:xflutter_cli_modules_application/common/ui/resources/themes/base_theme.dart';
 
 class VerifyPinCodeWidget extends StatelessWidget {
   final LiveData<String> code;
@@ -40,23 +40,14 @@ class VerifyPinCodeWidget extends StatelessWidget {
               padding: const EdgeInsets.only(top: 16, bottom: 8),
               child: PinCodeField(onChanged: onChanged),
             ),
-            if (onResendCode != null)
-              AppTextButton(
-                text: 'resend_code'.tr(),
-                callback: onResendCode!,
-                textStyle: verySmallTextStyle,
-              ),
+            if (onResendCode != null) AppTextButton(text: 'resend_code'.tr(), callback: onResendCode!, textStyle: verySmallTextStyle),
           ],
         ),
         LiveDataBuilder<String>(
           data: code,
           builder: (context, value) => SizedBox(
             width: double.infinity,
-            child: CustomizedButton(
-              enabled: value.length == length,
-              callback: onSubmit,
-              child: Text('next'.tr()),
-            ),
+            child: CustomizedButton(enabled: value.length == length, callback: onSubmit, child: Text('next'.tr())),
           ),
         ),
       ],

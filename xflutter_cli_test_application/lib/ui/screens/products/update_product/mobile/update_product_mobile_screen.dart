@@ -2,7 +2,8 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:xflutter_cli_test_application/ui/screens/products/widgets/product_form.dart';
-import 'package:xflutter_cli_test_application/ui/resources/themes/theme.dart';
+import 'package:xflutter_cli_test_application/data/models/ui_models/result/result.dart';
+import 'package:xflutter_cli_test_application/ui/resources/themes/base_theme.dart';
 import 'package:xflutter_cli_test_application/ui/widgets/core/base_scrollview.dart';
 import 'package:flutter/material.dart';
 import '../viewmodels/update_product_viewmodel.dart';
@@ -17,10 +18,7 @@ class UpdateProductMobileScreen extends StatelessWidget {
       builder: (UpdateProductViewModel viewModel) {
         return BaseScrollView(
           padding: adaptivePadding,
-          child: ProductForm(
-            product: viewModel.params.product.result,
-            submit: viewModel.submit,
-          ),
+          child: ProductForm(product: viewModel.params.product.value.dataOrNull, submit: viewModel.submit),
         );
       },
     );

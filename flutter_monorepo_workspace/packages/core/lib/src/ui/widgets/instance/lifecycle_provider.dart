@@ -3,9 +3,9 @@
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
-import '../../../data/models/di/di_scope/di_scope.dart';
-import '../../../viewmodels/base_viewmodel.dart';
 import 'lifecycle_owner.dart';
+import 'package:core/src/data/models/di/di_scope/di_scope.dart';
+import 'package:core/src/viewmodels/base_viewmodel.dart';
 
 /// manage widget life-cycle with your state-holder (viewModel) and observing data,
 /// and drop passed scope when widget destroyed.
@@ -27,20 +27,14 @@ class LifecycleProvider<T extends BaseViewModel> extends StatefulWidget {
   /// [onDispose] is callback fired when widget destroyed.
   final Function(BuildContext context, T instance)? onDispose;
 
-  const LifecycleProvider({
-    required this.diScope,
-    required this.builder,
-    this.onInit,
-    this.onReady,
-    this.onDispose,
-    super.key,
-  });
+  const LifecycleProvider({required this.diScope, required this.builder, this.onInit, this.onReady, this.onDispose, super.key});
 
   @override
   State<LifecycleProvider<T>> createState() => LifecycleProviderState();
 }
 
-class LifecycleProviderState<T extends BaseViewModel> extends State<LifecycleProvider<T>> with LifecycleOwner<LifecycleProvider<T>, T>, ObserverMixin {
+class LifecycleProviderState<T extends BaseViewModel> extends State<LifecycleProvider<T>>
+    with LifecycleOwner<LifecycleProvider<T>, T>, ObserverMixin {
   @override
   void onInitState() {
     super.onInitState();

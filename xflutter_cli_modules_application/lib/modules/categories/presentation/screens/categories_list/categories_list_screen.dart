@@ -30,11 +30,7 @@ class _CategoriesListScreenState extends State<CategoriesListScreen>
       children: [
         // screen body
         BaseScaffold(
-          builder: (context, theme) => SafeArea(
-            child: ScreenTypeLayout.builder(
-              mobile: (_) => const CategoriesListMobileScreen(),
-            ),
-          ),
+          builder: (context, theme) => SafeArea(child: ScreenTypeLayout.builder(mobile: (_) => CategoriesListMobileScreen())),
         ),
 
         // full-screen loader
@@ -44,9 +40,5 @@ class _CategoriesListScreenState extends State<CategoriesListScreen>
   }
 
   @override
-  DiScope get diScope => DiScope(
-        name: 'categoriesList',
-        factory: getIt.initCategoriesListScope,
-        dependencies: [],
-      );
+  DiScope get diScope => DiScope(name: 'categoriesList', factory: getIt.initCategoriesListScope, dependencies: []);
 }

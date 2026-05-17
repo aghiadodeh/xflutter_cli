@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:xflutter_cli_modules_application/common/ui/widgets/buttons/text_button.dart';
-import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme.dart';
+import 'package:xflutter_cli_modules_application/common/ui/resources/themes/base_theme.dart';
 import 'package:xflutter_cli_modules_application/common/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -33,6 +33,7 @@ class RegisterForm extends StatelessWidget {
                 children: [
                   // name
                   CustomizedReactiveFormField<String>(
+                    key: const Key('name'),
                     formControlName: 'name',
                     labelText: 'name'.tr(),
                     keyboardType: TextInputType.text,
@@ -43,6 +44,7 @@ class RegisterForm extends StatelessWidget {
 
                   // email
                   CustomizedReactiveFormField<String>(
+                    key: const Key('email'),
                     formControlName: 'email',
                     labelText: 'email'.tr(),
                     keyboardType: TextInputType.emailAddress,
@@ -62,6 +64,7 @@ class RegisterForm extends StatelessWidget {
 
                   // password
                   CustomizedReactiveFormField<String>(
+                    key: const Key('password'),
                     formControlName: 'password',
                     labelText: 'password'.tr(),
                     keyboardType: TextInputType.text,
@@ -71,8 +74,9 @@ class RegisterForm extends StatelessWidget {
                   ),
                   const SizedBox(height: formSpacing),
 
-                  // confirmPassword
+                  // confirm_password
                   CustomizedReactiveFormField<String>(
+                    key: const Key('confirm_password'),
                     formControlName: 'confirm_password',
                     labelText: 'confirm_password'.tr(),
                     keyboardType: TextInputType.text,
@@ -90,6 +94,7 @@ class RegisterForm extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: CustomizedButton(
+                      key: const Key('submit'),
                       child: Text('next'.tr()),
                       callback: () {
                         if (formGroup.valid) {
@@ -112,7 +117,7 @@ class RegisterForm extends StatelessWidget {
                         },
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ],

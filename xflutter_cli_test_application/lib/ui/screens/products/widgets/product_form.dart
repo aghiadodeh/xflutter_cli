@@ -21,54 +21,22 @@ class ProductForm extends StatefulWidget {
 
 class _ProductFormState extends State<ProductForm> {
   late final productForm = FormGroup({
-    'title': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'description': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'category': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'price': FormControl<double>(
-      validators: [Validators.required],
-    ),
-    'discountPercentage': FormControl<double>(
-      validators: [Validators.required],
-    ),
-    'rating': FormControl<double>(
-      validators: [Validators.required],
-    ),
-    'stock': FormControl<int>(
-      validators: [Validators.required],
-    ),
-    'brand': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'sku': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'weight': FormControl<int>(
-      validators: [Validators.required],
-    ),
-    'warrantyInformation': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'shippingInformation': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'availabilityStatus': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'returnPolicy': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'minimumOrderQuantity': FormControl<int>(
-      validators: [Validators.required],
-    ),
-    'thumbnail': FormControl<String>(
-      validators: [Validators.required],
-    ),
+    'title': FormControl<String>(validators: [Validators.required]),
+    'description': FormControl<String>(validators: [Validators.required]),
+    'category': FormControl<String>(validators: [Validators.required]),
+    'price': FormControl<double>(validators: [Validators.required]),
+    'discountPercentage': FormControl<double>(validators: [Validators.required]),
+    'rating': FormControl<double>(validators: [Validators.required]),
+    'stock': FormControl<int>(validators: [Validators.required]),
+    'brand': FormControl<String>(validators: [Validators.required]),
+    'sku': FormControl<String>(validators: [Validators.required]),
+    'weight': FormControl<int>(validators: [Validators.required]),
+    'warrantyInformation': FormControl<String>(validators: [Validators.required]),
+    'shippingInformation': FormControl<String>(validators: [Validators.required]),
+    'availabilityStatus': FormControl<String>(validators: [Validators.required]),
+    'returnPolicy': FormControl<String>(validators: [Validators.required]),
+    'minimumOrderQuantity': FormControl<int>(validators: [Validators.required]),
+    'thumbnail': FormControl<String>(validators: [Validators.required]),
   });
 
   @override
@@ -107,6 +75,7 @@ class _ProductFormState extends State<ProductForm> {
             children: [
               // title
               CustomizedReactiveFormField<String>(
+                key: const Key('title'),
                 formControlName: 'title',
                 labelText: 'title'.tr(),
                 keyboardType: TextInputType.text,
@@ -117,6 +86,7 @@ class _ProductFormState extends State<ProductForm> {
 
               // description
               CustomizedReactiveFormField<String>(
+                key: const Key('description'),
                 formControlName: 'description',
                 labelText: 'description'.tr(),
                 keyboardType: TextInputType.text,
@@ -127,6 +97,7 @@ class _ProductFormState extends State<ProductForm> {
 
               // category
               CustomizedReactiveFormField<String>(
+                key: const Key('category'),
                 formControlName: 'category',
                 labelText: 'category'.tr(),
                 keyboardType: TextInputType.text,
@@ -137,6 +108,7 @@ class _ProductFormState extends State<ProductForm> {
 
               // price
               CustomizedReactiveFormField<double>(
+                key: const Key('price'),
                 formControlName: 'price',
                 labelText: 'price'.tr(),
                 keyboardType: TextInputType.number,
@@ -145,8 +117,9 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // discount percentage
+              // discountPercentage
               CustomizedReactiveFormField<double>(
+                key: const Key('discountPercentage'),
                 formControlName: 'discountPercentage',
                 labelText: 'discountPercentage'.tr(),
                 keyboardType: TextInputType.number,
@@ -157,6 +130,7 @@ class _ProductFormState extends State<ProductForm> {
 
               // rating
               CustomizedReactiveFormField<double>(
+                key: const Key('rating'),
                 formControlName: 'rating',
                 labelText: 'rating'.tr(),
                 keyboardType: TextInputType.number,
@@ -167,6 +141,7 @@ class _ProductFormState extends State<ProductForm> {
 
               // stock
               CustomizedReactiveFormField<int>(
+                key: const Key('stock'),
                 formControlName: 'stock',
                 labelText: 'stock'.tr(),
                 keyboardType: TextInputType.number,
@@ -177,6 +152,7 @@ class _ProductFormState extends State<ProductForm> {
 
               // brand
               CustomizedReactiveFormField<String>(
+                key: const Key('brand'),
                 formControlName: 'brand',
                 labelText: 'brand'.tr(),
                 keyboardType: TextInputType.text,
@@ -187,6 +163,7 @@ class _ProductFormState extends State<ProductForm> {
 
               // sku
               CustomizedReactiveFormField<String>(
+                key: const Key('sku'),
                 formControlName: 'sku',
                 labelText: 'sku'.tr(),
                 keyboardType: TextInputType.text,
@@ -197,6 +174,7 @@ class _ProductFormState extends State<ProductForm> {
 
               // weight
               CustomizedReactiveFormField<int>(
+                key: const Key('weight'),
                 formControlName: 'weight',
                 labelText: 'weight'.tr(),
                 keyboardType: TextInputType.number,
@@ -205,8 +183,9 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // warranty information
+              // warrantyInformation
               CustomizedReactiveFormField<String>(
+                key: const Key('warrantyInformation'),
                 formControlName: 'warrantyInformation',
                 labelText: 'warrantyInformation'.tr(),
                 keyboardType: TextInputType.text,
@@ -215,8 +194,9 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // shipping information
+              // shippingInformation
               CustomizedReactiveFormField<String>(
+                key: const Key('shippingInformation'),
                 formControlName: 'shippingInformation',
                 labelText: 'shippingInformation'.tr(),
                 keyboardType: TextInputType.text,
@@ -225,8 +205,9 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // availability status
+              // availabilityStatus
               CustomizedReactiveFormField<String>(
+                key: const Key('availabilityStatus'),
                 formControlName: 'availabilityStatus',
                 labelText: 'availabilityStatus'.tr(),
                 keyboardType: TextInputType.text,
@@ -235,8 +216,9 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // return policy
+              // returnPolicy
               CustomizedReactiveFormField<String>(
+                key: const Key('returnPolicy'),
                 formControlName: 'returnPolicy',
                 labelText: 'returnPolicy'.tr(),
                 keyboardType: TextInputType.text,
@@ -245,8 +227,9 @@ class _ProductFormState extends State<ProductForm> {
               ),
               const SizedBox(height: formSpacing),
 
-              // minimum order quantity
+              // minimumOrderQuantity
               CustomizedReactiveFormField<int>(
+                key: const Key('minimumOrderQuantity'),
                 formControlName: 'minimumOrderQuantity',
                 labelText: 'minimumOrderQuantity'.tr(),
                 keyboardType: TextInputType.number,
@@ -257,6 +240,7 @@ class _ProductFormState extends State<ProductForm> {
 
               // thumbnail
               CustomizedReactiveFormField<String>(
+                key: const Key('thumbnail'),
                 formControlName: 'thumbnail',
                 labelText: 'thumbnail'.tr(),
                 keyboardType: TextInputType.text,
@@ -271,6 +255,7 @@ class _ProductFormState extends State<ProductForm> {
           SizedBox(
             width: double.infinity,
             child: CustomizedButton(
+              key: const Key('submit'),
               child: Text('next'.tr()),
               callback: () {
                 if (formGroup.valid) {

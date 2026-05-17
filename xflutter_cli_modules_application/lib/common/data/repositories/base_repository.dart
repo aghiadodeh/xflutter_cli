@@ -14,10 +14,7 @@ abstract class BaseRepository {
   bool get isConnectingToInternet => GetIt.instance<AppConnectivity>().isConnected.value;
 
   /// call request only if device connected to internet, else return null data response
-  Future<BaseResponse<T>> getResponse<T>(
-    Future<BaseResponse<T>> Function() request, {
-    CancelToken? cancelToken,
-  }) async {
+  Future<BaseResponse<T>> getResponse<T>(Future<BaseResponse<T>> Function() request, {CancelToken? cancelToken}) async {
     if (isConnectingToInternet) {
       if (cancelToken != null) cancelTokens.add(cancelToken);
       final response = await request().onError((error, stackTrace) => catchError<T>(error));
@@ -27,16 +24,12 @@ abstract class BaseRepository {
       }
       return response;
     } else {
-      return BaseResponse<T>(
-        success: false,
-        message: 'check_internet_connection'.tr(),
-        data: null,
-      );
+      return BaseResponse<T>(success: false, message: 'check_internet_connection'.tr(), data: null);
     }
   }
 
   /// handle request exceptions.
-  Future<BaseResponse<T>> catchError<T>(e) async {
+  Future<BaseResponse<T>> catchError<T>(dynamic e) async {
     Map<String, dynamic>? response;
     String? message;
     bool success = true;
@@ -55,11 +48,7 @@ abstract class BaseRepository {
     } catch (error) {
       if (kDebugMode) print(error);
     }
-    return BaseResponse<T>(
-      message: message,
-      data: null,
-      success: success,
-    );
+    return BaseResponse<T>(message: message, data: null, success: success, statusCode: int.tryParse('${response?['statusCode']}'));
   }
 
   void dispose() {
@@ -69,6 +58,7 @@ abstract class BaseRepository {
   /// cancel all pending requests
   void cancelPendingRequests() {
     for (var cancelToken in cancelTokens) {
+      if (cancelToken.isCancelled) continue;
       cancelToken.cancel();
     }
     cancelTokens.clear();

@@ -29,6 +29,7 @@ class ForgetPasswordForm extends StatelessWidget {
                 children: [
                   // email
                   CustomizedReactiveFormField<String>(
+                    key: const Key('email'),
                     formControlName: 'email',
                     labelText: 'email'.tr(),
                     keyboardType: TextInputType.emailAddress,
@@ -43,6 +44,7 @@ class ForgetPasswordForm extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: CustomizedButton(
+                  key: const Key('submit'),
                   child: Text('next'.tr()),
                   callback: () {
                     if (formGroup.valid) {

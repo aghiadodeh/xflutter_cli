@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,170 +9,272 @@ part of 'verify_code_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-VerifyCodeRequest _$VerifyCodeRequestFromJson(Map<String, dynamic> json) {
-  return _VerifyCodeRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$VerifyCodeRequest {
-  @JsonKey(name: 'email')
-  String? get email => throw _privateConstructorUsedError;
-  @JsonKey(name: 'verification_code')
-  String? get verificationCode => throw _privateConstructorUsedError;
+
+@JsonKey(name: 'email') String? get email;@JsonKey(name: 'verification_code') String? get verificationCode;
+/// Create a copy of VerifyCodeRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$VerifyCodeRequestCopyWith<VerifyCodeRequest> get copyWith => _$VerifyCodeRequestCopyWithImpl<VerifyCodeRequest>(this as VerifyCodeRequest, _$identity);
 
   /// Serializes this VerifyCodeRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of VerifyCodeRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $VerifyCodeRequestCopyWith<VerifyCodeRequest> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is VerifyCodeRequest&&(identical(other.email, email) || other.email == email)&&(identical(other.verificationCode, verificationCode) || other.verificationCode == verificationCode));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,email,verificationCode);
+
+@override
+String toString() {
+  return 'VerifyCodeRequest(email: $email, verificationCode: $verificationCode)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $VerifyCodeRequestCopyWith<$Res> {
-  factory $VerifyCodeRequestCopyWith(VerifyCodeRequest value, $Res Function(VerifyCodeRequest) then) =
-      _$VerifyCodeRequestCopyWithImpl<$Res, VerifyCodeRequest>;
-  @useResult
-  $Res call({@JsonKey(name: 'email') String? email, @JsonKey(name: 'verification_code') String? verificationCode});
+abstract mixin class $VerifyCodeRequestCopyWith<$Res>  {
+  factory $VerifyCodeRequestCopyWith(VerifyCodeRequest value, $Res Function(VerifyCodeRequest) _then) = _$VerifyCodeRequestCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'email') String? email,@JsonKey(name: 'verification_code') String? verificationCode
+});
+
+
+
+
+}
+/// @nodoc
+class _$VerifyCodeRequestCopyWithImpl<$Res>
+    implements $VerifyCodeRequestCopyWith<$Res> {
+  _$VerifyCodeRequestCopyWithImpl(this._self, this._then);
+
+  final VerifyCodeRequest _self;
+  final $Res Function(VerifyCodeRequest) _then;
+
+/// Create a copy of VerifyCodeRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? email = freezed,Object? verificationCode = freezed,}) {
+  return _then(_self.copyWith(
+email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String?,verificationCode: freezed == verificationCode ? _self.verificationCode : verificationCode // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-class _$VerifyCodeRequestCopyWithImpl<$Res, $Val extends VerifyCodeRequest> implements $VerifyCodeRequestCopyWith<$Res> {
-  _$VerifyCodeRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of VerifyCodeRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = freezed,
-    Object? verificationCode = freezed,
-  }) {
-    return _then(_value.copyWith(
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      verificationCode: freezed == verificationCode
-          ? _value.verificationCode
-          : verificationCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
 }
 
-/// @nodoc
-abstract class _$$VerifyCodeRequestImplCopyWith<$Res> implements $VerifyCodeRequestCopyWith<$Res> {
-  factory _$$VerifyCodeRequestImplCopyWith(_$VerifyCodeRequestImpl value, $Res Function(_$VerifyCodeRequestImpl) then) =
-      __$$VerifyCodeRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@JsonKey(name: 'email') String? email, @JsonKey(name: 'verification_code') String? verificationCode});
+
+/// Adds pattern-matching-related methods to [VerifyCodeRequest].
+extension VerifyCodeRequestPatterns on VerifyCodeRequest {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _VerifyCodeRequest value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _VerifyCodeRequest() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _VerifyCodeRequest value)  $default,){
+final _that = this;
+switch (_that) {
+case _VerifyCodeRequest():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _VerifyCodeRequest value)?  $default,){
+final _that = this;
+switch (_that) {
+case _VerifyCodeRequest() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'email')  String? email, @JsonKey(name: 'verification_code')  String? verificationCode)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _VerifyCodeRequest() when $default != null:
+return $default(_that.email,_that.verificationCode);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'email')  String? email, @JsonKey(name: 'verification_code')  String? verificationCode)  $default,) {final _that = this;
+switch (_that) {
+case _VerifyCodeRequest():
+return $default(_that.email,_that.verificationCode);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'email')  String? email, @JsonKey(name: 'verification_code')  String? verificationCode)?  $default,) {final _that = this;
+switch (_that) {
+case _VerifyCodeRequest() when $default != null:
+return $default(_that.email,_that.verificationCode);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$VerifyCodeRequestImplCopyWithImpl<$Res> extends _$VerifyCodeRequestCopyWithImpl<$Res, _$VerifyCodeRequestImpl>
-    implements _$$VerifyCodeRequestImplCopyWith<$Res> {
-  __$$VerifyCodeRequestImplCopyWithImpl(_$VerifyCodeRequestImpl _value, $Res Function(_$VerifyCodeRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of VerifyCodeRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = freezed,
-    Object? verificationCode = freezed,
-  }) {
-    return _then(_$VerifyCodeRequestImpl(
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      verificationCode: freezed == verificationCode
-          ? _value.verificationCode
-          : verificationCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$VerifyCodeRequestImpl implements _VerifyCodeRequest {
-  const _$VerifyCodeRequestImpl({@JsonKey(name: 'email') this.email, @JsonKey(name: 'verification_code') this.verificationCode});
 
-  factory _$VerifyCodeRequestImpl.fromJson(Map<String, dynamic> json) => _$$VerifyCodeRequestImplFromJson(json);
+class _VerifyCodeRequest implements VerifyCodeRequest {
+  const _VerifyCodeRequest({@JsonKey(name: 'email') this.email, @JsonKey(name: 'verification_code') this.verificationCode});
+  factory _VerifyCodeRequest.fromJson(Map<String, dynamic> json) => _$VerifyCodeRequestFromJson(json);
 
-  @override
-  @JsonKey(name: 'email')
-  final String? email;
-  @override
-  @JsonKey(name: 'verification_code')
-  final String? verificationCode;
+@override@JsonKey(name: 'email') final  String? email;
+@override@JsonKey(name: 'verification_code') final  String? verificationCode;
 
-  @override
-  String toString() {
-    return 'VerifyCodeRequest(email: $email, verificationCode: $verificationCode)';
-  }
+/// Create a copy of VerifyCodeRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$VerifyCodeRequestCopyWith<_VerifyCodeRequest> get copyWith => __$VerifyCodeRequestCopyWithImpl<_VerifyCodeRequest>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$VerifyCodeRequestImpl &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.verificationCode, verificationCode) || other.verificationCode == verificationCode));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, email, verificationCode);
-
-  /// Create a copy of VerifyCodeRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$VerifyCodeRequestImplCopyWith<_$VerifyCodeRequestImpl> get copyWith =>
-      __$$VerifyCodeRequestImplCopyWithImpl<_$VerifyCodeRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$VerifyCodeRequestImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$VerifyCodeRequestToJson(this, );
 }
 
-abstract class _VerifyCodeRequest implements VerifyCodeRequest {
-  const factory _VerifyCodeRequest(
-      {@JsonKey(name: 'email') final String? email,
-      @JsonKey(name: 'verification_code') final String? verificationCode}) = _$VerifyCodeRequestImpl;
-
-  factory _VerifyCodeRequest.fromJson(Map<String, dynamic> json) = _$VerifyCodeRequestImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'email')
-  String? get email;
-  @override
-  @JsonKey(name: 'verification_code')
-  String? get verificationCode;
-
-  /// Create a copy of VerifyCodeRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$VerifyCodeRequestImplCopyWith<_$VerifyCodeRequestImpl> get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _VerifyCodeRequest&&(identical(other.email, email) || other.email == email)&&(identical(other.verificationCode, verificationCode) || other.verificationCode == verificationCode));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,email,verificationCode);
+
+@override
+String toString() {
+  return 'VerifyCodeRequest(email: $email, verificationCode: $verificationCode)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$VerifyCodeRequestCopyWith<$Res> implements $VerifyCodeRequestCopyWith<$Res> {
+  factory _$VerifyCodeRequestCopyWith(_VerifyCodeRequest value, $Res Function(_VerifyCodeRequest) _then) = __$VerifyCodeRequestCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'email') String? email,@JsonKey(name: 'verification_code') String? verificationCode
+});
+
+
+
+
+}
+/// @nodoc
+class __$VerifyCodeRequestCopyWithImpl<$Res>
+    implements _$VerifyCodeRequestCopyWith<$Res> {
+  __$VerifyCodeRequestCopyWithImpl(this._self, this._then);
+
+  final _VerifyCodeRequest _self;
+  final $Res Function(_VerifyCodeRequest) _then;
+
+/// Create a copy of VerifyCodeRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? email = freezed,Object? verificationCode = freezed,}) {
+  return _then(_VerifyCodeRequest(
+email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String?,verificationCode: freezed == verificationCode ? _self.verificationCode : verificationCode // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

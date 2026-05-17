@@ -5,11 +5,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'get_verification_code_request.freezed.dart';
 part 'get_verification_code_request.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [GetVerificationCodeRequest] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class GetVerificationCodeRequest with _$GetVerificationCodeRequest {
-  const factory GetVerificationCodeRequest({
-    @JsonKey(name: 'phone') String? phone,
-  }) = _GetVerificationCodeRequest;
+abstract class GetVerificationCodeRequest with _$GetVerificationCodeRequest {
+  const factory GetVerificationCodeRequest({@JsonKey(name: 'phone') String? phone}) = _GetVerificationCodeRequest;
 
   factory GetVerificationCodeRequest.fromJson(Map<String, dynamic> json) => _$GetVerificationCodeRequestFromJson(json);
 }

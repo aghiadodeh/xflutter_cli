@@ -6,8 +6,12 @@ import '../media/media.dart';
 part 'category.freezed.dart';
 part 'category.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [Category] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class Category with _$Category {
+abstract class Category with _$Category {
   const factory Category({
     @JsonKey(name: 'id') int? id,
     @JsonKey(name: 'created_at') DateTime? createdAt,

@@ -9,41 +9,32 @@ import 'package:xflutter_cli_modules_application/common/data/models/responses/li
 import 'package:xflutter_cli_modules_application/modules/products/data/models/entities/product/product.dart';
 part 'products_remote_data_source.g.dart';
 
-@LazySingleton(scope: 'products')
+@Injectable()
 @RestApi()
 abstract class ProductsRemoteDataSource {
   @factoryMethod
   factory ProductsRemoteDataSource(Dio dio) = _ProductsRemoteDataSource;
 
-  @POST('/product')
-  Future<BaseResponse<Product>> create({
-    @Body() required Map<String, dynamic> data,
-    @CancelRequest() CancelToken? cancelToken,
-  });
+  @POST('/shop/products')
+  Future<BaseResponse<Product>> create({@Body() required Map<String, dynamic> data, @CancelRequest() CancelToken? cancelToken});
 
-  @PUT('/product/{id}')
+  @PUT('/shop/products/{id}')
   Future<BaseResponse<Product>> update({
     @Path('id') required int? id,
     @Body() required Map<String, dynamic> data,
     @CancelRequest() CancelToken? cancelToken,
   });
 
-  @GET('/product')
+  @GET('/shop/products')
   Future<BaseResponse<ListResponse<Product>>> findAll({
     @Query('page') required int page,
     @Query('per_page') required int perPage,
     @CancelRequest() CancelToken? cancelToken,
   });
 
-  @GET('/product/{id}')
-  Future<BaseResponse<Product>> findOne({
-    @Path('id') required int? id,
-    @CancelRequest() CancelToken? cancelToken,
-  });
+  @GET('/shop/products/{id}')
+  Future<BaseResponse<Product>> findOne({@Path('id') required int? id, @CancelRequest() CancelToken? cancelToken});
 
-  @DELETE('/product/{id}')
-  Future<BaseResponse<dynamic>> delete({
-    @Path('id') required int? id,
-    @CancelRequest() CancelToken? cancelToken,
-  });
+  @DELETE('/shop/products/{id}')
+  Future<BaseResponse<dynamic>> delete({@Path('id') required int? id, @CancelRequest() CancelToken? cancelToken});
 }

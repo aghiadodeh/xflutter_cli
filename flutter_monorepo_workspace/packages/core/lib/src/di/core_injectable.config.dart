@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format width=80
 
 // **************************************************************************
 // InjectableConfigGenerator
@@ -22,22 +23,18 @@ const String _test = 'test';
 const String _prod = 'prod';
 
 extension GetItInjectableX on _i174.GetIt {
-// initializes the registration of main-scope dependencies inside of GetIt
+  // initializes the registration of main-scope dependencies inside of GetIt
   Future<_i174.GetIt> init({
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
   }) async {
-    final gh = _i526.GetItHelper(
-      this,
-      environment,
-      environmentFilter,
-    );
+    final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final coreModule = _$CoreModule();
-    gh.lazySingleton<_i359.ThemeNotifier>(() => _i359.ThemeNotifier());
     await gh.lazySingletonAsync<_i460.SharedPreferences>(
       () => coreModule.provideSharedPreferences(),
       preResolve: true,
     );
+    gh.lazySingleton<_i359.ThemeNotifier>(() => _i359.ThemeNotifier());
     gh.lazySingleton<_i391.AppConnectivity>(() => _i391.AppConnectivity());
     gh.factory<_i438.AppEnvironment>(
       () => coreModule.developmentEnvironment,
@@ -51,7 +48,9 @@ extension GetItInjectableX on _i174.GetIt {
       () => coreModule.productionEnvironment,
       registerFor: {_prod},
     );
-    gh.lazySingleton<_i361.Dio>(() => coreModule.provideDio(gh<_i438.AppEnvironment>()));
+    gh.lazySingleton<_i361.Dio>(
+      () => coreModule.provideDio(gh<_i438.AppEnvironment>()),
+    );
     return this;
   }
 }

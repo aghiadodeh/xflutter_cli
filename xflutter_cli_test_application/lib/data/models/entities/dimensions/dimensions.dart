@@ -5,13 +5,14 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'dimensions.freezed.dart';
 part 'dimensions.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [Dimensions] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class Dimensions with _$Dimensions {
-  const factory Dimensions({
-    @JsonKey(name: 'width') num? width,
-    @JsonKey(name: 'height') num? height,
-    @JsonKey(name: 'depth') num? depth,
-  }) = _Dimensions;
+abstract class Dimensions with _$Dimensions {
+  const factory Dimensions({@JsonKey(name: 'width') num? width, @JsonKey(name: 'height') num? height, @JsonKey(name: 'depth') num? depth}) =
+      _Dimensions;
 
   factory Dimensions.fromJson(Map<String, dynamic> json) => _$DimensionsFromJson(json);
 }

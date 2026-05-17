@@ -7,9 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'products_injectable.config.dart';
 
 /// manage dependencies
-@InjectableInit(ignoreUnregisteredTypes: [
-  Dio,
-])
+@InjectableInit(ignoreUnregisteredTypes: [Dio])
 Future<void> configureProductsDependencies({Environment? environment}) async {
   await GetIt.instance.init(environment: environment?.name);
 }

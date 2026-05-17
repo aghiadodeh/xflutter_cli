@@ -12,28 +12,15 @@ class LocalDimensions {
   double? height;
   double? depth;
 
-  LocalDimensions({
-    this.id = 0,
-    this.width,
-    this.height,
-    this.depth,
-  });
+  LocalDimensions({this.id = 0, this.width, this.height, this.depth});
 
   /// convert [Dimensions] to [LocalDimensions]
-  factory LocalDimensions.fromEntity(Dimensions dimensions) {
-    final item = LocalDimensions(
-      width: dimensions.width?.toDouble(),
-      height: dimensions.height?.toDouble(),
-      depth: dimensions.depth?.toDouble(),
-    );
+  factory LocalDimensions.fromEntity(Dimensions entity) {
+    final item = LocalDimensions(width: entity.width?.toDouble(), height: entity.height?.toDouble(), depth: entity.depth?.toDouble());
 
     return item;
   }
 
   /// convert [LocalDimensions] to [Dimensions]
-  Dimensions fromLocal() => Dimensions(
-        width: width,
-        height: height,
-        depth: depth,
-      );
+  Dimensions fromLocal() => Dimensions(width: width, height: height, depth: depth);
 }

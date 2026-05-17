@@ -3,52 +3,41 @@
 // more info: https://xflutter-cli.com
 import 'package:objectbox/objectbox.dart';
 import 'package:xflutter_cli_modules_application/modules/categories/data/models/entities/category/category.dart';
-import '../media/local_media.dart';
+import 'package:xflutter_cli_modules_application/modules/categories/data/models/entities/media/media.dart';
+import 'dart:convert' as convert;
 
 @Entity()
 class LocalCategory {
-  @Id()
-  int id = 0;
-  @Unique(onConflict: ConflictStrategy.replace)
-  int? categoryId;
+  @Id(assignable: true)
+  int id;
   @Property(type: PropertyType.date)
   DateTime? createdAt;
   @Property(type: PropertyType.date)
   DateTime? updatedAt;
   String? name;
-  final toManyMedia = ToMany<LocalMedia>();
-  List<LocalMedia>? media;
+  List<String>? media;
 
-  LocalCategory({
-    this.id = 0,
-    this.categoryId,
-    this.createdAt,
-    this.updatedAt,
-    this.name,
-  });
+  LocalCategory({required this.id, this.createdAt, this.updatedAt, this.name, this.media});
 
   /// convert [Category] to [LocalCategory]
-  factory LocalCategory.fromEntity(Category category) {
+  factory LocalCategory.fromEntity(Category entity) {
     final item = LocalCategory(
-      categoryId: category.id,
-      createdAt: category.createdAt,
-      updatedAt: category.updatedAt,
-      name: category.name,
+      id: entity.id ?? 0,
+      createdAt: entity.createdAt,
+      updatedAt: entity.updatedAt,
+      name: entity.name,
+      media: entity.media?.map((e) => convert.json.encode(e)).toList(),
     );
-
-    if (category.media != null) {
-      item.toManyMedia.addAll(category.media?.map((e) => LocalMedia.fromEntity(e)) ?? []);
-    }
 
     return item;
   }
 
   /// convert [LocalCategory] to [Category]
   Category fromLocal() => Category(
-        id: categoryId,
-        createdAt: createdAt,
-        updatedAt: updatedAt,
-        name: name,
-        media: toManyMedia.map((e) => e.fromLocal()).toList(),
-      );
+    id: id,
+    createdAt: createdAt,
+    updatedAt: updatedAt,
+    name: name,
+    media: media?.map((e) => Media.fromJson(convert.json.decode(e))).toList(),
+  );
 }

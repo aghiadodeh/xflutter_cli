@@ -15,36 +15,14 @@ class RegisterParams {
     _result.send(value);
   }
 
-  late final registerForm = FormGroup({
-    'name': FormControl<String>(
-      validators: [Validators.required],
-    ),
-    'email': FormControl<String>(
-      validators: [
-        Validators.required,
-        Validators.email,
-      ],
-    ),
-    'phone': FormControl<PhoneNumber>(
-      validators: [
-        Validators.required,
-        PhoneValidators.validMobile,
-        PhoneValidators.required,
-      ],
-    ),
-    'password': FormControl<String>(
-      validators: [
-        Validators.required,
-        Validators.minLength(8),
-      ],
-    ),
-    'confirm_password': FormControl<String>(
-      validators: [Validators.required],
-    ),
-  }, validators: [
-    const MatchingValidator(
-      controlName: 'password',
-      matchingControlName: 'confirm_password',
-    ),
-  ]);
+  late final registerForm = FormGroup(
+    {
+      'name': FormControl<String>(validators: [Validators.required]),
+      'email': FormControl<String>(validators: [Validators.required, Validators.email]),
+      'phone': FormControl<PhoneNumber>(validators: [Validators.required, PhoneValidators.validMobile, PhoneValidators.required]),
+      'password': FormControl<String>(validators: [Validators.required, Validators.minLength(8)]),
+      'confirm_password': FormControl<String>(validators: [Validators.required]),
+    },
+    validators: [const MatchingValidator(controlName: 'password', matchingControlName: 'confirm_password')],
+  );
 }

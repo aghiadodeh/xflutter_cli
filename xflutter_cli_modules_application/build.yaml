@@ -21,4 +21,4 @@ targets:
       injectable_generator:injectable_builder:  
         options:  
           auto_register: true
-          file_name_pattern: "_module$" 
+          file_name_pattern: "_module$"

@@ -5,8 +5,8 @@ workspace: flutter_monorepo_workspace
 #
 # If you upgrade the version of the tool and find major changes between the latest version and the version that initializes your application,
 # you can downgrade version manually by run command:
-# dart pub global activate xflutter_cli 2.5.0
-version: 2.5.0
+# dart pub global activate xflutter_cli 2.7.1
+version: 2.7.1
 
 # formatting line width
 # tool will format the dart files after Generating by running:
@@ -40,14 +40,13 @@ modules:
       name: customer_app
       
       # machine Flutter version when initialize the module
-      flutter_version: 3.24.1
+      flutter_version: 3.38.6
 
     # xflutter_cli generate configuration
     generate:
       # avoid generate files
       # skip:
-        # - ui/widgets/result/result_builder.dart
-        # - models/data/result/result.dart
+        # - data/models/ui_models/ui_message/ui_message.dart
         # - models/responses/list_response/list_response.dart
         
       # run `dart run build_runner build --delete-conflicting-outputs`
@@ -63,7 +62,7 @@ modules:
       base: packages/core/lib/src
       path: packages/core
       name: core
-      flutter_version: 3.24.1
+      flutter_version: 3.38.6
     generate:
       run_build_runner: true
       overwrite: false
@@ -73,7 +72,7 @@ modules:
       base: apps/admin_app/lib
       path: apps/admin_app
       name: admin_app
-      flutter_version: 3.24.1
+      flutter_version: 3.38.6
     generate:
       run_build_runner: true
       overwrite: false
@@ -83,7 +82,7 @@ modules:
       base: packages/products/lib/src
       path: packages/products
       name: products
-      flutter_version: 3.24.1
+      flutter_version: 3.38.6
     generate:
       run_build_runner: true
       overwrite: false
@@ -93,7 +92,7 @@ modules:
       base: packages/orders/lib/src
       path: packages/orders
       name: orders
-      flutter_version: 3.24.1
+      flutter_version: 3.38.6
     generate:
       run_build_runner: true
       overwrite: false

@@ -27,20 +27,14 @@ class LifecycleProvider<T extends BaseViewModel> extends StatefulWidget {
   /// [onDispose] is callback fired when widget destroyed.
   final Function(BuildContext context, T instance)? onDispose;
 
-  const LifecycleProvider({
-    required this.diScope,
-    required this.builder,
-    this.onInit,
-    this.onReady,
-    this.onDispose,
-    super.key,
-  });
+  const LifecycleProvider({required this.diScope, required this.builder, this.onInit, this.onReady, this.onDispose, super.key});
 
   @override
   State<LifecycleProvider<T>> createState() => LifecycleProviderState();
 }
 
-class LifecycleProviderState<T extends BaseViewModel> extends State<LifecycleProvider<T>> with LifecycleOwner<LifecycleProvider<T>, T>, ObserverMixin {
+class LifecycleProviderState<T extends BaseViewModel> extends State<LifecycleProvider<T>>
+    with LifecycleOwner<LifecycleProvider<T>, T>, ObserverMixin {
   @override
   void onInitState() {
     super.onInitState();

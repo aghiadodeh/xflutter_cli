@@ -11,4 +11,4 @@ PRODUCT_NAME = xflutter_cli_test_application
 PRODUCT_BUNDLE_IDENTIFIER = com.xfluttercli.xflutterCliTestApplication
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.xflutter_cli. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 com.xflutter_cli. All rights reserved.

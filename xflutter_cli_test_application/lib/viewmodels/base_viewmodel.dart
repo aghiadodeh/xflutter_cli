@@ -2,86 +2,82 @@
 //
 // more info: https://xflutter-cli.com
 import 'dart:async';
-import 'package:flutterx_live_data/flutterx_live_data.dart';
 import 'base_params.dart';
 import '../data/models/ui_models/ui_message/ui_message.dart';
 import '../data/models/responses/base_response/base_response.dart';
-import '../extensions/nullable_extension.dart';
 
 abstract class BaseViewModel extends LifeCycle {
   final baseParams = BaseParams();
 
   /// handle calling http request
   ///
-  /// [result] is optional [LiveResult] params which control your [LiveResultBuilder].
   /// [setLoading] is optional [Function] which control your ui-loader while request in-progress.
+  ///
   /// [request] is a [Future] return type of [BaseResponse] called inside [callHttpRequest].
-  /// [callback] is a [Function] called after [request] fetched,
-  /// [callback] return nullable [X] result if [request] success else return `null`
+  ///
+  /// [callback] is a [Function] called after [request] fetched, it returns nullable [X] result if [request] success else return `null`.
+  ///
+  /// [onResponse] return the [BaseResponse] which give you more control for handling.
   Future<void> callHttpRequest<X>(
     Future<BaseResponse<X>> Function() request, {
-    LiveResult<X>? result,
-    Function(bool value)? setLoading,
-    Function(X? result, bool success)? callback,
+    bool showErrorMessage = true,
+    void Function(bool value)? setLoading,
+    void Function(X? result, bool success)? callback,
+    void Function(BaseResponse<X> response)? onResponse,
   }) async {
     // notify ui to show loader
     setLoading?.call(true);
-    result?.setLoading();
 
     // call http request
     final response = await request.call();
     if (response.isSuccess) {
       // success response
-      response.data?.let((it) => result?.setResult(it));
       callback?.call(response.data, true);
     } else {
       // error response
-      result?.setError(response.message ?? 'error');
-      showUiMessage(
-        uiMessage: UiMessage(
-          message: response.message,
-          state: UiMessageState.error,
-        ),
-      );
+      if (showErrorMessage) {
+        showUiMessage(
+          uiMessage: UiMessage(message: response.message, state: UiMessageState.error),
+        );
+      }
       callback?.call(null, false);
     }
     setLoading?.call(false);
+    onResponse?.call(response);
   }
 
   /// call http request with stream, this function used if your repository fetch data from multiple data-source (local and remote)
   ///
   /// [setLoading] is optional [Function] which control your ui-loader while request in-progress.
-  /// [result] is optional [LiveResult] params which control your [LiveResultBuilder].
+  ///
   /// [request] is a [Future] return type of [BaseResponse] called inside [callStreamRequest].
-  /// [callback] is a [Function] called after [request] fetched,
-  /// [callback] return nullable [X] result if [request] success else return `null`
+  ///
+  /// [callback] is a [Function] called after [request] fetched, it returns nullable [X] result if [request] success else return `null`.
+  ///
+  /// [onResponse] return the [BaseResponse] which give you more control for handling.
   Future<void> callStreamRequest<X>(
     Stream<BaseResponse<X>> Function() request, {
-    LiveResult<X>? result,
-    Function(bool value)? setLoading,
-    Function(X? result, bool success)? callback,
+    void Function(bool value)? setLoading,
+    void Function(X? result, bool success)? callback,
+    void Function(BaseResponse<X> response)? onResponse,
   }) async {
     // notify ui to show loader
     setLoading?.call(true);
-    result?.setLoading();
 
     await for (final response in request.call()) {
       if (response.success == true) {
+        setLoading?.call(false);
         // success response
-        response.data?.let((it) => result?.setResult(it));
         callback?.call(response.data, true);
       } else {
+        setLoading?.call(false);
         // error response
-        result?.setError(response.message ?? 'error');
         showUiMessage(
-          uiMessage: UiMessage(
-            message: response.message,
-            state: UiMessageState.error,
-          ),
+          uiMessage: UiMessage(message: response.message, state: UiMessageState.error),
         );
         callback?.call(null, false);
       }
-      setLoading?.call(false);
+      onResponse?.call(response);
     }
   }
 

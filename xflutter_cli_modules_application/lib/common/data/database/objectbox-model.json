@@ -4,372 +4,162 @@
   "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
   "entities": [
     {
-      "id": "1:2122160908577252228",
-      "lastPropertyId": "4:5570296253084072915",
-      "name": "LocalDimensions",
+      "id": "1:1558695712281547040",
+      "lastPropertyId": "5:3993396677876419296",
+      "name": "LocalCategory",
       "properties": [
         {
-          "id": "1:7367378304943420629",
+          "id": "1:8589967670959675220",
           "name": "id",
           "type": 6,
-          "flags": 1
+          "flags": 129
         },
         {
-          "id": "2:725525659083692558",
-          "name": "width",
-          "type": 8
-        },
-        {
-          "id": "3:4901943516027974532",
-          "name": "height",
-          "type": 8
-        },
-        {
-          "id": "4:5570296253084072915",
-          "name": "depth",
-          "type": 8
-        }
-      ],
-      "relations": []
-    },
-    {
-      "id": "2:6276929962951983797",
-      "lastPropertyId": "5:4148288451652044199",
-      "name": "LocalMeta",
-      "properties": [
-        {
-          "id": "1:8258615690161606195",
-          "name": "id",
-          "type": 6,
-          "flags": 1
-        },
-        {
-          "id": "2:2975092823442895155",
+          "id": "2:9039051279951300965",
           "name": "createdAt",
           "type": 10
         },
         {
-          "id": "3:3161399512787844555",
+          "id": "3:4382053505727048651",
           "name": "updatedAt",
           "type": 10
         },
         {
-          "id": "4:8778189847716892143",
-          "name": "barcode",
+          "id": "4:5541810469911782082",
+          "name": "name",
           "type": 9
         },
         {
-          "id": "5:4148288451652044199",
-          "name": "qrCode",
-          "type": 9
+          "id": "5:3993396677876419296",
+          "name": "media",
+          "type": 30
         }
       ],
       "relations": []
     },
     {
-      "id": "3:8714101394009378796",
-      "lastPropertyId": "22:5295875058168480462",
+      "id": "2:6599789792563351743",
+      "lastPropertyId": "22:3844170067179133710",
       "name": "LocalProduct",
       "properties": [
         {
-          "id": "1:4950305005857020540",
+          "id": "1:738663503216839090",
           "name": "id",
           "type": 6,
-          "flags": 1
+          "flags": 129
         },
         {
-          "id": "2:5785837506382813284",
-          "name": "productId",
-          "type": 6,
-          "flags": 32808,
-          "indexId": "1:2628685097833672000"
-        },
-        {
-          "id": "3:3864100186061919005",
+          "id": "2:1199688713008735371",
           "name": "title",
           "type": 9
         },
         {
-          "id": "4:8549972555162116882",
+          "id": "3:3849272132100566871",
           "name": "description",
           "type": 9
         },
         {
-          "id": "5:641962031009408866",
+          "id": "4:2736205914330701478",
           "name": "category",
           "type": 9
         },
         {
-          "id": "6:2498210399809801300",
+          "id": "5:1234348910140237256",
           "name": "price",
           "type": 8
         },
         {
-          "id": "7:6290856439237576945",
+          "id": "6:8918654707363090241",
           "name": "discountPercentage",
           "type": 8
         },
         {
-          "id": "8:1231556052923784109",
+          "id": "7:274518653212109355",
           "name": "rating",
           "type": 8
         },
         {
-          "id": "9:3707184211110616307",
+          "id": "8:890882037740843686",
           "name": "stock",
           "type": 6
         },
         {
-          "id": "10:2333198293225650761",
+          "id": "9:5375977887138904928",
           "name": "tags",
           "type": 30
         },
         {
-          "id": "11:3827112290753941347",
+          "id": "10:2090656976425899959",
           "name": "brand",
           "type": 9
         },
         {
-          "id": "12:2957570007312386489",
+          "id": "11:830079110481757092",
           "name": "sku",
           "type": 9
         },
         {
-          "id": "13:4144384176469534476",
+          "id": "12:1329775697012664697",
           "name": "weight",
           "type": 6
         },
         {
-          "id": "14:2316847073759280543",
-          "name": "toOneDimensionsId",
-          "type": 11,
-          "flags": 520,
-          "indexId": "2:9107861225221601972",
-          "relationTarget": "LocalDimensions"
+          "id": "13:9184213289654793308",
+          "name": "dimensions",
+          "type": 9
         },
         {
-          "id": "15:1934741029761377464",
+          "id": "14:5612956752114516726",
           "name": "warrantyInformation",
           "type": 9
         },
         {
-          "id": "16:6043429016929366377",
+          "id": "15:6558842388539644124",
           "name": "shippingInformation",
           "type": 9
         },
         {
-          "id": "17:336167009869936693",
+          "id": "16:5112514553891246175",
           "name": "availabilityStatus",
           "type": 9
         },
         {
-          "id": "18:399134745622610973",
+          "id": "17:7298722431598933443",
+          "name": "reviews",
+          "type": 30
+        },
+        {
+          "id": "18:2864602266468616075",
           "name": "returnPolicy",
           "type": 9
         },
         {
-          "id": "19:151516259473102985",
+          "id": "19:90390511956928161",
           "name": "minimumOrderQuantity",
           "type": 6
         },
         {
-          "id": "20:6606229142364230771",
-          "name": "toOneMetaId",
-          "type": 11,
-          "flags": 520,
-          "indexId": "3:6644423280066972976",
-          "relationTarget": "LocalMeta"
+          "id": "20:954126982519640897",
+          "name": "meta",
+          "type": 9
         },
         {
-          "id": "21:6363087237868859008",
+          "id": "21:6429592851954809068",
           "name": "images",
           "type": 30
         },
         {
-          "id": "22:5295875058168480462",
+          "id": "22:3844170067179133710",
           "name": "thumbnail",
-          "type": 9
-        }
-      ],
-      "relations": [
-        {
-          "id": "1:939601381664599836",
-          "name": "toManyReviews",
-          "targetId": "4:2553504931193802387"
-        }
-      ]
-    },
-    {
-      "id": "4:2553504931193802387",
-      "lastPropertyId": "6:848291459264687046",
-      "name": "LocalReview",
-      "properties": [
-        {
-          "id": "1:618133941657042797",
-          "name": "id",
-          "type": 6,
-          "flags": 1
-        },
-        {
-          "id": "2:2038614113387283736",
-          "name": "rating",
-          "type": 6
-        },
-        {
-          "id": "3:5595383768533117153",
-          "name": "comment",
-          "type": 9
-        },
-        {
-          "id": "4:8620874365921770796",
-          "name": "date",
-          "type": 10
-        },
-        {
-          "id": "5:5208266462371234448",
-          "name": "reviewerName",
-          "type": 9
-        },
-        {
-          "id": "6:848291459264687046",
-          "name": "reviewerEmail",
-          "type": 9
-        }
-      ],
-      "relations": []
-    },
-    {
-      "id": "5:7405729360011204903",
-      "lastPropertyId": "5:3015099453833395663",
-      "name": "LocalCategory",
-      "properties": [
-        {
-          "id": "1:5044012250443877637",
-          "name": "id",
-          "type": 6,
-          "flags": 1
-        },
-        {
-          "id": "2:5045963942035677795",
-          "name": "categoryId",
-          "type": 6,
-          "flags": 32808,
-          "indexId": "4:8285030884778431739"
-        },
-        {
-          "id": "3:1013481058419872732",
-          "name": "createdAt",
-          "type": 10
-        },
-        {
-          "id": "4:4888860475551646199",
-          "name": "updatedAt",
-          "type": 10
-        },
-        {
-          "id": "5:3015099453833395663",
-          "name": "name",
-          "type": 9
-        }
-      ],
-      "relations": [
-        {
-          "id": "2:5090988327262405121",
-          "name": "toManyMedia",
-          "targetId": "6:2945512839046358139"
-        }
-      ]
-    },
-    {
-      "id": "6:2945512839046358139",
-      "lastPropertyId": "15:418776477024300753",
-      "name": "LocalMedia",
-      "properties": [
-        {
-          "id": "1:8294059421580805313",
-          "name": "id",
-          "type": 6,
-          "flags": 1
-        },
-        {
-          "id": "2:5218853139970417453",
-          "name": "mediaId",
-          "type": 6,
-          "flags": 32808,
-          "indexId": "5:5894988889262983450"
-        },
-        {
-          "id": "3:5473289567215413959",
-          "name": "modelType",
-          "type": 9
-        },
-        {
-          "id": "4:1449620766463902571",
-          "name": "modelId",
-          "type": 6
-        },
-        {
-          "id": "5:379912949497910583",
-          "name": "collectionName",
-          "type": 9
-        },
-        {
-          "id": "6:8899268521612699553",
-          "name": "name",
-          "type": 9
-        },
-        {
-          "id": "7:7059216615460908350",
-          "name": "fileName",
-          "type": 9
-        },
-        {
-          "id": "8:1514297462568387719",
-          "name": "mimeType",
-          "type": 9
-        },
-        {
-          "id": "9:639133799121539235",
-          "name": "disk",
-          "type": 9
-        },
-        {
-          "id": "10:6622770181864924445",
-          "name": "conversionsDisk",
-          "type": 9
-        },
-        {
-          "id": "11:2999199610959622721",
-          "name": "size",
-          "type": 6
-        },
-        {
-          "id": "12:8719643789076804260",
-          "name": "createdAt",
-          "type": 10
-        },
-        {
-          "id": "13:5666378665693397657",
-          "name": "updatedAt",
-          "type": 10
-        },
-        {
-          "id": "14:4840340336842650055",
-          "name": "originalUrl",
-          "type": 9
-        },
-        {
-          "id": "15:418776477024300753",
-          "name": "previewUrl",
           "type": 9
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "6:2945512839046358139",
-  "lastIndexId": "5:5894988889262983450",
-  "lastRelationId": "2:5090988327262405121",
+  "lastEntityId": "2:6599789792563351743",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
   "modelVersionParserMinimum": 5,

@@ -2,6 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:xflutter_cli_modules_application/modules/products/data/models/entities/product/product.dart';
+import 'package:xflutter_cli_modules_application/common/data/models/ui_models/result/result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
 import './viewmodels/view_product_details_viewmodel.dart';
@@ -10,7 +11,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'mobile/view_product_details_mobile_screen.dart';
 import 'package:xflutter_cli_modules_application/common/data/models/di/di_scope/di_scope.dart';
-import 'package:xflutter_cli_modules_application/common/ui/widgets/loaders/live_data_loader.dart';
 import 'package:xflutter_cli_modules_application/common/ui/widgets/instance/lifecycle_owner.dart';
 import 'package:xflutter_cli_modules_application/core/extensions/di_extension.dart';
 import 'package:xflutter_cli_modules_application/common/di/app_injectable.config.dart';
@@ -30,12 +30,6 @@ class ViewProductDetailsScreen extends StatefulWidget {
 class _ViewProductDetailsScreenState extends State<ViewProductDetailsScreen>
     with LifecycleOwner<ViewProductDetailsScreen, ViewProductDetailsViewModel>, ObserverMixin {
   @override
-  void onInitState() {
-    viewModel.params.id = widget.id;
-    super.onInitState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -43,39 +37,29 @@ class _ViewProductDetailsScreenState extends State<ViewProductDetailsScreen>
         BaseScaffold(
           appBar: (context, theme) => BaseAppBar(title: 'view_product_details'.tr()),
           builder: (context, theme) => SafeArea(
-            child: LiveDataBuilder<LiveResult<Product>>(
+            child: LiveDataBuilder<Result<Product>>(
               data: viewModel.params.product,
-              builder: (BuildContext context, LiveResult<Product> value) {
-                if (value.state == ResultState.loading) {
-                  // product in fetching status
-                  return const Center(
-                    child: CircularProgressIndicator.adaptive(),
-                  );
-                } else if (value.state == ResultState.success) {
-                  // product details fetched successfully
-                  return ScreenTypeLayout.builder(
-                    mobile: (_) => const ViewProductDetailsMobileScreen(),
-                  );
-                } else if (value.state == ResultState.error) {
-                  // display error
-                  return Center(child: Text(value.error.toString()));
-                }
-                return const SizedBox.shrink();
+              builder: (BuildContext context, Result<Product> value) {
+                return value.when(
+                  idle: () => const SizedBox(),
+                  loading: () => const Center(child: CircularProgressIndicator.adaptive()),
+                  data: (_) => ScreenTypeLayout.builder(mobile: (_) => ViewProductDetailsMobileScreen()),
+                  error: (message, _, _) => Center(child: Text(message)),
+                );
               },
             ),
           ),
         ),
-
-        // full-screen loader
-        LiveDataFullScreenLoader(loading: viewModel.baseParams.loading),
       ],
     );
   }
 
   @override
-  DiScope get diScope => DiScope(
-        name: 'viewProductDetails',
-        factory: getIt.initViewProductDetailsScope,
-        dependencies: [],
-      );
+  void onInitState() {
+    viewModel.params.id = widget.id;
+    super.onInitState();
+  }
+
+  @override
+  DiScope get diScope => DiScope(name: 'viewProductDetails', factory: getIt.initViewProductDetailsScope, dependencies: []);
 }

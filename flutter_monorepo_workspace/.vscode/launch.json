@@ -1,0 +1,51 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    
+     {
+      "name": "customer_app (test)",
+      "cwd": "apps/customer_app",
+      "request": "launch",
+      "program": "lib/main_test.dart",
+      "type": "dart",
+    },
+    {
+      "name": "customer_app (dev)",
+      "cwd": "apps/customer_app",
+      "request": "launch",
+      "program": "lib/main_dev.dart",
+      "type": "dart",
+    },
+    {
+      "name": "customer_app (production)",
+      "cwd": "apps/customer_app",
+      "request": "launch",
+      "program": "lib/main_prod.dart",
+      "type": "dart",
+    },
+     {
+      "name": "admin_app (test)",
+      "cwd": "apps/admin_app",
+      "request": "launch",
+      "program": "lib/main_test.dart",
+      "type": "dart",
+    },
+    {
+      "name": "admin_app (dev)",
+      "cwd": "apps/admin_app",
+      "request": "launch",
+      "program": "lib/main_dev.dart",
+      "type": "dart",
+    },
+    {
+      "name": "admin_app (production)",
+      "cwd": "apps/admin_app",
+      "request": "launch",
+      "program": "lib/main_prod.dart",
+      "type": "dart",
+    }
+  ]
+}

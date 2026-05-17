@@ -55,12 +55,7 @@ class DependencyLocator {
   /// if instance isRegistered => return the Registered instance
   ///
   /// if instance is not registered => return [instance] with ability to register it
-  static T tryFindInstance<T extends Object>(
-    T instance, {
-    bool register = false,
-    Type? type,
-    String? instanceName,
-  }) {
+  static T tryFindInstance<T extends Object>(T instance, {bool register = false, Type? type, String? instanceName}) {
     if (isRegistered<T>(instance: instance, instanceName: instanceName)) {
       return findInstance<T>(type: type, instanceName: instanceName);
     } else {

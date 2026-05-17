@@ -31,9 +31,7 @@ class LoginViewModel extends BaseViewModel {
 
   void submit() {
     eventBus.fire(const SoftKeyboardEvent());
-    final request = LoginRequest(
-      phone: params.loginForm.getControlValue<PhoneNumber>('phone')?.international,
-    );
+    final request = LoginRequest(phone: params.loginForm.getControlValue<PhoneNumber>('phone')?.international);
     callHttpRequest(
       () => _authenticationRepository.login(request),
       setLoading: baseParams.setLoading,

@@ -15,7 +15,6 @@ import 'package:xflutter_cli_modules_application/common/ui/widgets/loaders/live_
 import 'package:xflutter_cli_modules_application/common/ui/widgets/instance/lifecycle_owner.dart';
 import 'package:xflutter_cli_modules_application/core/extensions/di_extension.dart';
 import 'package:xflutter_cli_modules_application/common/di/app_injectable.config.dart';
-import 'package:xflutter_cli_modules_application/common/ui/widgets/core/base_scaffold.dart';
 import 'package:xflutter_cli_modules_application/common/ui/widgets/core/base_appbar.dart';
 
 @RoutePage(name: 'resetPassword')
@@ -28,13 +27,18 @@ class ResetPasswordScreen extends StatefulWidget {
 
 class _ResetPasswordScreenState extends State<ResetPasswordScreen>
     with LifecycleOwner<ResetPasswordScreen, ResetPasswordViewModel>, ObserverMixin {
+  /// handle reset-password response, navigate to verify page
+  void _handleResetPasswordResponse(dynamic result) {
+    if (result == null) return;
+
+    // reset password success, go to login
+    appRouter.replaceAll(const [Login()]);
+  }
+
   @override
   void observeChanges(ObserverMixin observer) {
     viewModel.params.result.observe(observer, (value) {
-      if (value != null) {
-        // reset password success, go to login
-        appRouter.replaceAll(const [Login()]);
-      }
+      _handleResetPasswordResponse(value);
     });
   }
 
@@ -43,13 +47,10 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen>
     return Stack(
       children: [
         // screen body
-        BaseScaffold(
-          appBar: (context, theme) => BaseAppBar(title: 'reset_password'.tr()),
-          builder: (context, theme) => SafeArea(
-            child: ScreenTypeLayout.builder(
-              mobile: (_) => const ResetPasswordMobileScreen(),
-              tablet: (_) => const ResetPasswordTabletScreen(),
-            ),
+        Scaffold(
+          appBar: BaseAppBar(title: 'reset_password'.tr()),
+          body: SafeArea(
+            child: ScreenTypeLayout.builder(mobile: (_) => ResetPasswordMobileScreen(), tablet: (_) => ResetPasswordTabletScreen()),
           ),
         ),
 
@@ -60,9 +61,5 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen>
   }
 
   @override
-  DiScope get diScope => DiScope(
-        name: 'resetPassword',
-        factory: getIt.initResetPasswordScope,
-        dependencies: [],
-      );
+  DiScope get diScope => DiScope(name: 'resetPassword', factory: getIt.initResetPasswordScope, dependencies: []);
 }

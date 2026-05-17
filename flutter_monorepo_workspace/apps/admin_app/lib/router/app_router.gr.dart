@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -13,10 +14,7 @@ part of 'app_router.dart';
 /// [AdminProductsScreen]
 class AdminProducts extends PageRouteInfo<void> {
   const AdminProducts({List<PageRouteInfo>? children})
-      : super(
-          AdminProducts.name,
-          initialChildren: children,
-        );
+    : super(AdminProducts.name, initialChildren: children);
 
   static const String name = 'AdminProducts';
 

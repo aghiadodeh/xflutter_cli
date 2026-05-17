@@ -15,7 +15,6 @@ import 'package:xflutter_cli_modules_application/common/ui/widgets/loaders/live_
 import 'package:xflutter_cli_modules_application/common/ui/widgets/instance/lifecycle_owner.dart';
 import 'package:xflutter_cli_modules_application/core/extensions/di_extension.dart';
 import 'package:xflutter_cli_modules_application/common/di/app_injectable.config.dart';
-import 'package:xflutter_cli_modules_application/common/ui/widgets/core/base_scaffold.dart';
 import 'package:xflutter_cli_modules_application/common/ui/widgets/core/base_appbar.dart';
 
 @RoutePage(name: 'changePassword')
@@ -28,13 +27,18 @@ class ChangePasswordScreen extends StatefulWidget {
 
 class _ChangePasswordScreenState extends State<ChangePasswordScreen>
     with LifecycleOwner<ChangePasswordScreen, ChangePasswordViewModel>, ObserverMixin {
+  /// handle change-password response, navigate to verify page
+  void _handleChangePasswordResponse(dynamic result) {
+    if (result == null) return;
+
+    // change password success, back to previous screen
+    appRouter.maybePop(true);
+  }
+
   @override
   void observeChanges(ObserverMixin observer) {
     viewModel.params.result.observe(observer, (value) {
-      if (value != null) {
-        // change password success
-        appRouter.maybePop(true);
-      }
+      _handleChangePasswordResponse(value);
     });
   }
 
@@ -43,13 +47,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen>
     return Stack(
       children: [
         // screen body
-        BaseScaffold(
-          appBar: (context, theme) => BaseAppBar(title: 'change_password'.tr()),
-          builder: (context, theme) => SafeArea(
-            child: ScreenTypeLayout.builder(
-              mobile: (_) => const ChangePasswordMobileScreen(),
-              tablet: (_) => const ChangePasswordTabletScreen(),
-            ),
+        Scaffold(
+          appBar: BaseAppBar(title: 'change_password'.tr()),
+          body: SafeArea(
+            child: ScreenTypeLayout.builder(mobile: (_) => ChangePasswordMobileScreen(), tablet: (_) => ChangePasswordTabletScreen()),
           ),
         ),
 
@@ -61,13 +62,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen>
 
   @override
   DiScope get diScope => DiScope(
-        name: 'changePassword',
-        factory: getIt.initChangePasswordScope,
-        dependencies: [
-          DiScope(
-            name: 'authentication',
-            factory: getIt.initAuthenticationScope,
-          ),
-        ],
-      );
+    name: 'changePassword',
+    factory: getIt.initChangePasswordScope,
+    dependencies: [DiScope(name: 'authentication', factory: getIt.initAuthenticationScope)],
+  );
 }

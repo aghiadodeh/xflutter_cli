@@ -15,34 +15,21 @@ class LocalReview {
   String? reviewerName;
   String? reviewerEmail;
 
-  LocalReview({
-    this.id = 0,
-    this.rating,
-    this.comment,
-    this.date,
-    this.reviewerName,
-    this.reviewerEmail,
-  });
+  LocalReview({this.id = 0, this.rating, this.comment, this.date, this.reviewerName, this.reviewerEmail});
 
   /// convert [Review] to [LocalReview]
-  factory LocalReview.fromEntity(Review review) {
+  factory LocalReview.fromEntity(Review entity) {
     final item = LocalReview(
-      rating: review.rating,
-      comment: review.comment,
-      date: review.date,
-      reviewerName: review.reviewerName,
-      reviewerEmail: review.reviewerEmail,
+      rating: entity.rating,
+      comment: entity.comment,
+      date: entity.date,
+      reviewerName: entity.reviewerName,
+      reviewerEmail: entity.reviewerEmail,
     );
 
     return item;
   }
 
   /// convert [LocalReview] to [Review]
-  Review fromLocal() => Review(
-        rating: rating,
-        comment: comment,
-        date: date,
-        reviewerName: reviewerName,
-        reviewerEmail: reviewerEmail,
-      );
+  Review fromLocal() => Review(rating: rating, comment: comment, date: date, reviewerName: reviewerName, reviewerEmail: reviewerEmail);
 }

@@ -3,12 +3,11 @@
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
 import '../colors/dark_colors.dart';
-import 'theme.dart';
+import 'base_theme.dart';
 
 /// -------------- App Dark Theme -------------- ///
 final ThemeData darkTheme = ThemeData(
   // Define the default brightness and colors.
-  fontFamily: fontFamily,
   visualDensity: VisualDensity.adaptivePlatformDensity,
   brightness: Brightness.dark,
   primaryColor: DesignColorsDark.primaryColor,

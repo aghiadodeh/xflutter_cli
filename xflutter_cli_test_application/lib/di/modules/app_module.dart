@@ -28,9 +28,7 @@ abstract class AppModule {
         sendTimeout: const Duration(seconds: 60),
         baseUrl: '${environment.baseUrl}/api',
       )
-      ..interceptors.addAll([
-        HttpInterceptor(),
-      ]);
+      ..interceptors.addAll([HttpInterceptor()]);
 
     if (kDebugMode) {
       final logger = PrettyDioLogger(

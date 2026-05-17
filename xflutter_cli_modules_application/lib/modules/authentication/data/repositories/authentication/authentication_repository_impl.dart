@@ -13,11 +13,11 @@ import 'package:xflutter_cli_modules_application/modules/authentication/data/mod
 import 'package:xflutter_cli_modules_application/modules/authentication/data/models/requests/reset_password_request/reset_password_request.dart';
 import 'package:xflutter_cli_modules_application/modules/authentication/data/models/requests/change_password_request/change_password_request.dart';
 import 'package:xflutter_cli_modules_application/common/data/repositories/base_repository.dart';
-import 'package:xflutter_cli_modules_application/modules/authentication/data/data_sources/remote/authentication_rest_client/authentication_rest_client.dart';
+import 'package:xflutter_cli_modules_application/modules/authentication/data/data_sources/remote/authentication/authentication_remote_data_source.dart';
 
 @LazySingleton(scope: 'authentication', as: AuthenticationRepository)
 class AuthenticationRepositoryImpl extends BaseRepository implements AuthenticationRepository {
-  final AuthenticationRestClient _remoteDataSource;
+  final AuthenticationRemoteDataSource _remoteDataSource;
   AuthenticationRepositoryImpl(this._remoteDataSource);
 
   @override

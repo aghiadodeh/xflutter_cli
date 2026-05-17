@@ -17,21 +17,14 @@ class PinCodeField extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       color: Colors.transparent,
     );
-    PinTheme pinTheme = PinTheme(
-      decoration: pinPutDecoration,
-      height: 52,
-      width: 52,
-      textStyle: const TextStyle(fontSize: 18),
-    );
+    PinTheme pinTheme = PinTheme(decoration: pinPutDecoration, height: 52, width: 52, textStyle: const TextStyle(fontSize: 18));
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Pinput(
         length: length,
         defaultPinTheme: pinTheme,
         focusedPinTheme: pinTheme.copyWith(
-          decoration: pinPutDecoration.copyWith(
-            border: Border.all(color: theme.primaryColor, width: 2),
-          ),
+          decoration: pinPutDecoration.copyWith(border: Border.all(color: theme.primaryColor, width: 2)),
         ),
         closeKeyboardWhenCompleted: true,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

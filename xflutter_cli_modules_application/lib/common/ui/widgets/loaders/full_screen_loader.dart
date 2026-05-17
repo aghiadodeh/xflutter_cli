@@ -2,7 +2,6 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import '../animations/customized_animated_widget.dart';
 import 'loader.dart';
 
 class FullScreenLoader extends StatelessWidget {
@@ -10,12 +9,9 @@ class FullScreenLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomizedAnimatedWidget(
-      duration: const Duration(milliseconds: 350),
-      child: Scaffold(
-        backgroundColor: Colors.black.withOpacity(0.05),
-        body: const Center(child: Loader()),
-      ),
+    return Scaffold(
+      backgroundColor: Colors.black.withValues(alpha: 0.05),
+      body: const Center(child: Loader()),
     );
   }
 }

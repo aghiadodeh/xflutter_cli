@@ -3,6 +3,7 @@
 // more info: https://xflutter-cli.com
 import 'package:xflutter_cli_test_application/data/models/entities/product/product.dart';
 import 'package:xflutter_cli_test_application/events/event_bus.dart';
+import 'package:xflutter_cli_test_application/data/models/ui_models/result/result.dart';
 import 'package:xflutter_cli_test_application/data/repositories/products/products_repository.dart';
 import 'package:injectable/injectable.dart';
 import 'view_product_details_params.dart';
@@ -33,7 +34,15 @@ class ViewProductDetailsViewModel extends BaseViewModel {
     callStreamRequest<Product>(
       () => _repository.findOne(params.id),
       setLoading: baseParams.setLoading,
-      result: params.product,
+
+      onResponse: (response) {
+        final result = response.data;
+        if (result != null) {
+          params.setProduct(Result.data(result));
+        } else {
+          params.setProduct(Result.error(message: response.message ?? ''));
+        }
+      },
     );
   }
 }
