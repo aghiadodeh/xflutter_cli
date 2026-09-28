@@ -30,7 +30,7 @@ class VerifyPinCodeViewModel extends BaseViewModel {
     super.onDispose();
   }
 
-  /// update [VerifyPinCodeViewmodel.dartParams.code] value, check if [code] length == 4 -> submit the code
+  /// update [VerifyPinCodeParams.code] value, check if [code] length == 4 -> submit the code
   void onPinCodeChanged(String code) {
     params.setCode(code);
     if (code.length == 4) submitVerificationCode();
@@ -46,10 +46,7 @@ class VerifyPinCodeViewModel extends BaseViewModel {
       callback: (result, success) {
         if (result != null && success) {
           showUiMessage(
-            uiMessage: UiMessage(
-              message: 'code_resent'.tr(),
-              state: UiMessageState.success,
-            ),
+            uiMessage: UiMessage(message: 'code_resent'.tr(), state: UiMessageState.success),
           );
         }
       },

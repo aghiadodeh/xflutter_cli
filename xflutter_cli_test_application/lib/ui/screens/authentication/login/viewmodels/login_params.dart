@@ -15,12 +15,6 @@ class LoginParams {
   }
 
   late final loginForm = FormGroup({
-    'phone': FormControl<PhoneNumber>(
-      validators: [
-        Validators.required,
-        PhoneValidators.validMobile,
-        PhoneValidators.required,
-      ],
-    ),
+    'phone': FormControl<PhoneNumber>(validators: [Validators.required, PhoneValidators.validMobile, PhoneValidators.required]),
   });
 }

@@ -5,8 +5,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'change_password_request.freezed.dart';
 part 'change_password_request.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [ChangePasswordRequest] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class ChangePasswordRequest with _$ChangePasswordRequest {
+abstract class ChangePasswordRequest with _$ChangePasswordRequest {
   const factory ChangePasswordRequest({
     @JsonKey(name: 'old_password') String? oldPassword,
     @JsonKey(name: 'new_password') String? newPassword,

@@ -86,7 +86,7 @@ mixin LifecycleOwner<T extends StatefulWidget, VM extends BaseViewModel> on Stat
   Future<void> dropScope(DiScope scope) async {
     // check if scope is already registered
     if (GetIt.instance.hasScope(scope.name)) {
-      if (scope.disposeOwner) {
+      if (scope.disposeByOwner) {
         // check if scope registered in this lifeCycle Owner
         final index = diScopes.indexWhere((e) => e.name == scope.name);
         if (index != -1) {
@@ -109,11 +109,7 @@ mixin LifecycleOwner<T extends StatefulWidget, VM extends BaseViewModel> on Stat
   void _handleUiMessage(UiMessage uiMessage) {
     final message = uiMessage.message;
     if (message != null) {
-      showSnackBar(
-        context: context,
-        message: message,
-        backgroundColor: uiMessage.color,
-      );
+      showSnackBar(context: context, message: message, action: uiMessage.action, backgroundColor: uiMessage.color);
     }
   }
 

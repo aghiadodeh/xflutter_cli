@@ -9,7 +9,7 @@ import 'package:xflutter_cli_modules_application/common/data/database/app_store.
 import 'package:xflutter_cli_modules_application/modules/categories/data/models/local/category/local_category.dart';
 import 'package:xflutter_cli_modules_application/common/data/database/objectbox.g.dart';
 
-@LazySingleton(scope: 'categories', as: CategoriesLocalDataSource)
+@Injectable(as: CategoriesLocalDataSource)
 class CategoriesLocalDataSourceImpl implements CategoriesLocalDataSource {
   final ObjectBoxAppStore _appStore;
   CategoriesLocalDataSourceImpl(this._appStore);
@@ -19,183 +19,133 @@ class CategoriesLocalDataSourceImpl implements CategoriesLocalDataSource {
 
   @override
   Future<void> insertAll(Iterable<LocalCategory> data) async {
-    final store = _appStore.openStore();
-    // open transaction
-    await store.runInTransactionAsync<void, List<LocalCategory>>(
-      TxMode.write,
-      (Store store, List<LocalCategory> parameter) {
+    return _appStore.executeWithStore<void>(
+      (store) => store.runInTransactionAsync<void, List<LocalCategory>>(TxMode.write, (Store store, List<LocalCategory> parameter) {
         try {
           final box = store.box<LocalCategory>();
-
-          // find existing items for update
-          final ids = parameter.map((e) => e.categoryId!).toList();
-          final query = box.query(LocalCategory_.categoryId.oneOf(ids)).build();
-          final items = query.find();
-
-          // clean up resources
-          query.close();
-
-          // assign ids to objects
-          for (var item in items) {
-            final index = parameter.indexWhere((e) => e.categoryId == item.categoryId);
-            parameter[index].id = item.id;
-          }
 
           // insert new data, and update existing data
           box.putMany(parameter);
         } catch (error) {
-          debugPrint(error.toString());
+          if (kDebugMode) print('CategoriesLocalDataSource: $error');
         }
-      },
-      data.toList(),
+      }, data.toList()),
     );
-
-    // clean up resources
-    store.close();
   }
 
   @override
   Future<LocalCategory?> findOne(LocalCategoryQueryParameters queryParameters) async {
     if (queryParameters.id == null) return null;
-    final store = _appStore.openStore();
-    // open transaction
-    final result = await store.runInTransactionAsync<LocalCategory?, LocalCategoryQueryParameters>(
-      TxMode.read,
-      (Store store, LocalCategoryQueryParameters parameter) {
+    return _appStore.executeWithStore<LocalCategory?>(
+      (store) async => store.runInTransaction<LocalCategory?>(TxMode.read, () {
         try {
           final box = store.box<LocalCategory>();
 
-          // query builder for find item with filters
-          final query = box.query().build();
-          if (parameter.id != null) {
-            // filter on localCategory categoryId
-            query.param(LocalCategory_.categoryId).value = parameter.id!;
+          Condition<LocalCategory>? conditions;
+          if (queryParameters.id != null) {
+            // filter on id
+            final idCondition = LocalCategory_.id.equals(queryParameters.id!);
+            conditions = idCondition;
           }
 
-          final item = query.findFirst();
+          // query for find item with filter conditions
+          final query = box.query(conditions);
 
-          // mapping item
-          if (item != null) _mappingItem(item);
+          final builder = query.build();
+
+          // fetch item
+          final item = builder.findFirst();
 
           // clean up resources
-          query.close();
+          builder.close();
 
           return item;
         } catch (error) {
-          debugPrint(error.toString());
+          if (kDebugMode) print('CategoriesLocalDataSource: $error');
           return null;
         }
-      },
-      queryParameters,
+      }),
     );
-    store.close();
-    return result;
   }
 
   @override
   Future<List<LocalCategory>> findAll(LocalCategoriesListQueryParameters queryParameters) async {
-    final store = _appStore.openStore();
-    final result = await store.runInTransactionAsync<List<LocalCategory>, LocalCategoriesListQueryParameters>(
-      TxMode.write,
-      (Store store, LocalCategoriesListQueryParameters parameter) {
+    return _appStore.executeWithStore<List<LocalCategory>>(
+      (store) async => store.runInTransaction<List<LocalCategory>>(TxMode.read, () {
         try {
           final box = store.box<LocalCategory>();
-          final query = box.query().build();
+          final query = box.query();
+          final builder = query.build();
 
-          // add pagination
-          final page = parameter.page;
-          final perPage = parameter.perPage;
+          // fetch data with pagination
+          final page = queryParameters.page;
+          final perPage = queryParameters.perPage;
           if (page != null && perPage != null) {
-            query.offset = (perPage * page) - perPage;
-            query.limit = perPage;
+            builder.offset = (perPage * page) - perPage;
+            builder.limit = perPage;
           }
 
-          // find items
-          final items = query.find();
-
-          // mapping items
-          for (var item in items) {
-            _mappingItem(item);
-          }
+          // fetch items
+          final items = builder.find();
 
           // clean up resources
-          query.close();
+          builder.close();
 
           return items;
         } catch (error) {
-          debugPrint(error.toString());
+          if (kDebugMode) print('CategoriesLocalDataSource: $error');
           return [];
         }
-      },
-      queryParameters,
+      }),
     );
-    store.close();
-    return result;
   }
 
   @override
   Future<int> delete(int? id) async {
     if (id == null) return 0;
-    final store = _appStore.openStore();
-    final result = await store.runInTransactionAsync<int, int>(
-      TxMode.read,
-      (Store store, int parameter) {
+    return _appStore.executeWithStore<int>(
+      (store) => store.runInTransactionAsync<int, int>(TxMode.write, (Store store, int parameter) {
         try {
           final box = store.box<LocalCategory>();
-
           // filter item
-          final query = box.query(LocalCategory_.categoryId.equals(id)).build();
+          final builder = box.query(LocalCategory_.id.equals(id)).build();
 
           // remove item
-          final result = query.remove();
+          final result = builder.remove();
 
           // clean up resources
-          query.close();
+          builder.close();
 
           return result;
         } catch (error) {
-          debugPrint(error.toString());
+          if (kDebugMode) print('CategoriesLocalDataSource: $error');
           return 0;
         }
-      },
-      id,
+      }, id),
     );
-    store.close();
-    return result;
   }
 
   @override
   Future<int> count() async {
-    final store = _appStore.openStore();
-    final result = await store.runInTransactionAsync<int, dynamic>(
-      TxMode.read,
-      (Store store, _) {
+    return _appStore.executeWithStore<int>(
+      (store) async => store.runInTransaction<int>(TxMode.read, () {
         try {
           final box = store.box<LocalCategory>();
-          final query = box.query().build();
+          final query = box.query();
+          final builder = query.build();
 
           // count items
-          final count = query.count();
+          final count = builder.count();
 
           // clean up resources
-          query.close();
+          builder.close();
 
           return count;
         } catch (error) {
-          debugPrint(error.toString());
+          if (kDebugMode) print('CategoriesLocalDataSource: $error');
           return 0;
         }
-      },
-      null,
+      }),
     );
-    store.close();
-    return result;
-  }
-
-  /// objectbox require opened [Store] for mapping relations, embedded objects,
-  ///
-  /// mapping [LocalCategory] for access properties outside store
-  void _mappingItem(LocalCategory item) {
-    item.media = item.toManyMedia.toList();
   }
 }

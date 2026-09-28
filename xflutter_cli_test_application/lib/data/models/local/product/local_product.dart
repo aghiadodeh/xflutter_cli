@@ -3,16 +3,15 @@
 // more info: https://xflutter-cli.com
 import 'package:objectbox/objectbox.dart';
 import 'package:xflutter_cli_test_application/data/models/entities/product/product.dart';
-import '../dimensions/local_dimensions.dart';
-import '../review/local_review.dart';
-import '../meta/local_meta.dart';
+import 'package:xflutter_cli_test_application/data/models/entities/dimensions/dimensions.dart';
+import 'package:xflutter_cli_test_application/data/models/entities/review/review.dart';
+import 'package:xflutter_cli_test_application/data/models/entities/meta/meta.dart';
+import 'dart:convert' as convert;
 
 @Entity()
 class LocalProduct {
-  @Id()
-  int id = 0;
-  @Unique(onConflict: ConflictStrategy.replace)
-  int? productId;
+  @Id(assignable: true)
+  int id;
   String? title;
   String? description;
   String? category;
@@ -24,23 +23,19 @@ class LocalProduct {
   String? brand;
   String? sku;
   int? weight;
-  final toOneDimensions = ToOne<LocalDimensions>();
+  String? dimensions;
   String? warrantyInformation;
   String? shippingInformation;
   String? availabilityStatus;
-  final toManyReviews = ToMany<LocalReview>();
+  List<String>? reviews;
   String? returnPolicy;
   int? minimumOrderQuantity;
-  final toOneMeta = ToOne<LocalMeta>();
+  String? meta;
   List<String>? images;
   String? thumbnail;
-  LocalDimensions? dimensions;
-  List<LocalReview>? reviews;
-  LocalMeta? meta;
 
   LocalProduct({
-    this.id = 0,
-    this.productId,
+    required this.id,
     this.title,
     this.description,
     this.category,
@@ -52,76 +47,71 @@ class LocalProduct {
     this.brand,
     this.sku,
     this.weight,
+    this.dimensions,
     this.warrantyInformation,
     this.shippingInformation,
     this.availabilityStatus,
+    this.reviews,
     this.returnPolicy,
     this.minimumOrderQuantity,
+    this.meta,
     this.images,
     this.thumbnail,
   });
 
   /// convert [Product] to [LocalProduct]
-  factory LocalProduct.fromEntity(Product product) {
+  factory LocalProduct.fromEntity(Product entity) {
     final item = LocalProduct(
-      productId: product.id,
-      title: product.title,
-      description: product.description,
-      category: product.category,
-      price: product.price?.toDouble(),
-      discountPercentage: product.discountPercentage?.toDouble(),
-      rating: product.rating?.toDouble(),
-      stock: product.stock,
-      tags: product.tags,
-      brand: product.brand,
-      sku: product.sku,
-      weight: product.weight,
-      warrantyInformation: product.warrantyInformation,
-      shippingInformation: product.shippingInformation,
-      availabilityStatus: product.availabilityStatus,
-      returnPolicy: product.returnPolicy,
-      minimumOrderQuantity: product.minimumOrderQuantity,
-      images: product.images,
-      thumbnail: product.thumbnail,
+      id: entity.id ?? 0,
+      title: entity.title,
+      description: entity.description,
+      category: entity.category,
+      price: entity.price?.toDouble(),
+      discountPercentage: entity.discountPercentage?.toDouble(),
+      rating: entity.rating?.toDouble(),
+      stock: entity.stock,
+      tags: entity.tags,
+      brand: entity.brand,
+      sku: entity.sku,
+      weight: entity.weight,
+      warrantyInformation: entity.warrantyInformation,
+      shippingInformation: entity.shippingInformation,
+      availabilityStatus: entity.availabilityStatus,
+      returnPolicy: entity.returnPolicy,
+      minimumOrderQuantity: entity.minimumOrderQuantity,
+      images: entity.images,
+      thumbnail: entity.thumbnail,
+      dimensions: convert.json.encode(entity.dimensions ?? {}),
+      reviews: entity.reviews?.map((e) => convert.json.encode(e)).toList(),
+      meta: convert.json.encode(entity.meta ?? {}),
     );
-
-    if (product.dimensions != null) {
-      item.toOneDimensions.target = LocalDimensions.fromEntity(product.dimensions!);
-    }
-    if (product.meta != null) {
-      item.toOneMeta.target = LocalMeta.fromEntity(product.meta!);
-    }
-
-    if (product.reviews != null) {
-      item.toManyReviews.addAll(product.reviews?.map((e) => LocalReview.fromEntity(e)) ?? []);
-    }
 
     return item;
   }
 
   /// convert [LocalProduct] to [Product]
   Product fromLocal() => Product(
-        id: productId,
-        title: title,
-        description: description,
-        category: category,
-        price: price,
-        discountPercentage: discountPercentage,
-        rating: rating,
-        stock: stock,
-        tags: tags,
-        brand: brand,
-        sku: sku,
-        weight: weight,
-        warrantyInformation: warrantyInformation,
-        shippingInformation: shippingInformation,
-        availabilityStatus: availabilityStatus,
-        returnPolicy: returnPolicy,
-        minimumOrderQuantity: minimumOrderQuantity,
-        images: images,
-        thumbnail: thumbnail,
-        dimensions: toOneDimensions.target?.fromLocal(),
-        meta: toOneMeta.target?.fromLocal(),
-        reviews: toManyReviews.map((e) => e.fromLocal()).toList(),
-      );
+    id: id,
+    title: title,
+    description: description,
+    category: category,
+    price: price,
+    discountPercentage: discountPercentage,
+    rating: rating,
+    stock: stock,
+    tags: tags,
+    brand: brand,
+    sku: sku,
+    weight: weight,
+    warrantyInformation: warrantyInformation,
+    shippingInformation: shippingInformation,
+    availabilityStatus: availabilityStatus,
+    returnPolicy: returnPolicy,
+    minimumOrderQuantity: minimumOrderQuantity,
+    images: images,
+    thumbnail: thumbnail,
+    dimensions: Dimensions.fromJson(convert.json.decode(dimensions ?? '{}')),
+    reviews: reviews?.map((e) => Review.fromJson(convert.json.decode(e))).toList(),
+    meta: Meta.fromJson(convert.json.decode(meta ?? '{}')),
+  );
 }

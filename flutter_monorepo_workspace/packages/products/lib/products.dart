@@ -1,10 +1,9 @@
-library products;
+library;
 
 export 'src/data/models/entities/review/review.dart';
 export 'src/data/models/entities/meta/meta.dart';
 export 'src/data/models/entities/dimensions/dimensions.dart';
 export 'src/data/models/entities/product/product.dart';
-
 export 'src/data/models/local/dimensions/local_dimensions.dart';
 export 'src/data/models/local/review/local_review.dart';
 export 'src/data/models/local/meta/local_meta.dart';
@@ -18,13 +17,24 @@ export 'src/data/data_sources/local/products/products_local_data_source_impl.dar
 export 'src/data/data_sources/remote/products/products_remote_data_source.dart';
 export 'src/data/repositories/products/products_repository.dart';
 export 'src/data/repositories/products/products_repository_impl.dart';
-
-export 'src/ui/screens/products_list/mobile/products_list_mobile_screen.dart';
-export 'src/ui/screens/products_list/viewmodels/products_list_viewmodel.dart';
-export 'src/ui/screens/products_list/viewmodels/products_list_params.dart';
-export 'src/ui/screens/products_list/products_list_screen.dart';
-
+export 'src/ui/screens/products/products_list/mobile/products_list_mobile_screen.dart';
+export 'src/ui/screens/products/products_list/viewmodels/products_list_viewmodel.dart';
+export 'src/ui/screens/products/products_list/viewmodels/products_list_params.dart';
+export 'src/ui/screens/products/products_list/products_list_screen.dart';
 export 'src/mediators/paging/products_paging_controller.dart';
-export 'src/ui/screens/products_list/widgets/products_list_widget.dart';
-export 'src/ui/screens/products_list/widgets/product_card_widget.dart';
-export 'src/ui/screens/products_list/widgets/product_redacted_widget.dart';
+export 'src/ui/screens/products/products_list/widgets/products_list_widget.dart';
+export 'src/ui/screens/products/products_list/widgets/product_card_widget.dart';
+export 'src/ui/screens/products/products_list/widgets/product_redacted_widget.dart';
+export 'src/ui/screens/products/create_product/mobile/create_product_mobile_screen.dart';
+export 'src/ui/screens/products/create_product/viewmodels/create_product_viewmodel.dart';
+export 'src/ui/screens/products/create_product/viewmodels/create_product_params.dart';
+export 'src/ui/screens/products/create_product/create_product_screen.dart';
+export 'src/ui/screens/products/update_product/mobile/update_product_mobile_screen.dart';
+export 'src/ui/screens/products/update_product/viewmodels/update_product_viewmodel.dart';
+export 'src/ui/screens/products/update_product/viewmodels/update_product_params.dart';
+export 'src/ui/screens/products/update_product/update_product_screen.dart';
+export 'src/ui/screens/products/widgets/product_form.dart';
+export 'src/ui/screens/products/view_product_details/mobile/view_product_details_mobile_screen.dart';
+export 'src/ui/screens/products/view_product_details/viewmodels/view_product_details_viewmodel.dart';
+export 'src/ui/screens/products/view_product_details/viewmodels/view_product_details_params.dart';
+export 'src/ui/screens/products/view_product_details/view_product_details_screen.dart';

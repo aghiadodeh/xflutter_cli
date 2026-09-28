@@ -3,20 +3,15 @@
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
 import '../buttons/back_button.dart';
-import 'package:xflutter_cli_test_application/ui/resources/themes/theme.dart';
-import 'package:xflutter_cli_test_application/extensions/theme_extension.dart';
+import 'package:xflutter_cli_test_application/ui/resources/themes/base_theme.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool backVisibility;
   final String? title;
   final List<Widget>? actions;
 
-  const BaseAppBar({
-    this.title,
-    this.actions,
-    this.backVisibility = false,
-    super.key,
-  }) : preferredSize = const Size.fromHeight(kToolbarHeight);
+  const BaseAppBar({this.title, this.actions, this.backVisibility = false, super.key})
+    : preferredSize = const Size.fromHeight(kToolbarHeight);
 
   @override
   final Size preferredSize;
@@ -28,7 +23,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 1,
       title: Text(title ?? ''),
       centerTitle: true,
-      titleTextStyle: titleTextStyle.copyWith(color: Theme.of(context).textColor),
+      titleTextStyle: titleTextStyle,
       leading: AppBackButton(force: backVisibility),
       leadingWidth: 32,
       iconTheme: const IconThemeData(),

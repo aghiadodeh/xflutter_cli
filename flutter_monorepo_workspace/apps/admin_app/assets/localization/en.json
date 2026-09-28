@@ -1,4 +1,27 @@
 {
   "app_name": "AdminApp",
-  "check_internet_connection": "Check Your Internet Connection"
+  "check_internet_connection": "Check Your Internet Connection",
+  "delete_product_title": "Delete Product",
+  "delete_product_message": "Are you sure you want delete this product?",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "create_product": "Create Product",
+  "update_product": "Update Product",
+  "title": "Title",
+  "description": "Description",
+  "category": "Category",
+  "price": "Price",
+  "discountPercentage": "Discountpercentage",
+  "rating": "Rating",
+  "stock": "Stock",
+  "brand": "Brand",
+  "sku": "Sku",
+  "weight": "Weight",
+  "warrantyInformation": "Warrantyinformation",
+  "shippingInformation": "Shippinginformation",
+  "availabilityStatus": "Availabilitystatus",
+  "returnPolicy": "Returnpolicy",
+  "minimumOrderQuantity": "Minimumorderquantity",
+  "thumbnail": "Thumbnail",
+  "view_product_details": "View Product Details"
 }

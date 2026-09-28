@@ -12,7 +12,7 @@ class ViewProductDetailsMobileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return InstanceBuilder<ViewProductDetailsViewModel>(
       builder: (ViewProductDetailsViewModel viewModel) {
-        return const SizedBox();
+        return SizedBox();
       },
     );
   }

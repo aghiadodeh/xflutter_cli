@@ -9,8 +9,6 @@ class PaginationLoaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomizedAnimatedWidget(
-      child: SizedBox(width: 30, height: 30, child: CircularProgressIndicator.adaptive()),
-    );
+    return const CustomizedAnimatedWidget(child: SizedBox(width: 30, height: 30, child: CircularProgressIndicator.adaptive()));
   }
 }

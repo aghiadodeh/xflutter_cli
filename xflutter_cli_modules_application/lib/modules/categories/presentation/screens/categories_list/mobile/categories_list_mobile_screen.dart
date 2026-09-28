@@ -12,7 +12,7 @@ class CategoriesListMobileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return InstanceBuilder<CategoriesListViewModel>(
       builder: (CategoriesListViewModel viewModel) {
-        return const SizedBox();
+        return SizedBox();
       },
     );
   }

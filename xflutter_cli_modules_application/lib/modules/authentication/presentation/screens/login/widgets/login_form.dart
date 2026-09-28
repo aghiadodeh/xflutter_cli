@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:xflutter_cli_modules_application/common/ui/widgets/buttons/text_button.dart';
-import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme.dart';
+import 'package:xflutter_cli_modules_application/common/ui/resources/themes/base_theme.dart';
 import 'package:xflutter_cli_modules_application/common/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -32,6 +32,7 @@ class LoginForm extends StatelessWidget {
                 children: [
                   // email
                   CustomizedReactiveFormField<String>(
+                    key: const Key('email'),
                     formControlName: 'email',
                     labelText: 'email'.tr(),
                     keyboardType: TextInputType.emailAddress,
@@ -42,6 +43,7 @@ class LoginForm extends StatelessWidget {
 
                   // password
                   CustomizedReactiveFormField<String>(
+                    key: const Key('password'),
                     formControlName: 'password',
                     labelText: 'password'.tr(),
                     keyboardType: TextInputType.text,
@@ -56,7 +58,7 @@ class LoginForm extends StatelessWidget {
                       text: 'forget_password'.tr(),
                       textStyle: smallTextStyle,
                       callback: () {
-                        appRouter.push(const ForgetPassword());
+                        appRouter.push(ForgetPassword());
                       },
                     ),
                   ),
@@ -70,6 +72,7 @@ class LoginForm extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: CustomizedButton(
+                      key: const Key('submit'),
                       child: Text('next'.tr()),
                       callback: () {
                         if (formGroup.valid) {
@@ -88,11 +91,11 @@ class LoginForm extends StatelessWidget {
                         text: 'create_account'.tr(),
                         textStyle: smallTextStyle,
                         callback: () {
-                          appRouter.push(const Register());
+                          appRouter.push(Register());
                         },
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ],

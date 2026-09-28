@@ -64,12 +64,8 @@ void showSnackBar({
     ..showSnackBar(
       SnackBar(
         content: Text(message, style: textStyle ?? const TextStyle(color: Colors.white)),
-        backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.onSurface,
-        action: SnackBarAction(
-          label: action ?? 'Ok',
-          textColor: Colors.white,
-          onPressed: callback ?? () {},
-        ),
+        backgroundColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
+        action: SnackBarAction(label: action ?? 'Ok', textColor: Colors.white, onPressed: callback ?? () {}),
       ),
     );
 }
@@ -82,7 +78,7 @@ Future<T?> showConformationDialog<T>({
   required String cancelText,
   required String confirmText,
   required Function() onConfirm,
-  TextStyle? conformTextStyle,
+  TextStyle? confirmTextStyle,
 }) async {
   return showAdaptiveDialog<T>(
     context: context,
@@ -92,16 +88,13 @@ Future<T?> showConformationDialog<T>({
       title: Text(title),
       content: Text(content),
       actions: [
-        TextButton(
-          onPressed: () => Navigator.of(context).pop(false),
-          child: Text(cancelText),
-        ),
+        TextButton(onPressed: () => Navigator.of(context).pop(false), child: Text(cancelText)),
         TextButton(
           onPressed: () {
-            onConfirm();
             Navigator.of(context).pop(true);
+            onConfirm();
           },
-          child: Text(confirmText, style: conformTextStyle),
+          child: Text(confirmText, style: confirmTextStyle),
         ),
       ],
     ),

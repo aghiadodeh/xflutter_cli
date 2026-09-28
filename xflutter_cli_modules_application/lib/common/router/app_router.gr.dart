@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -13,10 +14,7 @@ part of 'app_router.dart';
 /// [CategoriesListScreen]
 class CategoriesList extends PageRouteInfo<void> {
   const CategoriesList({List<PageRouteInfo>? children})
-      : super(
-          CategoriesList.name,
-          initialChildren: children,
-        );
+    : super(CategoriesList.name, initialChildren: children);
 
   static const String name = 'CategoriesList';
 
@@ -32,10 +30,7 @@ class CategoriesList extends PageRouteInfo<void> {
 /// [ChangePasswordScreen]
 class ChangePassword extends PageRouteInfo<void> {
   const ChangePassword({List<PageRouteInfo>? children})
-      : super(
-          ChangePassword.name,
-          initialChildren: children,
-        );
+    : super(ChangePassword.name, initialChildren: children);
 
   static const String name = 'ChangePassword';
 
@@ -51,10 +46,7 @@ class ChangePassword extends PageRouteInfo<void> {
 /// [CreateProductScreen]
 class CreateProduct extends PageRouteInfo<void> {
   const CreateProduct({List<PageRouteInfo>? children})
-      : super(
-          CreateProduct.name,
-          initialChildren: children,
-        );
+    : super(CreateProduct.name, initialChildren: children);
 
   static const String name = 'CreateProduct';
 
@@ -70,10 +62,7 @@ class CreateProduct extends PageRouteInfo<void> {
 /// [ForgetPasswordScreen]
 class ForgetPassword extends PageRouteInfo<void> {
   const ForgetPassword({List<PageRouteInfo>? children})
-      : super(
-          ForgetPassword.name,
-          initialChildren: children,
-        );
+    : super(ForgetPassword.name, initialChildren: children);
 
   static const String name = 'ForgetPassword';
 
@@ -89,10 +78,7 @@ class ForgetPassword extends PageRouteInfo<void> {
 /// [LoginScreen]
 class Login extends PageRouteInfo<void> {
   const Login({List<PageRouteInfo>? children})
-      : super(
-          Login.name,
-          initialChildren: children,
-        );
+    : super(Login.name, initialChildren: children);
 
   static const String name = 'Login';
 
@@ -108,10 +94,7 @@ class Login extends PageRouteInfo<void> {
 /// [ProductsListScreen]
 class ProductsList extends PageRouteInfo<void> {
   const ProductsList({List<PageRouteInfo>? children})
-      : super(
-          ProductsList.name,
-          initialChildren: children,
-        );
+    : super(ProductsList.name, initialChildren: children);
 
   static const String name = 'ProductsList';
 
@@ -127,10 +110,7 @@ class ProductsList extends PageRouteInfo<void> {
 /// [RegisterScreen]
 class Register extends PageRouteInfo<void> {
   const Register({List<PageRouteInfo>? children})
-      : super(
-          Register.name,
-          initialChildren: children,
-        );
+    : super(Register.name, initialChildren: children);
 
   static const String name = 'Register';
 
@@ -146,10 +126,7 @@ class Register extends PageRouteInfo<void> {
 /// [ResetPasswordScreen]
 class ResetPassword extends PageRouteInfo<void> {
   const ResetPassword({List<PageRouteInfo>? children})
-      : super(
-          ResetPassword.name,
-          initialChildren: children,
-        );
+    : super(ResetPassword.name, initialChildren: children);
 
   static const String name = 'ResetPassword';
 
@@ -164,18 +141,12 @@ class ResetPassword extends PageRouteInfo<void> {
 /// generated route for
 /// [UpdateProductScreen]
 class UpdateProduct extends PageRouteInfo<UpdateProductArgs> {
-  UpdateProduct({
-    required int id,
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
-          UpdateProduct.name,
-          args: UpdateProductArgs(
-            id: id,
-            key: key,
-          ),
-          initialChildren: children,
-        );
+  UpdateProduct({required int id, Key? key, List<PageRouteInfo>? children})
+    : super(
+        UpdateProduct.name,
+        args: UpdateProductArgs(id: id, key: key),
+        initialChildren: children,
+      );
 
   static const String name = 'UpdateProduct';
 
@@ -183,19 +154,13 @@ class UpdateProduct extends PageRouteInfo<UpdateProductArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<UpdateProductArgs>();
-      return UpdateProductScreen(
-        id: args.id,
-        key: args.key,
-      );
+      return UpdateProductScreen(id: args.id, key: args.key);
     },
   );
 }
 
 class UpdateProductArgs {
-  const UpdateProductArgs({
-    required this.id,
-    this.key,
-  });
+  const UpdateProductArgs({required this.id, this.key});
 
   final int id;
 
@@ -205,6 +170,16 @@ class UpdateProductArgs {
   String toString() {
     return 'UpdateProductArgs{id: $id, key: $key}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! UpdateProductArgs) return false;
+    return id == other.id && key == other.key;
+  }
+
+  @override
+  int get hashCode => id.hashCode ^ key.hashCode;
 }
 
 /// generated route for
@@ -212,18 +187,14 @@ class UpdateProductArgs {
 class VerifyPinCode extends PageRouteInfo<VerifyPinCodeArgs> {
   VerifyPinCode({
     required String email,
-    PageRouteInfo<dynamic>? pageRoute,
+    PageRouteInfo<Object?>? pageRoute,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
-          VerifyPinCode.name,
-          args: VerifyPinCodeArgs(
-            email: email,
-            pageRoute: pageRoute,
-            key: key,
-          ),
-          initialChildren: children,
-        );
+         VerifyPinCode.name,
+         args: VerifyPinCodeArgs(email: email, pageRoute: pageRoute, key: key),
+         initialChildren: children,
+       );
 
   static const String name = 'VerifyPinCode';
 
@@ -241,15 +212,11 @@ class VerifyPinCode extends PageRouteInfo<VerifyPinCodeArgs> {
 }
 
 class VerifyPinCodeArgs {
-  const VerifyPinCodeArgs({
-    required this.email,
-    this.pageRoute,
-    this.key,
-  });
+  const VerifyPinCodeArgs({required this.email, this.pageRoute, this.key});
 
   final String email;
 
-  final PageRouteInfo<dynamic>? pageRoute;
+  final PageRouteInfo<Object?>? pageRoute;
 
   final Key? key;
 
@@ -257,23 +224,29 @@ class VerifyPinCodeArgs {
   String toString() {
     return 'VerifyPinCodeArgs{email: $email, pageRoute: $pageRoute, key: $key}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! VerifyPinCodeArgs) return false;
+    return email == other.email &&
+        pageRoute == other.pageRoute &&
+        key == other.key;
+  }
+
+  @override
+  int get hashCode => email.hashCode ^ pageRoute.hashCode ^ key.hashCode;
 }
 
 /// generated route for
 /// [ViewProductDetailsScreen]
 class ViewProductDetails extends PageRouteInfo<ViewProductDetailsArgs> {
-  ViewProductDetails({
-    required int id,
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
-          ViewProductDetails.name,
-          args: ViewProductDetailsArgs(
-            id: id,
-            key: key,
-          ),
-          initialChildren: children,
-        );
+  ViewProductDetails({required int id, Key? key, List<PageRouteInfo>? children})
+    : super(
+        ViewProductDetails.name,
+        args: ViewProductDetailsArgs(id: id, key: key),
+        initialChildren: children,
+      );
 
   static const String name = 'ViewProductDetails';
 
@@ -281,19 +254,13 @@ class ViewProductDetails extends PageRouteInfo<ViewProductDetailsArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<ViewProductDetailsArgs>();
-      return ViewProductDetailsScreen(
-        id: args.id,
-        key: args.key,
-      );
+      return ViewProductDetailsScreen(id: args.id, key: args.key);
     },
   );
 }
 
 class ViewProductDetailsArgs {
-  const ViewProductDetailsArgs({
-    required this.id,
-    this.key,
-  });
+  const ViewProductDetailsArgs({required this.id, this.key});
 
   final int id;
 
@@ -303,4 +270,14 @@ class ViewProductDetailsArgs {
   String toString() {
     return 'ViewProductDetailsArgs{id: $id, key: $key}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! ViewProductDetailsArgs) return false;
+    return id == other.id && key == other.key;
+  }
+
+  @override
+  int get hashCode => id.hashCode ^ key.hashCode;
 }

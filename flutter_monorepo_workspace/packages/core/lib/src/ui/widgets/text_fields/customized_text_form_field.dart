@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
-import 'package:core/src/ui/resources/themes/theme.dart';
+import 'package:core/src/ui/resources/themes/base_theme.dart';
 import 'package:core/src/utilities/async/debouncer.dart';
 
 class CustomizedTextFormField extends StatefulWidget {

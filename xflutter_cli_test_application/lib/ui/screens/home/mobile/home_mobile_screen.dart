@@ -12,7 +12,7 @@ class HomeMobileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return InstanceBuilder<HomeViewModel>(
       builder: (HomeViewModel viewModel) {
-        return const SizedBox();
+        return SizedBox();
       },
     );
   }

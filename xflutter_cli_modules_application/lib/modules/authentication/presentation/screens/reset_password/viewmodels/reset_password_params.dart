@@ -14,20 +14,11 @@ class ResetPasswordParams {
     _result.send(value);
   }
 
-  late final resetPasswordForm = FormGroup({
-    'new_password': FormControl<String>(
-      validators: [
-        Validators.required,
-        Validators.minLength(8),
-      ],
-    ),
-    'confirm_password': FormControl<String>(
-      validators: [Validators.required],
-    ),
-  }, validators: [
-    const MatchingValidator(
-      controlName: 'new_password',
-      matchingControlName: 'confirm_password',
-    ),
-  ]);
+  late final resetPasswordForm = FormGroup(
+    {
+      'new_password': FormControl<String>(validators: [Validators.required, Validators.minLength(8)]),
+      'confirm_password': FormControl<String>(validators: [Validators.required]),
+    },
+    validators: [const MatchingValidator(controlName: 'new_password', matchingControlName: 'confirm_password')],
+  );
 }

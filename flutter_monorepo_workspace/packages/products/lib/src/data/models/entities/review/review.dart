@@ -5,8 +5,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'review.freezed.dart';
 part 'review.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [Review] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class Review with _$Review {
+abstract class Review with _$Review {
   const factory Review({
     @JsonKey(name: 'rating') int? rating,
     @JsonKey(name: 'comment') String? comment,

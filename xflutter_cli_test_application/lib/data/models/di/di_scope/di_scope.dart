@@ -6,19 +6,19 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'di_scope.freezed.dart';
 
 @freezed
-class DiScope with _$DiScope {
+abstract class DiScope with _$DiScope {
   const factory DiScope({
     /// name of scope.
     required String name,
 
-    /// scope factory.
+    /// factory method to register dependencies of the scope.
     required GetIt Function() factory,
 
     /// drop scope on dispose.
     @Default(false) bool dispose,
 
     /// drop scope on lifeCycle-Owner dispose.
-    @Default(true) bool disposeOwner,
+    @Default(true) bool disposeByOwner,
 
     /// instances that [DiScope] depends on, this dependencies will be registered before register this [DiScope].
     @Default([]) List<DiScope> dependencies,

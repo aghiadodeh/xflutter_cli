@@ -5,12 +5,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'login_request.freezed.dart';
 part 'login_request.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [LoginRequest] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class LoginRequest with _$LoginRequest {
-  const factory LoginRequest({
-    @JsonKey(name: 'email') String? email,
-    @JsonKey(name: 'password') String? password,
-  }) = _LoginRequest;
+abstract class LoginRequest with _$LoginRequest {
+  const factory LoginRequest({@JsonKey(name: 'email') String? email, @JsonKey(name: 'password') String? password}) = _LoginRequest;
 
   factory LoginRequest.fromJson(Map<String, dynamic> json) => _$LoginRequestFromJson(json);
 }

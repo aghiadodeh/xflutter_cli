@@ -9,10 +9,8 @@ import 'package:products/src/data/models/local/meta/local_meta.dart';
 
 @Entity()
 class LocalProduct {
-  @Id()
-  int id = 0;
-  @Unique(onConflict: ConflictStrategy.replace)
-  int? productId;
+  @Id(assignable: true)
+  int id;
   String? title;
   String? description;
   String? category;
@@ -34,13 +32,15 @@ class LocalProduct {
   final toOneMeta = ToOne<LocalMeta>();
   List<String>? images;
   String? thumbnail;
+  @Transient()
   LocalDimensions? dimensions;
+  @Transient()
   List<LocalReview>? reviews;
+  @Transient()
   LocalMeta? meta;
 
   LocalProduct({
-    this.id = 0,
-    this.productId,
+    required this.id,
     this.title,
     this.description,
     this.category,
@@ -62,38 +62,38 @@ class LocalProduct {
   });
 
   /// convert [Product] to [LocalProduct]
-  factory LocalProduct.fromEntity(Product product) {
+  factory LocalProduct.fromEntity(Product entity) {
     final item = LocalProduct(
-      productId: product.id,
-      title: product.title,
-      description: product.description,
-      category: product.category,
-      price: product.price?.toDouble(),
-      discountPercentage: product.discountPercentage?.toDouble(),
-      rating: product.rating?.toDouble(),
-      stock: product.stock,
-      tags: product.tags,
-      brand: product.brand,
-      sku: product.sku,
-      weight: product.weight,
-      warrantyInformation: product.warrantyInformation,
-      shippingInformation: product.shippingInformation,
-      availabilityStatus: product.availabilityStatus,
-      returnPolicy: product.returnPolicy,
-      minimumOrderQuantity: product.minimumOrderQuantity,
-      images: product.images,
-      thumbnail: product.thumbnail,
+      id: entity.id ?? 0,
+      title: entity.title,
+      description: entity.description,
+      category: entity.category,
+      price: entity.price?.toDouble(),
+      discountPercentage: entity.discountPercentage?.toDouble(),
+      rating: entity.rating?.toDouble(),
+      stock: entity.stock,
+      tags: entity.tags,
+      brand: entity.brand,
+      sku: entity.sku,
+      weight: entity.weight,
+      warrantyInformation: entity.warrantyInformation,
+      shippingInformation: entity.shippingInformation,
+      availabilityStatus: entity.availabilityStatus,
+      returnPolicy: entity.returnPolicy,
+      minimumOrderQuantity: entity.minimumOrderQuantity,
+      images: entity.images,
+      thumbnail: entity.thumbnail,
     );
 
-    if (product.dimensions != null) {
-      item.toOneDimensions.target = LocalDimensions.fromEntity(product.dimensions!);
+    if (entity.dimensions != null) {
+      item.toOneDimensions.target = LocalDimensions.fromEntity(entity.dimensions!);
     }
-    if (product.meta != null) {
-      item.toOneMeta.target = LocalMeta.fromEntity(product.meta!);
+    if (entity.meta != null) {
+      item.toOneMeta.target = LocalMeta.fromEntity(entity.meta!);
     }
 
-    if (product.reviews != null) {
-      item.toManyReviews.addAll(product.reviews?.map((e) => LocalReview.fromEntity(e)) ?? []);
+    if (entity.reviews != null) {
+      item.toManyReviews.addAll(entity.reviews?.map((e) => LocalReview.fromEntity(e)) ?? []);
     }
 
     return item;
@@ -101,27 +101,28 @@ class LocalProduct {
 
   /// convert [LocalProduct] to [Product]
   Product fromLocal() => Product(
-        id: productId,
-        title: title,
-        description: description,
-        category: category,
-        price: price,
-        discountPercentage: discountPercentage,
-        rating: rating,
-        stock: stock,
-        tags: tags,
-        brand: brand,
-        sku: sku,
-        weight: weight,
-        warrantyInformation: warrantyInformation,
-        shippingInformation: shippingInformation,
-        availabilityStatus: availabilityStatus,
-        returnPolicy: returnPolicy,
-        minimumOrderQuantity: minimumOrderQuantity,
-        images: images,
-        thumbnail: thumbnail,
-        dimensions: toOneDimensions.target?.fromLocal(),
-        meta: toOneMeta.target?.fromLocal(),
-        reviews: toManyReviews.map((e) => e.fromLocal()).toList(),
-      );
+    id: id,
+    title: title,
+    description: description,
+    category: category,
+    price: price,
+    discountPercentage: discountPercentage,
+    rating: rating,
+    stock: stock,
+    tags: tags,
+    brand: brand,
+    sku: sku,
+    weight: weight,
+    warrantyInformation: warrantyInformation,
+    shippingInformation: shippingInformation,
+    availabilityStatus: availabilityStatus,
+    returnPolicy: returnPolicy,
+    minimumOrderQuantity: minimumOrderQuantity,
+    images: images,
+    thumbnail: thumbnail,
+
+    dimensions: toOneDimensions.target?.fromLocal(),
+    meta: toOneMeta.target?.fromLocal(),
+    reviews: toManyReviews.map((e) => e.fromLocal()).toList(),
+  );
 }

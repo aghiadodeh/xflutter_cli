@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import '../widgets/login_form.dart';
-import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme.dart';
+import 'package:xflutter_cli_modules_application/common/ui/resources/themes/base_theme.dart';
 import 'package:xflutter_cli_modules_application/common/ui/widgets/core/base_scrollview.dart';
 import 'package:flutter/material.dart';
 import '../viewmodels/login_viewmodel.dart';
@@ -15,10 +15,7 @@ class LoginMobileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return InstanceBuilder<LoginViewModel>(
       builder: (LoginViewModel viewModel) {
-        return BaseScrollView(
-          padding: adaptivePadding,
-          child: const LoginForm(),
-        );
+        return BaseScrollView(padding: adaptivePadding, child: LoginForm());
       },
     );
   }

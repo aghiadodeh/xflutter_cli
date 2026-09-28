@@ -8,20 +8,10 @@ class CustomizedButton extends StatelessWidget {
   final bool enabled;
   final Function() callback;
   final ButtonStyle? style;
-  const CustomizedButton({
-    required this.child,
-    required this.callback,
-    this.enabled = true,
-    this.style,
-    super.key,
-  });
+  const CustomizedButton({required this.child, required this.callback, this.enabled = true, this.style, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: !enabled ? null : callback,
-      style: style ?? Theme.of(context).elevatedButtonTheme.style,
-      child: child,
-    );
+    return ElevatedButton(onPressed: !enabled ? null : callback, style: style ?? Theme.of(context).elevatedButtonTheme.style, child: child);
   }
 }

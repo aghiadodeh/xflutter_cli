@@ -9,7 +9,7 @@ import 'dart:convert' as convert;
 
 @lazySingleton
 class AuthenticationController {
-  final MutableLiveData<User> _user = MutableLiveData<User>(value: const User());
+  final MutableLiveData<User> _user = MutableLiveData<User>(value: User());
   LiveData<User> get user => _user;
 
   /// set default values
@@ -28,10 +28,7 @@ class AuthenticationController {
   Future<void> setUser(User? user) async {
     if (user == null) return;
     _user.postValue(user);
-    await SecureStorage.write(
-      key: 'user',
-      value: convert.json.encode(user.toJson()),
-    );
+    await SecureStorage.write(key: 'user', value: convert.json.encode(user.toJson()));
   }
 
   /// get [User] info from [SecureStorage]

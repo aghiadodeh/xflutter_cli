@@ -14,17 +14,7 @@ class LoginParams {
   }
 
   late final loginForm = FormGroup({
-    'email': FormControl<String>(
-      validators: [
-        Validators.required,
-        Validators.email,
-      ],
-    ),
-    'password': FormControl<String>(
-      validators: [
-        Validators.required,
-        Validators.minLength(8),
-      ],
-    ),
+    'email': FormControl<String>(validators: [Validators.required, Validators.email]),
+    'password': FormControl<String>(validators: [Validators.required, Validators.minLength(8)]),
   });
 }

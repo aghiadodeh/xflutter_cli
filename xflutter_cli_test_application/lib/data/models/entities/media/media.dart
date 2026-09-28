@@ -5,8 +5,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'media.freezed.dart';
 part 'media.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [Media] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class Media with _$Media {
+abstract class Media with _$Media {
   const factory Media({
     @JsonKey(name: 'id') int? id,
     @JsonKey(name: 'model_type') String? modelType,

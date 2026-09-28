@@ -3,7 +3,7 @@
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
 import 'package:reactive_phone_form_field/reactive_phone_form_field.dart';
-import 'package:core/src/ui/resources/themes/theme.dart';
+import 'package:core/src/ui/resources/themes/base_theme.dart';
 
 class CustomizedReactivePhoneField extends StatelessWidget {
   final String formControlName;
@@ -48,17 +48,18 @@ class CustomizedReactivePhoneField extends StatelessWidget {
       textAlignVertical: TextAlignVertical.center,
       autocorrect: false,
       autofocus: false,
-      isCountryButtonPersistent: true,
-      validationMessages: validationMessages ??
-          {
-            'phone.required': (error) => '$labelText is required',
-            'phone.validMobile': (error) => '$labelText is not valid',
-          },
-      countrySelectorNavigator: const CountrySelectorNavigator.draggableBottomSheet(
+      isCountryButtonPersistent: false,
+      countryButtonStyle: CountryButtonStyle(
+        padding: const EdgeInsets.symmetric(horizontal: 0),
+        flagSize: 18,
+        textStyle: textStyle ?? textFieldStyle,
+      ),
+      validationMessages: validationMessages,
+      countrySelectorNavigator: CountrySelectorNavigator.draggableBottomSheet(
         initialChildSize: .8,
         maxChildSize: .95,
         minChildSize: .6,
-        addSeparator: true,
+        flagSize: 18,
         titleStyle: smallTextStyle,
         subtitleStyle: verySmallTextStyle,
         searchBoxTextStyle: normalTextStyle,

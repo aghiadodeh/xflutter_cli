@@ -5,8 +5,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'user.freezed.dart';
 part 'user.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [User] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class User with _$User {
+abstract class User with _$User {
   const factory User({
     @JsonKey(name: 'id') int? id,
     @JsonKey(name: 'full_name') String? fullName,

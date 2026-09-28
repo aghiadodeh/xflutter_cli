@@ -8,19 +8,17 @@ class AppBackButton extends StatelessWidget {
   final bool force;
   final Function()? backHandler;
 
-  const AppBackButton({
-    this.color,
-    this.force = false,
-    this.backHandler,
-    super.key,
-  });
+  const AppBackButton({this.color, this.force = false, this.backHandler, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Navigator.canPop(context) || force
         ? GestureDetector(
             onTap: () => backHandler?.call() ?? Navigator.pop(context),
-            child: const Padding(padding: EdgeInsets.all(6), child: Icon(Icons.arrow_back)),
+            child: Padding(
+              padding: const EdgeInsets.all(6),
+              child: Icon(Icons.arrow_back, color: color),
+            ),
           )
         : const SizedBox(height: 32);
   }

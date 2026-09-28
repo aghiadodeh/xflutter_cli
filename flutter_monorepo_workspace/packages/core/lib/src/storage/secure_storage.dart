@@ -13,37 +13,21 @@ class SecureStorage {
 
   /// Write value
   static Future<void> write({required String key, required String value}) async {
-    await _storage.write(
-      key: key,
-      value: value,
-      aOptions: _androidOptions,
-      iOptions: _iosOptions,
-    );
+    await _storage.write(key: key, value: value, aOptions: _androidOptions, iOptions: _iosOptions);
   }
 
   /// Read value
   static Future<String?> read({required String key}) async {
-    return await _storage.read(
-      key: key,
-      aOptions: _androidOptions,
-      iOptions: _iosOptions,
-    );
+    return await _storage.read(key: key, aOptions: _androidOptions, iOptions: _iosOptions);
   }
 
   /// Delete value
   static Future<void> delete(String key) async {
-    await _storage.delete(
-      key: key,
-      aOptions: _androidOptions,
-      iOptions: _iosOptions,
-    );
+    await _storage.delete(key: key, aOptions: _androidOptions, iOptions: _iosOptions);
   }
 
   /// Delete all values
   static Future<void> deleteAll() async {
-    await _storage.deleteAll(
-      aOptions: _androidOptions,
-      iOptions: _iosOptions,
-    );
+    await _storage.deleteAll(aOptions: _androidOptions, iOptions: _iosOptions);
   }
 }

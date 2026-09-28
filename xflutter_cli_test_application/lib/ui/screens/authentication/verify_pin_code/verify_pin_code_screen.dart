@@ -15,7 +15,6 @@ import 'package:xflutter_cli_test_application/ui/widgets/loaders/live_data_loade
 import 'package:xflutter_cli_test_application/ui/widgets/instance/lifecycle_owner.dart';
 import 'package:xflutter_cli_test_application/extensions/di_extension.dart';
 import 'package:xflutter_cli_test_application/di/app_injectable.config.dart';
-import 'package:xflutter_cli_test_application/ui/widgets/core/base_scaffold.dart';
 import 'package:xflutter_cli_test_application/ui/widgets/core/base_appbar.dart';
 
 @RoutePage(name: 'verifyPinCode')
@@ -31,18 +30,21 @@ class VerifyPinCodeScreen extends StatefulWidget {
 
 class _VerifyPinCodeScreenState extends State<VerifyPinCodeScreen>
     with LifecycleOwner<VerifyPinCodeScreen, VerifyPinCodeViewModel>, ObserverMixin {
+  /// handle verify response, navigate to destination route
+  Future<void> _handleVerifyResponse(dynamic result) async {
+    if (widget.pageRoute == null) return;
+    if (result == null) return;
+
+    // clear injected dependencies
+    await dropScope(diScope);
+    // navigate to destination
+    appRouter.replaceAll([widget.pageRoute!]);
+  }
+
   @override
   void observeChanges(ObserverMixin observer) {
     viewModel.params.result.observe(observer, (value) async {
-      if (value != null) {
-        // verification success
-        if (widget.pageRoute != null) {
-          // clear injected dependencies
-          await dropScope(diScope);
-          // navigate to destination
-          appRouter.replaceAll([widget.pageRoute!]);
-        }
-      }
+      await _handleVerifyResponse(value);
     });
   }
 
@@ -51,13 +53,10 @@ class _VerifyPinCodeScreenState extends State<VerifyPinCodeScreen>
     return Stack(
       children: [
         // screen body
-        BaseScaffold(
-          appBar: (context, theme) => BaseAppBar(title: 'verify_pin_code'.tr()),
-          builder: (context, theme) => SafeArea(
-            child: ScreenTypeLayout.builder(
-              mobile: (_) => const VerifyPinCodeMobileScreen(),
-              tablet: (_) => const VerifyPinCodeTabletScreen(),
-            ),
+        Scaffold(
+          appBar: BaseAppBar(title: 'verify_pin_code'.tr()),
+          body: SafeArea(
+            child: ScreenTypeLayout.builder(mobile: (_) => VerifyPinCodeMobileScreen(), tablet: (_) => VerifyPinCodeTabletScreen()),
           ),
         ),
 
@@ -74,9 +73,5 @@ class _VerifyPinCodeScreenState extends State<VerifyPinCodeScreen>
   }
 
   @override
-  DiScope get diScope => DiScope(
-        name: 'verifyPinCode',
-        factory: getIt.initVerifyPinCodeScope,
-        dependencies: [],
-      );
+  DiScope get diScope => DiScope(name: 'verifyPinCode', factory: getIt.initVerifyPinCodeScope, dependencies: []);
 }

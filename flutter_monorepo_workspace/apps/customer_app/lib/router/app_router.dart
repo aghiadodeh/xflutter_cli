@@ -5,16 +5,13 @@ import 'package:customer_app/ui/screens/customer_products/customer_products_scre
 import 'package:auto_route/auto_route.dart';
 part 'app_router.gr.dart';
 
-@AutoRouterConfig(replaceInRouteName: 'Page,Screen')
+@AutoRouterConfig(replaceInRouteName: 'Screen|Page,Screen')
 class AppRouter extends RootStackRouter {
   @override
-  List<AutoRoute> get routes => [
-        AutoRoute(
-          path: '/customer_products',
-          page: CustomerProducts.page,
-          initial: true,
-        ),
-      ];
+  RouteType get defaultRouteType => RouteType.adaptive();
+
+  @override
+  List<AutoRoute> get routes => [AutoRoute(path: '/customer_products', page: CustomerProducts.page, initial: true)];
 }
 
 final appRouter = AppRouter();

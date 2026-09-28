@@ -5,8 +5,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'meta.freezed.dart';
 part 'meta.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [Meta] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class Meta with _$Meta {
+abstract class Meta with _$Meta {
   const factory Meta({
     @JsonKey(name: 'createdAt') DateTime? createdAt,
     @JsonKey(name: 'updatedAt') DateTime? updatedAt,

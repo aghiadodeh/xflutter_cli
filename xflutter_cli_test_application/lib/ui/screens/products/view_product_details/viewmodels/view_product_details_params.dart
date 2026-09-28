@@ -2,9 +2,16 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:xflutter_cli_test_application/data/models/entities/product/product.dart';
-import 'package:xflutter_cli_test_application/extensions/live_data_extension.dart';
+import 'package:xflutter_cli_test_application/data/models/ui_models/result/live_result.dart';
+import 'package:xflutter_cli_test_application/data/models/ui_models/result/result.dart';
+import 'package:flutterx_live_data/flutterx_live_data.dart';
 
 class ViewProductDetailsParams {
   late int id;
-  final product = const Product().liveResult;
+  final _product = LiveResult<Product>(value: Result.loading());
+  LiveData<Result<Product>> get product => _product;
+
+  void setProduct(Result<Product> value) {
+    _product.postValue(value);
+  }
 }

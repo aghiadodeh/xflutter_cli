@@ -6,14 +6,6 @@ part of 'get_verification_code_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GetVerificationCodeRequestImpl _$$GetVerificationCodeRequestImplFromJson(
-        Map json) =>
-    _$GetVerificationCodeRequestImpl(
-      phone: json['phone'] as String?,
-    );
+_GetVerificationCodeRequest _$GetVerificationCodeRequestFromJson(Map json) => _GetVerificationCodeRequest(phone: json['phone'] as String?);
 
-Map<String, dynamic> _$$GetVerificationCodeRequestImplToJson(
-        _$GetVerificationCodeRequestImpl instance) =>
-    <String, dynamic>{
-      'phone': instance.phone,
-    };
+Map<String, dynamic> _$GetVerificationCodeRequestToJson(_GetVerificationCodeRequest instance) => <String, dynamic>{'phone': instance.phone};

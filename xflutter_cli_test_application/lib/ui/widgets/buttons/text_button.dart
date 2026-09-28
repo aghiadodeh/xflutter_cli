@@ -9,13 +9,7 @@ class AppTextButton extends StatelessWidget {
   final TextStyle? textStyle;
   final bool enabled;
 
-  const AppTextButton({
-    required this.text,
-    required this.callback,
-    this.textStyle,
-    this.enabled = true,
-    super.key,
-  });
+  const AppTextButton({required this.text, required this.callback, this.textStyle, this.enabled = true, super.key});
 
   @override
   Widget build(BuildContext context) {

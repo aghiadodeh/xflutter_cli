@@ -5,8 +5,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'reset_password_request.freezed.dart';
 part 'reset_password_request.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [ResetPasswordRequest] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class ResetPasswordRequest with _$ResetPasswordRequest {
+abstract class ResetPasswordRequest with _$ResetPasswordRequest {
   const factory ResetPasswordRequest({
     @JsonKey(name: 'email') String? email,
     @JsonKey(name: 'reset_password_code') String? resetPasswordCode,

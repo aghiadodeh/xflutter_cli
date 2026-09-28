@@ -2,7 +2,7 @@
 //
 // more info: https://xflutter-cli.com
 import '../widgets/change_password_form.dart';
-import 'package:xflutter_cli_modules_application/common/ui/resources/themes/theme.dart';
+import 'package:xflutter_cli_modules_application/common/ui/resources/themes/base_theme.dart';
 import 'package:xflutter_cli_modules_application/common/ui/widgets/core/base_scrollview.dart';
 import 'package:flutter/material.dart';
 import '../viewmodels/change_password_viewmodel.dart';
@@ -15,10 +15,7 @@ class ChangePasswordTabletScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return InstanceBuilder<ChangePasswordViewModel>(
       builder: (ChangePasswordViewModel viewModel) {
-        return BaseScrollView(
-          padding: adaptivePadding,
-          child: const ChangePasswordForm(),
-        );
+        return BaseScrollView(padding: adaptivePadding, child: ChangePasswordForm());
       },
     );
   }

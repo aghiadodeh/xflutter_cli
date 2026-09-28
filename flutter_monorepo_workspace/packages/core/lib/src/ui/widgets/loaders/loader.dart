@@ -11,9 +11,6 @@ class Loader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SpinKitCircle(
-      color: color ?? Theme.of(context).primaryColor,
-      size: size ?? MediaQuery.of(context).size.width * 0.15,
-    );
+    return SpinKitCircle(color: color ?? Theme.of(context).primaryColor, size: size ?? MediaQuery.of(context).size.width * 0.15);
   }
 }

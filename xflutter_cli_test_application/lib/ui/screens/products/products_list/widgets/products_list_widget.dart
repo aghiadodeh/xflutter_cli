@@ -34,7 +34,7 @@ class ProductsListWidget extends StatelessWidget {
           cancelText: 'cancel'.tr(),
           confirmText: 'delete'.tr(),
           onConfirm: () => onDelete(item),
-          conformTextStyle: const TextStyle(color: Colors.red),
+          confirmTextStyle: const TextStyle(color: Colors.red),
         ),
       ).onClick(() => onPressed(item)),
     );

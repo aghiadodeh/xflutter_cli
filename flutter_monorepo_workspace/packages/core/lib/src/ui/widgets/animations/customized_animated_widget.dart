@@ -13,12 +13,7 @@ class CustomizedAnimatedWidget extends StatefulWidget {
   /// animation sliding value.
   final double from;
 
-  const CustomizedAnimatedWidget({
-    super.key,
-    required this.child,
-    this.duration = const Duration(milliseconds: 300),
-    this.from = 30,
-  });
+  const CustomizedAnimatedWidget({super.key, required this.child, this.duration = const Duration(milliseconds: 300), this.from = 30});
 
   @override
   State<CustomizedAnimatedWidget> createState() => CustomizedAnimatedWidgetState();
@@ -37,10 +32,7 @@ class CustomizedAnimatedWidgetState extends State<CustomizedAnimatedWidget> {
           duration: widget.duration,
           tween: Tween<double>(begin: 0, end: 1),
           child: child,
-          builder: (context, opacity, child) => Opacity(
-            opacity: opacity,
-            child: child,
-          ),
+          builder: (context, opacity, child) => Opacity(opacity: opacity, child: child),
         ),
       ),
     );

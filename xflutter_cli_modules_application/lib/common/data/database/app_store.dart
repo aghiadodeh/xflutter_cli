@@ -2,17 +2,109 @@
 //
 // more info: https://xflutter-cli.com
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'objectbox.g.dart';
 import 'package:injectable/injectable.dart';
+import 'dart:collection';
+import 'dart:async';
 import 'package:path/path.dart' show join;
 
 @lazySingleton
 class ObjectBoxAppStore {
+  /// The directory where the ObjectBox database files will be stored.
   final Directory directory;
+
+  /// Constructor with a named dependency injection for the application [directory].
+  ///
+  /// The 'AppDocumentsDirectory' provides the base directory for storing data.
   ObjectBoxAppStore(@Named('AppDocumentsDirectory') this.directory);
 
+  /// The version of the database.
+  ///
+  /// This can be incremented when there are breaking changes in the schema or data structure.
   String get _version => 'v1';
 
-  /// open new objectbox [Store] with specific [_version]
-  Store openStore() => Store(getObjectBoxModel(), directory: join(directory.path, 'app_objectbox_$_version'));
+  /// The [directory] path for the ObjectBox [Store].
+  ///
+  /// Combines the base application directory with a specific [_version].
+  String get _path => join(directory.path, 'app_objectbox_$_version');
+
+  /// Internal method to open a new ObjectBox [Store] with the specified [_path].
+  Store _openStore() => Store(getObjectBoxModel(), directory: _path);
+
+  /// Internal queue to hold pending operations.
+  final Queue<Completer<void>> _operationQueue = Queue();
+
+  /// Tracks whether an operation is currently executing.
+  bool _isExecuting = false;
+
+  /// ObjectBox does not natively support multiple stores accessing the same directory simultaneously.
+  ///
+  /// Executes a given operation sequentially with exclusive access to the store.
+  ///
+  /// [operation] is a callback function that performs work with the provided [_openStore].
+  /// Returns the result of the [operation].
+  Future<T> executeWithStore<T>(Future<T> Function(Store store) operation) async {
+    // Enable debug logs for ObjectBox (optional, for development and debugging).
+    Store.debugLogs = true;
+
+    // Lock access to store
+    await _enqueue();
+    Store? store;
+    try {
+      // open new store
+      store = _openStore();
+
+      // do operation
+      final result = await operation(store);
+      return result;
+    } finally {
+      // close store
+      store?.close();
+
+      // Release the lock once the operation is finished
+      _dequeue();
+    }
+  }
+
+  /// Adds a new operation to the queue and waits for its turn.
+  Future<void> _enqueue() async {
+    // Create a Completer that represents the current operation.
+    final completer = Completer<void>();
+
+    // Add the Completer to the queue.
+    _operationQueue.add(completer);
+
+    // If this is the first operation in the queue, start executing it immediately.
+    if (!_isExecuting) {
+      _dequeue();
+    }
+
+    // Return the future of the completer to ensure the caller waits.
+    return completer.future;
+  }
+
+  /// Removes the first operation in the queue and allows the next to proceed.
+  void _dequeue() {
+    // Check if there are operations in the queue.
+    if (_operationQueue.isNotEmpty) {
+      // Set the executing flag to true.
+      _isExecuting = true;
+
+      // Complete the first operation in the queue.
+      _operationQueue.first.complete();
+
+      // Remove the completed operation from the queue.
+      _operationQueue.removeFirst();
+    } else {
+      // No more operations, mark as not executing.
+      _isExecuting = false;
+    }
+  }
+
+  Future<void> clean() async {
+    if (kDebugMode) print('deleting database ($_path)...');
+    await Directory(_path).delete(recursive: true);
+    if (kDebugMode) print('database deleted.');
+  }
 }

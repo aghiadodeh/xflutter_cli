@@ -2,10 +2,11 @@
 //
 // more info: https://xflutter-cli.com
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutterx_live_data/flutterx_live_data.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'theme.dart';
+import 'base_theme.dart';
 import 'dark_theme.dart';
 import 'package:core/src/events/event_bus.dart';
 import 'package:core/src/extensions/di_extension.dart';
@@ -25,8 +26,14 @@ class ThemeNotifier {
 
   /// check last saved [ThemeMode] from localStorage
   void initializeThemeMode() {
-    final darkMode = _sharedPreferences.getBool('dark_theme') ?? false;
-    final themeMode = darkMode ? ThemeMode.dark : ThemeMode.light;
+    final darkMode = _sharedPreferences.getBool('dark_theme');
+    var themeMode = ThemeMode.light;
+    if (darkMode == true) themeMode = ThemeMode.dark;
+    if (darkMode == null) {
+      // get device theme mode
+      final brightness = SchedulerBinding.instance.platformDispatcher.platformBrightness;
+      if (brightness == Brightness.dark) themeMode = ThemeMode.dark;
+    }
     if (themeMode != this.themeMode.value) {
       _themeMode.postValue(themeMode);
     }

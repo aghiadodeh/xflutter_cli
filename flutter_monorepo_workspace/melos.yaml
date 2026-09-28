@@ -1,10 +1,16 @@
 # melos is a tool for managing Dart projects with multiple packages.
 # https://melos.invertase.dev
+# melos version: 7.7.0
 name: flutter_monorepo_workspace
     
 packages:
   - apps/*
   - packages/*
+
+command:
+  bootstrap:
+    dependencyOverrides:
+      path_provider_foundation: 2.5.1
 
 scripts:
   analyze:

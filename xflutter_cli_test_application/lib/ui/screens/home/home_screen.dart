@@ -7,7 +7,6 @@ import './viewmodels/home_viewmodel.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'mobile/home_mobile_screen.dart';
-import 'tablet/home_tablet_screen.dart';
 import 'package:xflutter_cli_test_application/data/models/di/di_scope/di_scope.dart';
 import 'package:xflutter_cli_test_application/ui/widgets/loaders/live_data_loader.dart';
 import 'package:xflutter_cli_test_application/ui/widgets/instance/lifecycle_owner.dart';
@@ -30,12 +29,7 @@ class _HomeScreenState extends State<HomeScreen> with LifecycleOwner<HomeScreen,
       children: [
         // screen body
         BaseScaffold(
-          builder: (context, theme) => SafeArea(
-            child: ScreenTypeLayout.builder(
-              mobile: (_) => const HomeMobileScreen(),
-              tablet: (_) => const HomeTabletScreen(),
-            ),
-          ),
+          builder: (context, theme) => SafeArea(child: ScreenTypeLayout.builder(mobile: (_) => HomeMobileScreen())),
         ),
 
         // full-screen loader
@@ -45,9 +39,5 @@ class _HomeScreenState extends State<HomeScreen> with LifecycleOwner<HomeScreen,
   }
 
   @override
-  DiScope get diScope => DiScope(
-        name: 'home',
-        factory: getIt.initHomeScope,
-        dependencies: [],
-      );
+  DiScope get diScope => DiScope(name: 'home', factory: getIt.initHomeScope, dependencies: []);
 }

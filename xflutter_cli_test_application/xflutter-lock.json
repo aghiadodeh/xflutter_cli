@@ -2,75 +2,40 @@
   "w": null,
   "m": [
     {
-      "id": "1730643135754861",
-      "utc": "2024-11-03T14:12:15.755194Z",
+      "id": "1779042436647584",
+      "utc": "2026-05-17T18:27:16.647822Z",
       "e": {
         "a": "layers",
         "t": "app",
         "b": "lib",
         "p": "",
         "n": "xflutter_cli_test_application",
-        "fv": "3.24.1"
+        "fv": "3.38.6"
       },
       "mo": [
         {
-          "id": "1730643135783573",
-          "cn": "",
-          "p": "flutter_native_splash.yaml",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730643135788310",
-          "cn": "",
-          "p": "flutter_launcher_icons.yaml",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730643135792084",
+          "id": "1779042436670195",
           "cn": "",
           "p": "assets/localization/en.json",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135795539",
-          "cn": "",
-          "p": "assets/images/.gitignore",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730643135796274",
-          "cn": "",
-          "p": "assets/svgs/.gitkeep",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730643135797119",
+          "id": "1779042436677816",
           "cn": "",
           "p": "router/app_router.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135807918",
-          "cn": "",
-          "p": "build.yaml",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730643135809569",
+          "id": "1779042436681044",
           "cn": "",
           "p": "di/app_injectable.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135814945",
+          "id": "1779042436685500",
           "cn": "",
           "p": "di/modules/app_module.dart",
           "e": false,
@@ -84,1188 +49,427 @@
           ]
         },
         {
-          "id": "1730643135817289",
+          "id": "1779042436686630",
           "cn": "",
           "p": "data/models/responses/base_response/base_response.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135821130",
+          "id": "1779042436688722",
           "cn": "",
           "p": "data/models/responses/list_response/list_response.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135822746",
+          "id": "1779042436689809",
           "cn": "",
           "p": "data/models/ui_models/ui_message/ui_message.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135823763",
+          "id": "1779042436690290",
+          "cn": "",
+          "p": "data/models/ui_models/result/result.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779042436690674",
+          "cn": "",
+          "p": "data/models/ui_models/result/live_result.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779042436691261",
           "cn": "",
           "p": "utilities/ui/ui.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135824853",
+          "id": "1779042436691761",
           "cn": "",
           "p": "utilities/di/dependency_locator.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135825995",
+          "id": "1779042436692484",
           "cn": "",
           "p": "utilities/async/debouncer.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135826773",
+          "id": "1779042436692982",
           "cn": "",
           "p": "utilities/network/connectivity.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135828532",
+          "id": "1779042436694381",
           "cn": "",
           "p": "extensions/di_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135829767",
+          "id": "1779042436695011",
           "cn": "",
           "p": "extensions/view_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135830512",
+          "id": "1779042436695488",
           "cn": "",
           "p": "extensions/assets_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135831190",
+          "id": "1779042436695954",
           "cn": "",
           "p": "extensions/nullable_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135831930",
+          "id": "1779042436696376",
           "cn": "",
           "p": "extensions/live_data_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135832923",
+          "id": "1779042436697109",
           "cn": "",
           "p": "extensions/reactive_form_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135833977",
+          "id": "1779042436697639",
           "cn": "",
           "p": "events/event_bus.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135835946",
+          "id": "1779042436698697",
           "cn": "",
           "p": "storage/storage.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135899446",
+          "id": "1779042436735269",
           "cn": "",
           "p": "storage/secure_storage.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135901584",
+          "id": "1779042436736445",
           "cn": "",
           "p": "extensions/theme_extension.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643135903439",
+          "id": "1779042436737077",
           "cn": "",
           "p": "ui/resources/colors/colors.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643137998441",
+          "id": "1779042436737843",
           "cn": "",
           "p": "ui/resources/colors/dark_colors.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138701235",
+          "id": "1779042436738334",
           "cn": "",
-          "p": "ui/resources/themes/theme.dart",
+          "p": "ui/resources/themes/base_theme.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138702177",
+          "id": "1779042436739455",
           "cn": "",
           "p": "ui/resources/themes/dark_theme.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138703558",
+          "id": "1779042436740090",
           "cn": "",
           "p": "ui/resources/dimensions/dimensions.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138705003",
+          "id": "1779042436740816",
           "cn": "",
           "p": "ui/resources/themes/theme_notifier.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138709253",
+          "id": "1779042436742872",
           "cn": "",
           "p": "ui/widgets/text_fields/customized_text_form_field.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138711473",
+          "id": "1779042436743717",
           "cn": "",
           "p": "ui/widgets/text_fields/customized_reactive_text_field.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138714605",
+          "id": "1779042436745683",
           "cn": "",
           "p": "ui/widgets/text_fields/customized_reactive_phone_field.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138717776",
+          "id": "1779042436747016",
           "cn": "",
           "p": "utilities/validators/matching_validator.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138718663",
+          "id": "1779042436747625",
           "cn": "",
           "p": "ui/widgets/buttons/back_button.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138719653",
+          "id": "1779042436748125",
           "cn": "",
           "p": "ui/widgets/core/theme_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138720787",
+          "id": "1779042436748555",
           "cn": "",
           "p": "ui/widgets/core/base_scaffold.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138721786",
+          "id": "1779042436748936",
           "cn": "",
           "p": "ui/widgets/core/base_scrollview.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138722292",
+          "id": "1779042436749606",
           "cn": "",
           "p": "ui/widgets/core/base_appbar.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138723434",
+          "id": "1779042436750726",
           "cn": "",
           "p": "ui/widgets/blur_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643138724448",
+          "id": "1779042436751487",
           "cn": "",
           "p": "ui/widgets/infinite_scroll_view/infinite_scroll_view.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140227479",
+          "id": "1779042438269619",
           "cn": "",
           "p": "ui/widgets/infinite_scroll_view/pagination_error_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140228241",
+          "id": "1779042438270215",
           "cn": "",
           "p": "ui/widgets/infinite_scroll_view/pagination_load_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140229249",
+          "id": "1779042438270811",
           "cn": "",
           "p": "ui/widgets/loaders/full_screen_loader.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140229764",
+          "id": "1779042438271364",
           "cn": "",
           "p": "ui/widgets/loaders/live_data_loader.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140230884",
+          "id": "1779042438272283",
           "cn": "",
           "p": "ui/widgets/loaders/loader.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140232953",
+          "id": "1779042438273294",
           "cn": "",
           "p": "ui/widgets/buttons/text_button.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140233695",
+          "id": "1779042438273735",
           "cn": "",
           "p": "ui/widgets/buttons/customized_button.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140234605",
+          "id": "1779042438274485",
           "cn": "",
           "p": "ui/widgets/animations/customized_animated_widget.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140235983",
+          "id": "1779042438275308",
           "cn": "",
           "p": "ui/widgets/animations/animated_column.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140238376",
+          "id": "1779042438275895",
           "cn": "",
           "p": "data/models/di/di_scope/di_scope.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140239733",
+          "id": "1779042438276975",
           "cn": "",
           "p": "viewmodels/base_params.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140240883",
+          "id": "1779042438278408",
           "cn": "",
           "p": "viewmodels/base_viewmodel.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140243485",
+          "id": "1779042438279719",
           "cn": "",
           "p": "ui/widgets/instance/lifecycle_owner.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140245031",
+          "id": "1779042438280657",
           "cn": "",
           "p": "ui/widgets/instance/instance_builder.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140245672",
+          "id": "1779042438281015",
+          "cn": "",
+          "p": "ui/widgets/instance/lifecycle_provider.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779042438281804",
           "cn": "",
           "p": "environments/environments.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643140256713",
+          "id": "1779042438291891",
           "cn": "",
           "p": "utilities/network/http_interceptor.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643141396180",
+          "id": "1779042438941414",
           "cn": "",
           "p": "data/repositories/base_repository.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730643141398643",
+          "id": "1779042438943772",
           "cn": "",
           "p": "main.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730810257204717",
-          "cn": "",
-          "p": "ui/screens/home/mobile/home_mobile_screen.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730810257219633",
+          "id": "1779042606591769",
           "cn": "",
           "p": "ui/screens/home/tablet/home_tablet_screen.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730810257220846",
+          "id": "1779042606601644",
           "cn": "",
           "p": "ui/screens/home/viewmodels/home_viewmodel.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730810257221915",
+          "id": "1779042606602567",
           "cn": "",
           "p": "ui/screens/home/viewmodels/home_params.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730810257222640",
-          "cn": "",
-          "p": "ui/screens/home/widgets/.gitkeep",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730810257223861",
+          "id": "1779042606604285",
           "cn": "",
           "p": "ui/screens/home/home_screen.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730713651709102",
+          "id": "1779042606658366",
           "cn": "",
           "p": "di/app_injectable.config.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730716830239049",
-          "cn": "",
-          "p": "json/auth/login_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716837760012",
-          "cn": "",
-          "p": "json/auth/register_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716843485093",
-          "cn": "",
-          "p": "json/auth/verify_code_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716849040480",
-          "cn": "",
-          "p": "json/auth/get_verification_code_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716854649262",
-          "cn": "",
-          "p": "json/auth/reset_password_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716860251415",
-          "cn": "",
-          "p": "json/auth/change_password_request.json",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718737190819",
-          "cn": "",
-          "p": "data/data_sources/remote/authentication_rest_client/authentication_rest_client.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716871278722",
-          "cn": "",
-          "p": "data/models/requests/login_request/login_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716871287451",
-          "cn": "",
-          "p": "data/models/requests/verify_code_request/verify_code_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716871295987",
-          "cn": "",
-          "p": "data/models/requests/get_verification_code_request/get_verification_code_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716871305163",
-          "cn": "",
-          "p": "data/models/requests/register_request/register_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716871313139",
-          "cn": "",
-          "p": "data/models/requests/reset_password_request/reset_password_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716871320862",
-          "cn": "",
-          "p": "data/models/requests/change_password_request/change_password_request.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718737203775",
-          "cn": "",
-          "p": "data/repositories/authentication/authentication_repository.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718737205322",
-          "cn": "",
-          "p": "data/repositories/authentication/authentication_repository_impl.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716871330213",
-          "cn": "",
-          "p": "mediators/controllers/authentication_controller.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730718720372657",
-          "cn": "User",
-          "p": "data/models/entities/user/user.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716876587610",
-          "cn": "",
-          "p": "ui/widgets/text_fields/pin_code_field.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730716876589726",
-          "cn": "",
-          "p": "ui/widgets/text_fields/verify_pin_code_widget.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730799988198591",
-          "cn": "Review",
-          "p": "data/models/entities/review/review.dart",
-          "e": false,
-          "pr": [
-            {
-              "t": "int",
-              "n": "rating",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "comment",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "DateTime",
-              "n": "date",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "reviewerName",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "reviewerEmail",
-              "nullable": true,
-              "l": false
-            }
-          ]
-        },
-        {
-          "id": "1730799988213406",
-          "cn": "Meta",
-          "p": "data/models/entities/meta/meta.dart",
-          "e": false,
-          "pr": [
-            {
-              "t": "DateTime",
-              "n": "createdAt",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "DateTime",
-              "n": "updatedAt",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "barcode",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "qrCode",
-              "nullable": true,
-              "l": false
-            }
-          ]
-        },
-        {
-          "id": "1730799988214722",
-          "cn": "Dimensions",
-          "p": "data/models/entities/dimensions/dimensions.dart",
-          "e": false,
-          "pr": [
-            {
-              "t": "num",
-              "n": "width",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "num",
-              "n": "height",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "num",
-              "n": "depth",
-              "nullable": true,
-              "l": false
-            }
-          ]
-        },
-        {
-          "id": "1730799988216298",
-          "cn": "Product",
-          "p": "data/models/entities/product/product.dart",
-          "e": false,
-          "pr": [
-            {
-              "t": "int",
-              "n": "id",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "title",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "description",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "category",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "num",
-              "n": "price",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "num",
-              "n": "discountPercentage",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "num",
-              "n": "rating",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "int",
-              "n": "stock",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "tags",
-              "nullable": true,
-              "l": true
-            },
-            {
-              "t": "String",
-              "n": "brand",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "sku",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "int",
-              "n": "weight",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "Dimensions",
-              "n": "dimensions",
-              "nullable": true,
-              "l": false,
-              "p": "data/models/entities/dimensions/dimensions.dart",
-              "m": "1730643135754861"
-            },
-            {
-              "t": "String",
-              "n": "warrantyInformation",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "shippingInformation",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "availabilityStatus",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "Review",
-              "n": "reviews",
-              "nullable": true,
-              "l": true,
-              "p": "data/models/entities/review/review.dart",
-              "m": "1730643135754861"
-            },
-            {
-              "t": "String",
-              "n": "returnPolicy",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "int",
-              "n": "minimumOrderQuantity",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "Meta",
-              "n": "meta",
-              "nullable": true,
-              "l": false,
-              "p": "data/models/entities/meta/meta.dart",
-              "m": "1730643135754861"
-            },
-            {
-              "t": "String",
-              "n": "images",
-              "nullable": true,
-              "l": true
-            },
-            {
-              "t": "String",
-              "n": "thumbnail",
-              "nullable": true,
-              "l": false
-            }
-          ]
-        },
-        {
-          "id": "1730800026430630",
-          "cn": "LocalDimensions",
-          "p": "data/models/local/dimensions/local_dimensions.dart",
-          "e": false,
-          "pr": [
-            {
-              "t": "int",
-              "n": "id",
-              "nullable": false,
-              "l": false,
-              "meta": [
-                "primary"
-              ],
-              "a": [
-                "Id()"
-              ]
-            },
-            {
-              "t": "double",
-              "n": "width",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "double",
-              "n": "height",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "double",
-              "n": "depth",
-              "nullable": true,
-              "l": false
-            }
-          ]
-        },
-        {
-          "id": "1730800026442689",
-          "cn": "LocalReview",
-          "p": "data/models/local/review/local_review.dart",
-          "e": false,
-          "pr": [
-            {
-              "t": "int",
-              "n": "id",
-              "nullable": false,
-              "l": false,
-              "meta": [
-                "primary"
-              ],
-              "a": [
-                "Id()"
-              ]
-            },
-            {
-              "t": "int",
-              "n": "rating",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "comment",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "DateTime",
-              "n": "date",
-              "nullable": true,
-              "l": false,
-              "a": [
-                "Property(type: PropertyType.date)"
-              ]
-            },
-            {
-              "t": "String",
-              "n": "reviewerName",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "reviewerEmail",
-              "nullable": true,
-              "l": false
-            }
-          ]
-        },
-        {
-          "id": "1730800026444960",
-          "cn": "LocalMeta",
-          "p": "data/models/local/meta/local_meta.dart",
-          "e": false,
-          "pr": [
-            {
-              "t": "int",
-              "n": "id",
-              "nullable": false,
-              "l": false,
-              "meta": [
-                "primary"
-              ],
-              "a": [
-                "Id()"
-              ]
-            },
-            {
-              "t": "DateTime",
-              "n": "createdAt",
-              "nullable": true,
-              "l": false,
-              "a": [
-                "Property(type: PropertyType.date)"
-              ]
-            },
-            {
-              "t": "DateTime",
-              "n": "updatedAt",
-              "nullable": true,
-              "l": false,
-              "a": [
-                "Property(type: PropertyType.date)"
-              ]
-            },
-            {
-              "t": "String",
-              "n": "barcode",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "qrCode",
-              "nullable": true,
-              "l": false
-            }
-          ]
-        },
-        {
-          "id": "1730800026446183",
-          "cn": "",
-          "p": "data/database/app_store.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730800026459604",
-          "cn": "LocalProduct",
-          "p": "data/models/local/product/local_product.dart",
-          "e": false,
-          "pr": [
-            {
-              "t": "int",
-              "n": "id",
-              "nullable": false,
-              "l": false,
-              "meta": [
-                "primary"
-              ],
-              "a": [
-                "Id()"
-              ]
-            },
-            {
-              "t": "int",
-              "n": "productId",
-              "nullable": true,
-              "l": false,
-              "meta": [
-                "unique"
-              ],
-              "a": [
-                "Unique(onConflict: ConflictStrategy.replace)"
-              ]
-            },
-            {
-              "t": "String",
-              "n": "title",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "description",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "category",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "double",
-              "n": "price",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "double",
-              "n": "discountPercentage",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "double",
-              "n": "rating",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "int",
-              "n": "stock",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "tags",
-              "nullable": true,
-              "l": true
-            },
-            {
-              "t": "String",
-              "n": "brand",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "sku",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "int",
-              "n": "weight",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "LocalDimensions",
-              "ft": "",
-              "n": "toOneDimensions",
-              "nullable": false,
-              "l": false,
-              "p": "lib/data/models/local/dimensions/local_dimensions.dart",
-              "m": "1730643135754861",
-              "meta": [
-                "toOne"
-              ]
-            },
-            {
-              "t": "String",
-              "n": "warrantyInformation",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "shippingInformation",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "availabilityStatus",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "LocalReview",
-              "ft": "",
-              "n": "toManyReviews",
-              "nullable": false,
-              "l": true,
-              "p": "lib/data/models/local/review/local_review.dart",
-              "m": "1730643135754861",
-              "meta": [
-                "toMany"
-              ]
-            },
-            {
-              "t": "String",
-              "n": "returnPolicy",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "int",
-              "n": "minimumOrderQuantity",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "LocalMeta",
-              "ft": "",
-              "n": "toOneMeta",
-              "nullable": false,
-              "l": false,
-              "p": "lib/data/models/local/meta/local_meta.dart",
-              "m": "1730643135754861",
-              "meta": [
-                "toOne"
-              ]
-            },
-            {
-              "t": "String",
-              "n": "images",
-              "nullable": true,
-              "l": true
-            },
-            {
-              "t": "String",
-              "n": "thumbnail",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "LocalDimensions",
-              "n": "dimensions",
-              "nullable": true,
-              "l": false,
-              "p": "lib/data/models/local/dimensions/local_dimensions.dart",
-              "m": "1730643135754861",
-              "meta": []
-            },
-            {
-              "t": "LocalReview",
-              "n": "reviews",
-              "nullable": true,
-              "l": true,
-              "p": "lib/data/models/local/review/local_review.dart",
-              "m": "1730643135754861",
-              "meta": []
-            },
-            {
-              "t": "LocalMeta",
-              "n": "meta",
-              "nullable": true,
-              "l": false,
-              "p": "lib/data/models/local/meta/local_meta.dart",
-              "m": "1730643135754861",
-              "meta": []
-            }
-          ]
-        },
-        {
-          "id": "1730800026472375",
-          "cn": "",
-          "p": "data/data_sources/local/products/queries/local_products_query_parameters.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730800026472841",
-          "cn": "Products",
-          "p": "data/data_sources/local/products/products_local_data_source.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730800026473570",
-          "cn": "",
-          "p": "data/data_sources/local/products/products_local_data_source_impl.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730800026495800",
-          "cn": "Products",
-          "p": "data/data_sources/remote/products/products_remote_data_source.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730800026497710",
-          "cn": "ProductsRepository",
-          "p": "data/repositories/products/products_repository.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730800026498855",
-          "cn": "ProductsRepositoryImpl",
-          "p": "data/repositories/products/products_repository_impl.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730803772559967",
+          "id": "1779042704615943",
           "cn": "Media",
           "p": "data/models/entities/media/media.dart",
           "e": false,
@@ -1357,7 +561,7 @@
           ]
         },
         {
-          "id": "1730803772571458",
+          "id": "1779042704625126",
           "cn": "Category",
           "p": "data/models/entities/category/category.dart",
           "e": false,
@@ -1392,128 +596,19 @@
               "nullable": true,
               "l": true,
               "p": "data/models/entities/media/media.dart",
-              "m": "1730643135754861"
+              "m": "1779042436647584"
             }
           ]
         },
         {
-          "id": "1730803816959782",
-          "cn": "LocalMedia",
-          "p": "data/models/local/media/local_media.dart",
+          "id": "1779042783808196",
+          "cn": "",
+          "p": "data/database/app_store.dart",
           "e": false,
-          "pr": [
-            {
-              "t": "int",
-              "n": "id",
-              "nullable": false,
-              "l": false,
-              "meta": [
-                "primary"
-              ],
-              "a": [
-                "Id()"
-              ]
-            },
-            {
-              "t": "int",
-              "n": "mediaId",
-              "nullable": true,
-              "l": false,
-              "meta": [
-                "unique"
-              ],
-              "a": [
-                "Unique(onConflict: ConflictStrategy.replace)"
-              ]
-            },
-            {
-              "t": "String",
-              "n": "modelType",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "int",
-              "n": "modelId",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "collectionName",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "name",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "fileName",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "mimeType",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "disk",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "conversionsDisk",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "int",
-              "n": "size",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "DateTime",
-              "n": "createdAt",
-              "nullable": true,
-              "l": false,
-              "a": [
-                "Property(type: PropertyType.date)"
-              ]
-            },
-            {
-              "t": "DateTime",
-              "n": "updatedAt",
-              "nullable": true,
-              "l": false,
-              "a": [
-                "Property(type: PropertyType.date)"
-              ]
-            },
-            {
-              "t": "String",
-              "n": "originalUrl",
-              "nullable": true,
-              "l": false
-            },
-            {
-              "t": "String",
-              "n": "previewUrl",
-              "nullable": true,
-              "l": false
-            }
-          ]
+          "pr": []
         },
         {
-          "id": "1730803816970941",
+          "id": "1779042783829597",
           "cn": "LocalCategory",
           "p": "data/models/local/category/local_category.dart",
           "e": false,
@@ -1527,19 +622,7 @@
                 "primary"
               ],
               "a": [
-                "Id()"
-              ]
-            },
-            {
-              "t": "int",
-              "n": "categoryId",
-              "nullable": true,
-              "l": false,
-              "meta": [
-                "unique"
-              ],
-              "a": [
-                "Unique(onConflict: ConflictStrategy.replace)"
+                "Id(assignable: true)"
               ]
             },
             {
@@ -1567,117 +650,236 @@
               "l": false
             },
             {
-              "t": "LocalMedia",
-              "ft": "",
-              "n": "toManyMedia",
-              "nullable": false,
-              "l": true,
-              "p": "lib/data/models/local/media/local_media.dart",
-              "m": "1730643135754861",
-              "meta": [
-                "toMany"
-              ]
-            },
-            {
-              "t": "LocalMedia",
+              "t": "String",
               "n": "media",
               "nullable": true,
               "l": true,
-              "p": "lib/data/models/local/media/local_media.dart",
-              "m": "1730643135754861",
-              "meta": []
+              "p": "lib/data/models/entities/media/media.dart",
+              "m": "1779042436647584",
+              "meta": [
+                "convertJson"
+              ]
             }
           ]
         },
         {
-          "id": "1730803816985069",
+          "id": "1779042783832612",
           "cn": "",
           "p": "data/data_sources/local/categories/queries/local_categories_query_parameters.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730803816985574",
+          "id": "1779042783833054",
           "cn": "Categories",
           "p": "data/data_sources/local/categories/categories_local_data_source.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730803816986486",
+          "id": "1779042783833775",
           "cn": "",
           "p": "data/data_sources/local/categories/categories_local_data_source_impl.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730803816996380",
-          "cn": "",
-          "p": "data/database/objectbox.g.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730803816997120",
+          "id": "1779042783843880",
           "cn": "CategoriesRepository",
           "p": "data/repositories/categories/categories_repository.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730803816997992",
+          "id": "1779042783844780",
           "cn": "CategoriesRepositoryImpl",
           "p": "data/repositories/categories/categories_repository_impl.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730808122035328",
+          "id": "1779042873562161",
+          "cn": "User",
+          "p": "data/models/entities/user/user.dart",
+          "e": false,
+          "pr": [
+            {
+              "t": "int",
+              "n": "id",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "fullName",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "email",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "String",
+              "n": "phone",
+              "nullable": true,
+              "l": false
+            },
+            {
+              "t": "DateTime",
+              "n": "createdAt",
+              "nullable": true,
+              "l": false
+            }
+          ]
+        },
+        {
+          "id": "1779042953272693",
+          "cn": "",
+          "p": "json/auth/login_request.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779042985952970",
+          "cn": "",
+          "p": "json/auth/verify_code_request.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043018269076",
+          "cn": "",
+          "p": "json/auth/get_verification_code_request.json",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043052414042",
+          "cn": "",
+          "p": "data/data_sources/remote/authentication/authentication_remote_data_source.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043052442586",
+          "cn": "",
+          "p": "data/models/requests/login_request/login_request.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043052453584",
+          "cn": "",
+          "p": "data/models/requests/verify_code_request/verify_code_request.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043052463245",
+          "cn": "",
+          "p": "data/models/requests/get_verification_code_request/get_verification_code_request.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043052487456",
+          "cn": "",
+          "p": "data/repositories/authentication/authentication_repository.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043052488358",
+          "cn": "",
+          "p": "data/repositories/authentication/authentication_repository_impl.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043052489894",
+          "cn": "",
+          "p": "mediators/controllers/authentication_controller.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043114561410",
+          "cn": "",
+          "p": "ui/widgets/text_fields/pin_code_field.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043114563293",
+          "cn": "",
+          "p": "ui/widgets/text_fields/verify_pin_code_widget.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043268769750",
+          "cn": "",
+          "p": "data/models/entities/product/product.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043313785627",
+          "cn": "",
+          "p": "data/repositories/products/products_repository.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043410285008",
           "cn": "",
           "p": "mediators/paging/products_paging_controller.dart",
           "e": false,
           "pr": []
         },
         {
-          "id": "1730808122064674",
-          "cn": "",
-          "p": "ui/screens/home/widgets/products_list_widget.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730808122066734",
-          "cn": "",
-          "p": "ui/screens/home/widgets/product_card_widget.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730808122067584",
-          "cn": "",
-          "p": "ui/screens/home/widgets/product_redacted_widget.dart",
-          "e": false,
-          "pr": []
-        },
-        {
-          "id": "1730810412707888",
+          "id": "1779043504003555",
           "cn": "",
           "p": "ui/screens/products/widgets/product_form.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043651734132",
+          "cn": "",
+          "p": "main_test.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043651736140",
+          "cn": "",
+          "p": "main_dev.dart",
+          "e": false,
+          "pr": []
+        },
+        {
+          "id": "1779043651736622",
+          "cn": "",
+          "p": "main_prod.dart",
           "e": false,
           "pr": []
         }
       ]
     },
     {
-      "id": "1730643213972692",
-      "utc": "2024-11-03T14:13:33.972776Z",
+      "id": "1779042539357068",
+      "utc": "2026-05-17T18:28:59.357145Z",
       "e": {
         "a": "modules",
         "t": "package",
         "b": "packages/products/lib/src",
         "p": "packages/products",
         "n": "products",
-        "fv": "3.24.1"
+        "fv": "3.38.6"
       },
       "mo": []
     }

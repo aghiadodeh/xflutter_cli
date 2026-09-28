@@ -5,16 +5,13 @@ import 'package:admin_app/ui/screens/admin_products/admin_products_screen.dart';
 import 'package:auto_route/auto_route.dart';
 part 'app_router.gr.dart';
 
-@AutoRouterConfig(replaceInRouteName: 'Page,Screen')
+@AutoRouterConfig(replaceInRouteName: 'Screen|Page,Screen')
 class AppRouter extends RootStackRouter {
   @override
-  List<AutoRoute> get routes => [
-        AutoRoute(
-          path: '/admin_products',
-          page: AdminProducts.page,
-          initial: true,
-        ),
-      ];
+  RouteType get defaultRouteType => RouteType.adaptive();
+
+  @override
+  List<AutoRoute> get routes => [AutoRoute(path: '/admin_products', page: AdminProducts.page, initial: true)];
 }
 
 final appRouter = AppRouter();

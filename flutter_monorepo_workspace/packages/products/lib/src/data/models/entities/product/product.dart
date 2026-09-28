@@ -8,8 +8,12 @@ import 'package:products/src/data/models/entities/meta/meta.dart';
 part 'product.freezed.dart';
 part 'product.g.dart';
 
+/// **************************************************************************
+/// IMPORTANT: keep [Product] class definition at the top in this file,
+/// if you want to add some extensions or extra classes, declare these definitions at the bottom
+/// **************************************************************************
 @freezed
-class Product with _$Product {
+abstract class Product with _$Product {
   const factory Product({
     @JsonKey(name: 'id') int? id,
     @JsonKey(name: 'title') String? title,

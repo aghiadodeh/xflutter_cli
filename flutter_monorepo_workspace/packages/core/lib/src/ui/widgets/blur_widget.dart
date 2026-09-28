@@ -8,12 +8,7 @@ class BlurWidget extends StatelessWidget {
   final double width;
   final double height;
   final double blur;
-  const BlurWidget({
-    required this.width,
-    required this.height,
-    this.blur = 3,
-    super.key,
-  });
+  const BlurWidget({required this.width, required this.height, this.blur = 3, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +18,7 @@ class BlurWidget extends StatelessWidget {
       child: ClipRRect(
         child: BackdropFilter(
           filter: ui.ImageFilter.blur(sigmaX: blur, sigmaY: blur),
-          child: Container(
-            width: width,
-            height: height,
-            color: Colors.black.withOpacity(0.35),
-          ),
+          child: Container(width: width, height: height, color: Colors.black.withValues(alpha: 0.35)),
         ),
       ),
     );

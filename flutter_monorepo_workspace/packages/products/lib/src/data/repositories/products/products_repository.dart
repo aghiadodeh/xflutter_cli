@@ -10,7 +10,7 @@ abstract class ProductsRepository {
 
   Future<BaseResponse<Product>> update(int? id, Product data);
 
-  Stream<BaseResponse<ListResponse<Product>>> findAll(int page);
+  Stream<BaseResponse<ListResponse<Product>>> findAll(int page, {String? query});
 
   Stream<BaseResponse<Product>> findOne(int? id, {bool withCache = true});
 
